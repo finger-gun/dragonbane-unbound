@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #111318;
+  --muted: #5b5f69;
+  --surface: #f6f2ea;
+  --accent: #c45a3b;
+  --accent-soft: rgba(196, 90, 59, 0.12);
+  --sky: #f1efe7;
+  --shadow: rgba(15, 18, 25, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #fff9f0 0%, var(--sky) 45%, #e7e0d4 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+  display: grid;
+  gap: 48px;
+}
+
+.hero {
+  display: grid;
+  gap: 24px;
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height: 1.05;
+}
+
+.lede {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 620px;
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px var(--shadow);
+  border: 1px solid rgba(17, 19, 24, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 18, 25, 0.18);
+}
+
+.card h2 {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 14px 30px rgba(196, 90, 59, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(196, 90, 59, 0.45);
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+  main {
+    padding: 64px 18px 96px;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

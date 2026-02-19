@@ -1,0 +1,94 @@
+version: '3.9'
+
+services:
+  db:
+    image: supabase/postgres:15.1.0.117
+    ports:
+      - '54322:5432'
+    environment:
+      POSTGRES_PASSWORD: ${SUPABASE_DB_PASSWORD}
+      POSTGRES_DB: ${SUPABASE_DB_NAME}
+      POSTGRES_USER: ${SUPABASE_DB_USER}
+    volumes:
+      - supabase-db:/var/lib/postgresql/data
+
+  auth:
+    image: supabase/gotrue:v2.143.0
+    depends_on:
+      - db
+    environment:
+      GOTRUE_API_HOST: 0.0.0.0
+      GOTRUE_API_PORT: 9999
+      GOTRUE_DB_DRIVER: postgres
+      GOTRUE_DB_DATABASE_URL: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}
+      GOTRUE_SITE_URL: ${SUPABASE_SITE_URL}
+      GOTRUE_URI_ALLOW_LIST: ${SUPABASE_SITE_URL}
+      GOTRUE_JWT_SECRET: ${SUPABASE_JWT_SECRET}
+      GOTRUE_JWT_DEFAULT_GROUP_NAME: authenticated
+      GOTRUE_DISABLE_SIGNUP: 'false'
+    ports:
+      - '9999:9999'
+
+  rest:
+    image: postgrest/postgrest:v11.2.2
+    depends_on:
+      - db
+    environment:
+      PGRST_DB_URI: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}
+      PGRST_DB_SCHEMA: public,storage
+      PGRST_DB_ANON_ROLE: anon
+      PGRST_JWT_SECRET: ${SUPABASE_JWT_SECRET}
+    ports:
+      - '3000:3000'
+
+  realtime:
+    image: supabase/realtime:v2.25.35
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${SUPABASE_DB_NAME}
+      DB_USER: ${SUPABASE_DB_USER}
+      DB_PASSWORD: ${SUPABASE_DB_PASSWORD}
+      JWT_SECRET: ${SUPABASE_JWT_SECRET}
+      PORT: 4000
+    ports:
+      - '4000:4000'
+
+  storage:
+    image: supabase/storage-api:v1.0.6
+    depends_on:
+      - db
+      - rest
+    environment:
+      ANON_KEY: ${SUPABASE_ANON_KEY}
+      SERVICE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+      POSTGREST_URL: http://rest:3000
+      PGRST_JWT_SECRET: ${SUPABASE_JWT_SECRET}
+      DATABASE_URL: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}
+      FILE_SIZE_LIMIT: 52428800
+    ports:
+      - '5000:5000'
+
+  kong:
+    image: kong:2.8
+    depends_on:
+      - auth
+      - rest
+      - storage
+    environment:
+      KONG_DATABASE: 'off'
+      KONG_DECLARATIVE_CONFIG: /etc/kong/kong.yml
+      KONG_LOG_LEVEL: warn
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+    ports:
+      - '54321:8000'
+    volumes:
+      - ./supabase/kong.yml:/etc/kong/kong.yml:ro
+
+volumes:
+  supabase-db:

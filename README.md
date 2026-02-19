@@ -40,10 +40,20 @@ Dragonbane Unbound is an open-source, local-first platform for fast character cr
 - **[docs/MANIFEST.md](docs/MANIFEST.md)**: Project overview, architecture principles, and change tracking
 - **[docs/PLATFORM_MANIFEST.md](docs/PLATFORM_MANIFEST.md)**: Platform vision and technical manifesto
 - **[docs/PACKAGE_EXAMPLE.md](docs/PACKAGE_EXAMPLE.md)**: Example pack layouts and data-driven rules
+- **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)**: Development guidelines and documentation expectations
+- **[docs/LOCAL_SUPABASE.md](docs/LOCAL_SUPABASE.md)**: Local Supabase setup and usage
 
 ## Development Workflow
 
 This project uses [OpenSpec](https://openspec.dev/) for spec-driven development. OpenSpec provides a structured workflow for planning and implementing changes with AI assistants.
+
+### Core Scripts
+
+Run these from the repo root:
+
+- `pnpm dev`: runs all dev targets in parallel
+- `pnpm test`: runs all test targets
+- `pnpm lint`: runs all lint targets
 
 ### Quick Start with OpenSpec
 

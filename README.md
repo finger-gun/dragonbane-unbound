@@ -52,9 +52,4 @@ To propose a new change:
 /opsx:new <change-name>
 ```
 
-For guided onboarding:
-```bash
-/opsx:onboard
-```
-
 For complete workflow documentation, see [openspec/README.md](openspec/README.md).

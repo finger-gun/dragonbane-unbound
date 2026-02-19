@@ -26,6 +26,16 @@ This project runs Supabase locally via Docker Compose. The local stack provides 
    ```
    Use the result for `SUPABASE_JWT_SECRET`, then generate anon/service keys with the Supabase CLI or a local JWT helper.
 
+4. Apply the auth roles schema (required for baseline auth):
+   ```bash
+   psql "postgresql://postgres:<password>@localhost:${SUPABASE_DB_PORT}/postgres" -f supabase/sql/001_user_roles.sql
+   ```
+
+5. Seed local users (dev only):
+   ```bash
+   pnpm supabase:seed-users
+   ```
+
 ## Start the Stack
 
 ```bash

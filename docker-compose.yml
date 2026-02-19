@@ -11,14 +11,15 @@ services:
       - supabase-db:/var/lib/postgresql/data
 
   auth:
-    image: supabase/gotrue:v2.143.0
+    image: supabase/gotrue:v2.162.0
     depends_on:
       - db
     environment:
       GOTRUE_API_HOST: 0.0.0.0
       GOTRUE_API_PORT: 9999
       GOTRUE_DB_DRIVER: postgres
-      GOTRUE_DB_DATABASE_URL: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}
+      GOTRUE_DB_DATABASE_URL: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}?search_path=auth
+      GOTRUE_DB_SCHEMA: auth
       API_EXTERNAL_URL: ${SUPABASE_URL}
       GOTRUE_SITE_URL: ${SUPABASE_SITE_URL}
       GOTRUE_URI_ALLOW_LIST: ${SUPABASE_SITE_URL}

@@ -1,6 +1,8 @@
 import { AppInfo } from '@dbu/types';
 import { formatTagline } from '@dbu/utils';
 
+import AuthStatus from './components/AuthStatus';
+
 const appInfo: AppInfo = {
   name: 'Dragonbane Unbound',
   tagline: 'Run Dragonbane at the speed of play.',
@@ -18,10 +20,16 @@ export default function Home() {
           <span className="pill">Stage: {appInfo.stage}</span>
           <span className="pill">Monorepo scaffolded</span>
           <span className="pill">Supabase-ready</span>
+          <AuthStatus />
         </div>
-        <a className="cta" href="/">
-          Explore the platform vision
-        </a>
+        <div className="meta">
+          <a className="cta" href="/login">
+            Sign in
+          </a>
+          <a className="cta" href="/">
+            Explore the platform vision
+          </a>
+        </div>
       </section>
 
       <section className="card-grid">

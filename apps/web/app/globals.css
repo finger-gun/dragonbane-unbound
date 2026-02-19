@@ -114,6 +114,38 @@ h1 {
   flex-wrap: wrap;
 }
 
+.auth-button {
+  margin-left: 12px;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.field input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 19, 24, 0.1);
+  font-size: 1rem;
+}
+
+.form-message {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .pill {
   background: var(--accent-soft);
   color: var(--accent);

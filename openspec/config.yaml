@@ -25,7 +25,7 @@ context: |
   Data model: users, campaigns, characters, items, encounters, packs (versioned schemas + migrations)
   Security: least-privilege DB policies (RLS), privacy-first defaults, exportable data
   Conventions: apps depend on packages; packages avoid apps; keep engine client-safe; eslint/prettier/typescript use default settings and public consensus best practices
-  Testing: Vitest (preferred)
+  Testing: Vitest (preferred); target >80% coverage and strive for TDD
   Scripts: pnpm dev, pnpm setup, pnpm lint, pnpm test, pnpm supabase:init, pnpm supabase:up, pnpm supabase:down, pnpm supabase:verify
   Verification: before declaring work done, verify local env health (Supabase via `pnpm supabase:verify`, API health at http://localhost:4000/health, and web dev page on configured port)
   Key constraints: local-first; no arbitrary code execution in community packs

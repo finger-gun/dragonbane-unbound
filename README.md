@@ -59,6 +59,7 @@ Run these from the repo root:
 - `pnpm supabase:up`: starts the local Supabase stack
 - `pnpm supabase:down`: stops the local Supabase stack
 - `pnpm supabase:verify`: checks local Supabase endpoints
+- `pnpm supabase:seed-users`: seeds local admin/player/gm/super users
 
 ### Local Supabase
 

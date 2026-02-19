@@ -22,4 +22,5 @@ if (canRunDocker()) {
 } else {
   console.log('Docker is not running. Skipping Supabase startup.');
 }
-run('pnpm', ['turbo', 'run', 'dev', '--parallel']);
+const turboArgs = ['turbo', 'run', 'dev', '--parallel', ...process.argv.slice(2)];
+run('pnpm', turboArgs);

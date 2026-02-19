@@ -1,4 +1,6 @@
-# Dragonbane Unbound - Project Manifest
+![Dragonbane Unbound](../assets/logo.png)
+
+# Project Manifest
 
 ## Overview
 This file provides a high-level index and descriptions for all specification artifacts tracked in the Dragonbane Unbound repository. Dragonbane Unbound is an open-source, local-first platform for running Dragonbane at the speed of play.
@@ -6,7 +8,7 @@ This file provides a high-level index and descriptions for all specification art
 ## Project Information
 - **Project Name:** Dragonbane Unbound
 - **Description:** A modular rules engine, character builder, encounter runner, and community content system for Dragonbane RPG
-- **License:** MIT
+- **License:** Apache-2.0
 - **Repository:** https://github.com/finger-gun/dragonbane-unbound
 
 ## Main Capabilities
@@ -63,6 +65,7 @@ Completed and historical changes, for long-term reference.
 - Reference this file to quickly orient yourself in the project's spec history and current work
 - Update the index when proposing, merging, or archiving changes
 - For details on workflow and file structure, see `README.md` and the OpenSpec documentation
+- For a concrete data-driven pack example, see `docs/PACKAGE_EXAMPLE.md`
 
 ---
 

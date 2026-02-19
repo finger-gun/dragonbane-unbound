@@ -1,0 +1,41 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+# Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+
+context: |
+  Project: Dragonbane Unbound
+  Description: A modular rules engine, character builder, encounter runner, and community content system for Dragonbane RPG
+  License: Apache-2.0
+  Repository: https://github.com/finger-gun/dragonbane-unbound
+  Capabilities (planned): Rules Engine, Character Builder, Encounter Runner, Community Content
+  Principles: Local-first, modular, extensible, self-hostable, open source
+  Target users: Players, Game Masters, Publishers, Developers
+  Tech stack: Turborepo + pnpm; TypeScript; React (Next.js web app); Node API; Supabase (Postgres/Auth/Storage); React Native/Expo (later)
+  Monorepo layout: apps/{web,api,mobile,docs} and packages/{engine,systems,content,ui,types,utils,adapters}
+  Rules engine: data-driven DSL, deterministic outputs, auditable roll receipts
+  Packages: modular system/content packs with semver and dependencies
+  Deployment: local Docker Compose; hosted container deploy (Fly/Render/K8s/etc.)
+  Data model: users, campaigns, characters, items, encounters, packs (versioned schemas + migrations)
+  Security: least-privilege DB policies (RLS), privacy-first defaults, exportable data
+  Conventions: apps depend on packages; packages avoid apps; keep engine client-safe; eslint/prettier/typescript use default settings and public consensus best practices
+  Testing: Vitest (preferred)
+  Key constraints: local-first; no arbitrary code execution in community packs
+  Docs sources: docs/MANIFEST.md, docs/PLATFORM_MANIFEST.md
+  Artifact layout: /openspec/changes (proposals/tasks/specs/design), /openspec/specs (source of truth), /openspec/archive (completed changes)
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours

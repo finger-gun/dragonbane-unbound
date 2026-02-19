@@ -27,7 +27,7 @@ context: |
   Conventions: apps depend on packages; packages avoid apps; keep engine client-safe; eslint/prettier/typescript use default settings and public consensus best practices
   Testing: Vitest (preferred)
   Key constraints: local-first; no arbitrary code execution in community packs
-  Docs sources: docs/MANIFEST.md, docs/PLATFORM_MANIFEST.md
+  Docs sources: docs/MANIFEST.md, docs/PLATFORM_MANIFEST.md, docs/PACKAGE_EXAMPLE.md
   Artifact layout: /openspec/changes (proposals/tasks/specs/design), /openspec/specs (source of truth), /openspec/archive (completed changes)
 
 # Per-artifact rules (optional)

@@ -16,10 +16,12 @@ Any time you add a new tool, workflow, or capability, update `docs/` in the same
 
 Run these from the repo root:
 
-- `pnpm dev`: runs all dev targets in parallel
-- `pnpm dev:full`: starts local Supabase (Docker) and runs all dev targets in parallel
+- `pnpm dev`: initializes env if missing, starts Supabase (if Docker is running), then runs dev targets
+- `pnpm setup`: installs deps, initializes env, starts Supabase, verifies stack
+- `pnpm supabase:init`: creates/updates `.env` with local defaults, keys, and free ports
 - `pnpm supabase:up`: starts local Supabase (Docker)
 - `pnpm supabase:down`: stops local Supabase (Docker)
+- `pnpm supabase:verify`: checks local Supabase endpoints
 - `pnpm test`: runs all test targets
 - `pnpm lint`: runs all lint targets
 
@@ -40,7 +42,11 @@ Local Supabase requires a root `.env` (see `.env.example`) and Docker running.
    - `SUPABASE_DB_USER=postgres`
    - `SUPABASE_DB_PASSWORD=postgres`
    - `SUPABASE_DB_NAME=postgres`
+   - `SUPABASE_DB_PORT=54322`
    - `SUPABASE_JWT_SECRET=` (32+ chars)
+   - `SUPABASE_STORAGE_PORT=5000`
+   - `SUPABASE_KONG_PORT=54321`
+   - `SUPABASE_STUDIO_PORT=54323`
 4. Optional: set app ports in `apps/web/.env.example` and `apps/api/.env.example`.
 5. Start local Supabase (Docker):
    ```bash

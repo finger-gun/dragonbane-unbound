@@ -51,9 +51,37 @@ This project uses [OpenSpec](https://openspec.dev/) for spec-driven development.
 
 Run these from the repo root:
 
-- `pnpm dev`: runs all dev targets in parallel
+- `pnpm dev`: initializes env if missing, starts Supabase (if Docker is running), then runs dev targets
 - `pnpm test`: runs all test targets
 - `pnpm lint`: runs all lint targets
+- `pnpm setup`: installs deps, initializes env, starts Supabase, verifies stack
+- `pnpm supabase:init`: creates/updates `.env` with local defaults, keys, and free ports
+- `pnpm supabase:up`: starts the local Supabase stack
+- `pnpm supabase:down`: stops the local Supabase stack
+- `pnpm supabase:verify`: checks local Supabase endpoints
+
+### Local Supabase
+
+One-time setup:
+
+```bash
+pnpm setup
+```
+
+Initialize and start the local stack:
+
+```bash
+pnpm supabase:init
+pnpm supabase:up
+```
+
+Verify health:
+
+```bash
+pnpm supabase:verify
+```
+
+Studio (control panel): `http://localhost:${SUPABASE_STUDIO_PORT}`
 
 ### Quick Start with OpenSpec
 

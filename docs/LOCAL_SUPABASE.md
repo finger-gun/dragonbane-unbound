@@ -34,10 +34,11 @@ docker compose up -d
 
 ## URLs
 
-- Supabase API gateway: `http://localhost:54321`
-- Postgres: `postgresql://postgres:<password>@localhost:54322/postgres`
+- Supabase API gateway: `http://localhost:${SUPABASE_KONG_PORT}`
+- Postgres: `postgresql://postgres:<password>@localhost:${SUPABASE_DB_PORT}/postgres`
 - Auth: `http://localhost:9999`
-- Storage: `http://localhost:5000`
+- Storage: `http://localhost:${SUPABASE_STORAGE_PORT}`
+- Studio (control panel): `http://localhost:${SUPABASE_STUDIO_PORT}`
 
 ## Notes
 

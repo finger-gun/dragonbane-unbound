@@ -26,4 +26,4 @@
 
 - [x] 5.1 Verify web app starts in dev mode
 - [x] 5.2 Verify API health endpoint responds locally
-- [ ] 5.3 Verify Supabase stack starts and is reachable
+- [x] 5.3 Verify Supabase stack starts and is reachable

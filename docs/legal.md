@@ -767,7 +767,7 @@ The following practices are already in use and should be maintained:
 3. ~~**Before partnership outreach:** LR‑016, LR‑017, LR‑019, LR‑020 resolved.~~ Done.
 4. ~~**Medium-term:** LR‑010 through LR‑014 resolved.~~ Done.
 5. ~~**Ongoing:** LR‑018 resolved.~~ Done.
-6. **Before public release:** Rewrite git history to remove pre-remediation versions of data files and documentation from all commits. Use `git filter-repo` to purge stripped content from history, then force-push to remote.
+6. ~~**Before public release:** Rewrite git history to remove pre-remediation versions of data files and documentation from all commits. Use `git filter-repo` to purge stripped content from history, then force-push to remote.~~ Done. History rewritten with `git-filter-repo` — all 25+ prose-containing blob versions replaced with stripped equivalents across all commits. Verified: 154 file versions checked across 23 commits, zero prose found. Force-pushed clean history to remote.
 
 ---
 

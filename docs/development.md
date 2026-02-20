@@ -2,6 +2,8 @@
 
 # Development Guidelines
 
+> **New here?** Start with [CONTRIBUTING.md](../CONTRIBUTING.md) for project philosophy, legal requirements, and the spec workflow. This document covers technical setup only.
+
 ## Document as You Build
 
 Any time you add a new tool, workflow, or capability, update `docs/` in the same change. Treat documentation as part of the implementation, not a follow-up. If a change affects local setup, scripts, or developer ergonomics, update the relevant doc or add a new one.

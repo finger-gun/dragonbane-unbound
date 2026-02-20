@@ -11,7 +11,7 @@
 
 <h3>Run Dragonbane at the speed of play.</h3>
 
-A companion app for your Dragonbane home games — built by players, for players.
+A companion app for your Dragonbane home games, built by players, for players.
 
 </div>
 
@@ -21,30 +21,30 @@ A companion app for your Dragonbane home games — built by players, for players
 
 Dragonbane Unbound is an open-source, local-first companion tool for [Dragonbane](https://freeleaguepublishing.com/games/dragonbane/) (Drakar och Demoner). It handles the bookkeeping so you can focus on the game.
 
-This is **not** a VTT, not a digital rulebook, and not a replacement for the official game. It is the tool we wished existed when running home games — fast character creation, smooth encounter tracking, and a clean way to manage the mechanical side of play.
+This is **not** a VTT, not a digital rulebook, and not a replacement for the official game. It is the tool we wished existed when running home games; fast character creation, smooth encounter tracking, and a clean way to manage aspects of the mechanical side of play.
 
 **You still need the rulebooks to play.** This tool just makes it faster.
 
 ## Who Is This For?
 
-- **Players** — Create and track characters with rules-backed automation
-- **Game Masters** — Run combat and encounters quickly with audit-friendly rolls
-- **Community Creators** — Build and share original homebrew content as modular packs
-- **Developers** — Extend a clean, data-driven engine with portable content modules
+- **Players**: Create and track characters with rules-backed automation
+- **Game Masters**: Run combat and encounters quickly with audit-friendly rolls
+- **Community Creators**: Build and share original homebrew content as modular packs
+- **Developers**: Extend a clean, data-driven engine with portable content modules
 
 ## Core Capabilities
 
-- **Rules Engine** — Deterministic, data-driven rules evaluation (formulas, brackets, effects)
-- **Character Builder** — Fast creation with derived stats, validations, and age/kin/profession logic
-- **Encounter Runner** — Initiative, combat logs, conditions, and session state
-- **Content Packs** — Installable modules for homebrew monsters, items, spells, and systems
+- **Rules Engine**: Deterministic, data-driven rules evaluation (formulas, brackets, effects)
+- **Character Builder**: Fast creation with derived stats, validations, and age/kin/profession logic
+- **Encounter Runner**: Initiative, combat logs, conditions, and session state
+- **Content Packs**: Installable modules for homebrew monsters, items, spells, and systems
 
 ## Built for Local-First
 
-- Runs fully offline — no account required, no cloud dependency
+- Runs fully offline, no account required, no cloud dependency
 - Self-hostable by default; hosted cloud is optional convenience
 - Content and rules live in packages, not locked in databases
-- Your data is yours — always exportable, never captive
+- Your data is yours, always exportable, never captive
 
 ## Tech Stack
 
@@ -91,14 +91,14 @@ See [docs/development.md](docs/development.md) for full setup details and [docs/
 
 ## Contributing
 
-We welcome contributions! Whether it is homebrew content, engine improvements, UI work, or documentation — there is room for everyone.
+We welcome contributions! Whether it is homebrew content, engine improvements, UI work, or documentation, there is room for everyone.
 
-**Before you start, please read [CONTRIBUTING.md](CONTRIBUTING.md).** Key points:
+**Before you start, please read [CONTRIBUTING](CONTRIBUTING.md).** Key points:
 
-- All features require specification files (OpenSpec) — no exceptions
+- All features require specification files (OpenSpec), no exceptions
 - If AI is used in any part of development, spec files are **mandatory**
 - Contributions must not include official rulebook text or copyrighted content
-- See [docs/legal.md](docs/legal.md) for content guidelines
+- See [docs/legal](docs/legal.md) for content guidelines
 
 This project uses [OpenSpec](https://openspec.dev/) for spec-driven development. Every change goes through a structured proposal, spec, and implementation workflow.
 
@@ -116,7 +116,7 @@ This project uses [OpenSpec](https://openspec.dev/) for spec-driven development.
 
 ## Project Status
 
-Dragonbane Unbound is in **early alpha**. The data layer and specification work is underway — no game logic or UI is implemented yet. We are building the foundation right.
+Dragonbane Unbound is in **early alpha**. The data layer and specification work is underway, no game logic or UI is implemented yet. We are building the foundation right.
 
 ## License
 

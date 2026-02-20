@@ -20,6 +20,7 @@ DEFAULT_PROMPTS_MD = (
     ROOT_DIR / "docs/character_creation/kin-profile-portrait-prompts.md"
 )
 DEFAULT_OUT_DIR = ROOT_DIR / "assets/portraits/kins"
+DEFAULT_CHECKPOINTS_DIR = ROOT_DIR / "tools/ComfyUI/models/checkpoints"
 
 
 @dataclass(frozen=True)
@@ -74,6 +75,57 @@ def read_kin_prompts(md_path: Path) -> List[KinPrompt]:
 
     flush()
     return prompts
+
+
+def list_checkpoint_files(checkpoints_dir: Path) -> List[str]:
+    if not checkpoints_dir.exists():
+        return []
+    exts = {".safetensors", ".ckpt", ".pt"}
+    files = [
+        p.name
+        for p in checkpoints_dir.iterdir()
+        if p.is_file() and p.suffix.lower() in exts
+    ]
+    files.sort(key=str.lower)
+    return files
+
+
+def resolve_checkpoint_name(ckpt_arg: str | None, checkpoints_dir: Path) -> str:
+    # Priority:
+    # 1) explicit --ckpt
+    # 2) COMFYUI_CKPT env var
+    # 3) auto if exactly one checkpoint in directory
+    env_ckpt = os.environ.get("COMFYUI_CKPT")
+    ckpt_name = (ckpt_arg or env_ckpt or "").strip() or None
+
+    available = list_checkpoint_files(checkpoints_dir)
+    if ckpt_name:
+        if ckpt_name in available:
+            return ckpt_name
+        ckpt_basename = Path(ckpt_name).name
+        if ckpt_basename in available:
+            return ckpt_basename
+        raise SystemExit(
+            "Checkpoint not found: "
+            + ckpt_name
+            + "\nAvailable checkpoints in "
+            + str(checkpoints_dir)
+            + ":\n  - "
+            + "\n  - ".join(available or ["(none found)"])
+        )
+
+    if len(available) == 1:
+        return available[0]
+
+    raise SystemExit(
+        "No checkpoint selected. Put a model in "
+        + str(checkpoints_dir)
+        + " and either:\n"
+        + '  - pass --ckpt "<filename>"\n'
+        + '  - or set COMFYUI_CKPT="<filename>"\n\n'
+        + "Available checkpoints:\n  - "
+        + "\n  - ".join(available or ["(none found)"])
+    )
 
 
 def http_json(url: str, payload: dict | None = None, timeout_s: int = 60) -> dict:
@@ -198,8 +250,11 @@ def main() -> int:
     )
     ap.add_argument(
         "--ckpt",
-        required=True,
-        help="Checkpoint filename (in ComfyUI models/checkpoints)",
+        default=None,
+        help=(
+            "Checkpoint filename in tools/ComfyUI/models/checkpoints. "
+            "If omitted, uses COMFYUI_CKPT or auto-selects when only one is present."
+        ),
     )
     ap.add_argument("--width", type=int, default=1024)
     ap.add_argument("--height", type=int, default=1024)
@@ -224,6 +279,8 @@ def main() -> int:
     prompts_path = Path(args.prompts)
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    ckpt_name = resolve_checkpoint_name(args.ckpt, DEFAULT_CHECKPOINTS_DIR)
 
     kin_prompts = read_kin_prompts(prompts_path)
     if not kin_prompts:
@@ -251,7 +308,7 @@ def main() -> int:
             seed = seed + idx - 1
 
         workflow = comfy_workflow(
-            ckpt_name=args.ckpt,
+            ckpt_name=ckpt_name,
             positive=kp.prompt,
             negative=args.negative,
             seed=seed,

@@ -57,7 +57,7 @@ Completed and historical changes, for long-term reference.
 ## Target Users
 - **Players**: Create and manage characters, track progression
 - **Game Masters**: Run sessions, manage encounters, create content
-- **Publishers**: Distribute official and third-party content
+- **Publishers**: Distribute content with appropriate licensing (pending agreements)
 - **Developers**: Extend and customize the platform
 
 ## How to Use This Manifest

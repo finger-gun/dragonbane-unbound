@@ -1,6 +1,6 @@
 # Dragonbane Unbound – Legal & License Guidance
 
-*Version 0.4*
+*Version 0.5*
 *Last updated: 2026‑02‑20*
 
 > **Disclaimer:** This document is not a legal contract or advice. It is a practical compliance guide for keeping Dragonbane Unbound within the scope of Free League’s third‑party license and general copyright/trademark boundaries.
@@ -684,9 +684,9 @@ The following practices are already in use and should be maintained:
 
 1. **Immediate (before any public release):** Address all Critical items (LR‑001 through LR‑004). Strip `description`/`description_sv` fields from magic and heroic ability JSON files. Remove monster stat blocks from brandajorden-magic.json. Remove narrative flavor text from brandajorden-professions.json.
 2. **Short-term:** Address High items (LR‑005 through LR‑009). Strip descriptions from kins, equipment, skills, professions, and rules files. Retain only engine-necessary data plus page references.
-3. **Before partnership outreach:** Address LR‑016 and LR‑017. Reframe the platform manifest to separate what can be built now from what requires publisher agreement. Replace official content in package examples with original homebrew. Fix the "legal escape hatch" language (LR‑019). Correct the Legal Philosophy section to reflect actual state (LR‑020).
+3. **Before partnership outreach:** Address LR‑017 (remaining points). Replace official content in package examples with original homebrew. ~~LR‑016, LR‑019, LR‑020 resolved.~~
 4. **Medium-term:** Address Medium items (LR‑010 through LR‑014). Refactor guide documents to reference rather than reproduce content. Replace verbatim examples in technical specs.
-5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018). Establish `content_license` field in pack manifest schema (LR‑017).
+5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018). Address remaining LR‑017 points (1–2, 4–5).
 
 ---
 
@@ -707,6 +707,9 @@ The following practices are already in use and should be maintained:
 | LR‑014 | **Resolved** | Stripped `description`/`description_sv` and `special_note`/`special_note_sv` from drakborgen-heroic-abilities.json. |
 | LR‑017 (point 3) | **Resolved** | Added `content_license` field to `_meta` in all 16 data files with `_meta` blocks. Added `content_license` to all 3 pack manifest examples in `docs/package-example.md`. Values: `personal-use-only` (game data), `fair-use-reference` (dictionary), `original` (schema, sample character). |
 | LR‑015 | **Resolved** | Standardized on Apache-2.0 across all project files. Fixed MIT references in `docs/manifest.md`, `docs/platform-manifest.md`, and `README.md`. Added `"license": "Apache-2.0"` to root `package.json` and all 8 sub-package `package.json` files. Added "Project Licensing" section to `docs/legal.md` documenting the license choice, rationale, content pack licensing model, and third-party tooling plugin status. |
+| LR‑016 | **Resolved** | Rewrote `docs/platform-manifest.md` to separate aspirational features from current capabilities. Reframed "Licensed content is the official expansion layer" as conditional/future. Reframed "Licensed publisher add-ons" revenue section with caveats. Rewrote Legal Philosophy to reflect actual current state. Added caveats to cryptographic signing references. Added "Legal Prerequisites" section with explicit tables separating "can build now" from "requires publisher agreement." Updated `docs/manifest.md` Publishers target user line. |
+| LR‑019 | **Resolved** | Replaced "legal escape hatch" framing in `docs/platform-manifest.md` with design-benefit language: "This modular separation ensures the platform's core value is independent of any specific content." |
+| LR‑020 | **Resolved** | Rewrote `docs/platform-manifest.md` Legal Philosophy section to reflect current reality. Now acknowledges that development reference data exists, states what we provide vs. do not provide, and cross-references `docs/legal.md` for full compliance status. |
 
 Full-text reference copies preserved in `source_data/reference-data/` (gitignored) before stripping.
 

@@ -23,7 +23,7 @@ Dragonbane Unbound is:
 * **open-source**
 * **local-first**
 * **community-extensible**
-* **licensed-content-friendly**
+* **licensed-content-ready** (architecture supports it, pending agreements)
 
 The platform belongs to the players.
 
@@ -66,7 +66,7 @@ Everything beyond the engine is a package:
 @dbu/system-dragonbane-core
 @dbu/system-homebrew
 @dbu/content-community-pack
-@dbu/content-licensed-freeleague
+@dbu/content-licensed-freeleague   (future — requires publisher agreement)
 ```
 
 Packages can be:
@@ -77,9 +77,7 @@ Packages can be:
 * forked
 * community-maintained
 
-This gives the project a built-in legal escape hatch:
-
-> If official-compatible content ever becomes problematic, the platform survives unchanged.
+This modular separation ensures the platform's core value is independent of any specific content. Content modules can be updated, replaced, or removed without affecting the platform itself.
 
 ---
 
@@ -120,9 +118,9 @@ The community builds the world.
 
 ---
 
-### Licensed content is the “official expansion layer”
+### Licensed content could become an official expansion layer
 
-We aim for partnerships where publishers can offer:
+If publisher partnerships are established in the future, publishers could offer:
 
 * official bestiaries
 * adventures
@@ -130,7 +128,7 @@ We aim for partnerships where publishers can offer:
 * art assets
 * curated rule packs
 
-Dragonbane Unbound becomes a distribution channel that **sells books**, not pirates them.
+The architecture supports this, but **no licensed content features will be built until formal agreements exist**. See `docs/legal.md` Section 8 for details on when publisher contact is required.
 
 ---
 
@@ -153,27 +151,34 @@ Revenue comes from:
 * push notifications
 * session mode UX
 
-### Licensed publisher add-ons
+### Creator and publisher content (future, requires agreements)
 
-* official content packs
-* premium adventures
-* sanctioned expansions
+* community creator packs (free or paid)
+* publisher-licensed content packs (pending formal agreements)
 
-No subscription required to play locally.
+No subscription required to play locally. Revenue from licensed publisher content would require explicit partnership agreements — see `docs/legal.md` Section 8.
 
 ---
 
 ## Legal Philosophy
 
-We do not distribute copyrighted rulebook text.
+The platform is designed to avoid distributing copyrighted rulebook text. During development, reference data files may contain content that must be stripped before any public release (see `docs/legal.md` for current compliance status).
 
-We provide:
+What we provide:
 
-* mechanics automation
-* user-created data
-* publisher-approved packs
+* mechanics automation (formulas, dice, derived values)
+* user-created and community-created content
+* architecture that *could* support publisher-approved packs, pending formal agreements
 
-The platform is a “VTT-style supplement engine,” not a digital rulebook clone.
+What we do not provide:
+
+* official rulebook text or descriptions
+* content that replaces the need to own the game
+* publisher-licensed packs (no agreements exist yet)
+
+The platform is a companion tool — not a digital rulebook clone and not a replacement for any VTT. It exists to help players enjoy Dragonbane at the table, built by players for players.
+
+> For full legal guidance, see `docs/legal.md`.
 
 ---
 
@@ -250,7 +255,7 @@ Users can:
 * export packs
 * share packs
 
-Licensed packs are cryptographically signed.
+If licensed packs are supported in the future (pending publisher agreements), they could be cryptographically signed to verify authenticity.
 
 ---
 
@@ -258,11 +263,42 @@ Licensed packs are cryptographically signed.
 
 Dragonbane Unbound becomes:
 
-* the best way to run Dragonbane online
-* the best way to manage campaigns offline
-* a thriving homebrew ecosystem
-* a publisher-friendly digital marketplace
+* the best companion app for running Dragonbane at the table
+* the best way to manage characters and campaigns offline
+* a thriving community homebrew ecosystem
+* a place where creators can share content they love — and if publishers want to join, we would welcome them
 * an open platform that outlives any single ruleset
+
+---
+
+## Legal Prerequisites
+
+The following planned features **require explicit publisher permission** before implementation. They are documented here as aspirational goals, not current capabilities. See `docs/legal.md` Section 8 for full guidance.
+
+### Requires Free League agreement
+
+| Feature | Why |
+|---------|-----|
+| Licensed publisher content packs | Distributing official content requires publisher authorization |
+| Content marketplace (paid or free) | Positioning as a distribution channel for publisher IP requires a formal relationship |
+| Cryptographic signing of official packs | Implies an authentication/trust model that only works with a formal agreement |
+| Bilingual (Swedish + English) official content | Supporting both official language lines simultaneously is flagged as requiring contact |
+
+### Can build now (no publisher agreement needed)
+
+| Feature | Why |
+|---------|-----|
+| Core engine (rules evaluation, dice, effects) | Original engineering work, system-agnostic |
+| Character sheet framework | State management and UI — no copyrighted content |
+| Community homebrew system | User-created original content |
+| Local-first / self-hosted deployment | Infrastructure, no content concerns |
+| Hosted convenience services | Our own infrastructure offering |
+| Mobile companion app | Our own client application |
+| Content pack architecture (empty templates) | The architecture itself is original work |
+
+### The path forward
+
+This project is a work of passion — built by players, for players. The primary goal is to help more people enjoy Dragonbane at the table. We would welcome the opportunity to collaborate with Free League and provide a place where the community and publishers alike can share the content we all love. But until those conversations happen, we build only what we can build responsibly.
 
 ---
 
@@ -333,7 +369,7 @@ packages/
   * campaign sync
   * multiplayer presence
   * pack registry
-  * signatures/licensing (future)
+  * signatures/licensing (future, pending publisher agreements)
 
 ### Database/Auth/Storage
 
@@ -400,7 +436,7 @@ A small, safe DSL to express:
 ### Trust & Safety
 
 * Community packs are unsigned by default.
-* Licensed/official packs are cryptographically signed.
+* Licensed/official packs could be cryptographically signed (pending publisher agreements).
 
 ---
 

@@ -108,12 +108,14 @@ This reduces risk of the tool being seen as a replacement rule system.
 
 ### Current Gap
 
-The architecture described in `docs/package-example.md` and `docs/platform-manifest.md` follows this structure in principle, but the example packs and reference data in `docs/character_creation/` contain official rulebook content. Before any public release, the project must:
+The architecture described in `docs/package-example.md` and `docs/platform-manifest.md` follows this structure in principle. The following items have been addressed:
 
-1. Ensure no packs shipped by the project contain official text (see Section 12, LR‑017)
-2. Provide empty templates or original homebrew content as examples instead
-3. Add a `content_license` field to the pack manifest schema
-4. Clearly document that the "user-assembled" model is the expected path for official Dragonbane content
+1. ~~Ensure no packs shipped by the project contain official text~~ — Done. Example packs replaced with original homebrew content (LR‑017).
+2. ~~Provide empty templates or original homebrew content as examples instead~~ — Done. `package-example.md` now uses original Ironvale homebrew examples and user-assembled templates.
+3. ~~Add a `content_license` field to the pack manifest schema~~ — Done. All data files and example manifests include `content_license` (LR‑017 point 3).
+4. ~~Clearly document that the "user-assembled" model is the expected path for official Dragonbane content~~ — Done. `package-example.md` now documents the user-assembled model with workflow explanation.
+
+The reference data files in `docs/character_creation/` still contain structured data from official sourcebooks (numerical tables, brackets, formulas) but all prose/descriptions have been stripped (LR‑001 through LR‑014). These files are development reference data marked `"content_license": "personal-use-only"` and are not intended for distribution.
 
 ---
 
@@ -684,9 +686,9 @@ The following practices are already in use and should be maintained:
 
 1. **Immediate (before any public release):** Address all Critical items (LR‑001 through LR‑004). Strip `description`/`description_sv` fields from magic and heroic ability JSON files. Remove monster stat blocks from brandajorden-magic.json. Remove narrative flavor text from brandajorden-professions.json.
 2. **Short-term:** Address High items (LR‑005 through LR‑009). Strip descriptions from kins, equipment, skills, professions, and rules files. Retain only engine-necessary data plus page references.
-3. **Before partnership outreach:** Address LR‑017 (remaining points). Replace official content in package examples with original homebrew. ~~LR‑016, LR‑019, LR‑020 resolved.~~
+3. **Before partnership outreach:** ~~LR‑016, LR‑017, LR‑019, LR‑020 resolved.~~
 4. **Medium-term:** Address Medium items (LR‑010 through LR‑014). Refactor guide documents to reference rather than reproduce content. Replace verbatim examples in technical specs.
-5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018). Address remaining LR‑017 points (1–2, 4–5).
+5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018).
 
 ---
 
@@ -710,6 +712,7 @@ The following practices are already in use and should be maintained:
 | LR‑016 | **Resolved** | Rewrote `docs/platform-manifest.md` to separate aspirational features from current capabilities. Reframed "Licensed content is the official expansion layer" as conditional/future. Reframed "Licensed publisher add-ons" revenue section with caveats. Rewrote Legal Philosophy to reflect actual current state. Added caveats to cryptographic signing references. Added "Legal Prerequisites" section with explicit tables separating "can build now" from "requires publisher agreement." Updated `docs/manifest.md` Publishers target user line. |
 | LR‑019 | **Resolved** | Replaced "legal escape hatch" framing in `docs/platform-manifest.md` with design-benefit language: "This modular separation ensures the platform's core value is independent of any specific content." |
 | LR‑020 | **Resolved** | Rewrote `docs/platform-manifest.md` Legal Philosophy section to reflect current reality. Now acknowledges that development reference data exists, states what we provide vs. do not provide, and cross-references `docs/legal.md` for full compliance status. |
+| LR‑017 (points 1, 2, 4, 5) | **Resolved** | Rewrote `docs/package-example.md`. Restructured system pack to contain only engine data (tables, rules, creation flow) — removed `content/` subdirectories from the system pack. Replaced official content examples (Monsterbook orc, Den branda jorden) with original homebrew (Ironborn kin, Runesmith profession from fictional "Ironvale" setting). Added prominent legal notice at top. Documented user-assembled content model with explanation, templates, and workflow. Added expansion content template showing the user-assembled pattern. Added `content_license` values reference table. |
 
 Full-text reference copies preserved in `source_data/reference-data/` (gitignored) before stripping.
 

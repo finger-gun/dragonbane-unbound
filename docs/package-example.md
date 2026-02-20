@@ -4,9 +4,32 @@
 
 This example shows how packages store rules and content as data files. The rules engine reads these files and computes outcomes. The DB stores only state (inputs, choices, results, receipts).
 
-Examples below use actual Dragonbane data from `docs/character_creation/`.
+> **Legal Notice:** Packs distributed by the project must not contain official rulebook text, descriptions, or creative content from any published sourcebook. Distributing packs containing official content requires explicit publisher permission. See `docs/legal.md` for full guidance.
+
+## Content Model: User-Assembled
+
+Dragonbane Unbound follows a **user-assembled content model**. The project provides:
+
+- **System packs** — engine data (formulas, bracket tables, creation flow logic). These are original engineering work.
+- **Empty content templates** — directory structures and schemas for content packs. No official content is pre-populated.
+- **Homebrew examples** — original, fictional content demonstrating the pack format.
+
+Users populate content packs from their own rulebooks for personal use. The project never ships pre-populated official content.
+
+### Why this model?
+
+The platform is a companion tool, not a replacement for the rulebooks. By separating the engine (how to compute) from the content (what to compute with), we ensure:
+
+1. The engine is freely distributable under Apache-2.0
+2. Official content stays with the rulebooks where it belongs
+3. Community homebrew can be freely shared
+4. If publisher partnerships are established in the future, the architecture is ready
+
+---
 
 ## Example: System Pack Layout
+
+The system pack contains **engine data only** — formulas, bracket tables, and creation flow logic. It does not contain kins, professions, spells, equipment, or any other official content.
 
 ```
 packages/
@@ -20,12 +43,6 @@ packages/
       rules/
         derived-stats.json
         creation-flow.json
-      content/
-        kins/
-        professions/
-        skills/
-        spells/
-        equipment/
 ```
 
 ### manifest.json
@@ -36,8 +53,8 @@ packages/
   "type": "system",
   "version": "0.1.0",
   "requires": ["@dbu/engine"],
-  "description": "Core Dragonbane rules, tables, and content from the base rulebook",
-  "content_license": "personal-use-only"
+  "description": "Core Dragonbane engine data — formulas, bracket tables, and creation flow",
+  "content_license": "original"
 }
 ```
 
@@ -186,95 +203,188 @@ The 13-step character creation sequence. Each step defines an action type and it
 }
 ```
 
-## Example: Expansion Pack Layout
+> **Note:** The creation flow references `content/kins/` and `content/professions/` — these are user-assembled content directories, not shipped by the project. See "User-Assembled Content Packs" below.
 
-Expansion packs add content from other sourcebooks. They can be toggled independently.
+---
+
+## User-Assembled Content Packs
+
+Users create their own content packs from their owned rulebooks. The project provides empty templates and schemas but does not ship any official content.
+
+### Example: User-assembled core content
 
 ```
 packages/
   content/
-    monsterbook-kins/
+    my-dragonbane-core/
       manifest.json
       kins/
-        orc.json
-        ogre.json
-        goblin.json
+        human.json
+        halfling.json
         ...
-      modifiers/
-        nightkin.json
-        melancholy.json
-      tables/
-        expanded-kin-table.json
-```
-
-### manifest.json
-
-```json
-{
-  "name": "@dbu/content-monsterbook-kins",
-  "type": "content",
-  "version": "0.1.0",
-  "requires": ["@dbu/system-dragonbane-core"],
-  "description": "9 playable kins from the Dragonbane Monsterbook",
-  "source": "DoD_Monsterboken_v1",
-  "content_license": "personal-use-only",
-  "replaces": {
-    "tables/kin-table.json": "tables/expanded-kin-table.json"
-  }
-}
-```
-
-### kins/orc.json
-
-```json
-{
-  "id": "orc",
-  "name": "Orc",
-  "name_sv": "Orch",
-  "translation_official": true,
-  "movement": 10,
-  "modifiers": ["nightkin"],
-  "ability": {
-    "name": "Steadfast",
-    "name_sv": "Standfast",
-    "translation_official": false,
-    "wp_cost": 3,
-    "description": "At 0 HP, automatically Rally without needing persuasion or WIL roll."
-  },
-  "names": ["Mauga", "Muzorg", "Radbag", "Snagrat", "Ug-Gash", "Gor-Nakh"]
-}
-```
-
-## Example: Third-Party Adventure Pack
-
-Third-party content adds new professions, magic schools, or kins from adventure modules.
-
-```
-packages/
-  content/
-    branda-jorden/
-      manifest.json
       professions/
-        dark-mage.json
-        dark-knight.json
-      magic/
-        dark-magic.json
+        hunter.json
+        mage.json
+        ...
+      skills/
+      spells/
+      equipment/
 ```
 
 ### manifest.json
 
 ```json
 {
-  "name": "@dbu/content-branda-jorden",
+  "name": "my-dragonbane-core",
   "type": "content",
   "version": "0.1.0",
   "requires": ["@dbu/system-dragonbane-core"],
-  "description": "Dark Mage, Dark Knight professions and Dark Magic school from Den branda jorden",
-  "source": "Den_brnda_jorden_231003",
-  "translation_official": false,
+  "description": "My personal Dragonbane content assembled from the core rulebook",
   "content_license": "personal-use-only"
 }
 ```
+
+> **Important:** Packs with `"content_license": "personal-use-only"` are for local use only and must not be distributed publicly. They contain data assembled from copyrighted sourcebooks.
+
+---
+
+## Example: Community Homebrew Pack
+
+Community packs contain **original content** created by the community. These can be freely shared.
+
+```
+packages/
+  content/
+    ironvale-homebrew/
+      manifest.json
+      kins/
+        ironborn.json
+      professions/
+        runesmith.json
+```
+
+### manifest.json
+
+```json
+{
+  "name": "@dbu/content-ironvale",
+  "type": "content",
+  "version": "0.1.0",
+  "requires": ["@dbu/system-dragonbane-core"],
+  "description": "Original homebrew kin and profession from the Ironvale community setting",
+  "content_license": "original"
+}
+```
+
+### kins/ironborn.json
+
+```json
+{
+  "id": "ironborn",
+  "name": "Ironborn",
+  "name_sv": "Jarnfodd",
+  "translation_official": false,
+  "movement": 10,
+  "ability": {
+    "id": "iron_constitution",
+    "name": "Iron Constitution",
+    "name_sv": "Jarnhalsa",
+    "translation_official": false,
+    "mechanical_effects": [
+      {
+        "type": "reduce_damage",
+        "value": 1,
+        "when": "always",
+        "note": "Naturally tough skin reduces all physical damage by 1"
+      }
+    ]
+  },
+  "source_page": null
+}
+```
+
+### professions/runesmith.json
+
+```json
+{
+  "id": "runesmith",
+  "name": "Runesmith",
+  "name_sv": "Runsmed",
+  "translation_official": false,
+  "skills": [
+    { "id": "crafting", "name": "Crafting", "name_sv": "Hantverk" },
+    { "id": "spot_hidden", "name": "Spot Hidden", "name_sv": "Upptacka" },
+    { "id": "languages", "name": "Languages", "name_sv": "Sprak" },
+    { "id": "lore", "name": "Myths & Legends", "name_sv": "Myter och legender" },
+    { "id": "awareness", "name": "Awareness", "name_sv": "Uppmarksamhet" },
+    { "id": "evade", "name": "Evade", "name_sv": "Smyga" }
+  ],
+  "heroic_ability": {
+    "id": "rune_binding",
+    "name": "Rune Binding",
+    "name_sv": "Runbindning"
+  },
+  "gear_table": {
+    "die": "1d6",
+    "options": [
+      {
+        "roll": [1, 2],
+        "items": [
+          { "item": "Chisel set", "item_sv": "Mejselset" },
+          { "item": "Rune stones (3)", "item_sv": "Runstenar (3)" }
+        ]
+      },
+      {
+        "roll": [3, 4],
+        "items": [
+          { "item": "Hammer", "item_sv": "Hammare" },
+          { "item": "Blank iron tablets (5)", "item_sv": "Tomma jarntavlor (5)" }
+        ]
+      },
+      {
+        "roll": [5, 6],
+        "items": [
+          { "item": "Leather apron (light armor)", "item_sv": "Laderforklde (latt rustning)" },
+          { "item": "Ancient rune dictionary", "item_sv": "Gammal runordbok" }
+        ]
+      }
+    ]
+  },
+  "source_page": null
+}
+```
+
+---
+
+## Example: Expansion Content Template
+
+For content from expansion sourcebooks, users follow the same user-assembled model. Here is the template structure (no content shipped):
+
+```
+packages/
+  content/
+    my-monsterbook-kins/
+      manifest.json
+      kins/
+        (user populates from their own copy of the Monsterbook)
+      modifiers/
+      tables/
+```
+
+### manifest.json
+
+```json
+{
+  "name": "my-monsterbook-kins",
+  "type": "content",
+  "version": "0.1.0",
+  "requires": ["@dbu/system-dragonbane-core"],
+  "description": "Personal content assembled from the Dragonbane Monsterbook",
+  "content_license": "personal-use-only"
+}
+```
+
+---
 
 ## What Goes in the DB (State Only)
 
@@ -284,3 +394,17 @@ packages/
 - **Installed packs**: List of enabled packages + versions
 
 The DB never stores rules or content definitions — those live in packages. This separation means content can be updated without touching character data, and characters can be validated against any version of the rules.
+
+---
+
+## Content License Values
+
+Every pack manifest must include a `content_license` field:
+
+| Value | Meaning | Can distribute? |
+|-------|---------|-----------------|
+| `original` | Original content created by the pack author | Yes |
+| `community` | Community-created content, may reference game concepts | Yes |
+| `fair-use-reference` | Reference/translation data (e.g., term dictionaries) | Limited |
+| `personal-use-only` | Assembled from copyrighted sourcebooks for local use | No |
+| `publisher-licensed` | Content distributed with explicit publisher permission | Yes (per terms) |

@@ -36,7 +36,8 @@ packages/
   "type": "system",
   "version": "0.1.0",
   "requires": ["@dbu/engine"],
-  "description": "Core Dragonbane rules, tables, and content from the base rulebook"
+  "description": "Core Dragonbane rules, tables, and content from the base rulebook",
+  "content_license": "personal-use-only"
 }
 ```
 
@@ -216,6 +217,7 @@ packages/
   "requires": ["@dbu/system-dragonbane-core"],
   "description": "9 playable kins from the Dragonbane Monsterbook",
   "source": "DoD_Monsterboken_v1",
+  "content_license": "personal-use-only",
   "replaces": {
     "tables/kin-table.json": "tables/expanded-kin-table.json"
   }
@@ -269,7 +271,8 @@ packages/
   "requires": ["@dbu/system-dragonbane-core"],
   "description": "Dark Mage, Dark Knight professions and Dark Magic school from Den branda jorden",
   "source": "Den_brnda_jorden_231003",
-  "translation_official": false
+  "translation_official": false,
+  "content_license": "personal-use-only"
 }
 ```
 

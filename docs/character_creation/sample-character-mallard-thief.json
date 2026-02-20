@@ -10,9 +10,9 @@
       "weakness_roll": "d20 roll 10: Kleptomaniac",
       "memento_roll": "d20 roll 12: A pair of simple bone dice",
       "appearance_roll": "d20 roll 12: Magnificent hairstyle"
-    }
+    },
+    "content_license": "original"
   },
-
   "header": {
     "player_name": "Erik",
     "character_name": "Kvucksum Halvfinger",
@@ -25,7 +25,6 @@
     "appearance": "Magnificent hairstyle",
     "nickname": "Halvfinger"
   },
-
   "attributes": {
     "STR": 7,
     "CON": 11,
@@ -34,7 +33,6 @@
     "WIL": 9,
     "CHA": 13
   },
-
   "conditions": {
     "exhausted": false,
     "sickly": false,
@@ -43,90 +41,392 @@
     "scared": false,
     "disheartened": false
   },
-
   "derived_ratings": {
     "damage_bonus_str": null,
     "damage_bonus_agl": "1d4",
     "movement": 12,
     "carrying_capacity": 4
   },
-
   "skills": [
-    { "id": "bestiologi",      "name": "Beast Lore",       "name_sv": "Bestiologi",      "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "bluffa",          "name": "Bluffing",         "name_sv": "Bluffa",          "linked_attribute": "CHA", "value": 12, "trained": true,  "improvement_mark": false },
-    { "id": "fingerfardighet", "name": "Sleight of Hand",  "name_sv": "Fingerfärdighet", "linked_attribute": "AGL", "value": 14, "trained": true,  "improvement_mark": false },
-    { "id": "finna_dolda_ting","name": "Spot Hidden",      "name_sv": "Finna dolda ting","linked_attribute": "INT", "value": 10, "trained": true,  "improvement_mark": false },
-    { "id": "frammande_sprak", "name": "Languages",        "name_sv": "Främmande språk", "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "hantverk",        "name": "Crafting",         "name_sv": "Hantverk",        "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false },
-    { "id": "hoppa_klattra",   "name": "Acrobatics",       "name_sv": "Hoppa & klättra", "linked_attribute": "AGL", "value": 14, "trained": true,  "improvement_mark": false },
-    { "id": "jakt_fiske",      "name": "Hunting & Fishing","name_sv": "Jakt & fiske",    "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "kopsla",          "name": "Bartering",        "name_sv": "Köpslå",          "linked_attribute": "CHA", "value": 6,  "trained": false, "improvement_mark": false },
-    { "id": "lakekonst",       "name": "Healing",          "name_sv": "Läkekonst",       "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "myter_legender",  "name": "Myths & Legends",  "name_sv": "Myter & Legender","linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "rida",            "name": "Riding",           "name_sv": "Rida",            "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "simma",           "name": "Swimming",         "name_sv": "Simma",           "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "sjokunnighet",    "name": "Seamanship",       "name_sv": "Sjökunnighet",    "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "smyga",           "name": "Sneaking",         "name_sv": "Smyga",           "linked_attribute": "AGL", "value": 14, "trained": true,  "improvement_mark": false },
-    { "id": "undvika",         "name": "Evade",            "name_sv": "Undvika",         "linked_attribute": "AGL", "value": 14, "trained": true,  "improvement_mark": false },
-    { "id": "upptrada",        "name": "Performance",      "name_sv": "Uppträda",        "linked_attribute": "CHA", "value": 6,  "trained": false, "improvement_mark": false },
-    { "id": "upptacka_fara",   "name": "Awareness",        "name_sv": "Upptäcka fara",   "linked_attribute": "INT", "value": 10, "trained": true,  "improvement_mark": false },
-    { "id": "vildmarksvana",   "name": "Bushcraft",        "name_sv": "Vildmarksvana",   "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
-    { "id": "overtala",        "name": "Persuasion",       "name_sv": "Övertala",        "linked_attribute": "CHA", "value": 6,  "trained": false, "improvement_mark": false }
-  ],
-
-  "weapon_skills": [
-    { "id": "armborst",  "name": "Crossbows",  "name_sv": "Armborst",  "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "hammare",   "name": "Hammers",    "name_sv": "Hammare",   "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false },
-    { "id": "kniv",      "name": "Knives",     "name_sv": "Kniv",      "linked_attribute": "AGL", "value": 14, "trained": true,  "improvement_mark": false },
-    { "id": "pilbage",   "name": "Bows",       "name_sv": "Pilbåge",   "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "slagsmål",  "name": "Brawling",   "name_sv": "Slagsmål",  "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false },
-    { "id": "slunga",    "name": "Slings",     "name_sv": "Slunga",    "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "spjut",     "name": "Spears",     "name_sv": "Spjut",     "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false },
-    { "id": "stav",      "name": "Staves",     "name_sv": "Stav",      "linked_attribute": "AGL", "value": 7,  "trained": false, "improvement_mark": false },
-    { "id": "svard",     "name": "Swords",     "name_sv": "Svärd",     "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false },
-    { "id": "yxa",       "name": "Axes",       "name_sv": "Yxa",       "linked_attribute": "STR", "value": 4,  "trained": false, "improvement_mark": false }
-  ],
-
-  "secondary_skills": [],
-
-  "heroic_abilities_and_spells": [
-    { "id": "tjuvhugg",  "name": "Backstabbing", "name_sv": "Tjuvhugg",   "type": "heroic_ability", "wp_cost": 3, "school": null, "spell_level": null, "prepared": null },
-    { "id": null,        "name": "Ill-tempered", "name_sv": "Vresig",     "type": "kin_ability",    "wp_cost": 3, "school": null, "spell_level": null, "prepared": null },
-    { "id": null,        "name": "Webbed Feet",  "name_sv": "Simfötter",  "type": "kin_ability",    "wp_cost": 0, "school": null, "spell_level": null, "prepared": null }
-  ],
-
-  "weapons": [
     {
-      "id": "knife", "name": "Knife", "name_sv": "Kniv",
-      "grip": "1H", "str_requirement": null, "range": "STR", "damage": "1d8",
-      "durability": 6, "durability_max": 6,
-      "properties": ["Subtle", "Piercing", "Throwable"], "skill_id": "kniv", "is_masterwork": false
+      "id": "bestiologi",
+      "name": "Beast Lore",
+      "name_sv": "Bestiologi",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "bluffa",
+      "name": "Bluffing",
+      "name_sv": "Bluffa",
+      "linked_attribute": "CHA",
+      "value": 12,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "fingerfardighet",
+      "name": "Sleight of Hand",
+      "name_sv": "Fingerfärdighet",
+      "linked_attribute": "AGL",
+      "value": 14,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "finna_dolda_ting",
+      "name": "Spot Hidden",
+      "name_sv": "Finna dolda ting",
+      "linked_attribute": "INT",
+      "value": 10,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "frammande_sprak",
+      "name": "Languages",
+      "name_sv": "Främmande språk",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "hantverk",
+      "name": "Crafting",
+      "name_sv": "Hantverk",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "hoppa_klattra",
+      "name": "Acrobatics",
+      "name_sv": "Hoppa & klättra",
+      "linked_attribute": "AGL",
+      "value": 14,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "jakt_fiske",
+      "name": "Hunting & Fishing",
+      "name_sv": "Jakt & fiske",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "kopsla",
+      "name": "Bartering",
+      "name_sv": "Köpslå",
+      "linked_attribute": "CHA",
+      "value": 6,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "lakekonst",
+      "name": "Healing",
+      "name_sv": "Läkekonst",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "myter_legender",
+      "name": "Myths & Legends",
+      "name_sv": "Myter & Legender",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "rida",
+      "name": "Riding",
+      "name_sv": "Rida",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "simma",
+      "name": "Swimming",
+      "name_sv": "Simma",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "sjokunnighet",
+      "name": "Seamanship",
+      "name_sv": "Sjökunnighet",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "smyga",
+      "name": "Sneaking",
+      "name_sv": "Smyga",
+      "linked_attribute": "AGL",
+      "value": 14,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "undvika",
+      "name": "Evade",
+      "name_sv": "Undvika",
+      "linked_attribute": "AGL",
+      "value": 14,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "upptrada",
+      "name": "Performance",
+      "name_sv": "Uppträda",
+      "linked_attribute": "CHA",
+      "value": 6,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "upptacka_fara",
+      "name": "Awareness",
+      "name_sv": "Upptäcka fara",
+      "linked_attribute": "INT",
+      "value": 10,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "vildmarksvana",
+      "name": "Bushcraft",
+      "name_sv": "Vildmarksvana",
+      "linked_attribute": "INT",
+      "value": 5,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "overtala",
+      "name": "Persuasion",
+      "name_sv": "Övertala",
+      "linked_attribute": "CHA",
+      "value": 6,
+      "trained": false,
+      "improvement_mark": false
     }
   ],
-
+  "weapon_skills": [
+    {
+      "id": "armborst",
+      "name": "Crossbows",
+      "name_sv": "Armborst",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "hammare",
+      "name": "Hammers",
+      "name_sv": "Hammare",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "kniv",
+      "name": "Knives",
+      "name_sv": "Kniv",
+      "linked_attribute": "AGL",
+      "value": 14,
+      "trained": true,
+      "improvement_mark": false
+    },
+    {
+      "id": "pilbage",
+      "name": "Bows",
+      "name_sv": "Pilbåge",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "slagsmål",
+      "name": "Brawling",
+      "name_sv": "Slagsmål",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "slunga",
+      "name": "Slings",
+      "name_sv": "Slunga",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "spjut",
+      "name": "Spears",
+      "name_sv": "Spjut",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "stav",
+      "name": "Staves",
+      "name_sv": "Stav",
+      "linked_attribute": "AGL",
+      "value": 7,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "svard",
+      "name": "Swords",
+      "name_sv": "Svärd",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    },
+    {
+      "id": "yxa",
+      "name": "Axes",
+      "name_sv": "Yxa",
+      "linked_attribute": "STR",
+      "value": 4,
+      "trained": false,
+      "improvement_mark": false
+    }
+  ],
+  "secondary_skills": [],
+  "heroic_abilities_and_spells": [
+    {
+      "id": "tjuvhugg",
+      "name": "Backstabbing",
+      "name_sv": "Tjuvhugg",
+      "type": "heroic_ability",
+      "wp_cost": 3,
+      "school": null,
+      "spell_level": null,
+      "prepared": null
+    },
+    {
+      "id": null,
+      "name": "Ill-tempered",
+      "name_sv": "Vresig",
+      "type": "kin_ability",
+      "wp_cost": 3,
+      "school": null,
+      "spell_level": null,
+      "prepared": null
+    },
+    {
+      "id": null,
+      "name": "Webbed Feet",
+      "name_sv": "Simfötter",
+      "type": "kin_ability",
+      "wp_cost": 0,
+      "school": null,
+      "spell_level": null,
+      "prepared": null
+    }
+  ],
+  "weapons": [
+    {
+      "id": "knife",
+      "name": "Knife",
+      "name_sv": "Kniv",
+      "grip": "1H",
+      "str_requirement": null,
+      "range": "STR",
+      "damage": "1d8",
+      "durability": 6,
+      "durability_max": 6,
+      "properties": [
+        "Subtle",
+        "Piercing",
+        "Throwable"
+      ],
+      "skill_id": "kniv",
+      "is_masterwork": false
+    }
+  ],
   "armor": {
     "body_armor": null,
     "helmet": null
   },
-
   "packing": [
-    { "slot": 1, "item": "Simple lockpicks",  "item_sv": "Dyrkar (enkla)", "weight": 1 },
-    { "slot": 2, "item": "Torch",             "item_sv": "Fackla",         "weight": 1 },
-    { "slot": 3, "item": "Firestarter",       "item_sv": "Elddon",         "weight": 1 },
-    { "slot": 4, "item": "Rations (x4)",      "item_sv": "Ransoner (x4)",  "weight": 1 }
+    {
+      "slot": 1,
+      "item": "Simple lockpicks",
+      "item_sv": "Dyrkar (enkla)",
+      "weight": 1
+    },
+    {
+      "slot": 2,
+      "item": "Torch",
+      "item_sv": "Fackla",
+      "weight": 1
+    },
+    {
+      "slot": 3,
+      "item": "Firestarter",
+      "item_sv": "Elddon",
+      "weight": 1
+    },
+    {
+      "slot": 4,
+      "item": "Rations (x4)",
+      "item_sv": "Ransoner (x4)",
+      "weight": 1
+    }
   ],
-
   "memento": "A pair of simple bone dice",
-
-  "trinkets": ["Sling (weapon trinket)"],
-
-  "currency": { "gold": 0, "silver": 6, "copper": 0 },
-
-  "rest": { "quick_rest_used": false, "short_rest_used": false },
-
-  "hit_points": { "max": 11, "current": 11 },
-
-  "willpower_points": { "max": 9, "current": 9 },
-
-  "death_saves": { "successes": 0, "failures": 0 }
+  "trinkets": [
+    "Sling (weapon trinket)"
+  ],
+  "currency": {
+    "gold": 0,
+    "silver": 6,
+    "copper": 0
+  },
+  "rest": {
+    "quick_rest_used": false,
+    "short_rest_used": false
+  },
+  "hit_points": {
+    "max": 11,
+    "current": 11
+  },
+  "willpower_points": {
+    "max": 9,
+    "current": 9
+  },
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  }
 }

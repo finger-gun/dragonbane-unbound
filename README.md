@@ -92,3 +92,15 @@ To propose a new change:
 ```
 
 For complete workflow documentation, see [openspec/README.md](openspec/README.md).
+
+---
+
+<div align="center">
+
+<img src="https://freeleaguepublishing.com/wp-content/uploads/2023/11/Dragonbane-license-logo-black.png" alt="Dragonbane Compatibility Logo" width="200">
+
+Dragonbane Unbound is an independent, fan-made tool. It is not affiliated with or endorsed by Free League Publishing.
+
+Dragonbane / Drakar och Demoner is a trademark of Free League Publishing.
+
+</div>

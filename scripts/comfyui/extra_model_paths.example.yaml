@@ -1,0 +1,10 @@
+# Optional: point ComfyUI at an existing model directory.
+#
+# Copy to `scripts/comfyui/extra_model_paths.yaml` and edit paths.
+# That file is intentionally not created automatically.
+
+a111:
+  base_path: /ABSOLUTE/PATH/TO/YOUR/MODELS
+  checkpoints: checkpoints
+  loras: loras
+  vae: vae

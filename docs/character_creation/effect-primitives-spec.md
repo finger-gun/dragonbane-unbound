@@ -6,7 +6,9 @@ Machine-readable mechanical effects for Dragonbane Unbound VTT data files.
 
 Every item, ability, spell, kin trait, and modifier in the data files can carry a `mechanical_effects` array. Each element in this array is a **primitive** — a single, atomic mechanical operation the VTT can interpret and enforce.
 
-Free-text `description` / `effect` fields are **preserved as-is**. The `mechanical_effects` array sits alongside them, providing a structured duplicate that a rules engine can consume. The description remains the human-readable source of truth; the primitives are a machine-readable projection.
+The `mechanical_effects` array provides a structured, machine-readable projection that a rules engine can consume. Human-readable descriptions are maintained separately in the source data files.
+
+> **Note:** The examples in this spec use real ability and item names as identifiers. The constraint values and notes are **engineering annotations** describing how primitives should behave — they are not reproductions of rulebook text. See the source data JSON files for the actual game data.
 
 ---
 
@@ -347,7 +349,7 @@ Remove a condition from a target.
 { "type": "remove_condition", "value": "any", "target": { "self": true }, "when": "short_rest" }
 
 // Satyr "Encouragement" — remove one condition from ally within 10m (Layer 2)
-{ "type": "remove_condition", "value": "any", "target": { "allies": true, "range": "10m" }, "trigger": "free", "note": "Cannot target self. Costs an action." }
+{ "type": "remove_condition", "value": "any", "target": { "allies": true, "range": "10m" }, "trigger": "free", "note": "Allies only (not self). Costs an action." }
 ```
 
 ### 7. `auto_succeed`
@@ -374,7 +376,7 @@ Automatically succeed on a roll without rolling dice.
 { "type": "auto_succeed", "target": { "action": "resist_fear" }, "trigger": "on_fear_check" }
 
 // Hobgoblin "Fearless" — auto-succeed WIL vs fear (Layer 2)
-{ "type": "auto_succeed", "target": { "action": "resist_fear" }, "trigger": "on_fear_check", "note": "Must activate before dice are rolled" }
+{ "type": "auto_succeed", "target": { "action": "resist_fear" }, "trigger": "on_fear_check", "note": "Must activate before roll is made" }
 
 // Orc "Steadfast" — auto-Rally at 0 HP (Layer 2)
 { "type": "auto_succeed", "target": { "action": "rally" }, "trigger": "free", "condition": { "self_hp": 0 } }
@@ -428,7 +430,7 @@ Deal direct damage (not via attack roll — e.g., environmental, ability-trigger
 { "type": "damage", "value": "1d6", "target": { "self": true }, "condition": { "environment": "sunlight" }, "duration": "per_stretch" }
 
 // Master Carpenter — 1d12 damage to objects per WP spent (Layer 2)
-{ "type": "damage", "value": "1d12_per_wp", "target": { "object": true }, "trigger": "free", "note": "Ignores target protection. Costs an action." }
+{ "type": "damage", "value": "1d12_per_wp", "target": { "object": true }, "trigger": "free", "note": "Bypasses target protection. Costs an action." }
 
 // Ogre "Tackle" — 2d6 bludgeoning + damage bonus (Layer 2)
 { "type": "damage", "value": "2d6", "trigger": "after_hit", "note": "Bludgeoning. Plus normal damage bonus." }
@@ -449,13 +451,13 @@ Reduce incoming damage dice or flat damage.
 
 ```jsonc
 // Catlike — reduce fall damage by 1 die per WP spent (Layer 2)
-{ "type": "reduce_damage", "value": "1d6_per_wp", "trigger": "on_fall", "note": "Can roll Acrobatics first, then decide to activate" }
+{ "type": "reduce_damage", "value": "1d6_per_wp", "trigger": "on_fall", "note": "Optional activation after skill roll" }
 
 // Cat People "Nine Lives" — reduce fall damage up to 3d6 (Layer 2)
-{ "type": "reduce_damage", "value": "1d6_per_wp", "trigger": "on_fall", "note": "Max 3 WP. Applied after Acrobatics roll." }
+{ "type": "reduce_damage", "value": "1d6_per_wp", "trigger": "on_fall", "note": "Max 3 WP. Applied after skill roll." }
 
 // Master Blacksmith "Sharpen" — armor counts as one step lower (Layer 3)
-{ "type": "reduce_damage", "value": "armor_step_-1", "target": { "enemies": true }, "phase": "while_active", "note": "Applied to the weapon. Target's armor is treated as one step lower." }
+{ "type": "reduce_damage", "value": "armor_step_-1", "target": { "enemies": true }, "phase": "while_active", "note": "Applied to the weapon. Reduces effective armor by one step." }
 ```
 
 ### 11. `heal`
@@ -522,10 +524,10 @@ Redirect an incoming attack to a different target.
 
 ```jsonc
 // Guardian — redirect enemy attack from ally to self (Layer 2)
-{ "type": "redirect", "target": { "self": true }, "trigger": "on_incoming_attack", "condition": { "ally_targeted": true, "range": "2m" }, "note": "Not an action. You and ally must be in melee with the same enemy." }
+{ "type": "redirect", "target": { "self": true }, "trigger": "on_incoming_attack", "condition": { "ally_targeted": true, "range": "2m" }, "note": "Requires melee adjacency with both ally and attacker" }
 
 // Weasel — redirect attack from self to nearby PC (Layer 2)
-{ "type": "redirect", "target": { "allies": true, "range": "2m" }, "trigger": "on_incoming_attack", "note": "Must use before dodge/parry. No effect on area attacks." }
+{ "type": "redirect", "target": { "allies": true, "range": "2m" }, "trigger": "on_incoming_attack", "note": "Must activate before defensive roll. Does not apply to area effects." }
 ```
 
 ### 14. `extra_action`
@@ -549,10 +551,10 @@ Perform an action without spending your normal turn action, or gain an additiona
 { "type": "extra_action", "value": "dodge", "trigger": "on_incoming_attack", "frequency": "unlimited_per_round", "note": "Costs 3 WP per use" }
 
 // Dual Wield — extra off-hand attack (Layer 2)
-{ "type": "extra_action", "value": "attack", "trigger": "on_attack", "condition": { "weapon_type": "dual_wield" }, "note": "Off-hand attack has disadvantage. Off-hand STR req +3." }
+{ "type": "extra_action", "value": "attack", "trigger": "on_attack", "condition": { "weapon_type": "dual_wield" }, "note": "Off-hand attack at disadvantage. Increased STR requirement for off-hand." }
 
 // Master Spellcaster — cast two spells in one action (Layer 2)
-{ "type": "extra_action", "value": "cast_spell", "trigger": "on_attack", "note": "Must be two different spells. Each spell costs its own WP." }
+{ "type": "extra_action", "value": "cast_spell", "trigger": "on_attack", "note": "Two different spells in one action. Each costs WP separately." }
 ```
 
 ### 15. `modify_initiative`
@@ -614,20 +616,20 @@ Escape hatch for rules too complex to encode as primitives. Contains a human-rea
 **Examples:**
 
 ```jsonc
-// Berserker — must fight until enemies dead or 0 HP (Layer 3)
-{ "type": "constraint", "value": "Must fight until all enemies are defeated or you reach 0 HP", "phase": "while_active" }
+// Berserker — cannot retreat while active (Layer 3)
+{ "type": "constraint", "value": "Cannot voluntarily end combat while enemies remain or until incapacitated", "phase": "while_active" }
 
-// Human "Adaptive" — GM must approve skill substitution (Layer 2)
-{ "type": "constraint", "value": "GM must approve the skill substitution. Player must justify how the chosen skill applies.", "trigger": "on_skill_roll" }
+// Human "Adaptive" — requires GM adjudication (Layer 2)
+{ "type": "constraint", "value": "Requires GM approval for the skill substitution", "trigger": "on_skill_roll" }
 
-// Elf "Inner Peace" — unreachable during meditation (Layer 1)
-{ "type": "constraint", "value": "Completely unreachable during rest. Cannot be awakened.", "when": "short_rest" }
+// Elf "Inner Peace" — unavailable during rest (Layer 1)
+{ "type": "constraint", "value": "Cannot be interrupted or targeted during rest", "when": "short_rest" }
 
-// Companion — one companion at a time, 15 min bonding ritual (Layer 3)
-{ "type": "constraint", "value": "One companion at a time. Bonding takes 15 minutes.", "phase": "on_activate" }
+// Companion — single companion limit (Layer 3)
+{ "type": "constraint", "value": "Only one active companion at a time. Activation requires a ritual.", "phase": "on_activate" }
 
-// Lance "Requires war horse" (Layer 1)
-{ "type": "constraint", "value": "Can only be used while mounted on a war horse", "when": "equipped" }
+// Lance "Requires mount" (Layer 1)
+{ "type": "constraint", "value": "Requires a suitable mount to use", "when": "equipped" }
 ```
 
 ---
@@ -663,7 +665,7 @@ The 6 conditions are defined in `corebook-rules.json` under `conditions.list`:
   { "type": "boon", "target": { "action": "melee_attack" }, "phase": "while_active" },
   { "type": "restrict", "value": "parry", "phase": "while_active" },
   { "type": "restrict", "value": "dodge", "phase": "while_active" },
-  { "type": "constraint", "value": "Must fight until all enemies are defeated or you reach 0 HP", "phase": "while_active" },
+  { "type": "constraint", "value": "Cannot voluntarily end combat while enemies remain or until incapacitated", "phase": "while_active" },
   { "type": "apply_condition", "value": "exhausted", "phase": "on_end" }
 ]
 ```
@@ -724,7 +726,7 @@ The 6 conditions are defined in `corebook-rules.json` under `conditions.list`:
   "mechanical_effects": [
     { "type": "extra_action", "value": "attack", "trigger": "on_attack", "condition": { "weapon_type": "dual_wield" } },
     { "type": "bane", "target": { "action": "melee_attack" }, "trigger": "on_attack", "note": "Applies to the second (off-hand) attack only" },
-    { "type": "constraint", "value": "Off-hand weapon STR requirement is +3 above normal", "trigger": "on_attack" }
+    { "type": "constraint", "value": "Off-hand weapon has increased STR requirement", "trigger": "on_attack" }
   ]
 }
 
@@ -735,7 +737,7 @@ The 6 conditions are defined in `corebook-rules.json` under `conditions.list`:
   "wp_cost": 3,
   "mechanical_effects": [
     { "type": "extra_action", "value": "attack_second_target", "trigger": "on_attack", "condition": { "target_range": "2m" } },
-    { "type": "constraint", "value": "Single attack roll applies to both targets. Separate damage rolls.", "trigger": "on_attack" }
+    { "type": "constraint", "value": "One attack roll applied to both targets. Damage rolled separately.", "trigger": "on_attack" }
   ]
 }
 ```
@@ -749,11 +751,11 @@ The 6 conditions are defined in `corebook-rules.json` under `conditions.list`:
   "wp_cost": 3,
   "mechanical_effects_mode_a": [
     { "type": "boon", "target": { "allies": true, "range": "10m" }, "phase": "while_active", "note": "Advantage on ALL rolls" },
-    { "type": "constraint", "value": "Uses your action. Lasts until your next turn.", "phase": "on_activate" }
+    { "type": "constraint", "value": "Consumes your action. Effect lasts until next turn.", "phase": "on_activate" }
   ],
   "mechanical_effects_mode_b": [
     { "type": "bane", "target": { "enemies": true, "range": "10m" }, "phase": "while_active", "note": "Disadvantage on ALL rolls" },
-    { "type": "constraint", "value": "Uses your action. Lasts until your next turn.", "phase": "on_activate" }
+    { "type": "constraint", "value": "Consumes your action. Effect lasts until next turn.", "phase": "on_activate" }
   ]
 }
 ```

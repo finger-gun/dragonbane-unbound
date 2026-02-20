@@ -60,6 +60,33 @@ Completed and historical changes, for long-term reference.
 - **Publishers**: Distribute content with appropriate licensing (pending agreements)
 - **Developers**: Extend and customize the platform
 
+## Legal Constraints
+
+This project operates within the boundaries of Free League Publishing's third-party license and general copyright/trademark law. See [docs/legal.md](legal.md) for the full compliance guide.
+
+**Can build now:**
+
+| Capability | Status |
+|------------|--------|
+| Rules engine (formulas, brackets, derived stats) | Architecture ready |
+| Character builder (creation flow, validation) | Architecture ready |
+| Encounter runner (initiative, conditions, rolls) | Planned |
+| Original homebrew content packs | Architecture ready |
+| User-assembled content from owned rulebooks | Architecture ready |
+| Local-first offline operation | Architecture ready |
+| Self-hosting | Architecture ready |
+
+**Requires publisher agreement (do not build until agreements exist):**
+
+| Capability | Dependency |
+|------------|------------|
+| Official content packs (spells, abilities, monsters) | Free League license |
+| Content marketplace / distribution | Free League partnership |
+| Licensed publisher add-ons | Free League partnership |
+| Cryptographic signing of official packs | Free League partnership |
+
+Contributions must not include official rulebook text or copyrighted content. See [CONTRIBUTING.md](../CONTRIBUTING.md) for content guidelines.
+
 ## How to Use This Manifest
 
 - Reference this file to quickly orient yourself in the project's spec history and current work
@@ -69,4 +96,4 @@ Completed and historical changes, for long-term reference.
 
 ---
 
-_Last updated: 2026-02-18_
+_Last updated: 2026-02-20_

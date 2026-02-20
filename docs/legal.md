@@ -1,6 +1,6 @@
 # Dragonbane Unbound – Legal & License Guidance
 
-*Version 0.5*
+*Version 0.6*
 *Last updated: 2026‑02‑20*
 
 > **Disclaimer:** This document is not a legal contract or advice. It is a practical compliance guide for keeping Dragonbane Unbound within the scope of Free League’s third‑party license and general copyright/trademark boundaries.
@@ -687,8 +687,9 @@ The following practices are already in use and should be maintained:
 1. **Immediate (before any public release):** Address all Critical items (LR‑001 through LR‑004). Strip `description`/`description_sv` fields from magic and heroic ability JSON files. Remove monster stat blocks from brandajorden-magic.json. Remove narrative flavor text from brandajorden-professions.json.
 2. **Short-term:** Address High items (LR‑005 through LR‑009). Strip descriptions from kins, equipment, skills, professions, and rules files. Retain only engine-necessary data plus page references.
 3. **Before partnership outreach:** ~~LR‑016, LR‑017, LR‑019, LR‑020 resolved.~~
-4. **Medium-term:** Address Medium items (LR‑010 through LR‑014). Refactor guide documents to reference rather than reproduce content. Replace verbatim examples in technical specs.
-5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018).
+4. **Medium-term:** ~~LR‑010 through LR‑014 resolved. Guide documents refactored to reference rather than reproduce content. Effect primitives spec examples sanitized.~~
+5. **Ongoing:** ~~LR‑018 resolved. Legal prerequisites section added to project manifest.~~
+6. **Before public release:** Rewrite git history to remove pre-remediation versions of data files and documentation from all commits. Use `git filter-repo` to purge stripped content from history, then force-push to remote.
 
 ---
 
@@ -713,6 +714,10 @@ The following practices are already in use and should be maintained:
 | LR‑019 | **Resolved** | Replaced "legal escape hatch" framing in `docs/platform-manifest.md` with design-benefit language: "This modular separation ensures the platform's core value is independent of any specific content." |
 | LR‑020 | **Resolved** | Rewrote `docs/platform-manifest.md` Legal Philosophy section to reflect current reality. Now acknowledges that development reference data exists, states what we provide vs. do not provide, and cross-references `docs/legal.md` for full compliance status. |
 | LR‑017 (points 1, 2, 4, 5) | **Resolved** | Rewrote `docs/package-example.md`. Restructured system pack to contain only engine data (tables, rules, creation flow) — removed `content/` subdirectories from the system pack. Replaced official content examples (Monsterbook orc, Den branda jorden) with original homebrew (Ironborn kin, Runesmith profession from fictional "Ironvale" setting). Added prominent legal notice at top. Documented user-assembled content model with explanation, templates, and workflow. Added expansion content template showing the user-assembled pattern. Added `content_license` values reference table. |
+| LR‑010 | **Resolved** | Rewrote `docs/character_creation/character-creation-guide.md` as a process reference document. Removed all reproduced tables (kin abilities, profession lists, full skill tables, armor/weapon tables, gear packages, spell summaries). Replaced with data file references (`corebook-kins.json`, `corebook-professions.json`, etc.) and partial example tables (1–2 rows) for illustrative purposes. Trimmed worked example to show process flow without reproducing content. |
+| LR‑011 | **Resolved** | Rewrote `docs/character_creation/character-sheet-guide.md` as a field mapping reference. Removed all reproduced tables (full skill lists, full armor tables, rest mechanics). Replaced with data source references per section and partial example tables. Worked example trimmed to derived values and data file pointers. |
+| LR‑012 | **Resolved** | Sanitized `docs/character_creation/effect-primitives-spec.md` worked examples. Generalized `constraint` value strings and `note` fields that paraphrased specific rulebook text too closely. Added disclaimer noting examples use ability names as identifiers and that constraint values are engineering annotations, not rulebook reproductions. The spec's JSON structures and primitive type system are original engineering work and were preserved intact. |
+| LR‑018 | **Resolved** | Added "Legal Constraints" section to `docs/manifest.md` with two tables: "Can build now" (rules engine, character builder, homebrew packs, local-first, self-hosting) vs "Requires publisher agreement" (official content packs, marketplace, licensed add-ons, cryptographic signing). Added cross-reference to `docs/legal.md` and `CONTRIBUTING.md`. Updated date. |
 
 Full-text reference copies preserved in `source_data/reference-data/` (gitignored) before stripping.
 

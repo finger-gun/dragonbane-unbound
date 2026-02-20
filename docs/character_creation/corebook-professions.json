@@ -1,0 +1,2037 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "professions",
+    "purpose": "Ten playable professions from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.2",
+    "content_license": "personal-use-only"
+  },
+  "professions": [
+    {
+      "id": "bard",
+      "name": "Bard",
+      "name_sv": "Bard",
+      "translation_official": true,
+      "roll_value": 1,
+      "roll_die": "1d10",
+      "key_attribute": "CHA",
+      "key_attribute_sv": "KAR",
+      "skills": [
+        {
+          "id": "bluffa",
+          "name": "Bluffing",
+          "name_sv": "Bluffa"
+        },
+        {
+          "id": "frammande_sprak",
+          "name": "Languages",
+          "name_sv": "Främmande språk"
+        },
+        {
+          "id": "hoppa_klattra",
+          "name": "Acrobatics",
+          "name_sv": "Hoppa & klättra"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "myter_legender",
+          "name": "Myths & Legends",
+          "name_sv": "Myter & Legender"
+        },
+        {
+          "id": "undvika",
+          "name": "Evade",
+          "name_sv": "Undvika"
+        },
+        {
+          "id": "upptrada",
+          "name": "Performance",
+          "name_sv": "Uppträda"
+        },
+        {
+          "id": "overtala",
+          "name": "Persuasion",
+          "name_sv": "Övertala"
+        }
+      ],
+      "heroic_ability": {
+        "id": "tonkonst",
+        "name": "Musician",
+        "name_sv": "Tonkonst"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Lyre",
+              "item_sv": "Lyra"
+            },
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Oil lamp",
+              "item_sv": "Oljelampa"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Flute",
+              "item_sv": "Flöjt"
+            },
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Horn",
+              "item_sv": "Blåshorn"
+            },
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Kvädare",
+        "Skaldekraft",
+        "Silverstämma",
+        "Gyllenklav",
+        "Honungstunga",
+        "Rimsmidare"
+      ],
+      "source_page": 22
+    },
+    {
+      "id": "artisan",
+      "name": "Artisan",
+      "name_sv": "Hantverkare",
+      "translation_official": true,
+      "roll_value": 2,
+      "roll_die": "1d10",
+      "key_attribute": "STR",
+      "key_attribute_sv": "STY",
+      "skills": [
+        {
+          "id": "fingerfardighet",
+          "name": "Sleight of Hand",
+          "name_sv": "Fingerfärdighet"
+        },
+        {
+          "id": "finna_dolda_ting",
+          "name": "Spot Hidden",
+          "name_sv": "Finna dolda ting"
+        },
+        {
+          "id": "hammare",
+          "name": "Hammers",
+          "name_sv": "Hammare"
+        },
+        {
+          "id": "hantverk",
+          "name": "Crafting",
+          "name_sv": "Hantverk"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "slagsmål",
+          "name": "Brawling",
+          "name_sv": "Slagsmål"
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd"
+        },
+        {
+          "id": "yxa",
+          "name": "Axes",
+          "name_sv": "Yxa"
+        }
+      ],
+      "heroic_ability": {
+        "id": "garverimastare",
+        "name": "Master tanner",
+        "name_sv": "Garverimästare"
+      },
+      "heroic_ability_options": [
+        {
+          "id": "garverimastare",
+          "name": "Master tanner",
+          "name_sv": "Garverimästare"
+        },
+        {
+          "id": "mastersmed",
+          "name": "Master blacksmith",
+          "name_sv": "Mästersmed"
+        },
+        {
+          "id": "mastersnickare",
+          "name": "Master Carpenter",
+          "name_sv": "Mästersnickare"
+        }
+      ],
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Warhammer (small)",
+              "item_sv": "Stridshammare (liten)"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Smithing tools",
+              "item_sv": "Smidesverktyg"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Handaxe",
+              "item_sv": "Handyxa"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Carpentry tools",
+              "item_sv": "Snickarverktyg"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Leather tools",
+              "item_sv": "Läderverktyg"
+            },
+            {
+              "item": "Storm lantern",
+              "item_sv": "Stormlykta"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Stenhammare",
+        "Timmerklyve",
+        "Kraftnäve",
+        "Tunnmakare",
+        "Brovälvare",
+        "Järnmästare"
+      ],
+      "source_page": 23
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "name_sv": "Jägare",
+      "translation_official": true,
+      "roll_value": 3,
+      "roll_die": "1d10",
+      "key_attribute": "AGL",
+      "key_attribute_sv": "SMI",
+      "skills": [
+        {
+          "id": "hoppa_klattra",
+          "name": "Acrobatics",
+          "name_sv": "Hoppa & klättra"
+        },
+        {
+          "id": "jakt_fiske",
+          "name": "Hunting & Fishing",
+          "name_sv": "Jakt & fiske"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "pilbage",
+          "name": "Bows",
+          "name_sv": "Pilbåge"
+        },
+        {
+          "id": "slunga",
+          "name": "Slings",
+          "name_sv": "Slunga"
+        },
+        {
+          "id": "smyga",
+          "name": "Sneaking",
+          "name_sv": "Smyga"
+        },
+        {
+          "id": "upptacka_fara",
+          "name": "Awareness",
+          "name_sv": "Upptäcka fara"
+        },
+        {
+          "id": "vildmarksvana",
+          "name": "Bushcraft",
+          "name_sv": "Vildmarksvana"
+        }
+      ],
+      "heroic_ability": {
+        "id": "foljeslagare",
+        "name": "Companion",
+        "name_sv": "Följeslagare"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Short bow",
+              "item_sv": "Kortbåge"
+            },
+            {
+              "item": "Quiver",
+              "item_sv": "Koger"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Snare",
+              "item_sv": "Snara"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Longbow",
+              "item_sv": "Långbåge"
+            },
+            {
+              "item": "Quiver",
+              "item_sv": "Koger"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Fishing rod",
+              "item_sv": "Fiskespö"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Sling",
+              "item_sv": "Slunga"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Snare",
+              "item_sv": "Snara"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Skogsräv",
+        "Ulvbane",
+        "Stigfinnare",
+        "Vindfarne",
+        "Blodshunger",
+        "Skuggpil"
+      ],
+      "source_page": 24
+    },
+    {
+      "id": "fighter",
+      "name": "Fighter",
+      "name_sv": "Krigare",
+      "translation_official": true,
+      "roll_value": 4,
+      "roll_die": "1d10",
+      "key_attribute": "STR",
+      "key_attribute_sv": "STY",
+      "skills": [
+        {
+          "id": "armborst",
+          "name": "Crossbows",
+          "name_sv": "Armborst"
+        },
+        {
+          "id": "hammare",
+          "name": "Hammers",
+          "name_sv": "Hammare"
+        },
+        {
+          "id": "pilbage",
+          "name": "Bows",
+          "name_sv": "Pilbåge"
+        },
+        {
+          "id": "slagsmål",
+          "name": "Brawling",
+          "name_sv": "Slagsmål"
+        },
+        {
+          "id": "spjut",
+          "name": "Spears",
+          "name_sv": "Spjut"
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd"
+        },
+        {
+          "id": "undvika",
+          "name": "Evade",
+          "name_sv": "Undvika"
+        },
+        {
+          "id": "yxa",
+          "name": "Axes",
+          "name_sv": "Yxa"
+        }
+      ],
+      "heroic_ability": {
+        "id": "stridsvana",
+        "name": "Veteran",
+        "name_sv": "Stridsvana"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Broadsword/Battle axe/Morning star",
+              "item_sv": "Bredsvärd/Stridsyxa/Morgonstjärna"
+            },
+            {
+              "item": "Small shield",
+              "item_sv": "Liten sköld"
+            },
+            {
+              "item": "Chainmail",
+              "item_sv": "Ringbrynja"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Short sword/Handaxe/Short spear",
+              "item_sv": "Kortsvärd/Handyxa/Kortspjut"
+            },
+            {
+              "item": "Light crossbow",
+              "item_sv": "Lätt armborst"
+            },
+            {
+              "item": "Quiver",
+              "item_sv": "Koger"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Long spear",
+              "item_sv": "Långspjut"
+            },
+            {
+              "item": "Studded leather armor",
+              "item_sv": "Nitläderrustning"
+            },
+            {
+              "item": "Open helmet",
+              "item_sv": "Öppen hjälm"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d6 silver",
+              "item_sv": "1d6 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Gravmakare",
+        "Grymkäft",
+        "Vindhugg",
+        "Svärdsblank",
+        "Orädd",
+        "Slaktaren"
+      ],
+      "source_page": 25
+    },
+    {
+      "id": "scholar",
+      "name": "Scholar",
+      "name_sv": "Lärd",
+      "translation_official": true,
+      "roll_value": 5,
+      "roll_die": "1d10",
+      "key_attribute": "INT",
+      "key_attribute_sv": "INT",
+      "skills": [
+        {
+          "id": "bestiologi",
+          "name": "Beast Lore",
+          "name_sv": "Bestiologi"
+        },
+        {
+          "id": "finna_dolda_ting",
+          "name": "Spot Hidden",
+          "name_sv": "Finna dolda ting"
+        },
+        {
+          "id": "frammande_sprak",
+          "name": "Languages",
+          "name_sv": "Främmande språk"
+        },
+        {
+          "id": "lakekonst",
+          "name": "Healing",
+          "name_sv": "Läkekonst"
+        },
+        {
+          "id": "myter_legender",
+          "name": "Myths & Legends",
+          "name_sv": "Myter & Legender"
+        },
+        {
+          "id": "undvika",
+          "name": "Evade",
+          "name_sv": "Undvika"
+        },
+        {
+          "id": "upptacka_fara",
+          "name": "Awareness",
+          "name_sv": "Upptäcka fara"
+        },
+        {
+          "id": "vildmarksvana",
+          "name": "Bushcraft",
+          "name_sv": "Vildmarksvana"
+        }
+      ],
+      "heroic_ability": {
+        "id": "intuition",
+        "name": "Intuition",
+        "name_sv": "Intuition"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Wooden staff",
+              "item_sv": "Trästav"
+            },
+            {
+              "item": "Notebook",
+              "item_sv": "Anteckningsbok"
+            },
+            {
+              "item": "Quill pen",
+              "item_sv": "Fjäderpenna"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Book (any subject)",
+              "item_sv": "Bok (valfritt ämne)"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Oil lamp",
+              "item_sv": "Oljelampa"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Short sword",
+              "item_sv": "Kortsvärd"
+            },
+            {
+              "item": "Bandage",
+              "item_sv": "Förband"
+            },
+            {
+              "item": "Sleeping poison (one dose)",
+              "item_sv": "Sövande gift (en dos)"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Storm lantern",
+              "item_sv": "Stormlykta"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Boksynte",
+        "Allomklok",
+        "Vidblicke",
+        "Tankeklar",
+        "Dammlunga",
+        "Den lärde och välgödde"
+      ],
+      "source_page": 26
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "name_sv": "Magiker",
+      "translation_official": true,
+      "roll_value": 6,
+      "roll_die": "1d10",
+      "key_attribute": "WIL",
+      "key_attribute_sv": "PSY",
+      "sub_types": [
+        {
+          "id": "animist",
+          "name": "Animist",
+          "name_sv": "Animist",
+          "magic_school": {
+            "id": "animism",
+            "name": "Animism",
+            "name_sv": "Animism"
+          },
+          "skills": [
+            {
+              "id": "animism",
+              "name": "Animism",
+              "name_sv": "Animism"
+            },
+            {
+              "id": "bestiologi",
+              "name": "Beast Lore",
+              "name_sv": "Bestiologi"
+            },
+            {
+              "id": "jakt_fiske",
+              "name": "Hunting & Fishing",
+              "name_sv": "Jakt & fiske"
+            },
+            {
+              "id": "lakekonst",
+              "name": "Healing",
+              "name_sv": "Läkekonst"
+            },
+            {
+              "id": "smyga",
+              "name": "Sneaking",
+              "name_sv": "Smyga"
+            },
+            {
+              "id": "stav",
+              "name": "Staves",
+              "name_sv": "Stav"
+            },
+            {
+              "id": "undvika",
+              "name": "Evade",
+              "name_sv": "Undvika"
+            },
+            {
+              "id": "vildmarksvana",
+              "name": "Bushcraft",
+              "name_sv": "Vildmarksvana"
+            }
+          ]
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "name_sv": "Elementalist",
+          "magic_school": {
+            "id": "elementalism",
+            "name": "Elementalism",
+            "name_sv": "Elementalism"
+          },
+          "skills": [
+            {
+              "id": "elementalism",
+              "name": "Elementalism",
+              "name_sv": "Elementalism"
+            },
+            {
+              "id": "finna_dolda_ting",
+              "name": "Spot Hidden",
+              "name_sv": "Finna dolda ting"
+            },
+            {
+              "id": "frammande_sprak",
+              "name": "Languages",
+              "name_sv": "Främmande språk"
+            },
+            {
+              "id": "lakekonst",
+              "name": "Healing",
+              "name_sv": "Läkekonst"
+            },
+            {
+              "id": "myter_legender",
+              "name": "Myths & Legends",
+              "name_sv": "Myter & Legender"
+            },
+            {
+              "id": "stav",
+              "name": "Staves",
+              "name_sv": "Stav"
+            },
+            {
+              "id": "undvika",
+              "name": "Evade",
+              "name_sv": "Undvika"
+            },
+            {
+              "id": "upptacka_fara",
+              "name": "Awareness",
+              "name_sv": "Upptäcka fara"
+            }
+          ]
+        },
+        {
+          "id": "mentalist",
+          "name": "Mentalist",
+          "name_sv": "Mentalist",
+          "magic_school": {
+            "id": "mentalism",
+            "name": "Mentalism",
+            "name_sv": "Mentalism"
+          },
+          "skills": [
+            {
+              "id": "mentalism",
+              "name": "Mentalism",
+              "name_sv": "Mentalism"
+            },
+            {
+              "id": "frammande_sprak",
+              "name": "Languages",
+              "name_sv": "Främmande språk"
+            },
+            {
+              "id": "hoppa_klattra",
+              "name": "Acrobatics",
+              "name_sv": "Hoppa & klättra"
+            },
+            {
+              "id": "lakekonst",
+              "name": "Healing",
+              "name_sv": "Läkekonst"
+            },
+            {
+              "id": "myter_legender",
+              "name": "Myths & Legends",
+              "name_sv": "Myter & Legender"
+            },
+            {
+              "id": "slagsmål",
+              "name": "Brawling",
+              "name_sv": "Slagsmål"
+            },
+            {
+              "id": "undvika",
+              "name": "Evade",
+              "name_sv": "Undvika"
+            },
+            {
+              "id": "upptacka_fara",
+              "name": "Awareness",
+              "name_sv": "Upptäcka fara"
+            }
+          ]
+        }
+      ],
+      "heroic_ability": null,
+      "magic_at_creation": {
+        "school_choice": "Choose one of: Animism, Elementalism, Mentalism",
+        "school_choice_sv": "Välj en av: Animism, Elementalism, Mentalism",
+        "spells_rank_1": 3,
+        "cantrips": 3,
+        "spell_source": "From chosen school or General Magic",
+        "spell_source_sv": "Från vald skola eller allmän magi",
+        "gets_spell_book": true,
+        "school_skill_value": "Double base chance for INT",
+        "school_skill_value_sv": "Dubbla grundchansen för INT"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Wooden staff",
+              "item_sv": "Trästav"
+            },
+            {
+              "item": "Crystal ball",
+              "item_sv": "Spåkula"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Wand",
+              "item_sv": "Trollspö"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Amulet",
+              "item_sv": "Amulett"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d8 silver",
+              "item_sv": "1d8 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Rothjärta",
+        "Krokrygg",
+        "Gråkåpa",
+        "Vindhand",
+        "Stavhalte",
+        "Skuggmanare"
+      ],
+      "source_page": 27
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "name_sv": "Nasare",
+      "translation_official": true,
+      "roll_value": 7,
+      "roll_die": "1d10",
+      "key_attribute": "CHA",
+      "key_attribute_sv": "KAR",
+      "skills": [
+        {
+          "id": "bluffa",
+          "name": "Bluffing",
+          "name_sv": "Bluffa"
+        },
+        {
+          "id": "fingerfardighet",
+          "name": "Sleight of Hand",
+          "name_sv": "Fingerfärdighet"
+        },
+        {
+          "id": "finna_dolda_ting",
+          "name": "Spot Hidden",
+          "name_sv": "Finna dolda ting"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "kopsla",
+          "name": "Bartering",
+          "name_sv": "Köpslå"
+        },
+        {
+          "id": "undvika",
+          "name": "Evade",
+          "name_sv": "Undvika"
+        },
+        {
+          "id": "upptacka_fara",
+          "name": "Awareness",
+          "name_sv": "Upptäcka fara"
+        },
+        {
+          "id": "overtala",
+          "name": "Persuasion",
+          "name_sv": "Övertala"
+        }
+      ],
+      "heroic_ability": {
+        "id": "skattletare",
+        "name": "Treasure Hunter",
+        "name_sv": "Skattletare"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Donkey",
+              "item_sv": "Åsna"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Storm lantern",
+              "item_sv": "Stormlykta"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Field kitchen",
+              "item_sv": "Fältkök"
+            },
+            {
+              "item": "Donkey",
+              "item_sv": "Åsna"
+            },
+            {
+              "item": "Cart",
+              "item_sv": "Kärra"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Large tent",
+              "item_sv": "Stort tält"
+            },
+            {
+              "item": "Oil lamp",
+              "item_sv": "Oljelampa"
+            },
+            {
+              "item": "Lamp oil",
+              "item_sv": "Lampolja"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Backpack",
+              "item_sv": "Ryggsäck"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Silversnike",
+        "Guldtand",
+        "Silkestunga",
+        "Den läspe och ärlige",
+        "Isterbuk",
+        "Lockenpock"
+      ],
+      "source_page": 28
+    },
+    {
+      "id": "knight",
+      "name": "Knight",
+      "name_sv": "Riddare",
+      "translation_official": true,
+      "roll_value": 8,
+      "roll_die": "1d10",
+      "key_attribute": "STR",
+      "key_attribute_sv": "STY",
+      "skills": [
+        {
+          "id": "bestiologi",
+          "name": "Beast Lore",
+          "name_sv": "Bestiologi"
+        },
+        {
+          "id": "hammare",
+          "name": "Hammers",
+          "name_sv": "Hammare"
+        },
+        {
+          "id": "myter_legender",
+          "name": "Myths & Legends",
+          "name_sv": "Myter & Legender"
+        },
+        {
+          "id": "rida",
+          "name": "Riding",
+          "name_sv": "Rida"
+        },
+        {
+          "id": "spjut",
+          "name": "Spears",
+          "name_sv": "Spjut"
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd"
+        },
+        {
+          "id": "upptrada",
+          "name": "Performance",
+          "name_sv": "Uppträda"
+        },
+        {
+          "id": "overtala",
+          "name": "Persuasion",
+          "name_sv": "Övertala"
+        }
+      ],
+      "heroic_ability": {
+        "id": "forkampe",
+        "name": "Guardian",
+        "name_sv": "Förkämpe"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Broadsword/Morning star",
+              "item_sv": "Bredsvärd/Morgonstjärna"
+            },
+            {
+              "item": "Small shield",
+              "item_sv": "Sköld (liten)"
+            },
+            {
+              "item": "Plate armor",
+              "item_sv": "Plåtrustning"
+            },
+            {
+              "item": "Great helm",
+              "item_sv": "Tunnhjälm"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Flail/Warhammer (small)",
+              "item_sv": "Stridsgissel/Stridshammare (liten)"
+            },
+            {
+              "item": "Small shield",
+              "item_sv": "Sköld (liten)"
+            },
+            {
+              "item": "Chainmail",
+              "item_sv": "Ringbrynja"
+            },
+            {
+              "item": "Open helmet",
+              "item_sv": "Öppen hjälm"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Short sword",
+              "item_sv": "Kortsvärd"
+            },
+            {
+              "item": "Lance",
+              "item_sv": "Lans"
+            },
+            {
+              "item": "Small shield",
+              "item_sv": "Sköld (liten)"
+            },
+            {
+              "item": "Chainmail",
+              "item_sv": "Ringbrynja"
+            },
+            {
+              "item": "Open helmet",
+              "item_sv": "Öppen hjälm"
+            },
+            {
+              "item": "War-trained horse",
+              "item_sv": "Stridstränad häst"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d12 silver",
+              "item_sv": "1d12 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Drakhjärta",
+        "Gyllenlans",
+        "Gripenklo",
+        "Ädelsinne",
+        "Blankenhjelm",
+        "Sorgmantel"
+      ],
+      "source_page": 29
+    },
+    {
+      "id": "mariner",
+      "name": "Mariner",
+      "name_sv": "Sjöfarare",
+      "translation_official": true,
+      "roll_value": 9,
+      "roll_die": "1d10",
+      "key_attribute": "AGL",
+      "key_attribute_sv": "SMI",
+      "skills": [
+        {
+          "id": "frammande_sprak",
+          "name": "Languages",
+          "name_sv": "Främmande språk"
+        },
+        {
+          "id": "hoppa_klattra",
+          "name": "Acrobatics",
+          "name_sv": "Hoppa & klättra"
+        },
+        {
+          "id": "jakt_fiske",
+          "name": "Hunting & Fishing",
+          "name_sv": "Jakt & fiske"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "simma",
+          "name": "Swimming",
+          "name_sv": "Simma"
+        },
+        {
+          "id": "sjokunnighet",
+          "name": "Seamanship",
+          "name_sv": "Sjökunnighet"
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd"
+        },
+        {
+          "id": "upptacka_fara",
+          "name": "Awareness",
+          "name_sv": "Upptäcka fara"
+        }
+      ],
+      "heroic_ability": {
+        "id": "sjoben",
+        "name": "Sea Legs",
+        "name_sv": "Sjöben"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Short bow",
+              "item_sv": "Kortbåge"
+            },
+            {
+              "item": "Quiver",
+              "item_sv": "Koger"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Grappling hook",
+              "item_sv": "Änterhake"
+            },
+            {
+              "item": "Sleeping fur",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Scimitar",
+              "item_sv": "Kroksabel"
+            },
+            {
+              "item": "Leather armor",
+              "item_sv": "Läderrustning"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Grappling hook",
+              "item_sv": "Änterhake"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Trident",
+              "item_sv": "Treudd"
+            },
+            {
+              "item": "Spyglass",
+              "item_sv": "Kikare"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Grappling hook",
+              "item_sv": "Änterhake"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d8 rations",
+              "item_sv": "1d8 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Sjöskum",
+        "Vågryttare",
+        "Skumfarne",
+        "Saltstänke",
+        "Sjöbjörn",
+        "Havsstorm"
+      ],
+      "source_page": 30
+    },
+    {
+      "id": "thief",
+      "name": "Thief",
+      "name_sv": "Tjuv",
+      "translation_official": true,
+      "roll_value": 10,
+      "roll_die": "1d10",
+      "key_attribute": "AGL",
+      "key_attribute_sv": "SMI",
+      "skills": [
+        {
+          "id": "bluffa",
+          "name": "Bluffing",
+          "name_sv": "Bluffa"
+        },
+        {
+          "id": "kniv",
+          "name": "Knives",
+          "name_sv": "Kniv"
+        },
+        {
+          "id": "fingerfardighet",
+          "name": "Sleight of Hand",
+          "name_sv": "Fingerfärdighet"
+        },
+        {
+          "id": "finna_dolda_ting",
+          "name": "Spot Hidden",
+          "name_sv": "Finna dolda ting"
+        },
+        {
+          "id": "hoppa_klattra",
+          "name": "Acrobatics",
+          "name_sv": "Hoppa & klättra"
+        },
+        {
+          "id": "smyga",
+          "name": "Sneaking",
+          "name_sv": "Smyga"
+        },
+        {
+          "id": "undvika",
+          "name": "Evade",
+          "name_sv": "Undvika"
+        },
+        {
+          "id": "upptacka_fara",
+          "name": "Awareness",
+          "name_sv": "Upptäcka fara"
+        }
+      ],
+      "heroic_ability": {
+        "id": "tjuvhugg",
+        "name": "Backstabbing",
+        "name_sv": "Tjuvhugg"
+      },
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Sling",
+              "item_sv": "Slunga"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Grappling hook",
+              "item_sv": "Änterhake"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Knife",
+              "item_sv": "Kniv"
+            },
+            {
+              "item": "Lockpicks (simple)",
+              "item_sv": "Dyrkar (enkla)"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Two daggers",
+              "item_sv": "Två dolkar"
+            },
+            {
+              "item": "Marbles",
+              "item_sv": "Stenkulor"
+            },
+            {
+              "item": "Rope (hemp)",
+              "item_sv": "Rep (hampa)"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Flint & steel",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "1d6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "1d10 silver"
+            }
+          ]
+        }
+      ],
+      "nicknames": [
+        "Halvfinger",
+        "Svartråtta",
+        "Rödöga",
+        "Kvickfot",
+        "Dubbeltunga",
+        "Dolkenstöt"
+      ],
+      "source_page": 31
+    }
+  ]
+}

@@ -29,7 +29,7 @@ context: |
   Scripts: pnpm dev, pnpm setup, pnpm lint, pnpm test, pnpm supabase:init, pnpm supabase:up, pnpm supabase:down, pnpm supabase:verify
   Verification: before declaring work done, verify local env health (Supabase via `pnpm supabase:verify`, API health at http://localhost:4000/health, and web dev page on configured port)
   Key constraints: local-first; no arbitrary code execution in community packs
-  Docs sources: docs/MANIFEST.md, docs/PLATFORM_MANIFEST.md, docs/PACKAGE_EXAMPLE.md
+  Docs sources: docs/manifest.md, docs/platform-manifest.md, docs/package-example.md
   Artifact layout: /openspec/changes (proposals/tasks/specs/design), /openspec/specs (source of truth), /openspec/archive (completed changes)
 
 # Per-artifact rules (optional)

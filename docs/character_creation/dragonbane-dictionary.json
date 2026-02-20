@@ -1,0 +1,2767 @@
+{
+  "_meta": {
+    "source": "Dragonbane_Dictionary_v1.1.pdf",
+    "purpose": "Official Swedish-English dictionary for Dragonbane (Drakar och Demoner). Provides bidirectional term lookups and categorized entries for programmatic use.",
+    "version": "1.1",
+    "extracted": "2026-02-20",
+    "total_entries": 392,
+    "categories": {
+      "bestiary": 86,
+      "combat": 58,
+      "core": 63,
+      "equipment": 14,
+      "general": 8,
+      "magic": 80,
+      "skills": 83
+    },
+    "usage": {
+      "sv_to_en": "Look up Swedish term to get official English translation",
+      "en_to_sv": "Look up English term to get official Swedish original",
+      "entries": "Full list with category annotations for filtering"
+    }
+  },
+  "entries": [
+    {
+      "sv": "Aktivera förmåga",
+      "en": "Activate Ability",
+      "category": "combat"
+    },
+    {
+      "sv": "Allmän magi",
+      "en": "General magic",
+      "category": "magic"
+    },
+    {
+      "sv": "Alv",
+      "en": "Elf",
+      "category": "core"
+    },
+    {
+      "sv": "Animism",
+      "en": "Animism",
+      "category": "magic"
+    },
+    {
+      "sv": "Anka",
+      "en": "Mallard",
+      "category": "core"
+    },
+    {
+      "sv": "Anpasslig",
+      "en": "Adaptive",
+      "category": "core"
+    },
+    {
+      "sv": "Antimagi",
+      "en": "Dispell",
+      "category": "magic"
+    },
+    {
+      "sv": "Använda föremål",
+      "en": "Use Item",
+      "category": "combat"
+    },
+    {
+      "sv": "Arg – INT",
+      "en": "Angry – INT",
+      "category": "combat"
+    },
+    {
+      "sv": "Armborst (SMI)",
+      "en": "Crossbows (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Avståndsattack",
+      "en": "Ranged Attack",
+      "category": "combat"
+    },
+    {
+      "sv": "Avståndsstrid",
+      "en": "Ranged combat",
+      "category": "combat"
+    },
+    {
+      "sv": "Avväpna",
+      "en": "Disarm",
+      "category": "combat"
+    },
+    {
+      "sv": "Baggfolk",
+      "en": "Beetle Kin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Bakhåll",
+      "en": "Ambush",
+      "category": "combat"
+    },
+    {
+      "sv": "Bard",
+      "en": "Bard",
+      "category": "core"
+    },
+    {
+      "sv": "Basfärdigheter",
+      "en": "The core skills",
+      "category": "general"
+    },
+    {
+      "sv": "Basilisk",
+      "en": "Basilisk",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Belastning",
+      "en": "Encumbrance",
+      "category": "core"
+    },
+    {
+      "sv": "Bergsjätte",
+      "en": "Mountain Giant",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Bergtroll",
+      "en": "Mountain Troll",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Beskyddare",
+      "en": "Protector",
+      "category": "magic"
+    },
+    {
+      "sv": "Bestar",
+      "en": "Beasts",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Bestiarium",
+      "en": "Bestiary",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Bestiologi (INT)",
+      "en": "Beast Lore (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Besvärjelser",
+      "en": "Spells",
+      "category": "magic"
+    },
+    {
+      "sv": "Blixt",
+      "en": "Lightning Bolt",
+      "category": "magic"
+    },
+    {
+      "sv": "Blixtsnabb",
+      "en": "Lightning fast",
+      "category": "skills"
+    },
+    {
+      "sv": "Bloddemon",
+      "en": "Blood Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Blomsterspår",
+      "en": "Floral Trail",
+      "category": "magic"
+    },
+    {
+      "sv": "Bluffa (KAR)",
+      "en": "Bluffing (CHA)",
+      "category": "skills"
+    },
+    {
+      "sv": "Bromsa fall",
+      "en": "Slow Fall",
+      "category": "magic"
+    },
+    {
+      "sv": "Brytvärde (BV)",
+      "en": "Durability",
+      "category": "combat"
+    },
+    {
+      "sv": "Bäckhäst",
+      "en": "Brook Horse",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Bärsärk",
+      "en": "Berserker",
+      "category": "skills"
+    },
+    {
+      "sv": "Defensiv",
+      "en": "Defensive",
+      "category": "skills"
+    },
+    {
+      "sv": "Demon",
+      "en": "Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Demoner",
+      "en": "Demons",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Demonslag",
+      "en": "Rolling a demon",
+      "category": "skills"
+    },
+    {
+      "sv": "Din rollperson",
+      "en": "Your player character",
+      "category": "general"
+    },
+    {
+      "sv": "Dominera",
+      "en": "Dominate",
+      "category": "magic"
+    },
+    {
+      "sv": "Drakar",
+      "en": "Dragons",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Drakar och Demoner",
+      "en": "Dragonbane",
+      "category": "general"
+    },
+    {
+      "sv": "Drakdräpare",
+      "en": "Dragonslayer",
+      "category": "skills"
+    },
+    {
+      "sv": "Drake",
+      "en": "Dragon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Drakorm",
+      "en": "Lindworm",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Drakslag",
+      "en": "Rolling a dragon",
+      "category": "skills"
+    },
+    {
+      "sv": "Dubbelhugg",
+      "en": "Double slash",
+      "category": "skills"
+    },
+    {
+      "sv": "Ducka",
+      "en": "Dodge",
+      "category": "combat"
+    },
+    {
+      "sv": "Dunkel",
+      "en": "Dimly Lit",
+      "category": "combat"
+    },
+    {
+      "sv": "Dvärg",
+      "en": "Dwarf",
+      "category": "core"
+    },
+    {
+      "sv": "Dyrka lås",
+      "en": "Pick Lock",
+      "category": "combat"
+    },
+    {
+      "sv": "Dödsslag",
+      "en": "Death Roll",
+      "category": "combat"
+    },
+    {
+      "sv": "Effektgrad",
+      "en": "Power level",
+      "category": "magic"
+    },
+    {
+      "sv": "Egenskaper",
+      "en": "Features",
+      "category": "equipment"
+    },
+    {
+      "sv": "Elddemon",
+      "en": "Fire Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Eldfågel",
+      "en": "Firebird",
+      "category": "magic"
+    },
+    {
+      "sv": "Eldklot",
+      "en": "Fire Blast",
+      "category": "magic"
+    },
+    {
+      "sv": "Eldvirvel",
+      "en": "Firestorm",
+      "category": "magic"
+    },
+    {
+      "sv": "Elementalism",
+      "en": "Elementalism",
+      "category": "magic"
+    },
+    {
+      "sv": "Enorm",
+      "en": "Huge",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Enstöring",
+      "en": "Lone wolf",
+      "category": "skills"
+    },
+    {
+      "sv": "Erfarenhet",
+      "en": "Experince",
+      "category": "core"
+    },
+    {
+      "sv": "Falköga",
+      "en": "Eagle eye",
+      "category": "skills"
+    },
+    {
+      "sv": "Fingerfärdighet (SMI)",
+      "en": "Sleight of Hand (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Finna dolda ting (INT)",
+      "en": "Spot Hidden (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Fjärrsyn",
+      "en": "Farsight",
+      "category": "magic"
+    },
+    {
+      "sv": "Flamma",
+      "en": "Fireball",
+      "category": "magic"
+    },
+    {
+      "sv": "Flodvåg",
+      "en": "Tidal Wave",
+      "category": "magic"
+    },
+    {
+      "sv": "Flyga",
+      "en": "Flight",
+      "category": "magic"
+    },
+    {
+      "sv": "Fokuserad",
+      "en": "Focused",
+      "category": "skills"
+    },
+    {
+      "sv": "Formelbok",
+      "en": "Grimoire",
+      "category": "magic"
+    },
+    {
+      "sv": "Fornsyn",
+      "en": "Divination",
+      "category": "magic"
+    },
+    {
+      "sv": "Fria handlingar",
+      "en": "Free Actions",
+      "category": "combat"
+    },
+    {
+      "sv": "Frisyr",
+      "en": "Hairstyle",
+      "category": "magic"
+    },
+    {
+      "sv": "Frivilliga regler",
+      "en": "Optional rules",
+      "category": "core"
+    },
+    {
+      "sv": "Frost",
+      "en": "Frost",
+      "category": "magic"
+    },
+    {
+      "sv": "Främmande språk (INT)",
+      "en": "Languages (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "FV = Färdighetsvärde",
+      "en": "Skill rating",
+      "category": "core"
+    },
+    {
+      "sv": "FYS = Fysik",
+      "en": "CON = Constitution",
+      "category": "core"
+    },
+    {
+      "sv": "Fälla",
+      "en": "Topple",
+      "category": "combat"
+    },
+    {
+      "sv": "Fällande",
+      "en": "Toppling",
+      "category": "equipment"
+    },
+    {
+      "sv": "Färdigheter",
+      "en": "Skills",
+      "category": "skills"
+    },
+    {
+      "sv": "Fågelsång",
+      "en": "Birdsong",
+      "category": "magic"
+    },
+    {
+      "sv": "Följeslagare",
+      "en": "Companion",
+      "category": "skills"
+    },
+    {
+      "sv": "Förbereda besvärjelser",
+      "en": "Prepared Spells",
+      "category": "magic"
+    },
+    {
+      "sv": "Förbättringskryss",
+      "en": "Advancement marks",
+      "category": "core"
+    },
+    {
+      "sv": "Förbättringsslag",
+      "en": "Advancement rolls",
+      "category": "core"
+    },
+    {
+      "sv": "Fördelar",
+      "en": "Boons",
+      "category": "skills"
+    },
+    {
+      "sv": "Fördriva",
+      "en": "Banish",
+      "category": "magic"
+    },
+    {
+      "sv": "Förflyttning",
+      "en": "Movement",
+      "category": "combat"
+    },
+    {
+      "sv": "Förinta",
+      "en": "Purge",
+      "category": "magic"
+    },
+    {
+      "sv": "Förklädnad",
+      "en": "Disguise",
+      "category": "skills"
+    },
+    {
+      "sv": "Förkämpe",
+      "en": "Guardian",
+      "category": "skills"
+    },
+    {
+      "sv": "Första hjälpen",
+      "en": "First Aid",
+      "category": "combat"
+    },
+    {
+      "sv": "Förtrolla vapen",
+      "en": "Enchant Weapon",
+      "category": "magic"
+    },
+    {
+      "sv": "Garverimästare",
+      "en": "Master tanner",
+      "category": "skills"
+    },
+    {
+      "sv": "Gast",
+      "en": "Wight",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Gnom",
+      "en": "Gnome",
+      "category": "magic"
+    },
+    {
+      "sv": "Golem",
+      "en": "Golem",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Gott läkekött",
+      "en": "Fast healer",
+      "category": "skills"
+    },
+    {
+      "sv": "Greppa",
+      "en": "Grapple",
+      "category": "combat"
+    },
+    {
+      "sv": "Grip",
+      "en": "Griffon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Grodfolk",
+      "en": "Frog People",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Grottroll",
+      "en": "Cave Troll",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Grundchans",
+      "en": "Base chance",
+      "category": "core"
+    },
+    {
+      "sv": "Grundegenskaper",
+      "en": "Attributes",
+      "category": "core"
+    },
+    {
+      "sv": "Hal som en ål",
+      "en": "Fast footwork",
+      "category": "skills"
+    },
+    {
+      "sv": "Halvling",
+      "en": "Halfling",
+      "category": "core"
+    },
+    {
+      "sv": "Hammare (STY)",
+      "en": "Hammers (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "Handlingar",
+      "en": "Actions",
+      "category": "combat"
+    },
+    {
+      "sv": "Hantverk (STY)",
+      "en": "Crafting (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "Hantverkare",
+      "en": "Artisan",
+      "category": "core"
+    },
+    {
+      "sv": "Harpya",
+      "en": "Harpy",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Havsjätte",
+      "en": "Sea Giant",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Hela",
+      "en": "Heal Wound",
+      "category": "magic"
+    },
+    {
+      "sv": "Hippogriff",
+      "en": "Hippogriff",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Hitta glipa",
+      "en": "Find Weak Spot",
+      "category": "combat"
+    },
+    {
+      "sv": "Hjälpa",
+      "en": "Helping",
+      "category": "combat"
+    },
+    {
+      "sv": "Hjälteförmågor",
+      "en": "Heroic abilities",
+      "category": "core"
+    },
+    {
+      "sv": "Hoppa & klättra (SMI)",
+      "en": "Acrobatics (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Huggande",
+      "en": "Slashing",
+      "category": "equipment"
+    },
+    {
+      "sv": "Huggskada",
+      "en": "Slashing",
+      "category": "combat"
+    },
+    {
+      "sv": "Hydra",
+      "en": "Hydra",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Hämta",
+      "en": "Fetch",
+      "category": "magic"
+    },
+    {
+      "sv": "I den äldsta tiden",
+      "en": "In the oldest times",
+      "category": "general"
+    },
+    {
+      "sv": "Initiativdraget",
+      "en": "Drawing the initiative",
+      "category": "combat"
+    },
+    {
+      "sv": "Inre frid",
+      "en": "Inner peace",
+      "category": "core"
+    },
+    {
+      "sv": "Insektoider",
+      "en": "Insektoids",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Insikt",
+      "en": "Insight",
+      "category": "skills"
+    },
+    {
+      "sv": "INT = Intelligens",
+      "en": "INT = Intelligence",
+      "category": "core"
+    },
+    {
+      "sv": "Intuition",
+      "en": "Intuition",
+      "category": "skills"
+    },
+    {
+      "sv": "Jakt & fiske (SMI)",
+      "en": "Hunting & Fishing (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Jaktsinne",
+      "en": "Hunting instincts",
+      "category": "core"
+    },
+    {
+      "sv": "Jägare",
+      "en": "Hunter",
+      "category": "core"
+    },
+    {
+      "sv": "Järngrepp",
+      "en": "Iron grip",
+      "category": "skills"
+    },
+    {
+      "sv": "Järnnäve",
+      "en": "Iron fist",
+      "category": "skills"
+    },
+    {
+      "sv": "Jättar",
+      "en": "Giants",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Jätte",
+      "en": "Giant",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Jätteamöba",
+      "en": "Giant Amoeba",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Jättebläckfisk",
+      "en": "Giant Octopus",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Jättespindel",
+      "en": "Giant Spider",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kalydon",
+      "en": "Calydon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kaosdemon",
+      "en": "Chaos Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "KAR = Karisma",
+      "en": "CHA = Charisma",
+      "category": "core"
+    },
+    {
+      "sv": "Karkion",
+      "en": "Karkion",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kastarm",
+      "en": "Throwing arm",
+      "category": "skills"
+    },
+    {
+      "sv": "Kattfolk",
+      "en": "Cat People",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kattfot",
+      "en": "Catlike",
+      "category": "skills"
+    },
+    {
+      "sv": "Kentaur",
+      "en": "Centaur",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kimera",
+      "en": "Chimera",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Kniv (SMI)",
+      "en": "Knives (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Knuffa",
+      "en": "Shove",
+      "category": "combat"
+    },
+    {
+      "sv": "Knäpp",
+      "en": "Flich",
+      "category": "magic"
+    },
+    {
+      "sv": "Kort vila",
+      "en": "Stretch rest",
+      "category": "combat"
+    },
+    {
+      "sv": "KP = Kroppspoäng",
+      "en": "HP = Hit Points",
+      "category": "core"
+    },
+    {
+      "sv": "Kraftnäve",
+      "en": "Power Fist",
+      "category": "magic"
+    },
+    {
+      "sv": "Kraftslag",
+      "en": "Massive blow",
+      "category": "skills"
+    },
+    {
+      "sv": "Kraftstöt",
+      "en": "Mental Strike",
+      "category": "magic"
+    },
+    {
+      "sv": "Kraftöverföring",
+      "en": "Transfer",
+      "category": "magic"
+    },
+    {
+      "sv": "Krasslig – FYS",
+      "en": "Sickly – CON",
+      "category": "combat"
+    },
+    {
+      "sv": "Krigare",
+      "en": "Fighter",
+      "category": "core"
+    },
+    {
+      "sv": "Kritisk träff",
+      "en": "Critical hit",
+      "category": "combat"
+    },
+    {
+      "sv": "Krossande",
+      "en": "Bludgeoning",
+      "category": "equipment"
+    },
+    {
+      "sv": "Krosskada",
+      "en": "Bludgeoning",
+      "category": "combat"
+    },
+    {
+      "sv": "Kurera",
+      "en": "Restoration",
+      "category": "magic"
+    },
+    {
+      "sv": "Kvart",
+      "en": "Stretch",
+      "category": "core"
+    },
+    {
+      "sv": "Kvartermästare",
+      "en": "Quartermaster",
+      "category": "skills"
+    },
+    {
+      "sv": "Kämpa på",
+      "en": "Rally",
+      "category": "combat"
+    },
+    {
+      "sv": "Känna magi",
+      "en": "Sense Magic",
+      "category": "magic"
+    },
+    {
+      "sv": "Köpslå (KAR)",
+      "en": "Bartering (CHA)",
+      "category": "skills"
+    },
+    {
+      "sv": "Laddning",
+      "en": "Charge",
+      "category": "magic"
+    },
+    {
+      "sv": "Laga kläder",
+      "en": "Repair Clothes",
+      "category": "magic"
+    },
+    {
+      "sv": "Laga mat",
+      "en": "Cook Food",
+      "category": "magic"
+    },
+    {
+      "sv": "Levanda död",
+      "en": "Living Dead",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Liggande mål",
+      "en": "Prone targets",
+      "category": "combat"
+    },
+    {
+      "sv": "Likätare",
+      "en": "Ghoul",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Liten",
+      "en": "Small",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Ljungeld",
+      "en": "Lightning Flash",
+      "category": "magic"
+    },
+    {
+      "sv": "Ljus",
+      "en": "Light",
+      "category": "magic"
+    },
+    {
+      "sv": "Lyft",
+      "en": "Levitate",
+      "category": "magic"
+    },
+    {
+      "sv": "Lyktgubbe",
+      "en": "Will-o'-the-Wisp",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Lägga besvärjelse",
+      "en": "Cast Spell",
+      "category": "combat"
+    },
+    {
+      "sv": "Lägga besvärjelser",
+      "en": "Casting spells",
+      "category": "magic"
+    },
+    {
+      "sv": "Läka",
+      "en": "Treat Wound",
+      "category": "magic"
+    },
+    {
+      "sv": "Läkekonst (INT)",
+      "en": "Healing (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Läkning & vila",
+      "en": "Healing & resting",
+      "category": "combat"
+    },
+    {
+      "sv": "Lärd",
+      "en": "Scholar",
+      "category": "core"
+    },
+    {
+      "sv": "Lång",
+      "en": "Long",
+      "category": "equipment"
+    },
+    {
+      "sv": "Lång vila",
+      "en": "Shift rest",
+      "category": "combat"
+    },
+    {
+      "sv": "Långsint",
+      "en": "Unforgiving",
+      "category": "core"
+    },
+    {
+      "sv": "Långstige",
+      "en": "Longstrider",
+      "category": "magic"
+    },
+    {
+      "sv": "Låsa/låsa upp",
+      "en": "Lock/Unlock",
+      "category": "magic"
+    },
+    {
+      "sv": "Lönnmördare",
+      "en": "Assassin",
+      "category": "skills"
+    },
+    {
+      "sv": "Magi",
+      "en": "Magic",
+      "category": "magic"
+    },
+    {
+      "sv": "Magiker",
+      "en": "Mage",
+      "category": "core"
+    },
+    {
+      "sv": "Magisk pall",
+      "en": "Magic Stool",
+      "category": "magic"
+    },
+    {
+      "sv": "Magisk talang",
+      "en": "Magic School",
+      "category": "skills"
+    },
+    {
+      "sv": "Magiskolor",
+      "en": "Schools of magic",
+      "category": "magic"
+    },
+    {
+      "sv": "Magiskt missöde",
+      "en": "Magical mishap",
+      "category": "magic"
+    },
+    {
+      "sv": "Mantikora",
+      "en": "Manticore",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Medelålders drake",
+      "en": "Adult Dragon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Medusa",
+      "en": "Medusa",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Mentalism",
+      "en": "Mentalism",
+      "category": "magic"
+    },
+    {
+      "sv": "Minnessak",
+      "en": "Memento",
+      "category": "core"
+    },
+    {
+      "sv": "Minotauer",
+      "en": "Minotauer",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Minotaur",
+      "en": "Minotaur",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Misslyckande",
+      "en": "Failure",
+      "category": "skills"
+    },
+    {
+      "sv": "Monsterboken",
+      "en": "Bestiary",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Monsterjägare",
+      "en": "Monster hunter",
+      "category": "skills"
+    },
+    {
+      "sv": "Motståndsslag",
+      "en": "Opposed roll",
+      "category": "skills"
+    },
+    {
+      "sv": "Mumie",
+      "en": "Mummy",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Myrfolk",
+      "en": "Ant People",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Myter & legender",
+      "en": "Myths & Legends (INT)",
+      "category": "general"
+    },
+    {
+      "sv": "Myter & legender (INT)",
+      "en": "Myths & Legends",
+      "category": "skills"
+    },
+    {
+      "sv": "Människa",
+      "en": "Human",
+      "category": "core"
+    },
+    {
+      "sv": "Mästerbesvärjare",
+      "en": "Master spellcaster",
+      "category": "skills"
+    },
+    {
+      "sv": "Mästerkock",
+      "en": "Master chef",
+      "category": "skills"
+    },
+    {
+      "sv": "Mästersmed",
+      "en": "Master blacksmith",
+      "category": "skills"
+    },
+    {
+      "sv": "Mästersnickare",
+      "en": "Master carpenter",
+      "category": "skills"
+    },
+    {
+      "sv": "Nackdelar",
+      "en": "Banes",
+      "category": "skills"
+    },
+    {
+      "sv": "Namn",
+      "en": "Name",
+      "category": "core"
+    },
+    {
+      "sv": "Nasare",
+      "en": "Merchant",
+      "category": "core"
+    },
+    {
+      "sv": "Nattfolk",
+      "en": "Nightkin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Nivå",
+      "en": "Rank",
+      "category": "magic"
+    },
+    {
+      "sv": "Normal",
+      "en": "Normal",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Nyfödd drake",
+      "en": "Hatchling Dragon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Nymf",
+      "en": "Naiad",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Närstrid",
+      "en": "Melee combat",
+      "category": "combat"
+    },
+    {
+      "sv": "Närstridsattack",
+      "en": "Melee Attack",
+      "category": "combat"
+    },
+    {
+      "sv": "Odöda",
+      "en": "Undead",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Oländig",
+      "en": "Rough",
+      "category": "combat"
+    },
+    {
+      "sv": "Omtöcknad – SMI",
+      "en": "Dazed – AGL",
+      "category": "combat"
+    },
+    {
+      "sv": "Orch",
+      "en": "Orc",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Ormmänniska",
+      "en": "Contortionist",
+      "category": "skills"
+    },
+    {
+      "sv": "Orädd",
+      "en": "Fearless",
+      "category": "skills"
+    },
+    {
+      "sv": "Ovanlig",
+      "en": "Uncommon",
+      "category": "equipment"
+    },
+    {
+      "sv": "Parera",
+      "en": "Parry",
+      "category": "combat"
+    },
+    {
+      "sv": "Pegas",
+      "en": "Pegasus",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Pelare",
+      "en": "Pillar",
+      "category": "magic"
+    },
+    {
+      "sv": "Permanens",
+      "en": "Permanence",
+      "category": "magic"
+    },
+    {
+      "sv": "Pilbåge (SMI)",
+      "en": "Bows (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Pilparad",
+      "en": "Deflect arrow",
+      "category": "skills"
+    },
+    {
+      "sv": "Plocka upp föremål",
+      "en": "Pick Up Item",
+      "category": "combat"
+    },
+    {
+      "sv": "Pressa slaget",
+      "en": "Push the roll",
+      "category": "skills"
+    },
+    {
+      "sv": "PSY = Psykisk kraft",
+      "en": "WIL = Willpower",
+      "category": "core"
+    },
+    {
+      "sv": "Reaktiva handlingar",
+      "en": "Reactions",
+      "category": "combat"
+    },
+    {
+      "sv": "Reptilfolk",
+      "en": "Lizard People",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Rese",
+      "en": "Ogre",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Rida (SMI)",
+      "en": "Riding (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Riddare",
+      "en": "Knight",
+      "category": "core"
+    },
+    {
+      "sv": "Rock",
+      "en": "Roc",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Runda",
+      "en": "Round",
+      "category": "core"
+    },
+    {
+      "sv": "Rundor",
+      "en": "Rounds",
+      "category": "combat"
+    },
+    {
+      "sv": "Rustning",
+      "en": "Armor",
+      "category": "combat"
+    },
+    {
+      "sv": "Rädd – PSY",
+      "en": "Scared – WIL",
+      "category": "combat"
+    },
+    {
+      "sv": "Rökpuff",
+      "en": "Puff of Smoke",
+      "category": "magic"
+    },
+    {
+      "sv": "Salamander",
+      "en": "Salamander",
+      "category": "magic"
+    },
+    {
+      "sv": "Satyr",
+      "en": "Satyr",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Sekundära egenskaper",
+      "en": "Derived ratings",
+      "category": "core"
+    },
+    {
+      "sv": "Sekundära färdigheter",
+      "en": "Secondary skills",
+      "category": "core"
+    },
+    {
+      "sv": "Sigill",
+      "en": "Magic Seal",
+      "category": "magic"
+    },
+    {
+      "sv": "Simfötter",
+      "en": "Webbed feet",
+      "category": "core"
+    },
+    {
+      "sv": "Simma (SMI)",
+      "en": "Swimming (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Sjöben",
+      "en": "Sea legs",
+      "category": "skills"
+    },
+    {
+      "sv": "Sjöfarare",
+      "en": "Mariner",
+      "category": "core"
+    },
+    {
+      "sv": "Sjöjungfru",
+      "en": "Mermaid",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Sjökunnighet (INT)",
+      "en": "Seamanship (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Sjöorm",
+      "en": "Sea Serpent",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Skadebonus",
+      "en": "Damage bonus",
+      "category": "core"
+    },
+    {
+      "sv": "Skattletare",
+      "en": "Treasure hunter",
+      "category": "skills"
+    },
+    {
+      "sv": "Skelett",
+      "en": "Skeleton",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Skift",
+      "en": "Shift",
+      "category": "core"
+    },
+    {
+      "sv": "Skingra",
+      "en": "Magic Shield",
+      "category": "magic"
+    },
+    {
+      "sv": "Skogsjätte",
+      "en": "Forest Giant",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Skogtroll",
+      "en": "Forest Troll",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Skuggdemon",
+      "en": "Shadow Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Skydd",
+      "en": "Armor Rating",
+      "category": "equipment"
+    },
+    {
+      "sv": "Skyddsvärde",
+      "en": "Armor Rating",
+      "category": "combat"
+    },
+    {
+      "sv": "Skymd sikt",
+      "en": "Obscured targets",
+      "category": "combat"
+    },
+    {
+      "sv": "Sköldblockad",
+      "en": "Shield block",
+      "category": "skills"
+    },
+    {
+      "sv": "SL = Spelledaren",
+      "en": "GM = Gamemaster",
+      "category": "core"
+    },
+    {
+      "sv": "Slagsmål (STY)",
+      "en": "Brawling (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "SLP =",
+      "en": "NPC = Non-Player Character",
+      "category": "general"
+    },
+    {
+      "sv": "SLP = Spelledarperson",
+      "en": "NPC = Non-Player",
+      "category": "core"
+    },
+    {
+      "sv": "Slunga (SMI)",
+      "en": "Slings (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Släkte",
+      "en": "Kin",
+      "category": "core"
+    },
+    {
+      "sv": "Släktesförmåga",
+      "en": "Innate ability",
+      "category": "core"
+    },
+    {
+      "sv": "Slå in dörr",
+      "en": "Break Down Door",
+      "category": "combat"
+    },
+    {
+      "sv": "Slå tärning",
+      "en": "Roll the dice",
+      "category": "skills"
+    },
+    {
+      "sv": "SMI = Smidighet",
+      "en": "AGL = Agility",
+      "category": "core"
+    },
+    {
+      "sv": "Smidig",
+      "en": "Subtle",
+      "category": "equipment"
+    },
+    {
+      "sv": "Smyga (SMI)",
+      "en": "Sneaking (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Smygattack",
+      "en": "Sneak Attack",
+      "category": "combat"
+    },
+    {
+      "sv": "Småsaker",
+      "en": "Tiny items",
+      "category": "core"
+    },
+    {
+      "sv": "Snabb vila",
+      "en": "Round Rest",
+      "category": "combat"
+    },
+    {
+      "sv": "Snärja",
+      "en": "Ensnaring Roots",
+      "category": "magic"
+    },
+    {
+      "sv": "Snårskog",
+      "en": "Engulfing Forest",
+      "category": "magic"
+    },
+    {
+      "sv": "Specialattacker",
+      "en": "Special attacks",
+      "category": "combat"
+    },
+    {
+      "sv": "Spelledaren",
+      "en": "Gamemaster",
+      "category": "core"
+    },
+    {
+      "sv": "Spindelfolk",
+      "en": "Spider Kin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Spjut (STY)",
+      "en": "Spears (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "Splittra",
+      "en": "Shatter",
+      "category": "magic"
+    },
+    {
+      "sv": "Sprinta",
+      "en": "Dash",
+      "category": "combat"
+    },
+    {
+      "sv": "Språk",
+      "en": "Language",
+      "category": "core"
+    },
+    {
+      "sv": "Spöke",
+      "en": "Ghost",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Startvärden",
+      "en": "Starting skill levels",
+      "category": "core"
+    },
+    {
+      "sv": "Stav (SMI)",
+      "en": "Staves (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Stenhud",
+      "en": "Stone Skin",
+      "category": "magic"
+    },
+    {
+      "sv": "Stensköld",
+      "en": "Stone Shield",
+      "category": "magic"
+    },
+    {
+      "sv": "Stenvägg",
+      "en": "Stonewall",
+      "category": "magic"
+    },
+    {
+      "sv": "Stickande",
+      "en": "Piercing",
+      "category": "equipment"
+    },
+    {
+      "sv": "Stickskada",
+      "en": "Piercing",
+      "category": "combat"
+    },
+    {
+      "sv": "Stigfinnare",
+      "en": "Pathfinder",
+      "category": "skills"
+    },
+    {
+      "sv": "Stor",
+      "en": "Large",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Storlek",
+      "en": "Size",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Strid & skada",
+      "en": "Combat & damage",
+      "category": "general"
+    },
+    {
+      "sv": "Stridsrop",
+      "en": "Battle cry",
+      "category": "skills"
+    },
+    {
+      "sv": "Stridsvana",
+      "en": "Veteran",
+      "category": "skills"
+    },
+    {
+      "sv": "STY = Styrka",
+      "en": "STR = Strength",
+      "category": "core"
+    },
+    {
+      "sv": "Städa",
+      "en": "Clean",
+      "category": "magic"
+    },
+    {
+      "sv": "Svaghet",
+      "en": "Weakness",
+      "category": "core"
+    },
+    {
+      "sv": "Svanmö",
+      "en": "Swan Maiden",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Svartalf",
+      "en": "Goblin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Svärd (STY)",
+      "en": "Swords (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "Svärm",
+      "en": "Swarm",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Svåra skador",
+      "en": "Severe injuries",
+      "category": "combat"
+    },
+    {
+      "sv": "Svårfångad",
+      "en": "Hard to catch",
+      "category": "core"
+    },
+    {
+      "sv": "Sylf",
+      "en": "Sylph",
+      "category": "magic"
+    },
+    {
+      "sv": "Sällsynt",
+      "en": "Rare",
+      "category": "equipment"
+    },
+    {
+      "sv": "Sällsynta släkten",
+      "en": "Rare kin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Söva",
+      "en": "Sleep",
+      "category": "magic"
+    },
+    {
+      "sv": "Ta av/på",
+      "en": "Equip/Unequip Armor/Helmet",
+      "category": "general"
+    },
+    {
+      "sv": "Ta av/på rustning/hjälm",
+      "en": "Equip/Unequip",
+      "category": "combat"
+    },
+    {
+      "sv": "Tala med djur",
+      "en": "Animal Whisperer",
+      "category": "magic"
+    },
+    {
+      "sv": "Tankeöverföring",
+      "en": "Telepathy",
+      "category": "magic"
+    },
+    {
+      "sv": "Teleportera",
+      "en": "Teleport",
+      "category": "magic"
+    },
+    {
+      "sv": "Terräng",
+      "en": "Terrain",
+      "category": "combat"
+    },
+    {
+      "sv": "Tillgång",
+      "en": "Supply",
+      "category": "equipment"
+    },
+    {
+      "sv": "Tillstånd",
+      "en": "Conditions",
+      "category": "combat"
+    },
+    {
+      "sv": "Titan",
+      "en": "Titan",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Tjuv",
+      "en": "Thief",
+      "category": "core"
+    },
+    {
+      "sv": "Tjuvhugg",
+      "en": "Backstabbing",
+      "category": "skills"
+    },
+    {
+      "sv": "Tonkonst",
+      "en": "Musician",
+      "category": "skills"
+    },
+    {
+      "sv": "Troll",
+      "en": "Troll",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Trolleritrick",
+      "en": "Magic tricks",
+      "category": "magic"
+    },
+    {
+      "sv": "Trång",
+      "en": "Cramped",
+      "category": "combat"
+    },
+    {
+      "sv": "Tunga föremål",
+      "en": "Heavy items",
+      "category": "core"
+    },
+    {
+      "sv": "Tvillingpil",
+      "en": "Twin shot",
+      "category": "skills"
+    },
+    {
+      "sv": "Två vapen",
+      "en": "Dual wield",
+      "category": "skills"
+    },
+    {
+      "sv": "Tända",
+      "en": "Ignite",
+      "category": "magic"
+    },
+    {
+      "sv": "Tålig",
+      "en": "Robust",
+      "category": "skills"
+    },
+    {
+      "sv": "Ulv",
+      "en": "Worg",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Undin",
+      "en": "Undine",
+      "category": "magic"
+    },
+    {
+      "sv": "Undvika (SMI)",
+      "en": "Evade (AGL)",
+      "category": "skills"
+    },
+    {
+      "sv": "Ung drake",
+      "en": "Young Dragon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Unik",
+      "en": "Unique",
+      "category": "equipment"
+    },
+    {
+      "sv": "Uppgiven – KAR",
+      "en": "Disheartened – CHA",
+      "category": "combat"
+    },
+    {
+      "sv": "Uppträda (KAR)",
+      "en": "Performance (CHA)",
+      "category": "skills"
+    },
+    {
+      "sv": "Upptäcka fara (INT)",
+      "en": "Awareness (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Urträd",
+      "en": "Tree Kin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Urålders drake",
+      "en": "Ancient Dragon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Utmattad – STY",
+      "en": "Exhausted – STR",
+      "category": "combat"
+    },
+    {
+      "sv": "Utrustning",
+      "en": "Gear",
+      "category": "equipment"
+    },
+    {
+      "sv": "Utseende",
+      "en": "Appearance",
+      "category": "core"
+    },
+    {
+      "sv": "Vampyr",
+      "en": "Vampire",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Vampyrfladdermöss",
+      "en": "Vampiric Bats",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Vanlig",
+      "en": "Common",
+      "category": "equipment"
+    },
+    {
+      "sv": "Vanliga djur",
+      "en": "Common Animals",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Vargfolk",
+      "en": "Wolfkin",
+      "category": "core"
+    },
+    {
+      "sv": "Varseblivning",
+      "en": "Scrying",
+      "category": "magic"
+    },
+    {
+      "sv": "Varulv",
+      "en": "Werewolf",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Vildmarksvana (INT)",
+      "en": "Bushcraft (INT)",
+      "category": "skills"
+    },
+    {
+      "sv": "Vindpust",
+      "en": "Gust of Wind",
+      "category": "magic"
+    },
+    {
+      "sv": "Virvelvind",
+      "en": "Whirlwind",
+      "category": "magic"
+    },
+    {
+      "sv": "VP = Viljepoäng",
+      "en": "WP = Willpower Points",
+      "category": "core"
+    },
+    {
+      "sv": "Vresig",
+      "en": "Ill-tempered",
+      "category": "core"
+    },
+    {
+      "sv": "Väktardemon",
+      "en": "Guardian Demon",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Värma/kyla",
+      "en": "Heat/Chill",
+      "category": "magic"
+    },
+    {
+      "sv": "Vätte",
+      "en": "Hobgoblin",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Ynkrygg",
+      "en": "Weasel",
+      "category": "skills"
+    },
+    {
+      "sv": "Yrke",
+      "en": "Profession",
+      "category": "core"
+    },
+    {
+      "sv": "Yxa (STY)",
+      "en": "Axes (STR)",
+      "category": "skills"
+    },
+    {
+      "sv": "Ägodelar",
+      "en": "Gear",
+      "category": "core"
+    },
+    {
+      "sv": "Älva",
+      "en": "Fairy",
+      "category": "bestiary"
+    },
+    {
+      "sv": "Ålder",
+      "en": "Age",
+      "category": "core"
+    },
+    {
+      "sv": "Åskvigg",
+      "en": "Thunderbolt",
+      "category": "magic"
+    },
+    {
+      "sv": "Återuppväcka",
+      "en": "Resurrection",
+      "category": "magic"
+    },
+    {
+      "sv": "Öppna/stänga",
+      "en": "Open/Close",
+      "category": "magic"
+    },
+    {
+      "sv": "Överbelastad",
+      "en": "Over-encumbered",
+      "category": "core"
+    },
+    {
+      "sv": "Överraskning",
+      "en": "Surprise",
+      "category": "combat"
+    },
+    {
+      "sv": "Övertala (KAR)",
+      "en": "Persuasion (CHA)",
+      "category": "skills"
+    }
+  ],
+  "sv_to_en": {
+    "Aktivera förmåga": "Activate Ability",
+    "Allmän magi": "General magic",
+    "Alv": "Elf",
+    "Animism": "Animism",
+    "Anka": "Mallard",
+    "Anpasslig": "Adaptive",
+    "Antimagi": "Dispell",
+    "Använda föremål": "Use Item",
+    "Arg – INT": "Angry – INT",
+    "Armborst (SMI)": "Crossbows (AGL)",
+    "Avståndsattack": "Ranged Attack",
+    "Avståndsstrid": "Ranged combat",
+    "Avväpna": "Disarm",
+    "Baggfolk": "Beetle Kin",
+    "Bakhåll": "Ambush",
+    "Bard": "Bard",
+    "Basfärdigheter": "The core skills",
+    "Basilisk": "Basilisk",
+    "Belastning": "Encumbrance",
+    "Bergsjätte": "Mountain Giant",
+    "Bergtroll": "Mountain Troll",
+    "Beskyddare": "Protector",
+    "Bestar": "Beasts",
+    "Bestiarium": "Bestiary",
+    "Bestiologi (INT)": "Beast Lore (INT)",
+    "Besvärjelser": "Spells",
+    "Blixt": "Lightning Bolt",
+    "Blixtsnabb": "Lightning fast",
+    "Bloddemon": "Blood Demon",
+    "Blomsterspår": "Floral Trail",
+    "Bluffa (KAR)": "Bluffing (CHA)",
+    "Bromsa fall": "Slow Fall",
+    "Brytvärde (BV)": "Durability",
+    "Bäckhäst": "Brook Horse",
+    "Bärsärk": "Berserker",
+    "Defensiv": "Defensive",
+    "Demon": "Demon",
+    "Demoner": "Demons",
+    "Demonslag": "Rolling a demon",
+    "Din rollperson": "Your player character",
+    "Dominera": "Dominate",
+    "Drakar": "Dragons",
+    "Drakar och Demoner": "Dragonbane",
+    "Drakdräpare": "Dragonslayer",
+    "Drake": "Dragon",
+    "Drakorm": "Lindworm",
+    "Drakslag": "Rolling a dragon",
+    "Dubbelhugg": "Double slash",
+    "Ducka": "Dodge",
+    "Dunkel": "Dimly Lit",
+    "Dvärg": "Dwarf",
+    "Dyrka lås": "Pick Lock",
+    "Dödsslag": "Death Roll",
+    "Effektgrad": "Power level",
+    "Egenskaper": "Features",
+    "Elddemon": "Fire Demon",
+    "Eldfågel": "Firebird",
+    "Eldklot": "Fire Blast",
+    "Eldvirvel": "Firestorm",
+    "Elementalism": "Elementalism",
+    "Enorm": "Huge",
+    "Enstöring": "Lone wolf",
+    "Erfarenhet": "Experince",
+    "FV = Färdighetsvärde": "Skill rating",
+    "FYS = Fysik": "CON = Constitution",
+    "Falköga": "Eagle eye",
+    "Fingerfärdighet (SMI)": "Sleight of Hand (AGL)",
+    "Finna dolda ting (INT)": "Spot Hidden (INT)",
+    "Fjärrsyn": "Farsight",
+    "Flamma": "Fireball",
+    "Flodvåg": "Tidal Wave",
+    "Flyga": "Flight",
+    "Fokuserad": "Focused",
+    "Formelbok": "Grimoire",
+    "Fornsyn": "Divination",
+    "Fria handlingar": "Free Actions",
+    "Frisyr": "Hairstyle",
+    "Frivilliga regler": "Optional rules",
+    "Frost": "Frost",
+    "Främmande språk (INT)": "Languages (INT)",
+    "Fälla": "Topple",
+    "Fällande": "Toppling",
+    "Färdigheter": "Skills",
+    "Fågelsång": "Birdsong",
+    "Följeslagare": "Companion",
+    "Förbereda besvärjelser": "Prepared Spells",
+    "Förbättringskryss": "Advancement marks",
+    "Förbättringsslag": "Advancement rolls",
+    "Fördelar": "Boons",
+    "Fördriva": "Banish",
+    "Förflyttning": "Movement",
+    "Förinta": "Purge",
+    "Förklädnad": "Disguise",
+    "Förkämpe": "Guardian",
+    "Första hjälpen": "First Aid",
+    "Förtrolla vapen": "Enchant Weapon",
+    "Garverimästare": "Master tanner",
+    "Gast": "Wight",
+    "Gnom": "Gnome",
+    "Golem": "Golem",
+    "Gott läkekött": "Fast healer",
+    "Greppa": "Grapple",
+    "Grip": "Griffon",
+    "Grodfolk": "Frog People",
+    "Grottroll": "Cave Troll",
+    "Grundchans": "Base chance",
+    "Grundegenskaper": "Attributes",
+    "Hal som en ål": "Fast footwork",
+    "Halvling": "Halfling",
+    "Hammare (STY)": "Hammers (STR)",
+    "Handlingar": "Actions",
+    "Hantverk (STY)": "Crafting (STR)",
+    "Hantverkare": "Artisan",
+    "Harpya": "Harpy",
+    "Havsjätte": "Sea Giant",
+    "Hela": "Heal Wound",
+    "Hippogriff": "Hippogriff",
+    "Hitta glipa": "Find Weak Spot",
+    "Hjälpa": "Helping",
+    "Hjälteförmågor": "Heroic abilities",
+    "Hoppa & klättra (SMI)": "Acrobatics (AGL)",
+    "Huggande": "Slashing",
+    "Huggskada": "Slashing",
+    "Hydra": "Hydra",
+    "Hämta": "Fetch",
+    "I den äldsta tiden": "In the oldest times",
+    "INT = Intelligens": "INT = Intelligence",
+    "Initiativdraget": "Drawing the initiative",
+    "Inre frid": "Inner peace",
+    "Insektoider": "Insektoids",
+    "Insikt": "Insight",
+    "Intuition": "Intuition",
+    "Jakt & fiske (SMI)": "Hunting & Fishing (AGL)",
+    "Jaktsinne": "Hunting instincts",
+    "Jägare": "Hunter",
+    "Järngrepp": "Iron grip",
+    "Järnnäve": "Iron fist",
+    "Jättar": "Giants",
+    "Jätte": "Giant",
+    "Jätteamöba": "Giant Amoeba",
+    "Jättebläckfisk": "Giant Octopus",
+    "Jättespindel": "Giant Spider",
+    "KAR = Karisma": "CHA = Charisma",
+    "KP = Kroppspoäng": "HP = Hit Points",
+    "Kalydon": "Calydon",
+    "Kaosdemon": "Chaos Demon",
+    "Karkion": "Karkion",
+    "Kastarm": "Throwing arm",
+    "Kattfolk": "Cat People",
+    "Kattfot": "Catlike",
+    "Kentaur": "Centaur",
+    "Kimera": "Chimera",
+    "Kniv (SMI)": "Knives (AGL)",
+    "Knuffa": "Shove",
+    "Knäpp": "Flich",
+    "Kort vila": "Stretch rest",
+    "Kraftnäve": "Power Fist",
+    "Kraftslag": "Massive blow",
+    "Kraftstöt": "Mental Strike",
+    "Kraftöverföring": "Transfer",
+    "Krasslig – FYS": "Sickly – CON",
+    "Krigare": "Fighter",
+    "Kritisk träff": "Critical hit",
+    "Krossande": "Bludgeoning",
+    "Krosskada": "Bludgeoning",
+    "Kurera": "Restoration",
+    "Kvart": "Stretch",
+    "Kvartermästare": "Quartermaster",
+    "Kämpa på": "Rally",
+    "Känna magi": "Sense Magic",
+    "Köpslå (KAR)": "Bartering (CHA)",
+    "Laddning": "Charge",
+    "Laga kläder": "Repair Clothes",
+    "Laga mat": "Cook Food",
+    "Levanda död": "Living Dead",
+    "Liggande mål": "Prone targets",
+    "Likätare": "Ghoul",
+    "Liten": "Small",
+    "Ljungeld": "Lightning Flash",
+    "Ljus": "Light",
+    "Lyft": "Levitate",
+    "Lyktgubbe": "Will-o'-the-Wisp",
+    "Lägga besvärjelse": "Cast Spell",
+    "Lägga besvärjelser": "Casting spells",
+    "Läka": "Treat Wound",
+    "Läkekonst (INT)": "Healing (INT)",
+    "Läkning & vila": "Healing & resting",
+    "Lärd": "Scholar",
+    "Lång": "Long",
+    "Lång vila": "Shift rest",
+    "Långsint": "Unforgiving",
+    "Långstige": "Longstrider",
+    "Låsa/låsa upp": "Lock/Unlock",
+    "Lönnmördare": "Assassin",
+    "Magi": "Magic",
+    "Magiker": "Mage",
+    "Magisk pall": "Magic Stool",
+    "Magisk talang": "Magic School",
+    "Magiskolor": "Schools of magic",
+    "Magiskt missöde": "Magical mishap",
+    "Mantikora": "Manticore",
+    "Medelålders drake": "Adult Dragon",
+    "Medusa": "Medusa",
+    "Mentalism": "Mentalism",
+    "Minnessak": "Memento",
+    "Minotauer": "Minotauer",
+    "Minotaur": "Minotaur",
+    "Misslyckande": "Failure",
+    "Monsterboken": "Bestiary",
+    "Monsterjägare": "Monster hunter",
+    "Motståndsslag": "Opposed roll",
+    "Mumie": "Mummy",
+    "Myrfolk": "Ant People",
+    "Myter & legender": "Myths & Legends (INT)",
+    "Myter & legender (INT)": "Myths & Legends",
+    "Människa": "Human",
+    "Mästerbesvärjare": "Master spellcaster",
+    "Mästerkock": "Master chef",
+    "Mästersmed": "Master blacksmith",
+    "Mästersnickare": "Master carpenter",
+    "Nackdelar": "Banes",
+    "Namn": "Name",
+    "Nasare": "Merchant",
+    "Nattfolk": "Nightkin",
+    "Nivå": "Rank",
+    "Normal": "Normal",
+    "Nyfödd drake": "Hatchling Dragon",
+    "Nymf": "Naiad",
+    "Närstrid": "Melee combat",
+    "Närstridsattack": "Melee Attack",
+    "Odöda": "Undead",
+    "Oländig": "Rough",
+    "Omtöcknad – SMI": "Dazed – AGL",
+    "Orch": "Orc",
+    "Ormmänniska": "Contortionist",
+    "Orädd": "Fearless",
+    "Ovanlig": "Uncommon",
+    "PSY = Psykisk kraft": "WIL = Willpower",
+    "Parera": "Parry",
+    "Pegas": "Pegasus",
+    "Pelare": "Pillar",
+    "Permanens": "Permanence",
+    "Pilbåge (SMI)": "Bows (AGL)",
+    "Pilparad": "Deflect arrow",
+    "Plocka upp föremål": "Pick Up Item",
+    "Pressa slaget": "Push the roll",
+    "Reaktiva handlingar": "Reactions",
+    "Reptilfolk": "Lizard People",
+    "Rese": "Ogre",
+    "Rida (SMI)": "Riding (AGL)",
+    "Riddare": "Knight",
+    "Rock": "Roc",
+    "Runda": "Round",
+    "Rundor": "Rounds",
+    "Rustning": "Armor",
+    "Rädd – PSY": "Scared – WIL",
+    "Rökpuff": "Puff of Smoke",
+    "SL = Spelledaren": "GM = Gamemaster",
+    "SLP =": "NPC = Non-Player Character",
+    "SLP = Spelledarperson": "NPC = Non-Player",
+    "SMI = Smidighet": "AGL = Agility",
+    "STY = Styrka": "STR = Strength",
+    "Salamander": "Salamander",
+    "Satyr": "Satyr",
+    "Sekundära egenskaper": "Derived ratings",
+    "Sekundära färdigheter": "Secondary skills",
+    "Sigill": "Magic Seal",
+    "Simfötter": "Webbed feet",
+    "Simma (SMI)": "Swimming (AGL)",
+    "Sjöben": "Sea legs",
+    "Sjöfarare": "Mariner",
+    "Sjöjungfru": "Mermaid",
+    "Sjökunnighet (INT)": "Seamanship (INT)",
+    "Sjöorm": "Sea Serpent",
+    "Skadebonus": "Damage bonus",
+    "Skattletare": "Treasure hunter",
+    "Skelett": "Skeleton",
+    "Skift": "Shift",
+    "Skingra": "Magic Shield",
+    "Skogsjätte": "Forest Giant",
+    "Skogtroll": "Forest Troll",
+    "Skuggdemon": "Shadow Demon",
+    "Skydd": "Armor Rating",
+    "Skyddsvärde": "Armor Rating",
+    "Skymd sikt": "Obscured targets",
+    "Sköldblockad": "Shield block",
+    "Slagsmål (STY)": "Brawling (STR)",
+    "Slunga (SMI)": "Slings (AGL)",
+    "Släkte": "Kin",
+    "Släktesförmåga": "Innate ability",
+    "Slå in dörr": "Break Down Door",
+    "Slå tärning": "Roll the dice",
+    "Smidig": "Subtle",
+    "Smyga (SMI)": "Sneaking (AGL)",
+    "Smygattack": "Sneak Attack",
+    "Småsaker": "Tiny items",
+    "Snabb vila": "Round Rest",
+    "Snärja": "Ensnaring Roots",
+    "Snårskog": "Engulfing Forest",
+    "Specialattacker": "Special attacks",
+    "Spelledaren": "Gamemaster",
+    "Spindelfolk": "Spider Kin",
+    "Spjut (STY)": "Spears (STR)",
+    "Splittra": "Shatter",
+    "Sprinta": "Dash",
+    "Språk": "Language",
+    "Spöke": "Ghost",
+    "Startvärden": "Starting skill levels",
+    "Stav (SMI)": "Staves (AGL)",
+    "Stenhud": "Stone Skin",
+    "Stensköld": "Stone Shield",
+    "Stenvägg": "Stonewall",
+    "Stickande": "Piercing",
+    "Stickskada": "Piercing",
+    "Stigfinnare": "Pathfinder",
+    "Stor": "Large",
+    "Storlek": "Size",
+    "Strid & skada": "Combat & damage",
+    "Stridsrop": "Battle cry",
+    "Stridsvana": "Veteran",
+    "Städa": "Clean",
+    "Svaghet": "Weakness",
+    "Svanmö": "Swan Maiden",
+    "Svartalf": "Goblin",
+    "Svärd (STY)": "Swords (STR)",
+    "Svärm": "Swarm",
+    "Svåra skador": "Severe injuries",
+    "Svårfångad": "Hard to catch",
+    "Sylf": "Sylph",
+    "Sällsynt": "Rare",
+    "Sällsynta släkten": "Rare kin",
+    "Söva": "Sleep",
+    "Ta av/på": "Equip/Unequip Armor/Helmet",
+    "Ta av/på rustning/hjälm": "Equip/Unequip",
+    "Tala med djur": "Animal Whisperer",
+    "Tankeöverföring": "Telepathy",
+    "Teleportera": "Teleport",
+    "Terräng": "Terrain",
+    "Tillgång": "Supply",
+    "Tillstånd": "Conditions",
+    "Titan": "Titan",
+    "Tjuv": "Thief",
+    "Tjuvhugg": "Backstabbing",
+    "Tonkonst": "Musician",
+    "Troll": "Troll",
+    "Trolleritrick": "Magic tricks",
+    "Trång": "Cramped",
+    "Tunga föremål": "Heavy items",
+    "Tvillingpil": "Twin shot",
+    "Två vapen": "Dual wield",
+    "Tända": "Ignite",
+    "Tålig": "Robust",
+    "Ulv": "Worg",
+    "Undin": "Undine",
+    "Undvika (SMI)": "Evade (AGL)",
+    "Ung drake": "Young Dragon",
+    "Unik": "Unique",
+    "Uppgiven – KAR": "Disheartened – CHA",
+    "Uppträda (KAR)": "Performance (CHA)",
+    "Upptäcka fara (INT)": "Awareness (INT)",
+    "Urträd": "Tree Kin",
+    "Urålders drake": "Ancient Dragon",
+    "Utmattad – STY": "Exhausted – STR",
+    "Utrustning": "Gear",
+    "Utseende": "Appearance",
+    "VP = Viljepoäng": "WP = Willpower Points",
+    "Vampyr": "Vampire",
+    "Vampyrfladdermöss": "Vampiric Bats",
+    "Vanlig": "Common",
+    "Vanliga djur": "Common Animals",
+    "Vargfolk": "Wolfkin",
+    "Varseblivning": "Scrying",
+    "Varulv": "Werewolf",
+    "Vildmarksvana (INT)": "Bushcraft (INT)",
+    "Vindpust": "Gust of Wind",
+    "Virvelvind": "Whirlwind",
+    "Vresig": "Ill-tempered",
+    "Väktardemon": "Guardian Demon",
+    "Värma/kyla": "Heat/Chill",
+    "Vätte": "Hobgoblin",
+    "Ynkrygg": "Weasel",
+    "Yrke": "Profession",
+    "Yxa (STY)": "Axes (STR)",
+    "Ägodelar": "Gear",
+    "Älva": "Fairy",
+    "Ålder": "Age",
+    "Åskvigg": "Thunderbolt",
+    "Återuppväcka": "Resurrection",
+    "Öppna/stänga": "Open/Close",
+    "Överbelastad": "Over-encumbered",
+    "Överraskning": "Surprise",
+    "Övertala (KAR)": "Persuasion (CHA)"
+  },
+  "en_to_sv": {
+    "AGL = Agility": "SMI = Smidighet",
+    "Acrobatics (AGL)": "Hoppa & klättra (SMI)",
+    "Actions": "Handlingar",
+    "Activate Ability": "Aktivera förmåga",
+    "Adaptive": "Anpasslig",
+    "Adult Dragon": "Medelålders drake",
+    "Advancement marks": "Förbättringskryss",
+    "Advancement rolls": "Förbättringsslag",
+    "Age": "Ålder",
+    "Ambush": "Bakhåll",
+    "Ancient Dragon": "Urålders drake",
+    "Angry – INT": "Arg – INT",
+    "Animal Whisperer": "Tala med djur",
+    "Animism": "Animism",
+    "Ant People": "Myrfolk",
+    "Appearance": "Utseende",
+    "Armor": "Rustning",
+    "Armor Rating": "Skyddsvärde",
+    "Artisan": "Hantverkare",
+    "Assassin": "Lönnmördare",
+    "Attributes": "Grundegenskaper",
+    "Awareness (INT)": "Upptäcka fara (INT)",
+    "Axes (STR)": "Yxa (STY)",
+    "Backstabbing": "Tjuvhugg",
+    "Banes": "Nackdelar",
+    "Banish": "Fördriva",
+    "Bard": "Bard",
+    "Bartering (CHA)": "Köpslå (KAR)",
+    "Base chance": "Grundchans",
+    "Basilisk": "Basilisk",
+    "Battle cry": "Stridsrop",
+    "Beast Lore (INT)": "Bestiologi (INT)",
+    "Beasts": "Bestar",
+    "Beetle Kin": "Baggfolk",
+    "Berserker": "Bärsärk",
+    "Bestiary": "Monsterboken",
+    "Birdsong": "Fågelsång",
+    "Blood Demon": "Bloddemon",
+    "Bludgeoning": "Krosskada",
+    "Bluffing (CHA)": "Bluffa (KAR)",
+    "Boons": "Fördelar",
+    "Bows (AGL)": "Pilbåge (SMI)",
+    "Brawling (STR)": "Slagsmål (STY)",
+    "Break Down Door": "Slå in dörr",
+    "Brook Horse": "Bäckhäst",
+    "Bushcraft (INT)": "Vildmarksvana (INT)",
+    "CHA = Charisma": "KAR = Karisma",
+    "CON = Constitution": "FYS = Fysik",
+    "Calydon": "Kalydon",
+    "Cast Spell": "Lägga besvärjelse",
+    "Casting spells": "Lägga besvärjelser",
+    "Cat People": "Kattfolk",
+    "Catlike": "Kattfot",
+    "Cave Troll": "Grottroll",
+    "Centaur": "Kentaur",
+    "Chaos Demon": "Kaosdemon",
+    "Charge": "Laddning",
+    "Chimera": "Kimera",
+    "Clean": "Städa",
+    "Combat & damage": "Strid & skada",
+    "Common": "Vanlig",
+    "Common Animals": "Vanliga djur",
+    "Companion": "Följeslagare",
+    "Conditions": "Tillstånd",
+    "Contortionist": "Ormmänniska",
+    "Cook Food": "Laga mat",
+    "Crafting (STR)": "Hantverk (STY)",
+    "Cramped": "Trång",
+    "Critical hit": "Kritisk träff",
+    "Crossbows (AGL)": "Armborst (SMI)",
+    "Damage bonus": "Skadebonus",
+    "Dash": "Sprinta",
+    "Dazed – AGL": "Omtöcknad – SMI",
+    "Death Roll": "Dödsslag",
+    "Defensive": "Defensiv",
+    "Deflect arrow": "Pilparad",
+    "Demon": "Demon",
+    "Demons": "Demoner",
+    "Derived ratings": "Sekundära egenskaper",
+    "Dimly Lit": "Dunkel",
+    "Disarm": "Avväpna",
+    "Disguise": "Förklädnad",
+    "Disheartened – CHA": "Uppgiven – KAR",
+    "Dispell": "Antimagi",
+    "Divination": "Fornsyn",
+    "Dodge": "Ducka",
+    "Dominate": "Dominera",
+    "Double slash": "Dubbelhugg",
+    "Dragon": "Drake",
+    "Dragonbane": "Drakar och Demoner",
+    "Dragons": "Drakar",
+    "Dragonslayer": "Drakdräpare",
+    "Drawing the initiative": "Initiativdraget",
+    "Dual wield": "Två vapen",
+    "Durability": "Brytvärde (BV)",
+    "Dwarf": "Dvärg",
+    "Eagle eye": "Falköga",
+    "Elementalism": "Elementalism",
+    "Elf": "Alv",
+    "Enchant Weapon": "Förtrolla vapen",
+    "Encumbrance": "Belastning",
+    "Engulfing Forest": "Snårskog",
+    "Ensnaring Roots": "Snärja",
+    "Equip/Unequip": "Ta av/på rustning/hjälm",
+    "Equip/Unequip Armor/Helmet": "Ta av/på",
+    "Evade (AGL)": "Undvika (SMI)",
+    "Exhausted – STR": "Utmattad – STY",
+    "Experince": "Erfarenhet",
+    "Failure": "Misslyckande",
+    "Fairy": "Älva",
+    "Farsight": "Fjärrsyn",
+    "Fast footwork": "Hal som en ål",
+    "Fast healer": "Gott läkekött",
+    "Fearless": "Orädd",
+    "Features": "Egenskaper",
+    "Fetch": "Hämta",
+    "Fighter": "Krigare",
+    "Find Weak Spot": "Hitta glipa",
+    "Fire Blast": "Eldklot",
+    "Fire Demon": "Elddemon",
+    "Fireball": "Flamma",
+    "Firebird": "Eldfågel",
+    "Firestorm": "Eldvirvel",
+    "First Aid": "Första hjälpen",
+    "Flich": "Knäpp",
+    "Flight": "Flyga",
+    "Floral Trail": "Blomsterspår",
+    "Focused": "Fokuserad",
+    "Forest Giant": "Skogsjätte",
+    "Forest Troll": "Skogtroll",
+    "Free Actions": "Fria handlingar",
+    "Frog People": "Grodfolk",
+    "Frost": "Frost",
+    "GM = Gamemaster": "SL = Spelledaren",
+    "Gamemaster": "Spelledaren",
+    "Gear": "Ägodelar",
+    "General magic": "Allmän magi",
+    "Ghost": "Spöke",
+    "Ghoul": "Likätare",
+    "Giant": "Jätte",
+    "Giant Amoeba": "Jätteamöba",
+    "Giant Octopus": "Jättebläckfisk",
+    "Giant Spider": "Jättespindel",
+    "Giants": "Jättar",
+    "Gnome": "Gnom",
+    "Goblin": "Svartalf",
+    "Golem": "Golem",
+    "Grapple": "Greppa",
+    "Griffon": "Grip",
+    "Grimoire": "Formelbok",
+    "Guardian": "Förkämpe",
+    "Guardian Demon": "Väktardemon",
+    "Gust of Wind": "Vindpust",
+    "HP = Hit Points": "KP = Kroppspoäng",
+    "Hairstyle": "Frisyr",
+    "Halfling": "Halvling",
+    "Hammers (STR)": "Hammare (STY)",
+    "Hard to catch": "Svårfångad",
+    "Harpy": "Harpya",
+    "Hatchling Dragon": "Nyfödd drake",
+    "Heal Wound": "Hela",
+    "Healing & resting": "Läkning & vila",
+    "Healing (INT)": "Läkekonst (INT)",
+    "Heat/Chill": "Värma/kyla",
+    "Heavy items": "Tunga föremål",
+    "Helping": "Hjälpa",
+    "Heroic abilities": "Hjälteförmågor",
+    "Hippogriff": "Hippogriff",
+    "Hobgoblin": "Vätte",
+    "Huge": "Enorm",
+    "Human": "Människa",
+    "Hunter": "Jägare",
+    "Hunting & Fishing (AGL)": "Jakt & fiske (SMI)",
+    "Hunting instincts": "Jaktsinne",
+    "Hydra": "Hydra",
+    "INT = Intelligence": "INT = Intelligens",
+    "Ignite": "Tända",
+    "Ill-tempered": "Vresig",
+    "In the oldest times": "I den äldsta tiden",
+    "Innate ability": "Släktesförmåga",
+    "Inner peace": "Inre frid",
+    "Insektoids": "Insektoider",
+    "Insight": "Insikt",
+    "Intuition": "Intuition",
+    "Iron fist": "Järnnäve",
+    "Iron grip": "Järngrepp",
+    "Karkion": "Karkion",
+    "Kin": "Släkte",
+    "Knight": "Riddare",
+    "Knives (AGL)": "Kniv (SMI)",
+    "Language": "Språk",
+    "Languages (INT)": "Främmande språk (INT)",
+    "Large": "Stor",
+    "Levitate": "Lyft",
+    "Light": "Ljus",
+    "Lightning Bolt": "Blixt",
+    "Lightning Flash": "Ljungeld",
+    "Lightning fast": "Blixtsnabb",
+    "Lindworm": "Drakorm",
+    "Living Dead": "Levanda död",
+    "Lizard People": "Reptilfolk",
+    "Lock/Unlock": "Låsa/låsa upp",
+    "Lone wolf": "Enstöring",
+    "Long": "Lång",
+    "Longstrider": "Långstige",
+    "Mage": "Magiker",
+    "Magic": "Magi",
+    "Magic School": "Magisk talang",
+    "Magic Seal": "Sigill",
+    "Magic Shield": "Skingra",
+    "Magic Stool": "Magisk pall",
+    "Magic tricks": "Trolleritrick",
+    "Magical mishap": "Magiskt missöde",
+    "Mallard": "Anka",
+    "Manticore": "Mantikora",
+    "Mariner": "Sjöfarare",
+    "Massive blow": "Kraftslag",
+    "Master blacksmith": "Mästersmed",
+    "Master carpenter": "Mästersnickare",
+    "Master chef": "Mästerkock",
+    "Master spellcaster": "Mästerbesvärjare",
+    "Master tanner": "Garverimästare",
+    "Medusa": "Medusa",
+    "Melee Attack": "Närstridsattack",
+    "Melee combat": "Närstrid",
+    "Memento": "Minnessak",
+    "Mental Strike": "Kraftstöt",
+    "Mentalism": "Mentalism",
+    "Merchant": "Nasare",
+    "Mermaid": "Sjöjungfru",
+    "Minotauer": "Minotauer",
+    "Minotaur": "Minotaur",
+    "Monster hunter": "Monsterjägare",
+    "Mountain Giant": "Bergsjätte",
+    "Mountain Troll": "Bergtroll",
+    "Movement": "Förflyttning",
+    "Mummy": "Mumie",
+    "Musician": "Tonkonst",
+    "Myths & Legends": "Myter & legender (INT)",
+    "Myths & Legends (INT)": "Myter & legender",
+    "NPC = Non-Player": "SLP = Spelledarperson",
+    "NPC = Non-Player Character": "SLP =",
+    "Naiad": "Nymf",
+    "Name": "Namn",
+    "Nightkin": "Nattfolk",
+    "Normal": "Normal",
+    "Obscured targets": "Skymd sikt",
+    "Ogre": "Rese",
+    "Open/Close": "Öppna/stänga",
+    "Opposed roll": "Motståndsslag",
+    "Optional rules": "Frivilliga regler",
+    "Orc": "Orch",
+    "Over-encumbered": "Överbelastad",
+    "Parry": "Parera",
+    "Pathfinder": "Stigfinnare",
+    "Pegasus": "Pegas",
+    "Performance (CHA)": "Uppträda (KAR)",
+    "Permanence": "Permanens",
+    "Persuasion (CHA)": "Övertala (KAR)",
+    "Pick Lock": "Dyrka lås",
+    "Pick Up Item": "Plocka upp föremål",
+    "Piercing": "Stickskada",
+    "Pillar": "Pelare",
+    "Power Fist": "Kraftnäve",
+    "Power level": "Effektgrad",
+    "Prepared Spells": "Förbereda besvärjelser",
+    "Profession": "Yrke",
+    "Prone targets": "Liggande mål",
+    "Protector": "Beskyddare",
+    "Puff of Smoke": "Rökpuff",
+    "Purge": "Förinta",
+    "Push the roll": "Pressa slaget",
+    "Quartermaster": "Kvartermästare",
+    "Rally": "Kämpa på",
+    "Ranged Attack": "Avståndsattack",
+    "Ranged combat": "Avståndsstrid",
+    "Rank": "Nivå",
+    "Rare": "Sällsynt",
+    "Rare kin": "Sällsynta släkten",
+    "Reactions": "Reaktiva handlingar",
+    "Repair Clothes": "Laga kläder",
+    "Restoration": "Kurera",
+    "Resurrection": "Återuppväcka",
+    "Riding (AGL)": "Rida (SMI)",
+    "Robust": "Tålig",
+    "Roc": "Rock",
+    "Roll the dice": "Slå tärning",
+    "Rolling a demon": "Demonslag",
+    "Rolling a dragon": "Drakslag",
+    "Rough": "Oländig",
+    "Round": "Runda",
+    "Round Rest": "Snabb vila",
+    "Rounds": "Rundor",
+    "STR = Strength": "STY = Styrka",
+    "Salamander": "Salamander",
+    "Satyr": "Satyr",
+    "Scared – WIL": "Rädd – PSY",
+    "Scholar": "Lärd",
+    "Schools of magic": "Magiskolor",
+    "Scrying": "Varseblivning",
+    "Sea Giant": "Havsjätte",
+    "Sea Serpent": "Sjöorm",
+    "Sea legs": "Sjöben",
+    "Seamanship (INT)": "Sjökunnighet (INT)",
+    "Secondary skills": "Sekundära färdigheter",
+    "Sense Magic": "Känna magi",
+    "Severe injuries": "Svåra skador",
+    "Shadow Demon": "Skuggdemon",
+    "Shatter": "Splittra",
+    "Shield block": "Sköldblockad",
+    "Shift": "Skift",
+    "Shift rest": "Lång vila",
+    "Shove": "Knuffa",
+    "Sickly – CON": "Krasslig – FYS",
+    "Size": "Storlek",
+    "Skeleton": "Skelett",
+    "Skill rating": "FV = Färdighetsvärde",
+    "Skills": "Färdigheter",
+    "Slashing": "Huggskada",
+    "Sleep": "Söva",
+    "Sleight of Hand (AGL)": "Fingerfärdighet (SMI)",
+    "Slings (AGL)": "Slunga (SMI)",
+    "Slow Fall": "Bromsa fall",
+    "Small": "Liten",
+    "Sneak Attack": "Smygattack",
+    "Sneaking (AGL)": "Smyga (SMI)",
+    "Spears (STR)": "Spjut (STY)",
+    "Special attacks": "Specialattacker",
+    "Spells": "Besvärjelser",
+    "Spider Kin": "Spindelfolk",
+    "Spot Hidden (INT)": "Finna dolda ting (INT)",
+    "Starting skill levels": "Startvärden",
+    "Staves (AGL)": "Stav (SMI)",
+    "Stone Shield": "Stensköld",
+    "Stone Skin": "Stenhud",
+    "Stonewall": "Stenvägg",
+    "Stretch": "Kvart",
+    "Stretch rest": "Kort vila",
+    "Subtle": "Smidig",
+    "Supply": "Tillgång",
+    "Surprise": "Överraskning",
+    "Swan Maiden": "Svanmö",
+    "Swarm": "Svärm",
+    "Swimming (AGL)": "Simma (SMI)",
+    "Swords (STR)": "Svärd (STY)",
+    "Sylph": "Sylf",
+    "Telepathy": "Tankeöverföring",
+    "Teleport": "Teleportera",
+    "Terrain": "Terräng",
+    "The core skills": "Basfärdigheter",
+    "Thief": "Tjuv",
+    "Throwing arm": "Kastarm",
+    "Thunderbolt": "Åskvigg",
+    "Tidal Wave": "Flodvåg",
+    "Tiny items": "Småsaker",
+    "Titan": "Titan",
+    "Topple": "Fälla",
+    "Toppling": "Fällande",
+    "Transfer": "Kraftöverföring",
+    "Treasure hunter": "Skattletare",
+    "Treat Wound": "Läka",
+    "Tree Kin": "Urträd",
+    "Troll": "Troll",
+    "Twin shot": "Tvillingpil",
+    "Uncommon": "Ovanlig",
+    "Undead": "Odöda",
+    "Undine": "Undin",
+    "Unforgiving": "Långsint",
+    "Unique": "Unik",
+    "Use Item": "Använda föremål",
+    "Vampire": "Vampyr",
+    "Vampiric Bats": "Vampyrfladdermöss",
+    "Veteran": "Stridsvana",
+    "WIL = Willpower": "PSY = Psykisk kraft",
+    "WP = Willpower Points": "VP = Viljepoäng",
+    "Weakness": "Svaghet",
+    "Weasel": "Ynkrygg",
+    "Webbed feet": "Simfötter",
+    "Werewolf": "Varulv",
+    "Whirlwind": "Virvelvind",
+    "Wight": "Gast",
+    "Will-o'-the-Wisp": "Lyktgubbe",
+    "Wolfkin": "Vargfolk",
+    "Worg": "Ulv",
+    "Young Dragon": "Ung drake",
+    "Your player character": "Din rollperson"
+  }
+}

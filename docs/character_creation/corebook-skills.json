@@ -1,0 +1,263 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "skills",
+    "purpose": "All skills (base, weapon, and secondary/magic) plus skill base chance brackets from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' and 'description_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.2",
+    "content_license": "personal-use-only"
+  },
+  "skill_base_chance": {
+    "brackets": [
+      {
+        "attribute_range": [
+          1,
+          5
+        ],
+        "base_chance": 3
+      },
+      {
+        "attribute_range": [
+          6,
+          8
+        ],
+        "base_chance": 4
+      },
+      {
+        "attribute_range": [
+          9,
+          12
+        ],
+        "base_chance": 5
+      },
+      {
+        "attribute_range": [
+          13,
+          15
+        ],
+        "base_chance": 6
+      },
+      {
+        "attribute_range": [
+          16,
+          18
+        ],
+        "base_chance": 7
+      }
+    ],
+    "trained_skill_value": {
+      "id": "trained_skill_value",
+      "formula": "base_chance * 2"
+    }
+  },
+  "skills": {
+    "base_skills": [
+      {
+        "id": "bestiologi",
+        "name": "Beast Lore",
+        "name_sv": "Bestiologi",
+        "attribute": "INT"
+      },
+      {
+        "id": "bluffa",
+        "name": "Bluffing",
+        "name_sv": "Bluffa",
+        "attribute": "CHA"
+      },
+      {
+        "id": "fingerfardighet",
+        "name": "Sleight of Hand",
+        "name_sv": "Fingerfärdighet",
+        "attribute": "AGL"
+      },
+      {
+        "id": "finna_dolda_ting",
+        "name": "Spot Hidden",
+        "name_sv": "Finna dolda ting",
+        "attribute": "INT"
+      },
+      {
+        "id": "frammande_sprak",
+        "name": "Languages",
+        "name_sv": "Främmande språk",
+        "attribute": "INT"
+      },
+      {
+        "id": "hantverk",
+        "name": "Crafting",
+        "name_sv": "Hantverk",
+        "attribute": "STR"
+      },
+      {
+        "id": "hoppa_klattra",
+        "name": "Acrobatics",
+        "name_sv": "Hoppa & klättra",
+        "attribute": "AGL"
+      },
+      {
+        "id": "jakt_fiske",
+        "name": "Hunting & Fishing",
+        "name_sv": "Jakt & fiske",
+        "attribute": "AGL"
+      },
+      {
+        "id": "kopsla",
+        "name": "Bartering",
+        "name_sv": "Köpslå",
+        "attribute": "CHA"
+      },
+      {
+        "id": "lakekonst",
+        "name": "Healing",
+        "name_sv": "Läkekonst",
+        "attribute": "INT"
+      },
+      {
+        "id": "myter_legender",
+        "name": "Myths & Legends",
+        "name_sv": "Myter & Legender",
+        "attribute": "INT"
+      },
+      {
+        "id": "rida",
+        "name": "Riding",
+        "name_sv": "Rida",
+        "attribute": "AGL"
+      },
+      {
+        "id": "simma",
+        "name": "Swimming",
+        "name_sv": "Simma",
+        "attribute": "AGL"
+      },
+      {
+        "id": "sjokunnighet",
+        "name": "Seamanship",
+        "name_sv": "Sjökunnighet",
+        "attribute": "INT"
+      },
+      {
+        "id": "smyga",
+        "name": "Sneaking",
+        "name_sv": "Smyga",
+        "attribute": "AGL"
+      },
+      {
+        "id": "undvika",
+        "name": "Evade",
+        "name_sv": "Undvika",
+        "attribute": "AGL"
+      },
+      {
+        "id": "upptrada",
+        "name": "Performance",
+        "name_sv": "Uppträda",
+        "attribute": "CHA"
+      },
+      {
+        "id": "upptacka_fara",
+        "name": "Awareness",
+        "name_sv": "Upptäcka fara",
+        "attribute": "INT"
+      },
+      {
+        "id": "vildmarksvana",
+        "name": "Bushcraft",
+        "name_sv": "Vildmarksvana",
+        "attribute": "INT"
+      },
+      {
+        "id": "overtala",
+        "name": "Persuasion",
+        "name_sv": "Övertala",
+        "attribute": "CHA"
+      }
+    ],
+    "weapon_skills": [
+      {
+        "id": "armborst",
+        "name": "Crossbows",
+        "name_sv": "Armborst",
+        "attribute": "AGL"
+      },
+      {
+        "id": "hammare",
+        "name": "Hammers",
+        "name_sv": "Hammare",
+        "attribute": "STR"
+      },
+      {
+        "id": "kniv",
+        "name": "Knives",
+        "name_sv": "Kniv",
+        "attribute": "AGL"
+      },
+      {
+        "id": "pilbage",
+        "name": "Bows",
+        "name_sv": "Pilbåge",
+        "attribute": "AGL"
+      },
+      {
+        "id": "slagsmål",
+        "name": "Brawling",
+        "name_sv": "Slagsmål",
+        "attribute": "STR"
+      },
+      {
+        "id": "slunga",
+        "name": "Slings",
+        "name_sv": "Slunga",
+        "attribute": "AGL"
+      },
+      {
+        "id": "spjut",
+        "name": "Spears",
+        "name_sv": "Spjut",
+        "attribute": "STR"
+      },
+      {
+        "id": "stav",
+        "name": "Staves",
+        "name_sv": "Stav",
+        "attribute": "AGL"
+      },
+      {
+        "id": "svard",
+        "name": "Swords",
+        "name_sv": "Svärd",
+        "attribute": "STR"
+      },
+      {
+        "id": "yxa",
+        "name": "Axes",
+        "name_sv": "Yxa",
+        "attribute": "STR"
+      }
+    ],
+    "secondary_skills": [
+      {
+        "id": "animism",
+        "name": "Animism",
+        "name_sv": "Animism",
+        "attribute": "INT",
+        "type": "magic_school"
+      },
+      {
+        "id": "elementalism",
+        "name": "Elementalism",
+        "name_sv": "Elementalism",
+        "attribute": "INT",
+        "type": "magic_school"
+      },
+      {
+        "id": "mentalism",
+        "name": "Mentalism",
+        "name_sv": "Mentalism",
+        "attribute": "INT",
+        "type": "magic_school"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "source": "Drakborgen_-_Ath_Ungols_Hemlighet_Beta_SE_10.pdf",
+    "purpose": "New heroic ability (Lucky) from the Drakborgen adventure module. Designed as a separate data package that can be enabled or disabled independently.",
+    "language_note": "Swedish original terms preserved in 'name_sv' and 'description_sv' fields. This is a third-party adventure module with no official English translation; all English translations are unofficial and flagged with 'translation_official: false'.",
+    "extracted": "2026-02-20",
+    "version": "1.4",
+    "compatibility": "Adds one new heroic ability accessible via the Drakborgen adventure module.",
+    "content_license": "personal-use-only"
+  },
+  "heroic_abilities": [
+    {
+      "id": "tursam",
+      "name": "Lucky",
+      "name_sv": "Tursam",
+      "translation_official": false,
+      "requirement": "Spot Hidden FV 12, Awareness FV 12, or Movement 14",
+      "requirement_sv": "Finna dolda ting FV 12, Upptäcka fara FV 12 eller Förflyttning 14",
+      "wp_cost": 4,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Roll WIL — on success, luck changes the narrative in your favor. GM determines the specific outcome.",
+          "trigger": "free"
+        },
+        {
+          "type": "auto_succeed",
+          "target": {
+            "skill": "spot_hidden"
+          },
+          "trigger": "on_skill_roll",
+          "condition": {
+            "context": "drakborgen",
+            "after_failed_roll": true
+          },
+          "note": "Drakborgen-specific: automatically find a secret door on a failed Spot Hidden roll"
+        },
+        {
+          "type": "reduce_damage",
+          "value": "half",
+          "trigger": "free",
+          "condition": {
+            "context": "drakborgen",
+            "damage_source": "trap"
+          },
+          "note": "Drakborgen-specific: immediately halve trap damage (round down)"
+        },
+        {
+          "type": "constraint",
+          "value": "Drakborgen-specific: used when the dragon awakens to see if it falls back asleep",
+          "trigger": "free"
+        }
+      ],
+      "source_page": 14
+    }
+  ]
+}

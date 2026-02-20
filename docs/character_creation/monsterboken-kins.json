@@ -1,0 +1,638 @@
+{
+  "_meta": {
+    "source": "DoD_Monsterboken_v1.pdf",
+    "purpose": "Playable kins from the Dragonbane Monsterbook expansion. These are additional kins beyond the 6 core kins in the base rulebook. Designed as a separate data package that can be enabled or disabled independently.",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields. Kin names verified against the official Dragonbane Dictionary v1.1. Ability names are Monsterbook-specific and have no official English translation; unofficial translations are flagged with 'translation_official: false'.",
+    "extracted": "2026-02-20",
+    "version": "1.4",
+    "compatibility": "Replaces core rulebook kin table (p.9) with expanded d20 table (p.7 Monsterbook). Core kins 1-11 unchanged; entries 12-20 are new.",
+    "base_movement_note": "All new kins have a base movement of 10, modified by AGL per the standard table on p.25 of the core rulebook.",
+    "changelog": "v1.1: Renamed from monsterbook-kins.json. Changed 'ability' (object) to 'abilities' (array) for canonical alignment with corebook-kins.json.",
+    "content_license": "personal-use-only"
+  },
+  "modifiers": {
+    "nightkin": {
+      "id": "nightkin",
+      "name": "Nightkin",
+      "name_sv": "Nattfolk",
+      "translation_official": true,
+      "mechanical_effects": [
+        {
+          "type": "bane",
+          "target": {
+            "all_rolls": true
+          },
+          "when": "always",
+          "condition": {
+            "environment": "sunlight"
+          }
+        },
+        {
+          "type": "damage",
+          "value": "1d6",
+          "target": {
+            "self": true
+          },
+          "when": "always",
+          "condition": {
+            "environment": "sunlight"
+          },
+          "duration": "per_stretch"
+        },
+        {
+          "type": "constraint",
+          "value": "Thick cloud cover or full-body covering clothing negates the effect",
+          "when": "always"
+        }
+      ],
+      "applies_to": [
+        "orc",
+        "ogre",
+        "goblin",
+        "hobgoblin"
+      ],
+      "source_page": 9
+    },
+    "melancholy": {
+      "id": "melancholy",
+      "name": "Melancholy",
+      "name_sv": "Melankoli",
+      "translation_official": false,
+      "mechanical_effects": [
+        {
+          "type": "bane",
+          "target": {
+            "all_rolls": true
+          },
+          "when": "always",
+          "condition": {
+            "not_celebrated": true
+          },
+          "note": "Triggered by not celebrating with friends for a full day"
+        },
+        {
+          "type": "constraint",
+          "value": "Recovery: feasting/celebrating with friends removes the bane",
+          "when": "always"
+        }
+      ],
+      "applies_to": [
+        "satyr"
+      ],
+      "source_page": 36
+    },
+    "large_creature": {
+      "id": "large_creature",
+      "name": "Large",
+      "name_sv": "Stor",
+      "translation_official": true,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Large creature per rules on p.83 of core rulebook",
+          "when": "always"
+        }
+      ],
+      "applies_to": [
+        "ogre"
+      ],
+      "source_page": 12
+    }
+  },
+  "kins": [
+    {
+      "id": "orc",
+      "name": "Orc",
+      "name_sv": "Orch",
+      "translation_official": true,
+      "roll_value": 12,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [
+        "nightkin"
+      ],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Steadfast",
+          "name_sv": "Ståndfast",
+          "translation_official": false,
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "auto_succeed",
+              "target": {
+                "action": "rally"
+              },
+              "trigger": "free",
+              "condition": {
+                "self_hp": 0
+              },
+              "note": "No WIL roll or persuasion needed. Typically only used by PCs and important NPCs."
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Mauga",
+        "Muzorg",
+        "Radbag",
+        "Snagrat",
+        "Ug-Gash",
+        "Gor-Nakh"
+      ],
+      "source_page": 10
+    },
+    {
+      "id": "ogre",
+      "name": "Ogre",
+      "name_sv": "Rese",
+      "translation_official": true,
+      "roll_value": 13,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [
+        "nightkin",
+        "large_creature"
+      ],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Tackle",
+          "name_sv": "Tackling",
+          "translation_official": false,
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "action": "melee_attack"
+              },
+              "trigger": "on_attack",
+              "note": "Unarmed melee attack"
+            },
+            {
+              "type": "damage",
+              "value": "2d6",
+              "trigger": "after_hit",
+              "note": "Bludgeoning. Plus normal damage bonus."
+            },
+            {
+              "type": "restrict",
+              "value": "parry",
+              "trigger": "on_attack",
+              "note": "Target cannot parry this attack"
+            },
+            {
+              "type": "constraint",
+              "value": "May sprint before the attack. Humanoid targets of Normal size or smaller are automatically knocked prone on hit.",
+              "trigger": "on_attack"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Glorm",
+        "Barg",
+        "Arra",
+        "Klog",
+        "Orluk",
+        "Urla"
+      ],
+      "source_page": 12
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "name_sv": "Svartalf",
+      "translation_official": true,
+      "roll_value": 14,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [
+        "nightkin"
+      ],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Resilient",
+          "name_sv": "Motståndskraftig",
+          "translation_official": false,
+          "wp_cost": 1,
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Can always eat raw food without problems (no WP cost)",
+              "when": "always"
+            }
+          ],
+          "mechanical_effects_mode_a": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "constitution"
+              },
+              "trigger": "on_skill_roll",
+              "condition": {
+                "roll_is": "resist_poison_or_disease"
+              }
+            }
+          ],
+          "mechanical_effects_mode_b": [
+            {
+              "type": "auto_succeed",
+              "target": {
+                "skill": "bushcraft"
+              },
+              "trigger": "on_camp"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Flifos",
+        "Ilola",
+        "Luts",
+        "Trulli",
+        "Luregg",
+        "Soli"
+      ],
+      "source_page": 14
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Hobgoblin",
+      "name_sv": "Vätte",
+      "translation_official": true,
+      "roll_value": 15,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [
+        "nightkin"
+      ],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Fearless",
+          "name_sv": "Orädd",
+          "translation_official": true,
+          "wp_cost": 2,
+          "mechanical_effects": [
+            {
+              "type": "auto_succeed",
+              "target": {
+                "action": "resist_fear"
+              },
+              "trigger": "on_fear_check",
+              "note": "Must activate before dice are rolled"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Gruush",
+        "Kloorg",
+        "Feeger",
+        "Aamash",
+        "Haggra",
+        "Ploot"
+      ],
+      "source_page": 16
+    },
+    {
+      "id": "frog_people",
+      "name": "Frog People",
+      "name_sv": "Grodfolk",
+      "translation_official": true,
+      "roll_value": 16,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Leaper",
+          "name_sv": "Hoppare",
+          "translation_official": false,
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "jump_horizontal_eq_movement",
+              "trigger": "free",
+              "note": "Or vertical = half movement. No Acrobatics roll needed."
+            },
+            {
+              "type": "boon",
+              "target": {
+                "action": "melee_attack"
+              },
+              "trigger": "on_attack",
+              "condition": {
+                "after_jump": true
+              },
+              "note": "Only if jump ends with melee attack"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Kärkien",
+        "Bolle",
+        "Päpäi",
+        "Tiänen",
+        "Ribiiti",
+        "Hotiä"
+      ],
+      "source_page": 20
+    },
+    {
+      "id": "karkion",
+      "name": "Karkion",
+      "name_sv": "Karkion",
+      "translation_official": true,
+      "roll_value": 17,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Wings",
+          "name_sv": "Vingar",
+          "translation_official": false,
+          "wp_cost": 1,
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "flight_at_ground_speed",
+              "trigger": "free",
+              "duration": "sustained",
+              "note": "Costs 1 WP per round to maintain"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Absu",
+        "Baatu",
+        "Gaar",
+        "Kibili",
+        "Maastu",
+        "Ubus"
+      ],
+      "source_page": 24
+    },
+    {
+      "id": "cat_people",
+      "name": "Cat People",
+      "name_sv": "Kattfolk",
+      "translation_official": true,
+      "roll_value": 18,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Nine Lives",
+          "name_sv": "Nio liv",
+          "translation_official": false,
+          "wp_cost": "varies",
+          "mechanical_effects_mode_a": [
+            {
+              "type": "boon",
+              "target": {
+                "action": "death_roll"
+              },
+              "trigger": "on_death_roll",
+              "note": "Costs 2 WP"
+            }
+          ],
+          "mechanical_effects_mode_b": [
+            {
+              "type": "reduce_damage",
+              "value": "1d6_per_wp",
+              "trigger": "on_fall",
+              "note": "Max 3 WP. Applied after Acrobatics roll."
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Stjerne",
+        "Bast",
+        "Esme",
+        "Mira",
+        "Lune",
+        "Lapiz"
+      ],
+      "source_page": 26
+    },
+    {
+      "id": "lizard_people",
+      "name": "Lizard People",
+      "name_sv": "Reptilfolk",
+      "translation_official": true,
+      "roll_value": 19,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Camouflage",
+          "name_sv": "Kamouflage",
+          "translation_official": false,
+          "wp_cost": 2,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "sneaking"
+              },
+              "trigger": "on_skill_roll"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "[Kluck][väs][väs]",
+        "[Klick][grr][schh][kluck]",
+        "[Väs][klick][klick][väs]",
+        "[Kluck][grr][väs][väs]",
+        "[Grr][grr]",
+        "[Väs][schh][kluck][klick][grr]"
+      ],
+      "source_page": 34
+    },
+    {
+      "id": "satyr",
+      "name": "Satyr",
+      "name_sv": "Satyr",
+      "translation_official": true,
+      "roll_value": 20,
+      "roll_die": "1d20",
+      "movement": 10,
+      "modifiers": [
+        "melancholy"
+      ],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Encouragement",
+          "name_sv": "Uppmuntran",
+          "translation_official": false,
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "remove_condition",
+              "value": "any",
+              "target": {
+                "allies": true,
+                "range": "10m"
+              },
+              "trigger": "free",
+              "note": "Cannot target self. Costs an action. Target must be within earshot."
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Aeson",
+        "Bartolome",
+        "Dianys",
+        "Priapos",
+        "Xander",
+        "Sebastian"
+      ],
+      "source_page": 36
+    }
+  ],
+  "expanded_kin_table": {
+    "roll_die": "1d20",
+    "entries": [
+      {
+        "roll_range": [
+          1,
+          4
+        ],
+        "kin": "human",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          5,
+          6
+        ],
+        "kin": "halfling",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          7,
+          8
+        ],
+        "kin": "dwarf",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          9,
+          9
+        ],
+        "kin": "elf",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          10,
+          10
+        ],
+        "kin": "mallard",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          11,
+          11
+        ],
+        "kin": "wolfkin",
+        "source": "core"
+      },
+      {
+        "roll_range": [
+          12,
+          12
+        ],
+        "kin": "orc",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          13,
+          13
+        ],
+        "kin": "ogre",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          14,
+          14
+        ],
+        "kin": "goblin",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          15,
+          15
+        ],
+        "kin": "hobgoblin",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          16,
+          16
+        ],
+        "kin": "frog_people",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          17,
+          17
+        ],
+        "kin": "karkion",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          18,
+          18
+        ],
+        "kin": "cat_people",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          19,
+          19
+        ],
+        "kin": "lizard_people",
+        "source": "monsterbook"
+      },
+      {
+        "roll_range": [
+          20,
+          20
+        ],
+        "kin": "satyr",
+        "source": "monsterbook"
+      }
+    ],
+    "source_page": 7
+  }
+}

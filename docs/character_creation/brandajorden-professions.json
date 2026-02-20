@@ -1,0 +1,393 @@
+{
+  "_meta": {
+    "source": "Den_brnda_jorden_231003.pdf",
+    "source_title": "Den brända jorden (The Scorched Earth)",
+    "purpose": "Two new professions (Dark Mage and Dark Knight) from the Den brända jorden third-party adventure module. Designed as a separate data package that can be enabled or disabled independently.",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields. This is a third-party adventure module with no official English translation; all English translations are unofficial and flagged with 'translation_official: false'.",
+    "extracted": "2026-02-20",
+    "version": "1.4",
+    "compatibility": "Adds two new professions. The Dark Mage profession works like the core Mage but uses Dark Magic (from brandajorden-magic.json) instead of Animism/Elementalism/Mentalism. The Dark Knight profession follows standard profession rules.",
+    "content_license": "personal-use-only"
+  },
+  "professions": [
+    {
+      "id": "dark_mage",
+      "name": "Dark Mage",
+      "name_sv": "Mörkermagiker",
+      "translation_official": false,
+      "key_attribute": "WIL",
+      "key_attribute_sv": "PSY",
+      "skills": [
+        {
+          "id": "dark_magic",
+          "name": "Dark Magic",
+          "name_sv": "Mörkermagi",
+          "is_magic_school": true
+        },
+        {
+          "id": "bestiologi",
+          "name": "Beast Lore",
+          "name_sv": "Bestiologi",
+          "is_magic_school": false
+        },
+        {
+          "id": "lakekonst",
+          "name": "Healing",
+          "name_sv": "Läkekonst",
+          "is_magic_school": false
+        },
+        {
+          "id": "myter_legender",
+          "name": "Myths & Legends",
+          "name_sv": "Myter & Legender",
+          "is_magic_school": false
+        },
+        {
+          "id": "stav",
+          "name": "Staves",
+          "name_sv": "Stav",
+          "is_magic_school": false
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd",
+          "is_magic_school": false
+        },
+        {
+          "id": "upptrada",
+          "name": "Performance",
+          "name_sv": "Uppträda",
+          "is_magic_school": false
+        },
+        {
+          "id": "vildmarksvana",
+          "name": "Bushcraft",
+          "name_sv": "Vildmarksvana",
+          "is_magic_school": false
+        }
+      ],
+      "heroic_ability": null,
+      "mechanical_effects": [
+        {
+          "type": "bane",
+          "target": {
+            "skill": "dark_magic"
+          },
+          "when": "always",
+          "condition": {
+            "environment": "sunlight"
+          }
+        },
+        {
+          "type": "boon",
+          "target": {
+            "skill": "dark_magic"
+          },
+          "when": "always",
+          "condition": {
+            "environment": "darkness"
+          }
+        }
+      ],
+      "nicknames": [
+        "Drömlös",
+        "Entropist",
+        "Fjärrskådare",
+        "Himlafall",
+        "Ingenting",
+        "Melankolin",
+        "Mörkerhand",
+        "Nådsinne",
+        "Rofylld",
+        "Sotblick",
+        "Svartsand",
+        "Svärtare"
+      ],
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Wooden staff",
+              "item_sv": "Trästav"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "1 ration",
+              "item_sv": "1 ranson mat"
+            },
+            {
+              "item": "Ink",
+              "item_sv": "Bläck"
+            },
+            {
+              "item": "Quill",
+              "item_sv": "Fjäderpenna"
+            },
+            {
+              "item": "Notebook",
+              "item_sv": "Anteckningsbok"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Wooden staff",
+              "item_sv": "Trästav"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "Wooden sword (counts as club, light)",
+              "item_sv": "Träsvärd (räknas som tillhygge, lätt)"
+            },
+            {
+              "item": "Shoulder bag",
+              "item_sv": "Axelväska"
+            },
+            {
+              "item": "Hourglass",
+              "item_sv": "Timglas"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Wooden staff",
+              "item_sv": "Trästav"
+            },
+            {
+              "item": "Spell book",
+              "item_sv": "Formelbok"
+            },
+            {
+              "item": "Amulet",
+              "item_sv": "Amulett"
+            },
+            {
+              "item": "Torch",
+              "item_sv": "Fackla"
+            },
+            {
+              "item": "Firestarter",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "Needle and thread",
+              "item_sv": "Nål och tråd"
+            },
+            {
+              "item": "Waterskin (counts as bottle)",
+              "item_sv": "Vattenskinn (räknas som flaska)"
+            }
+          ]
+        }
+      ],
+      "source_page": 138
+    },
+    {
+      "id": "dark_knight",
+      "name": "Dark Knight",
+      "name_sv": "Mörkerriddare",
+      "translation_official": false,
+      "key_attribute": "STR",
+      "key_attribute_sv": "STY",
+      "skills": [
+        {
+          "id": "bestiologi",
+          "name": "Beast Lore",
+          "name_sv": "Bestiologi"
+        },
+        {
+          "id": "lakekonst",
+          "name": "Healing",
+          "name_sv": "Läkekonst"
+        },
+        {
+          "id": "myter_legender",
+          "name": "Myths & Legends",
+          "name_sv": "Myter & Legender"
+        },
+        {
+          "id": "rida",
+          "name": "Riding",
+          "name_sv": "Rida"
+        },
+        {
+          "id": "svard",
+          "name": "Swords",
+          "name_sv": "Svärd"
+        },
+        {
+          "id": "free_weapon",
+          "name": "Any second weapon (player's choice)",
+          "name_sv": "Valfritt andravapen"
+        },
+        {
+          "id": "vildmarksvana",
+          "name": "Bushcraft",
+          "name_sv": "Vildmarksvana"
+        }
+      ],
+      "heroic_ability": {
+        "id": "monsterjagare",
+        "name": "Monster Hunter",
+        "name_sv": "Monsterjägare",
+        "translation_official": true,
+        "wp_cost": 3
+      },
+      "nicknames": [
+        "Allvarsam",
+        "Blodsbarn",
+        "Dunkelsam",
+        "Glödhjärta",
+        "Halvmåne",
+        "Järnhjärta",
+        "Kvalfylld",
+        "Otillräcklig",
+        "Rost",
+        "Svärdshand",
+        "Viljestark",
+        "Ärofull"
+      ],
+      "gear_options": [
+        {
+          "roll": [
+            1,
+            2
+          ],
+          "items": [
+            {
+              "item": "Plate armor",
+              "item_sv": "Plåtrustning"
+            },
+            {
+              "item": "Broadsword",
+              "item_sv": "Slagsvärd"
+            },
+            {
+              "item": "Bedroll",
+              "item_sv": "Sovfäll"
+            },
+            {
+              "item": "Cloak",
+              "item_sv": "Mantel"
+            },
+            {
+              "item": "Firestarter",
+              "item_sv": "Elddon"
+            },
+            {
+              "item": "2 torches",
+              "item_sv": "2 facklor"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "T6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "T10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            3,
+            4
+          ],
+          "items": [
+            {
+              "item": "Chainmail",
+              "item_sv": "Ringbrynja"
+            },
+            {
+              "item": "Broadsword",
+              "item_sv": "Bredsvärd"
+            },
+            {
+              "item": "Bandages (10)",
+              "item_sv": "Förband (10 st)"
+            },
+            {
+              "item": "Blanket",
+              "item_sv": "Filt"
+            },
+            {
+              "item": "Shield (small)",
+              "item_sv": "Sköld (liten)"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "T6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "T10 silver"
+            }
+          ]
+        },
+        {
+          "roll": [
+            5,
+            6
+          ],
+          "items": [
+            {
+              "item": "Plate armor",
+              "item_sv": "Plåtrustning"
+            },
+            {
+              "item": "Cloak",
+              "item_sv": "Mantel"
+            },
+            {
+              "item": "Dagger",
+              "item_sv": "Dolk"
+            },
+            {
+              "item": "Broadsword",
+              "item_sv": "Slagsvärd"
+            },
+            {
+              "item": "Flute",
+              "item_sv": "Flöjt"
+            },
+            {
+              "item": "Hemp rope (10 meters)",
+              "item_sv": "Rep (hampa, 10 meter)"
+            },
+            {
+              "item": "1d6 rations",
+              "item_sv": "T6 ransoner mat"
+            },
+            {
+              "item": "1d10 silver",
+              "item_sv": "T10 silver"
+            }
+          ]
+        }
+      ],
+      "source_page": 139
+    }
+  ]
+}

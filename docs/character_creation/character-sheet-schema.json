@@ -1,0 +1,1018 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dragonbane-unbound.local/character-sheet.schema.json",
+  "title": "Dragonbane Character Sheet",
+  "title_sv": "Drakar och Demoner Rollformulär",
+  "description": "JSON Schema for the Dragonbane (Drakar och Demoner) character sheet as printed on p.127 of DoD_Regelboken_v2. Models every field on the paper sheet, organized by visual section. This schema defines the runtime state of a character — all values that change during play.",
+  "version": "1.0",
+  "source": "DoD_Regelboken_v2.pdf p.127 (rollformulär)",
+  "type": "object",
+  "required": ["header", "attributes", "conditions", "derived_ratings", "skills", "weapon_skills", "secondary_skills", "heroic_abilities_and_spells", "weapons", "armor", "packing", "currency", "rest", "hit_points", "willpower_points", "death_saves"],
+  "properties": {
+
+    "header": {
+      "title": "Header Fields",
+      "title_sv": "Överskrifter",
+      "description": "Identity and background fields across the top of the character sheet.",
+      "type": "object",
+      "required": ["character_name", "kin", "profession", "age"],
+      "properties": {
+        "player_name": {
+          "title": "Player",
+          "title_sv": "Spelare",
+          "description": "Name of the real-world player.",
+          "type": "string",
+          "examples": ["Anna"]
+        },
+        "character_name": {
+          "title": "Name",
+          "title_sv": "Namn",
+          "description": "The character's in-game name.",
+          "type": "string",
+          "examples": ["Joruna Blankenhjelm"]
+        },
+        "kin": {
+          "title": "Kin",
+          "title_sv": "Släkte",
+          "description": "The character's kin (race/species). References kins from corebook-kins.json or monsterboken-kins.json.",
+          "type": "string",
+          "examples": ["Human"]
+        },
+        "kin_id": {
+          "title": "Kin ID",
+          "description": "Machine-readable kin identifier matching IDs in the rules data.",
+          "type": "string",
+          "examples": ["human"]
+        },
+        "age": {
+          "title": "Age",
+          "title_sv": "Ålder",
+          "description": "Age category chosen during character creation.",
+          "type": "string",
+          "enum": ["Young", "Middle-Aged", "Old"],
+          "examples": ["Middle-Aged"]
+        },
+        "profession": {
+          "title": "Profession",
+          "title_sv": "Yrke",
+          "description": "The character's profession. References professions from corebook-professions.json.",
+          "type": "string",
+          "examples": ["Knight"]
+        },
+        "profession_id": {
+          "title": "Profession ID",
+          "description": "Machine-readable profession identifier.",
+          "type": "string",
+          "examples": ["knight"]
+        },
+        "weakness": {
+          "title": "Weakness",
+          "title_sv": "Svaghet",
+          "description": "Character flaw from the d20 weakness table (optional during creation, but tracked here).",
+          "type": ["string", "null"],
+          "examples": ["Greedy"]
+        },
+        "appearance": {
+          "title": "Appearance",
+          "title_sv": "Utseende",
+          "description": "Physical description or traits from the d20 appearance table. Multiple entries possible.",
+          "type": "string",
+          "examples": ["Weather-beaten face, silver tooth"]
+        },
+        "nickname": {
+          "title": "Nickname",
+          "description": "Optional epithet from the profession's nickname table. Not a field on the paper sheet but commonly used.",
+          "type": ["string", "null"],
+          "examples": ["Gyllenlans"]
+        }
+      }
+    },
+
+    "attributes": {
+      "title": "Attributes",
+      "title_sv": "Grundegenskaper",
+      "description": "The six base attributes. Scale 3–18 (after age modifiers, capped at 18). On the paper sheet these appear in a column on the left side.",
+      "type": "object",
+      "required": ["STR", "CON", "AGL", "INT", "WIL", "CHA"],
+      "properties": {
+        "STR": {
+          "title": "Strength",
+          "title_sv": "Styrka (STY)",
+          "abbreviation_sv": "STY",
+          "description": "Raw physical muscle power.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [14]
+        },
+        "CON": {
+          "title": "Constitution",
+          "title_sv": "Fysik (FYS)",
+          "abbreviation_sv": "FYS",
+          "description": "Physical endurance and resistance.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [12]
+        },
+        "AGL": {
+          "title": "Agility",
+          "title_sv": "Smidighet (SMI)",
+          "abbreviation_sv": "SMI",
+          "description": "Body control, speed and fine motor skills.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [11]
+        },
+        "INT": {
+          "title": "Intelligence",
+          "title_sv": "Intelligens (INT)",
+          "abbreviation_sv": "INT",
+          "description": "Acuity, logic and reason.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [10]
+        },
+        "WIL": {
+          "title": "Willpower",
+          "title_sv": "Psykisk kraft (PSY)",
+          "abbreviation_sv": "PSY",
+          "description": "Willpower and mental focus.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [13]
+        },
+        "CHA": {
+          "title": "Charisma",
+          "title_sv": "Karisma (KAR)",
+          "abbreviation_sv": "KAR",
+          "description": "Personal radiance and empathy.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 18,
+          "examples": [9]
+        }
+      }
+    },
+
+    "conditions": {
+      "title": "Conditions",
+      "title_sv": "Tillstånd",
+      "description": "Six conditions, one per attribute. Printed as checkboxes beneath the attributes on the paper sheet. When active, the character has disadvantage on all rolls for skills linked to that attribute. All six active = cannot push rolls.",
+      "type": "object",
+      "required": ["exhausted", "sickly", "dazed", "angry", "scared", "disheartened"],
+      "properties": {
+        "exhausted": {
+          "title": "Exhausted",
+          "title_sv": "Utmattad",
+          "linked_attribute": "STR",
+          "description": "Disadvantage on all STR-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        },
+        "sickly": {
+          "title": "Sickly",
+          "title_sv": "Krasslig",
+          "linked_attribute": "CON",
+          "description": "Disadvantage on all CON-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        },
+        "dazed": {
+          "title": "Dazed",
+          "title_sv": "Omtöcknad",
+          "linked_attribute": "AGL",
+          "description": "Disadvantage on all AGL-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        },
+        "angry": {
+          "title": "Angry",
+          "title_sv": "Arg",
+          "linked_attribute": "INT",
+          "description": "Disadvantage on all INT-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [true]
+        },
+        "scared": {
+          "title": "Scared",
+          "title_sv": "Rädd",
+          "linked_attribute": "WIL",
+          "description": "Disadvantage on all WIL-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        },
+        "disheartened": {
+          "title": "Disheartened",
+          "title_sv": "Uppgiven",
+          "linked_attribute": "CHA",
+          "description": "Disadvantage on all CHA-based skill rolls.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        }
+      }
+    },
+
+    "derived_ratings": {
+      "title": "Derived Ratings",
+      "title_sv": "Sekundära egenskaper",
+      "description": "Values calculated from attributes and kin. Printed below the attributes block on the paper sheet.",
+      "type": "object",
+      "required": ["damage_bonus_str", "damage_bonus_agl", "movement", "carrying_capacity"],
+      "properties": {
+        "damage_bonus_str": {
+          "title": "Damage Bonus STR",
+          "title_sv": "Skadebonus STY",
+          "description": "Extra damage die for STR-based melee weapons. Null if STR <= 12, '1d4' if 13-16, '1d6' if 17-18.",
+          "type": ["string", "null"],
+          "examples": ["1d4"]
+        },
+        "damage_bonus_agl": {
+          "title": "Damage Bonus AGL",
+          "title_sv": "Skadebonus SMI",
+          "description": "Extra damage die for AGL-based melee weapons. Null if AGL <= 12, '1d4' if 13-16, '1d6' if 17-18.",
+          "type": ["string", "null"],
+          "examples": [null]
+        },
+        "movement": {
+          "title": "Movement",
+          "title_sv": "Förflyttning",
+          "description": "Movement rate in meters per round. Base from kin, modified by AGL bracket.",
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 16,
+          "examples": [10]
+        },
+        "carrying_capacity": {
+          "title": "Carrying Capacity",
+          "title_sv": "Bärförmåga",
+          "description": "Max packing slots = STR / 2 (round up). Backpack adds +2.",
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 11,
+          "examples": [7]
+        }
+      }
+    },
+
+    "skills": {
+      "title": "Skills",
+      "title_sv": "Färdigheter",
+      "description": "The 20 base skills. On the paper sheet these are listed with their linked attribute abbreviation. Each skill has a skill value (FV) and an improvement mark checkbox.",
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "improvement_mark"],
+        "properties": {
+          "id": {
+            "description": "Skill identifier matching corebook-skills.json.",
+            "type": "string",
+            "examples": ["svard"]
+          },
+          "name": {
+            "description": "English skill name.",
+            "type": "string",
+            "examples": ["Swords"]
+          },
+          "name_sv": {
+            "description": "Swedish skill name as printed on the paper sheet.",
+            "type": "string",
+            "examples": ["Svärd"]
+          },
+          "linked_attribute": {
+            "description": "Attribute abbreviation (EN) this skill is based on.",
+            "type": "string",
+            "enum": ["STR", "CON", "AGL", "INT", "WIL", "CHA"],
+            "examples": ["STR"]
+          },
+          "value": {
+            "title": "Skill Value (FV)",
+            "title_sv": "Färdighetsvärde (FV)",
+            "description": "Current skill value. Base chance from attribute bracket; doubled if trained. Max 18. Written as a number on the paper sheet.",
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 18,
+            "examples": [12]
+          },
+          "trained": {
+            "description": "Whether this skill was chosen as a trained skill during creation.",
+            "type": "boolean",
+            "examples": [true]
+          },
+          "improvement_mark": {
+            "title": "Improvement Mark",
+            "title_sv": "Förbättringsmarkering",
+            "description": "Checkbox on the paper sheet. Marked when a dragon (1) or demon (20) is rolled, or from session questions. Cleared after improvement roll at end of session.",
+            "type": "boolean",
+            "default": false,
+            "examples": [false]
+          }
+        }
+      },
+      "examples": [[
+        { "id": "bestiologi",      "name": "Beast Lore",      "name_sv": "Bestiologi",      "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "bluffa",          "name": "Bluffing",        "name_sv": "Bluffa",          "linked_attribute": "CHA", "value": 4,  "trained": false, "improvement_mark": false },
+        { "id": "fingerfardighet", "name": "Sleight of Hand", "name_sv": "Fingerfärdighet", "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "finna_dolda_ting","name": "Spot Hidden",     "name_sv": "Finna dolda ting","linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "frammande_sprak", "name": "Languages",       "name_sv": "Främmande språk", "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "hantverk",        "name": "Crafting",        "name_sv": "Hantverk",        "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false },
+        { "id": "hoppa_klattra",   "name": "Acrobatics",      "name_sv": "Hoppa & klättra", "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "jakt_fiske",      "name": "Hunting & Fishing","name_sv": "Jakt & fiske",   "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "kopsla",          "name": "Bartering",       "name_sv": "Köpslå",          "linked_attribute": "CHA", "value": 4,  "trained": false, "improvement_mark": false },
+        { "id": "lakekonst",       "name": "Healing",         "name_sv": "Läkekonst",       "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "myter_legender",  "name": "Myths & Legends", "name_sv": "Myter & Legender","linked_attribute": "INT", "value": 10, "trained": true,  "improvement_mark": false },
+        { "id": "rida",            "name": "Riding",          "name_sv": "Rida",            "linked_attribute": "AGL", "value": 10, "trained": true,  "improvement_mark": true },
+        { "id": "simma",           "name": "Swimming",        "name_sv": "Simma",           "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "sjokunnighet",    "name": "Seamanship",      "name_sv": "Sjökunnighet",    "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "smyga",           "name": "Sneaking",        "name_sv": "Smyga",           "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "undvika",         "name": "Evade",           "name_sv": "Undvika",         "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "upptrada",        "name": "Performance",     "name_sv": "Uppträda",        "linked_attribute": "CHA", "value": 8,  "trained": true,  "improvement_mark": false },
+        { "id": "upptacka_fara",   "name": "Awareness",       "name_sv": "Upptäcka fara",   "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "vildmarksvana",   "name": "Bushcraft",       "name_sv": "Vildmarksvana",   "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "overtala",        "name": "Persuasion",      "name_sv": "Övertala",        "linked_attribute": "CHA", "value": 8,  "trained": true,  "improvement_mark": false }
+      ]]
+    },
+
+    "weapon_skills": {
+      "title": "Weapon Skills",
+      "title_sv": "Vapenfärdigheter",
+      "description": "The 10 weapon skills. Same structure as base skills. Listed separately on the paper sheet.",
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "improvement_mark"],
+        "properties": {
+          "id": {
+            "description": "Weapon skill identifier.",
+            "type": "string",
+            "examples": ["svard"]
+          },
+          "name": {
+            "type": "string",
+            "examples": ["Swords"]
+          },
+          "name_sv": {
+            "type": "string",
+            "examples": ["Svärd"]
+          },
+          "linked_attribute": {
+            "type": "string",
+            "enum": ["STR", "AGL"],
+            "examples": ["STR"]
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 18,
+            "examples": [12]
+          },
+          "trained": {
+            "type": "boolean",
+            "examples": [true]
+          },
+          "improvement_mark": {
+            "type": "boolean",
+            "default": false,
+            "examples": [false]
+          }
+        }
+      },
+      "examples": [[
+        { "id": "armborst",  "name": "Crossbows",  "name_sv": "Armborst",  "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "hammare",   "name": "Hammers",    "name_sv": "Hammare",   "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": false },
+        { "id": "kniv",      "name": "Knives",     "name_sv": "Kniv",      "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "pilbage",   "name": "Bows",       "name_sv": "Pilbåge",   "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "slagsmål",  "name": "Brawling",   "name_sv": "Slagsmål",  "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false },
+        { "id": "slunga",    "name": "Slings",     "name_sv": "Slunga",    "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "spjut",     "name": "Spears",     "name_sv": "Spjut",     "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": true },
+        { "id": "stav",      "name": "Staves",     "name_sv": "Stav",      "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+        { "id": "svard",     "name": "Swords",     "name_sv": "Svärd",     "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": false },
+        { "id": "yxa",       "name": "Axes",       "name_sv": "Yxa",       "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false }
+      ]]
+    },
+
+    "secondary_skills": {
+      "title": "Secondary Skills",
+      "title_sv": "Sekundära färdigheter",
+      "description": "Magic school skills and any other secondary skills. On the paper sheet these are blank lines that the player fills in. Most characters have 0–1 entries; mages have their school skill here.",
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "improvement_mark"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": ["animism"]
+          },
+          "name": {
+            "type": "string",
+            "examples": ["Animism"]
+          },
+          "name_sv": {
+            "type": "string",
+            "examples": ["Animism"]
+          },
+          "linked_attribute": {
+            "type": "string",
+            "const": "INT",
+            "examples": ["INT"]
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 18,
+            "examples": [10]
+          },
+          "trained": {
+            "type": "boolean",
+            "examples": [true]
+          },
+          "improvement_mark": {
+            "type": "boolean",
+            "default": false,
+            "examples": [false]
+          }
+        }
+      },
+      "examples": [[]]
+    },
+
+    "heroic_abilities_and_spells": {
+      "title": "Abilities & Spells",
+      "title_sv": "Förmågor & Besvärjelser",
+      "description": "Free-form list on the paper sheet. Includes heroic abilities, kin abilities, and prepared spells. Each entry has a name and WP cost.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "id": {
+            "description": "Machine-readable ID matching corebook-heroic-abilities.json, if applicable.",
+            "type": ["string", "null"],
+            "examples": ["forkampe"]
+          },
+          "name": {
+            "description": "English display name.",
+            "type": "string",
+            "examples": ["Guardian"]
+          },
+          "name_sv": {
+            "description": "Swedish name as it would appear on the paper sheet.",
+            "type": "string",
+            "examples": ["Förkämpe"]
+          },
+          "type": {
+            "description": "Category of ability: heroic_ability, kin_ability, spell, or cantrip.",
+            "type": "string",
+            "enum": ["heroic_ability", "kin_ability", "spell", "cantrip"],
+            "examples": ["heroic_ability"]
+          },
+          "wp_cost": {
+            "description": "Willpower point cost to activate. 0 for passive abilities. Cantrips always cost 1 WP.",
+            "type": ["integer", "string"],
+            "examples": [2]
+          },
+          "school": {
+            "description": "Magic school for spells/cantrips. Null for non-magic abilities.",
+            "type": ["string", "null"],
+            "enum": ["General", "Animism", "Elementalism", "Mentalism", null],
+            "examples": [null]
+          },
+          "spell_level": {
+            "description": "Spell rank (1–5) for spells. Null for cantrips and non-spell abilities.",
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "maximum": 5,
+            "examples": [null]
+          },
+          "prepared": {
+            "description": "Whether a spell is currently prepared. Always true for cantrips (always prepared). Null for non-spell entries.",
+            "type": ["boolean", "null"],
+            "examples": [null]
+          }
+        }
+      },
+      "examples": [[
+        { "id": "forkampe",    "name": "Guardian",   "name_sv": "Förkämpe",   "type": "heroic_ability", "wp_cost": 2, "school": null, "spell_level": null, "prepared": null },
+        { "id": null,          "name": "Adaptive",   "name_sv": "Anpasslig",  "type": "kin_ability",    "wp_cost": 3, "school": null, "spell_level": null, "prepared": null }
+      ]]
+    },
+
+    "weapons": {
+      "title": "Weapons",
+      "title_sv": "Vapen",
+      "description": "Weapon/shield slots on the paper sheet. The sheet has space for multiple rows in a table with columns: Weapon/Shield, Grip, Range, Damage, Durability (Brytvärde), Properties (Egenskaper). Weapons 'at hand' (up to 3) are kept ready; others go in packing.",
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "grip", "damage"],
+        "properties": {
+          "id": {
+            "description": "Weapon ID matching corebook-equipment.json equipment list.",
+            "type": ["string", "null"],
+            "examples": ["broadsword"]
+          },
+          "name": {
+            "title": "Weapon / Shield",
+            "title_sv": "Vapen / Sköld",
+            "description": "Display name of the weapon or shield.",
+            "type": "string",
+            "examples": ["Broadsword"]
+          },
+          "name_sv": {
+            "type": "string",
+            "examples": ["Bredsvärd"]
+          },
+          "grip": {
+            "title": "Grip",
+            "title_sv": "Grepp",
+            "description": "One-handed (1H) or two-handed (2H).",
+            "type": ["string", "null"],
+            "enum": ["1H", "2H", null],
+            "examples": ["1H"]
+          },
+          "str_requirement": {
+            "title": "STR Requirement",
+            "description": "Minimum STR to wield without penalty.",
+            "type": ["integer", "null"],
+            "examples": [10]
+          },
+          "range": {
+            "title": "Range",
+            "title_sv": "Räckvidd",
+            "description": "Melee range in meters, or special value like 'STR' for thrown weapons, or numeric for ranged weapons.",
+            "type": ["integer", "string"],
+            "examples": [2]
+          },
+          "damage": {
+            "title": "Damage",
+            "title_sv": "Skada",
+            "description": "Base damage dice.",
+            "type": "string",
+            "examples": ["2d6"]
+          },
+          "durability": {
+            "title": "Durability",
+            "title_sv": "Brytvärde",
+            "description": "Current durability value. Decreases when weapon/shield is damaged. Null for unarmed/improvised.",
+            "type": ["integer", "null"],
+            "examples": [15]
+          },
+          "durability_max": {
+            "description": "Maximum durability value for reference.",
+            "type": ["integer", "null"],
+            "examples": [15]
+          },
+          "properties": {
+            "title": "Properties",
+            "title_sv": "Egenskaper",
+            "description": "Weapon property tags.",
+            "type": "array",
+            "items": { "type": "string" },
+            "examples": [["Piercing", "Slashing"]]
+          },
+          "skill_id": {
+            "description": "ID of the weapon skill used for this weapon.",
+            "type": "string",
+            "examples": ["svard"]
+          },
+          "is_masterwork": {
+            "description": "Whether this is a masterwork weapon (10x price, -3 STR req, +3 durability).",
+            "type": "boolean",
+            "default": false,
+            "examples": [false]
+          }
+        }
+      },
+      "examples": [[
+        {
+          "id": "broadsword", "name": "Broadsword", "name_sv": "Bredsvärd",
+          "grip": "1H", "str_requirement": 10, "range": 2, "damage": "2d6",
+          "durability": 15, "durability_max": 15,
+          "properties": ["Piercing", "Slashing"], "skill_id": "svard", "is_masterwork": false
+        },
+        {
+          "id": "small_shield", "name": "Small Shield", "name_sv": "Liten sköld",
+          "grip": "1H", "str_requirement": 7, "range": 2, "damage": "1d8",
+          "durability": 15, "durability_max": 15,
+          "properties": ["Crushing"], "skill_id": "svard", "is_masterwork": false
+        }
+      ]]
+    },
+
+    "armor": {
+      "title": "Armor",
+      "title_sv": "Rustning",
+      "description": "Armor and helmet section on the paper sheet. Includes protection value and reminder of which skills get disadvantage. Worn armor and helmet do not count against carrying capacity.",
+      "type": "object",
+      "required": ["body_armor", "helmet"],
+      "properties": {
+        "body_armor": {
+          "title": "Armor",
+          "title_sv": "Rustning",
+          "description": "Body armor currently worn. Null if unarmored.",
+          "type": ["object", "null"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "examples": ["chainmail"]
+            },
+            "name": {
+              "type": "string",
+              "examples": ["Chainmail"]
+            },
+            "name_sv": {
+              "type": "string",
+              "examples": ["Ringbrynja"]
+            },
+            "protection": {
+              "title": "Protection Value",
+              "title_sv": "Skyddsvärde",
+              "description": "Damage reduction per hit.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8,
+              "examples": [4]
+            },
+            "disadvantages": {
+              "title": "Disadvantages",
+              "title_sv": "Nackdelar",
+              "description": "Skills that get disadvantage from wearing this armor. Printed on the paper sheet as reminder: NACKDEL PÅ: SMYGA, UNDVIKA, UPPTÄCKA FARA, HOPPA & KLÄTTRA, AVSTÅNDSATTACKER.",
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Evade", "Sneaking"]]
+            }
+          },
+          "examples": [{
+            "id": "chainmail", "name": "Chainmail", "name_sv": "Ringbrynja",
+            "protection": 4, "disadvantages": ["Evade", "Sneaking"]
+          }]
+        },
+        "helmet": {
+          "title": "Helmet",
+          "title_sv": "Hjälm",
+          "description": "Helmet currently worn. Null if no helmet.",
+          "type": ["object", "null"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "examples": ["open_helmet"]
+            },
+            "name": {
+              "type": "string",
+              "examples": ["Open Helmet"]
+            },
+            "name_sv": {
+              "type": "string",
+              "examples": ["Öppen hjälm"]
+            },
+            "protection": {
+              "title": "Protection Value",
+              "title_sv": "Skyddsvärde",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3,
+              "examples": [1]
+            },
+            "disadvantages": {
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Awareness"]]
+            }
+          },
+          "examples": [{
+            "id": "open_helmet", "name": "Open Helmet", "name_sv": "Öppen hjälm",
+            "protection": 1, "disadvantages": ["Awareness"]
+          }]
+        }
+      }
+    },
+
+    "packing": {
+      "title": "Packing",
+      "title_sv": "Packning",
+      "description": "Inventory slots on the paper sheet, numbered 1–10. Each slot holds one item (heavy items may take 2+ slots). The number of usable slots equals carrying_capacity. Up to 4 rations count as 1 slot.",
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["slot", "item"],
+        "properties": {
+          "slot": {
+            "description": "Slot number (1-based, matching the paper sheet numbering).",
+            "type": "integer",
+            "minimum": 1,
+            "examples": [1]
+          },
+          "item": {
+            "description": "Item name. Empty string for unused slot.",
+            "type": "string",
+            "examples": ["Torch"]
+          },
+          "item_sv": {
+            "description": "Swedish item name.",
+            "type": "string",
+            "examples": ["Fackla"]
+          },
+          "weight": {
+            "description": "How many slots this item consumes. Default 1. Heavy items use 2+.",
+            "type": "integer",
+            "minimum": 1,
+            "default": 1,
+            "examples": [1]
+          }
+        }
+      },
+      "examples": [[
+        { "slot": 1, "item": "Torch",           "item_sv": "Fackla",     "weight": 1 },
+        { "slot": 2, "item": "Firestarter",     "item_sv": "Elddon",     "weight": 1 },
+        { "slot": 3, "item": "Rations (x4)",    "item_sv": "Ransoner (x4)", "weight": 1 },
+        { "slot": 4, "item": "Rope (hemp)",     "item_sv": "Rep (hampa)", "weight": 1 }
+      ]]
+    },
+
+    "memento": {
+      "title": "Memento",
+      "title_sv": "Minnessak",
+      "description": "A personal keepsake. Once per session, use during a short rest to recover one extra condition. Single field on the paper sheet.",
+      "type": ["string", "null"],
+      "examples": ["An ornamented key"]
+    },
+
+    "trinkets": {
+      "title": "Trinkets",
+      "title_sv": "Småsaker",
+      "description": "Small items that don't count against carrying capacity. Free-form text on the paper sheet.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["Quill", "Bone dice", "Silver medallion"]]
+    },
+
+    "currency": {
+      "title": "Currency",
+      "title_sv": "Mynt",
+      "description": "Three currency denominations. 10 copper = 1 silver, 10 silver = 1 gold. Under 100 total coins count as a trinket for encumbrance.",
+      "type": "object",
+      "required": ["gold", "silver", "copper"],
+      "properties": {
+        "gold": {
+          "title": "Gold Coins",
+          "title_sv": "Guldmynt",
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "examples": [0]
+        },
+        "silver": {
+          "title": "Silver Coins",
+          "title_sv": "Silvermynt",
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "examples": [8]
+        },
+        "copper": {
+          "title": "Copper Coins",
+          "title_sv": "Kopparmynt",
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "examples": [0]
+        }
+      }
+    },
+
+    "rest": {
+      "title": "Rest Tracking",
+      "title_sv": "Vila",
+      "description": "Rest tracking checkboxes on the paper sheet. Quick rest (recover 1d6 WP, 15 min) and short rest (recover 1d6 HP + 1d6 WP, heal one condition, takes a stretch).",
+      "type": "object",
+      "required": ["quick_rest_used", "short_rest_used"],
+      "properties": {
+        "quick_rest_used": {
+          "title": "Quick Rest",
+          "title_sv": "Snabb vila",
+          "description": "Whether quick rest has been used since last long rest. Recover 1d6 WP. Takes 15 minutes. One per stretch.",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        },
+        "short_rest_used": {
+          "title": "Short Rest",
+          "title_sv": "Kort vila",
+          "description": "Whether short rest has been used since last long rest. Recover 1d6 HP + 1d6 WP + heal one condition. Takes a stretch (15 min).",
+          "type": "boolean",
+          "default": false,
+          "examples": [false]
+        }
+      }
+    },
+
+    "hit_points": {
+      "title": "Hit Points",
+      "title_sv": "Kroppspoäng (KP)",
+      "description": "HP tracking section on the paper sheet. Max HP = CON (can be increased by Robust heroic ability, +2 per take). Current HP tracked during play.",
+      "type": "object",
+      "required": ["current", "max"],
+      "properties": {
+        "max": {
+          "description": "Maximum HP. Equals CON, plus 2 per instance of the Robust heroic ability.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 30,
+          "examples": [12]
+        },
+        "current": {
+          "description": "Current HP. 0 = dying (begin death saves).",
+          "type": "integer",
+          "minimum": 0,
+          "examples": [12]
+        }
+      }
+    },
+
+    "willpower_points": {
+      "title": "Willpower Points",
+      "title_sv": "Viljepoäng (VP)",
+      "description": "WP tracking section on the paper sheet. Max WP = WIL (can be increased by Focused heroic ability, +2 per take). Spent on magic, kin abilities, and heroic abilities. Recovered via rest or rolling a 1/20.",
+      "type": "object",
+      "required": ["current", "max"],
+      "properties": {
+        "max": {
+          "description": "Maximum WP. Equals WIL, plus 2 per instance of the Focused heroic ability.",
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 30,
+          "examples": [13]
+        },
+        "current": {
+          "description": "Current WP.",
+          "type": "integer",
+          "minimum": 0,
+          "examples": [10]
+        }
+      }
+    },
+
+    "death_saves": {
+      "title": "Death Saves",
+      "title_sv": "Dödsslag",
+      "description": "Death save tracking on the paper sheet. When at 0 HP, roll a death save each round. 3 successes = stabilize. 3 failures = dead. Printed with 'LYCKADE' (successes) and 'MISSLYCKADE' (failures) checkboxes.",
+      "type": "object",
+      "required": ["successes", "failures"],
+      "properties": {
+        "successes": {
+          "title": "Successes",
+          "title_sv": "Lyckade",
+          "description": "Number of successful death saves. 3 = stabilized.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0,
+          "examples": [0]
+        },
+        "failures": {
+          "title": "Failures",
+          "title_sv": "Misslyckade",
+          "description": "Number of failed death saves. 3 = dead.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 0,
+          "examples": [0]
+        }
+      }
+    }
+  },
+
+  "examples": [{
+    "header": {
+      "player_name": "Anna",
+      "character_name": "Joruna Blankenhjelm",
+      "kin": "Human",
+      "kin_id": "human",
+      "age": "Middle-Aged",
+      "profession": "Knight",
+      "profession_id": "knight",
+      "weakness": "Foolhardy",
+      "appearance": "Weather-beaten face, silver tooth",
+      "nickname": "Gyllenlans"
+    },
+    "attributes": {
+      "STR": 14,
+      "CON": 12,
+      "AGL": 11,
+      "INT": 10,
+      "WIL": 13,
+      "CHA": 9
+    },
+    "conditions": {
+      "exhausted": false,
+      "sickly": false,
+      "dazed": false,
+      "angry": true,
+      "scared": false,
+      "disheartened": false
+    },
+    "derived_ratings": {
+      "damage_bonus_str": "1d4",
+      "damage_bonus_agl": null,
+      "movement": 10,
+      "carrying_capacity": 7
+    },
+    "skills": [
+      { "id": "bestiologi",      "name": "Beast Lore",       "name_sv": "Bestiologi",      "linked_attribute": "INT", "value": 10, "trained": true,  "improvement_mark": false },
+      { "id": "bluffa",          "name": "Bluffing",         "name_sv": "Bluffa",          "linked_attribute": "CHA", "value": 4,  "trained": false, "improvement_mark": false },
+      { "id": "fingerfardighet", "name": "Sleight of Hand",  "name_sv": "Fingerfärdighet", "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "finna_dolda_ting","name": "Spot Hidden",      "name_sv": "Finna dolda ting","linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "frammande_sprak", "name": "Languages",        "name_sv": "Främmande språk", "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "hantverk",        "name": "Crafting",         "name_sv": "Hantverk",        "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false },
+      { "id": "hoppa_klattra",   "name": "Acrobatics",       "name_sv": "Hoppa & klättra", "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "jakt_fiske",      "name": "Hunting & Fishing","name_sv": "Jakt & fiske",    "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "kopsla",          "name": "Bartering",        "name_sv": "Köpslå",          "linked_attribute": "CHA", "value": 4,  "trained": false, "improvement_mark": false },
+      { "id": "lakekonst",       "name": "Healing",          "name_sv": "Läkekonst",       "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "myter_legender",  "name": "Myths & Legends",  "name_sv": "Myter & Legender","linked_attribute": "INT", "value": 10, "trained": true,  "improvement_mark": false },
+      { "id": "rida",            "name": "Riding",           "name_sv": "Rida",            "linked_attribute": "AGL", "value": 10, "trained": true,  "improvement_mark": true },
+      { "id": "simma",           "name": "Swimming",         "name_sv": "Simma",           "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "sjokunnighet",    "name": "Seamanship",       "name_sv": "Sjökunnighet",    "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "smyga",           "name": "Sneaking",         "name_sv": "Smyga",           "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "undvika",         "name": "Evade",            "name_sv": "Undvika",         "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "upptrada",        "name": "Performance",      "name_sv": "Uppträda",        "linked_attribute": "CHA", "value": 8,  "trained": true,  "improvement_mark": false },
+      { "id": "upptacka_fara",   "name": "Awareness",        "name_sv": "Upptäcka fara",   "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "vildmarksvana",   "name": "Bushcraft",        "name_sv": "Vildmarksvana",   "linked_attribute": "INT", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "overtala",        "name": "Persuasion",       "name_sv": "Övertala",        "linked_attribute": "CHA", "value": 8,  "trained": true,  "improvement_mark": false }
+    ],
+    "weapon_skills": [
+      { "id": "armborst",  "name": "Crossbows",  "name_sv": "Armborst",  "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "hammare",   "name": "Hammers",    "name_sv": "Hammare",   "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": false },
+      { "id": "kniv",      "name": "Knives",     "name_sv": "Kniv",      "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "pilbage",   "name": "Bows",       "name_sv": "Pilbåge",   "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "slagsmål",  "name": "Brawling",   "name_sv": "Slagsmål",  "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false },
+      { "id": "slunga",    "name": "Slings",     "name_sv": "Slunga",    "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "spjut",     "name": "Spears",     "name_sv": "Spjut",     "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": true },
+      { "id": "stav",      "name": "Staves",     "name_sv": "Stav",      "linked_attribute": "AGL", "value": 5,  "trained": false, "improvement_mark": false },
+      { "id": "svard",     "name": "Swords",     "name_sv": "Svärd",     "linked_attribute": "STR", "value": 12, "trained": true,  "improvement_mark": false },
+      { "id": "yxa",       "name": "Axes",       "name_sv": "Yxa",       "linked_attribute": "STR", "value": 6,  "trained": false, "improvement_mark": false }
+    ],
+    "secondary_skills": [],
+    "heroic_abilities_and_spells": [
+      { "id": "forkampe", "name": "Guardian", "name_sv": "Förkämpe", "type": "heroic_ability", "wp_cost": 2, "school": null, "spell_level": null, "prepared": null },
+      { "id": null,       "name": "Adaptive", "name_sv": "Anpasslig", "type": "kin_ability",   "wp_cost": 3, "school": null, "spell_level": null, "prepared": null }
+    ],
+    "weapons": [
+      {
+        "id": "broadsword", "name": "Broadsword", "name_sv": "Bredsvärd",
+        "grip": "1H", "str_requirement": 10, "range": 2, "damage": "2d6",
+        "durability": 15, "durability_max": 15,
+        "properties": ["Piercing", "Slashing"], "skill_id": "svard", "is_masterwork": false
+      },
+      {
+        "id": "small_shield", "name": "Small Shield", "name_sv": "Liten sköld",
+        "grip": "1H", "str_requirement": 7, "range": 2, "damage": "1d8",
+        "durability": 15, "durability_max": 15,
+        "properties": ["Crushing"], "skill_id": "svard", "is_masterwork": false
+      }
+    ],
+    "armor": {
+      "body_armor": {
+        "id": "chainmail", "name": "Chainmail", "name_sv": "Ringbrynja",
+        "protection": 4, "disadvantages": ["Evade", "Sneaking"]
+      },
+      "helmet": {
+        "id": "open_helmet", "name": "Open Helmet", "name_sv": "Öppen hjälm",
+        "protection": 1, "disadvantages": ["Awareness"]
+      }
+    },
+    "packing": [
+      { "slot": 1, "item": "Torch",        "item_sv": "Fackla",        "weight": 1 },
+      { "slot": 2, "item": "Firestarter",  "item_sv": "Elddon",        "weight": 1 },
+      { "slot": 3, "item": "Rations (x4)", "item_sv": "Ransoner (x4)", "weight": 1 },
+      { "slot": 4, "item": "Rope (hemp)",  "item_sv": "Rep (hampa)",   "weight": 1 }
+    ],
+    "memento": "An ornamented key",
+    "trinkets": ["Bone dice", "Silver medallion"],
+    "currency": { "gold": 0, "silver": 8, "copper": 0 },
+    "rest": { "quick_rest_used": false, "short_rest_used": false },
+    "hit_points": { "max": 12, "current": 12 },
+    "willpower_points": { "max": 13, "current": 10 },
+    "death_saves": { "successes": 0, "failures": 0 }
+  }]
+}

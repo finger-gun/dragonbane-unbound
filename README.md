@@ -37,11 +37,11 @@ Dragonbane Unbound is an open-source, local-first platform for fast character cr
 
 ## Documentation
 
-- **[docs/MANIFEST.md](docs/MANIFEST.md)**: Project overview, architecture principles, and change tracking
-- **[docs/PLATFORM_MANIFEST.md](docs/PLATFORM_MANIFEST.md)**: Platform vision and technical manifesto
-- **[docs/PACKAGE_EXAMPLE.md](docs/PACKAGE_EXAMPLE.md)**: Example pack layouts and data-driven rules
-- **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)**: Development guidelines and documentation expectations
-- **[docs/LOCAL_SUPABASE.md](docs/LOCAL_SUPABASE.md)**: Local Supabase setup and usage
+- **[docs/manifest.md](docs/manifest.md)**: Project overview, architecture principles, and change tracking
+- **[docs/platform-manifest.md](docs/platform-manifest.md)**: Platform vision and technical manifesto
+- **[docs/package-example.md](docs/package-example.md)**: Example pack layouts and data-driven rules
+- **[docs/development.md](docs/development.md)**: Development guidelines and documentation expectations
+- **[docs/local-supabase.md](docs/local-supabase.md)**: Local Supabase setup and usage
 
 ## Development Workflow
 

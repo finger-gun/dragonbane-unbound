@@ -1,0 +1,326 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "kins",
+    "purpose": "Six playable kins from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' and 'description_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.3",
+    "content_license": "personal-use-only"
+  },
+  "kins": [
+    {
+      "id": "human",
+      "name": "Human",
+      "name_sv": "Människa",
+      "translation_official": true,
+      "roll_range": [
+        1,
+        4
+      ],
+      "roll_die": "1d12",
+      "movement": 10,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Adaptive",
+          "name_sv": "Anpasslig",
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Substitute any skill for the required skill on a skill roll. Player must justify how the chosen skill applies. GM has final say but should be permissive.",
+              "trigger": "on_skill_roll"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Joruna",
+        "Tym",
+        "Halvelda",
+        "Garmander",
+        "Verolun",
+        "Lothar"
+      ],
+      "source_page": 13
+    },
+    {
+      "id": "halfling",
+      "name": "Halfling",
+      "name_sv": "Halvling",
+      "translation_official": true,
+      "roll_range": [
+        5,
+        7
+      ],
+      "roll_die": "1d12",
+      "movement": 8,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Hard to Catch",
+          "name_sv": "Svårfångad",
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "action": "dodge"
+              },
+              "trigger": "on_dodge"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Kvicke",
+        "Brine",
+        "Kott",
+        "Humle",
+        "Perrywick",
+        "Theolina"
+      ],
+      "source_page": 14
+    },
+    {
+      "id": "dwarf",
+      "name": "Dwarf",
+      "name_sv": "Dvärg",
+      "translation_official": true,
+      "roll_range": [
+        8,
+        9
+      ],
+      "roll_die": "1d12",
+      "movement": 8,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Unforgiving",
+          "name_sv": "Långsint",
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "action": "melee_attack"
+              },
+              "trigger": "on_attack",
+              "condition": {
+                "target_has": "damaged_you"
+              }
+            },
+            {
+              "type": "boon",
+              "target": {
+                "action": "ranged_attack"
+              },
+              "trigger": "on_attack",
+              "condition": {
+                "target_has": "damaged_you"
+              }
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Fnöskberga",
+        "Halwyld",
+        "Tymolana",
+        "Traut",
+        "Urd",
+        "Fermer"
+      ],
+      "source_page": 15
+    },
+    {
+      "id": "elf",
+      "name": "Elf",
+      "name_sv": "Alv",
+      "translation_official": true,
+      "roll_range": [
+        10,
+        10
+      ],
+      "roll_die": "1d12",
+      "movement": 10,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Inner Peace",
+          "name_sv": "Inre Frid",
+          "wp_cost": 0,
+          "mechanical_effects": [
+            {
+              "type": "heal",
+              "target": {
+                "stat": "hp"
+              },
+              "value": "1d6",
+              "when": "short_rest"
+            },
+            {
+              "type": "heal",
+              "target": {
+                "stat": "wp"
+              },
+              "value": "1d6",
+              "when": "short_rest"
+            },
+            {
+              "type": "remove_condition",
+              "value": "any",
+              "target": {
+                "self": true
+              },
+              "when": "short_rest"
+            },
+            {
+              "type": "constraint",
+              "value": "Completely unreachable during rest. Cannot be awakened.",
+              "when": "short_rest"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Arasin",
+        "Illyriana",
+        "Galvander",
+        "Tyrindelia",
+        "Erwilnor",
+        "Andremone"
+      ],
+      "source_page": 16
+    },
+    {
+      "id": "mallard",
+      "name": "Mallard",
+      "name_sv": "Anka",
+      "translation_official": true,
+      "roll_range": [
+        11,
+        11
+      ],
+      "roll_die": "1d12",
+      "movement": 8,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Ill-tempered",
+          "name_sv": "Vresig",
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "all_rolls": true
+              },
+              "trigger": "on_skill_roll",
+              "condition": {
+                "not_attribute": "INT"
+              }
+            },
+            {
+              "type": "apply_condition",
+              "value": "angry",
+              "trigger": "on_skill_roll"
+            }
+          ]
+        },
+        {
+          "name": "Webbed Feet",
+          "name_sv": "Simfötter",
+          "wp_cost": 0,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "swimming"
+              },
+              "when": "always"
+            },
+            {
+              "type": "movement",
+              "value": "full_speed",
+              "when": "in_water"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Kvucksum",
+        "Splatts",
+        "Mogge",
+        "Groddy",
+        "Blisandina",
+        "Svulmhugg"
+      ],
+      "source_page": 17
+    },
+    {
+      "id": "wolfkin",
+      "name": "Wolfkin",
+      "name_sv": "Vargfolk",
+      "translation_official": true,
+      "roll_range": [
+        12,
+        12
+      ],
+      "roll_die": "1d12",
+      "movement": 12,
+      "modifiers": [],
+      "abilities": [
+        {
+          "name": "Hunting instincts",
+          "name_sv": "Jaktsinne",
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Designate a creature in line of sight or whose scent trail you follow as quarry. Costs an action in combat.",
+              "trigger": "free"
+            },
+            {
+              "type": "constraint",
+              "value": "Follow the quarry's scent trail for up to one day",
+              "trigger": "free"
+            },
+            {
+              "type": "boon",
+              "target": {
+                "action": "melee_attack"
+              },
+              "trigger": "on_attack",
+              "condition": {
+                "target_is": "quarry"
+              },
+              "note": "Costs 1 additional WP per attack. Not an action."
+            },
+            {
+              "type": "boon",
+              "target": {
+                "action": "ranged_attack"
+              },
+              "trigger": "on_attack",
+              "condition": {
+                "target_is": "quarry"
+              },
+              "note": "Costs 1 additional WP per attack. Not an action."
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Wyld",
+        "Vargskugga",
+        "Lunariem",
+        "Obdurian",
+        "Frostbite",
+        "Wuldenhall"
+      ],
+      "source_page": 18
+    }
+  ]
+}

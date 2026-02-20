@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "appearance",
+    "purpose": "d20 appearance table and d20 memento table from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.2",
+    "content_license": "personal-use-only"
+  },
+  "appearance": {
+    "roll_die": "1d20",
+    "note": "Roll one or more times, or choose freely",
+    "note_sv": "Slå en eller flera gånger, eller välj fritt",
+    "list": [
+      {
+        "roll": 1,
+        "name_sv": "Fult ärr över kinden",
+        "name": "Ugly scar across the cheek"
+      },
+      {
+        "roll": 2,
+        "name_sv": "Märklig huvudbonad",
+        "name": "Peculiar headwear"
+      },
+      {
+        "roll": 3,
+        "name_sv": "Onormalt blek och glåmig",
+        "name": "Abnormally pale and gaunt"
+      },
+      {
+        "roll": 4,
+        "name_sv": "Ständigt ett leende",
+        "name": "Permanent smile"
+      },
+      {
+        "roll": 5,
+        "name_sv": "Iskall blick",
+        "name": "Ice-cold, penetrating gaze"
+      },
+      {
+        "roll": 6,
+        "name_sv": "Några extra kilon",
+        "name": "A few extra pounds around the middle"
+      },
+      {
+        "roll": 7,
+        "name_sv": "Mager och senig",
+        "name": "Thin and wiry"
+      },
+      {
+        "roll": 8,
+        "name_sv": "Onormalt kraftig kroppsbehåring",
+        "name": "Abnormally thick body hair (kin dependent)"
+      },
+      {
+        "roll": 9,
+        "name_sv": "Mycket tunnhårig",
+        "name": "Very thin hair (kin dependent)"
+      },
+      {
+        "roll": 10,
+        "name_sv": "Framträdande tatuering",
+        "name": "Prominent tattoo"
+      },
+      {
+        "roll": 11,
+        "name_sv": "Luktar illa",
+        "name": "Smells bad"
+      },
+      {
+        "roll": 12,
+        "name_sv": "Storslagen frisyr",
+        "name": "Magnificent hairstyle"
+      },
+      {
+        "roll": 13,
+        "name_sv": "Haltande gång",
+        "name": "Limping gait"
+      },
+      {
+        "roll": 14,
+        "name_sv": "Lortig",
+        "name": "Dirty"
+      },
+      {
+        "roll": 15,
+        "name_sv": "Ärliga blå ögon",
+        "name": "Honest blue eyes"
+      },
+      {
+        "roll": 16,
+        "name_sv": "Tand av silver",
+        "name": "Silver tooth"
+      },
+      {
+        "roll": 17,
+        "name_sv": "Välparfymerad",
+        "name": "Well-perfumed"
+      },
+      {
+        "roll": 18,
+        "name_sv": "Olika ögonfärg",
+        "name": "Different colored eyes"
+      },
+      {
+        "roll": 19,
+        "name_sv": "Väsande röst",
+        "name": "Wheezing voice"
+      },
+      {
+        "roll": 20,
+        "name_sv": "Väderbitet ansikte",
+        "name": "Weather-beaten face"
+      }
+    ]
+  },
+  "mementos": {
+    "roll_die": "1d20",
+    "optional": true,
+    "list": [
+      {
+        "roll": 1,
+        "name": "Your trusty old shoes",
+        "name_sv": "Dina gamla trotjänarskor"
+      },
+      {
+        "roll": 2,
+        "name": "A simple silver medallion",
+        "name_sv": "En enkel silvermedaljong"
+      },
+      {
+        "roll": 3,
+        "name": "A letter from an old friend or relative",
+        "name_sv": "Ett brev från en gammal vän eller släkting"
+      },
+      {
+        "roll": 4,
+        "name": "An old worn diary",
+        "name_sv": "En gammal nött dagbok"
+      },
+      {
+        "roll": 5,
+        "name": "A family heirloom bracelet",
+        "name_sv": "Ett armband som är en familjerelikt"
+      },
+      {
+        "roll": 6,
+        "name": "A carved wooden figurine you got as a child",
+        "name_sv": "En snidad träfigur du fick som barn"
+      },
+      {
+        "roll": 7,
+        "name": "A peculiarly shaped stone",
+        "name_sv": "En märkligt formad sten"
+      },
+      {
+        "roll": 8,
+        "name": "A copper coin from a treasure your parent sought",
+        "name_sv": "Ett kopparmynt från en skatt din förälder sökte"
+      },
+      {
+        "roll": 9,
+        "name": "An old tin flask",
+        "name_sv": "En gammal plåtflaska"
+      },
+      {
+        "roll": 10,
+        "name": "A horn taken as trophy from a monster",
+        "name_sv": "Ett horn taget som trofé från ett monster"
+      },
+      {
+        "roll": 11,
+        "name": "A fang taken as trophy from a beast",
+        "name_sv": "En huggtand tagen som trofé från ett odjur"
+      },
+      {
+        "roll": 12,
+        "name": "A pair of simple bone dice",
+        "name_sv": "Ett par enkla bentärningar"
+      },
+      {
+        "roll": 13,
+        "name": "A charm with a lock of hair",
+        "name_sv": "En amulett med en hårlock"
+      },
+      {
+        "roll": 14,
+        "name": "An ornamented key",
+        "name_sv": "En ornamenterad nyckel"
+      },
+      {
+        "roll": 15,
+        "name": "A hand-drawn map you inherited",
+        "name_sv": "En handritad karta du ärvt"
+      },
+      {
+        "roll": 16,
+        "name": "A ring with an inscription",
+        "name_sv": "En ring med en inskription"
+      },
+      {
+        "roll": 17,
+        "name": "A bone whistle",
+        "name_sv": "En benvisselpipa"
+      },
+      {
+        "roll": 18,
+        "name": "Your parent's worn hat",
+        "name_sv": "Din förälders slitna hatt"
+      },
+      {
+        "roll": 19,
+        "name": "A feather from a griffon",
+        "name_sv": "En fjäder från en grip"
+      },
+      {
+        "roll": 20,
+        "name": "A well-carved pipe",
+        "name_sv": "En välskuren pipa"
+      }
+    ]
+  }
+}

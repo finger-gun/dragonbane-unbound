@@ -65,7 +65,7 @@ Completed and historical changes, for long-term reference.
 - Reference this file to quickly orient yourself in the project's spec history and current work
 - Update the index when proposing, merging, or archiving changes
 - For details on workflow and file structure, see `README.md` and the OpenSpec documentation
-- For a concrete data-driven pack example, see `docs/PACKAGE_EXAMPLE.md`
+- For a concrete data-driven pack example, see `docs/package-example.md`
 
 ---
 

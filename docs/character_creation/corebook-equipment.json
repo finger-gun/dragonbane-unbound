@@ -1,0 +1,919 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "equipment",
+    "purpose": "Armor, melee weapons, ranged weapons, weapon properties, and masterwork rules from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv', 'effect_sv', and weapon property '_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.3",
+    "content_license": "personal-use-only"
+  },
+  "equipment": {
+    "armor": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "name_sv": "Läder",
+        "protection": 1,
+        "price": "2 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "mechanical_effects": []
+      },
+      {
+        "id": "studded",
+        "name": "Studded Leather",
+        "name_sv": "Nitläder",
+        "protection": 2,
+        "price": "10 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "mechanical_effects": [
+          {
+            "type": "bane",
+            "target": {
+              "skill": "sneaking"
+            },
+            "when": "equipped"
+          }
+        ]
+      },
+      {
+        "id": "chainmail",
+        "name": "Chainmail",
+        "name_sv": "Ringbrynja",
+        "protection": 4,
+        "price": "50 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "mechanical_effects": [
+          {
+            "type": "bane",
+            "target": {
+              "skill": "evade"
+            },
+            "when": "equipped"
+          },
+          {
+            "type": "bane",
+            "target": {
+              "skill": "sneaking"
+            },
+            "when": "equipped"
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "name": "Plate Armor",
+        "name_sv": "Plåtrustning",
+        "protection": 6,
+        "price": "500 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "mechanical_effects": [
+          {
+            "type": "bane",
+            "target": {
+              "skill": "acrobatics"
+            },
+            "when": "equipped"
+          },
+          {
+            "type": "bane",
+            "target": {
+              "skill": "evade"
+            },
+            "when": "equipped"
+          },
+          {
+            "type": "bane",
+            "target": {
+              "skill": "sneaking"
+            },
+            "when": "equipped"
+          }
+        ]
+      },
+      {
+        "id": "open_helmet",
+        "name": "Open Helmet",
+        "name_sv": "Öppen hjälm",
+        "protection": 1,
+        "price": "12 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "is_helmet": true,
+        "mechanical_effects": [
+          {
+            "type": "bane",
+            "target": {
+              "skill": "awareness"
+            },
+            "when": "equipped"
+          }
+        ]
+      },
+      {
+        "id": "great_helmet",
+        "name": "Great Helmet",
+        "name_sv": "Tunnhjälm",
+        "protection": 2,
+        "price": "100 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "is_helmet": true,
+        "mechanical_effects": [
+          {
+            "type": "bane",
+            "target": {
+              "skill": "awareness"
+            },
+            "when": "equipped"
+          },
+          {
+            "type": "bane",
+            "target": {
+              "action": "ranged_attack"
+            },
+            "when": "equipped"
+          }
+        ]
+      }
+    ],
+    "melee_weapons": [
+      {
+        "id": "unarmed",
+        "name": "Unarmed",
+        "name_sv": "Obeväpnad",
+        "grip": null,
+        "str_req": null,
+        "range": 2,
+        "damage": "1d6",
+        "durability": null,
+        "price": null,
+        "availability": null,
+        "availability_sv": null,
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "light_improvised",
+        "name": "Light Improvised",
+        "name_sv": "Lätt improviserat",
+        "grip": "1H",
+        "str_req": null,
+        "range": "STR",
+        "damage": "1d8",
+        "durability": 3,
+        "price": null,
+        "availability": null,
+        "availability_sv": null,
+        "properties": [
+          "Crushing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "heavy_improvised",
+        "name": "Heavy Improvised",
+        "name_sv": "Tungt improviserat",
+        "grip": "2H",
+        "str_req": 16,
+        "range": 2,
+        "damage": "2d8",
+        "durability": 3,
+        "price": null,
+        "availability": null,
+        "availability_sv": null,
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "knife",
+        "name": "Knife",
+        "name_sv": "Kniv",
+        "grip": "1H",
+        "str_req": null,
+        "range": "STR",
+        "damage": "1d8",
+        "durability": 6,
+        "price": "5 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Subtle",
+          "Piercing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "dagger",
+        "name": "Dagger",
+        "name_sv": "Dolk",
+        "grip": "1H",
+        "str_req": null,
+        "range": "STR",
+        "damage": "1d8",
+        "durability": 9,
+        "price": "1 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Subtle",
+          "Piercing",
+          "Slashing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "parrying_dagger",
+        "name": "Parrying Dagger",
+        "name_sv": "Pareringsdolk",
+        "grip": "1H",
+        "str_req": null,
+        "range": 2,
+        "damage": "1d6",
+        "durability": 15,
+        "price": "2 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Subtle",
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "short_sword",
+        "name": "Short Sword",
+        "name_sv": "Kortsvärd",
+        "grip": "1H",
+        "str_req": 7,
+        "range": 2,
+        "damage": "1d10",
+        "durability": 12,
+        "price": "8 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "broadsword",
+        "name": "Broadsword",
+        "name_sv": "Bredsvärd",
+        "grip": "1H",
+        "str_req": 10,
+        "range": 2,
+        "damage": "2d6",
+        "durability": 15,
+        "price": "12 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "bastard_sword",
+        "name": "Bastard Sword",
+        "name_sv": "Bastardsvärd",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 2,
+        "damage": "2d8",
+        "durability": 15,
+        "price": "25 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "two_handed_sword",
+        "name": "Two-Handed Sword",
+        "name_sv": "Tvåhandssvärd",
+        "grip": "2H",
+        "str_req": 16,
+        "range": 2,
+        "damage": "2d10",
+        "durability": 15,
+        "price": "50 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "properties": [
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "scimitar",
+        "name": "Scimitar",
+        "name_sv": "Kroksabel",
+        "grip": "1H",
+        "str_req": 10,
+        "range": 2,
+        "damage": "2d6",
+        "durability": 12,
+        "price": "10 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Toppling",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "hand_axe",
+        "name": "Hand Axe",
+        "name_sv": "Handyxa",
+        "grip": "1H",
+        "str_req": 7,
+        "range": "STR",
+        "damage": "2d6",
+        "durability": 9,
+        "price": "2 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Toppling",
+          "Slashing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "battle_axe",
+        "name": "Battle Axe",
+        "name_sv": "Stridsyxa",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 2,
+        "damage": "2d8",
+        "durability": 9,
+        "price": "10 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Toppling",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "two_handed_axe",
+        "name": "Two-Handed Axe",
+        "name_sv": "Tvåhandsyxa",
+        "grip": "2H",
+        "str_req": 16,
+        "range": 2,
+        "damage": "2d10",
+        "durability": 9,
+        "price": "25 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Toppling",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "mace",
+        "name": "Mace",
+        "name_sv": "Stridsklubba",
+        "grip": "1H",
+        "str_req": 7,
+        "range": 2,
+        "damage": "2d4",
+        "durability": 12,
+        "price": "8 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "morning_star",
+        "name": "Morning Star",
+        "name_sv": "Morgonstjärna",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 2,
+        "damage": "2d8",
+        "durability": 12,
+        "price": "14 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "flail",
+        "name": "Flail",
+        "name_sv": "Slaga",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 2,
+        "damage": "2d8",
+        "durability": null,
+        "price": "16 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Crushing",
+          "Toppling",
+          "Cannot parry"
+        ]
+      },
+      {
+        "id": "light_warhammer",
+        "name": "Light Warhammer",
+        "name_sv": "Lätt stridshammare",
+        "grip": "1H",
+        "str_req": 10,
+        "range": 2,
+        "damage": "2d6",
+        "durability": 12,
+        "price": "10 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Crushing",
+          "Toppling"
+        ]
+      },
+      {
+        "id": "heavy_warhammer",
+        "name": "Heavy Warhammer",
+        "name_sv": "Tung stridshammare",
+        "grip": "2H",
+        "str_req": 16,
+        "range": 2,
+        "damage": "2d10",
+        "durability": 12,
+        "price": "20 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Crushing",
+          "Toppling"
+        ]
+      },
+      {
+        "id": "small_wooden_club",
+        "name": "Small Wooden Club",
+        "name_sv": "Liten träklubba",
+        "grip": "1H",
+        "str_req": 7,
+        "range": 2,
+        "damage": "1d8",
+        "durability": 9,
+        "price": "1 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "large_wooden_club",
+        "name": "Large Wooden Club",
+        "name_sv": "Stor träklubba",
+        "grip": "2H",
+        "str_req": 16,
+        "range": 2,
+        "damage": "2d8",
+        "durability": 12,
+        "price": "2 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "name_sv": "Stav",
+        "grip": "2H",
+        "str_req": 7,
+        "range": 2,
+        "damage": "1d8",
+        "durability": 9,
+        "price": "2 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing",
+          "Toppling"
+        ]
+      },
+      {
+        "id": "short_spear",
+        "name": "Short Spear",
+        "name_sv": "Kortspjut",
+        "grip": "1H",
+        "str_req": 7,
+        "range": "STRx2",
+        "damage": "1d10",
+        "durability": 9,
+        "price": "5 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Piercing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "long_spear",
+        "name": "Long Spear",
+        "name_sv": "Långspjut",
+        "grip": "2H",
+        "str_req": 10,
+        "range": 4,
+        "damage": "2d8",
+        "durability": 9,
+        "price": "1 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Long",
+          "Piercing"
+        ]
+      },
+      {
+        "id": "lance",
+        "name": "Lance",
+        "name_sv": "Lans",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 4,
+        "damage": "2d10",
+        "durability": 12,
+        "price": "12 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "properties": [
+          "Long",
+          "Piercing",
+          "Requires war horse"
+        ]
+      },
+      {
+        "id": "halberd",
+        "name": "Halberd",
+        "name_sv": "Hillebard",
+        "grip": "2H",
+        "str_req": 13,
+        "range": 4,
+        "damage": "2d8",
+        "durability": 12,
+        "price": "20 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "properties": [
+          "Long",
+          "Toppling",
+          "Piercing",
+          "Slashing"
+        ]
+      },
+      {
+        "id": "trident",
+        "name": "Trident",
+        "name_sv": "Trident",
+        "grip": "1H",
+        "str_req": 10,
+        "range": "STR",
+        "damage": "2d6",
+        "durability": 9,
+        "price": "5 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Toppling",
+          "Piercing",
+          "Throwable"
+        ]
+      },
+      {
+        "id": "small_shield",
+        "name": "Small Shield",
+        "name_sv": "Liten sköld",
+        "grip": "1H",
+        "str_req": 7,
+        "range": 2,
+        "damage": "1d8",
+        "durability": 15,
+        "price": "4 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing"
+        ]
+      },
+      {
+        "id": "large_shield",
+        "name": "Large Shield",
+        "name_sv": "Stor sköld",
+        "grip": "1H",
+        "str_req": 13,
+        "range": 2,
+        "damage": "1d8",
+        "durability": 18,
+        "price": "12 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing"
+        ]
+      }
+    ],
+    "ranged_weapons": [
+      {
+        "id": "sling",
+        "name": "Sling",
+        "name_sv": "Slunga",
+        "grip": "1H",
+        "str_req": null,
+        "range": 20,
+        "damage": "1d8",
+        "durability": null,
+        "price": "1 silver",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Crushing",
+          "Trinket"
+        ]
+      },
+      {
+        "id": "short_bow",
+        "name": "Short Bow",
+        "name_sv": "Kort pilbåge",
+        "grip": "2H",
+        "str_req": 7,
+        "range": 30,
+        "damage": "1d10",
+        "durability": 3,
+        "price": "25 gold",
+        "availability": "Common",
+        "availability_sv": "Vanlig",
+        "properties": [
+          "Piercing",
+          "Requires quiver"
+        ]
+      },
+      {
+        "id": "long_bow",
+        "name": "Long Bow",
+        "name_sv": "Lång pilbåge",
+        "grip": "2H",
+        "str_req": 13,
+        "range": 100,
+        "damage": "1d12",
+        "durability": 6,
+        "price": "50 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Piercing",
+          "Requires quiver"
+        ]
+      },
+      {
+        "id": "light_crossbow",
+        "name": "Light Crossbow",
+        "name_sv": "Lätt armborst",
+        "grip": "2H",
+        "str_req": 7,
+        "range": 40,
+        "damage": "2d6",
+        "durability": 6,
+        "price": "75 gold",
+        "availability": "Uncommon",
+        "availability_sv": "Ovanlig",
+        "properties": [
+          "Piercing",
+          "Requires quiver",
+          "No damage bonus"
+        ]
+      },
+      {
+        "id": "heavy_crossbow",
+        "name": "Heavy Crossbow",
+        "name_sv": "Tungt armborst",
+        "grip": "2H",
+        "str_req": 13,
+        "range": 60,
+        "damage": "2d8",
+        "durability": 9,
+        "price": "200 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "properties": [
+          "Piercing",
+          "Requires quiver",
+          "No damage bonus"
+        ]
+      },
+      {
+        "id": "hand_crossbow",
+        "name": "Hand Crossbow",
+        "name_sv": "Handarmborst",
+        "grip": "1H",
+        "str_req": 7,
+        "range": 30,
+        "damage": "2d6",
+        "durability": 6,
+        "price": "90 gold",
+        "availability": "Rare",
+        "availability_sv": "Sällsynt",
+        "properties": [
+          "Piercing",
+          "Requires quiver",
+          "No damage bonus"
+        ]
+      }
+    ],
+    "weapon_properties": {
+      "Subtle": {
+        "name_sv": "Smidig",
+        "mechanical_effects": [
+          {
+            "type": "boon",
+            "target": {
+              "action": "melee_attack"
+            },
+            "when": "equipped",
+            "condition": {
+              "attack_is": "sneak"
+            }
+          },
+          {
+            "type": "bonus_damage",
+            "value": "+1_damage_die",
+            "when": "equipped",
+            "condition": {
+              "attack_is": "sneak"
+            }
+          }
+        ]
+      },
+      "Long": {
+        "name_sv": "Lång",
+        "mechanical_effects": [
+          {
+            "type": "movement",
+            "value": "melee_reach_4m",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Toppling": {
+        "name_sv": "Fällande",
+        "mechanical_effects": [
+          {
+            "type": "boon",
+            "target": {
+              "action": "knockdown"
+            },
+            "when": "equipped"
+          }
+        ]
+      },
+      "Piercing": {
+        "name_sv": "Stickande",
+        "mechanical_effects": [
+          {
+            "type": "constraint",
+            "value": "Damage type: piercing. Armor interaction rules apply.",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Slashing": {
+        "name_sv": "Huggande",
+        "mechanical_effects": [
+          {
+            "type": "constraint",
+            "value": "Damage type: slashing. If weapon has both slashing and piercing, choose before attack.",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Crushing": {
+        "name_sv": "Krossande",
+        "mechanical_effects": [
+          {
+            "type": "constraint",
+            "value": "Damage type: crushing. Armor interaction rules apply.",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Throwable": {
+        "name_sv": "Kastbar",
+        "mechanical_effects": [
+          {
+            "type": "unlock",
+            "value": "ranged_attack_mode",
+            "when": "equipped",
+            "note": "Range based on STR"
+          }
+        ]
+      },
+      "Trinket": {
+        "name_sv": "Småsak",
+        "mechanical_effects": [
+          {
+            "type": "modify_stat",
+            "target": {
+              "stat": "encumbrance_slots"
+            },
+            "value": -1,
+            "when": "equipped",
+            "note": "Occupies a trinket slot instead of a normal item slot"
+          }
+        ]
+      },
+      "No damage bonus": {
+        "name_sv": "Ingen skadebonus",
+        "mechanical_effects": [
+          {
+            "type": "restrict",
+            "value": "damage_bonus",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Cannot parry": {
+        "name_sv": "Kan inte parera",
+        "mechanical_effects": [
+          {
+            "type": "restrict",
+            "value": "parry",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Requires quiver": {
+        "name_sv": "Kräver koger",
+        "mechanical_effects": [
+          {
+            "type": "constraint",
+            "value": "Requires a quiver with ammunition to attack",
+            "when": "equipped"
+          }
+        ]
+      },
+      "Requires war horse": {
+        "name_sv": "Kräver stridshäst",
+        "mechanical_effects": [
+          {
+            "type": "constraint",
+            "value": "Can only be used while mounted on a war horse",
+            "when": "equipped"
+          }
+        ]
+      }
+    },
+    "masterwork": {
+      "price_multiplier": 10,
+      "str_req_reduction": 3,
+      "durability_increase": 3,
+      "mechanical_effects": [
+        {
+          "type": "modify_stat",
+          "target": {
+            "stat": "str_requirement"
+          },
+          "value": -3,
+          "when": "always"
+        },
+        {
+          "type": "modify_stat",
+          "target": {
+            "stat": "durability"
+          },
+          "value": 3,
+          "when": "always"
+        },
+        {
+          "type": "constraint",
+          "value": "Price is multiplied by 10",
+          "when": "always"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,954 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "heroic_abilities",
+    "purpose": "All 44 heroic abilities from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv', 'requirement_sv', and 'description_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.3",
+    "content_license": "personal-use-only"
+  },
+  "heroic_abilities": [
+    {
+      "id": "blixtsnabb",
+      "name": "Lightning fast",
+      "name_sv": "Blixtsnabb",
+      "translation_official": true,
+      "requirement": "Evade FV 12",
+      "requirement_sv": "Undvika FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "modify_initiative",
+          "value": "draw_2_pick_best",
+          "trigger": "on_initiative",
+          "frequency": "once_per_round"
+        }
+      ]
+    },
+    {
+      "id": "barsark",
+      "name": "Berserker",
+      "name_sv": "Bärsärk",
+      "translation_official": true,
+      "requirement": "Melee weapon FV 12",
+      "requirement_sv": "Närstridsvapen FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "apply_condition",
+          "value": "angry",
+          "phase": "on_activate"
+        },
+        {
+          "type": "boon",
+          "target": {
+            "action": "melee_attack"
+          },
+          "phase": "while_active"
+        },
+        {
+          "type": "restrict",
+          "value": "parry",
+          "phase": "while_active"
+        },
+        {
+          "type": "restrict",
+          "value": "dodge",
+          "phase": "while_active"
+        },
+        {
+          "type": "constraint",
+          "value": "Must fight until all enemies are defeated or you reach 0 HP",
+          "phase": "while_active"
+        },
+        {
+          "type": "apply_condition",
+          "value": "exhausted",
+          "phase": "on_end"
+        }
+      ]
+    },
+    {
+      "id": "defensiv",
+      "name": "Defensive",
+      "name_sv": "Defensiv",
+      "translation_official": true,
+      "requirement": "Melee weapon FV 12",
+      "requirement_sv": "Närstridsvapen FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "parry",
+          "trigger": "on_incoming_attack",
+          "frequency": "unlimited_per_round"
+        }
+      ]
+    },
+    {
+      "id": "drakdrapare",
+      "name": "Dragonslayer",
+      "name_sv": "Drakdräpare",
+      "translation_official": true,
+      "requirement": "Weapon skill FV 12",
+      "requirement_sv": "Vapenfärdighet FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "bonus_damage",
+          "value": "1d8",
+          "trigger": "after_hit",
+          "condition": {
+            "target_is": "monster"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dubbelhugg",
+      "name": "Double slash",
+      "name_sv": "Dubbelhugg",
+      "translation_official": true,
+      "requirement": "Swords or Axes FV 12",
+      "requirement_sv": "Svärd eller Yxa FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "attack_second_target",
+          "trigger": "on_attack",
+          "condition": {
+            "target_range": "2m"
+          }
+        },
+        {
+          "type": "constraint",
+          "value": "Single attack roll applies to both targets. Separate damage rolls. Can combine with Dual Wield.",
+          "trigger": "on_attack"
+        }
+      ]
+    },
+    {
+      "id": "enstoring",
+      "name": "Lone wolf",
+      "name_sv": "Enstöring",
+      "translation_official": true,
+      "requirement": "Bushcraft FV 12",
+      "requirement_sv": "Vildmarksvana FV 12",
+      "wp_cost": 0,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "skill": "bushcraft"
+          },
+          "when": "long_rest",
+          "note": "Self only. Wilderness only."
+        }
+      ]
+    },
+    {
+      "id": "falkoyo",
+      "name": "Eagle eye",
+      "name_sv": "Falköga",
+      "translation_official": true,
+      "requirement": "Awareness FV 12",
+      "requirement_sv": "Upptäcka fara FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "See details at 200m as if close",
+          "phase": "while_active"
+        },
+        {
+          "type": "unlock",
+          "value": "ranged_attack_no_range_penalty",
+          "phase": "while_active"
+        },
+        {
+          "type": "constraint",
+          "value": "Duration: 15 minutes",
+          "phase": "on_activate"
+        }
+      ]
+    },
+    {
+      "id": "fokuserad",
+      "name": "Focused",
+      "name_sv": "Fokuserad",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 0,
+      "mechanical_effects": [
+        {
+          "type": "modify_stat",
+          "target": {
+            "stat": "wp"
+          },
+          "value": 2,
+          "when": "always",
+          "stackable": true
+        }
+      ]
+    },
+    {
+      "id": "foljeslagare",
+      "name": "Companion",
+      "name_sv": "Följeslagare",
+      "translation_official": true,
+      "requirement": "Hunting & Fishing FV 12",
+      "requirement_sv": "Jakt & fiske FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Bond with an animal (15 min ritual). One companion at a time. Companion scouts for you.",
+          "phase": "on_activate"
+        },
+        {
+          "type": "constraint",
+          "value": "Spend 3 additional WP to command companion to attack",
+          "phase": "while_active"
+        }
+      ]
+    },
+    {
+      "id": "forkladnad",
+      "name": "Disguise",
+      "name_sv": "Förklädnad",
+      "translation_official": true,
+      "requirement": "Bluffing FV 12",
+      "requirement_sv": "Bluffa FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "15 min setup. Mimic appearance, voice, and behavior. Same kin only.",
+          "phase": "on_activate"
+        },
+        {
+          "type": "constraint",
+          "value": "Observers who know the target may roll Awareness within 10m to detect the disguise",
+          "phase": "while_active"
+        }
+      ]
+    },
+    {
+      "id": "forkampe",
+      "name": "Guardian",
+      "name_sv": "Förkämpe",
+      "translation_official": true,
+      "requirement": "Hammers, Swords, or Axes FV 12",
+      "requirement_sv": "Hammare, Svärd eller Yxa FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "redirect",
+          "target": {
+            "self": true
+          },
+          "trigger": "on_incoming_attack",
+          "condition": {
+            "ally_targeted": true,
+            "range": "2m"
+          },
+          "note": "Not an action. You and ally must be in melee with the same enemy."
+        }
+      ]
+    },
+    {
+      "id": "garverimastare",
+      "name": "Master tanner",
+      "name_sv": "Garverimästare",
+      "translation_official": true,
+      "requirement": "Crafting FV 12",
+      "requirement_sv": "Hantverk FV 12",
+      "wp_cost": "varies",
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Requires leather tools. One shift to craft. Input: creature skin. Output: leather armor with protection = ceil(beast_protection / 2), min 1. WP cost = resulting protection value.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "gott_lakekott",
+      "name": "Fast healer",
+      "name_sv": "Gott läkekött",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "heal",
+          "target": {
+            "stat": "hp"
+          },
+          "value": "1d6",
+          "trigger": "on_short_rest"
+        }
+      ]
+    },
+    {
+      "id": "hal_som_en_al",
+      "name": "Fast footwork",
+      "name_sv": "Hal som en ål",
+      "translation_official": true,
+      "requirement": "Evade FV 12",
+      "requirement_sv": "Undvika FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "dodge",
+          "trigger": "on_incoming_attack",
+          "frequency": "unlimited_per_round"
+        }
+      ]
+    },
+    {
+      "id": "insikt",
+      "name": "Insight",
+      "name_sv": "Insikt",
+      "translation_official": true,
+      "requirement": "Bluffing FV 12",
+      "requirement_sv": "Bluffa FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "unlock",
+          "value": "detect_lie_via_awareness",
+          "trigger": "free",
+          "note": "Must have spoken with the target first. Roll Awareness to determine if lying."
+        }
+      ]
+    },
+    {
+      "id": "intuition",
+      "name": "Intuition",
+      "name_sv": "Intuition",
+      "translation_official": true,
+      "requirement": "Myths & Legends FV 12",
+      "requirement_sv": "Myter & Legender FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Ask the GM one question and get a useful answer. Triggered when facing a hard decision.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "jarnnave",
+      "name": "Iron fist",
+      "name_sv": "Järnnäve",
+      "translation_official": true,
+      "requirement": "Brawling FV 12",
+      "requirement_sv": "Slagsmål FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "bonus_damage",
+          "value": "1d6",
+          "trigger": "after_hit",
+          "condition": {
+            "weapon_type": "unarmed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jarngrepp",
+      "name": "Iron grip",
+      "name_sv": "Järngrepp",
+      "translation_official": true,
+      "requirement": "Brawling FV 12",
+      "requirement_sv": "Slagsmål FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "boon",
+          "target": {
+            "skill": "brawling"
+          },
+          "trigger": "on_skill_roll",
+          "condition": {
+            "roll_is": "grapple_or_resist_break_free"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kastarm",
+      "name": "Throwing arm",
+      "name_sv": "Kastarm",
+      "translation_official": true,
+      "requirement": "Melee weapon FV 12",
+      "requirement_sv": "Närstridsvapen FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "unlock",
+          "value": "throw_one_handed_melee_weapon",
+          "trigger": "on_attack",
+          "note": "Range = STR meters. Normal attack roll."
+        }
+      ]
+    },
+    {
+      "id": "kattfot",
+      "name": "Catlike",
+      "name_sv": "Kattfot",
+      "translation_official": true,
+      "requirement": "Acrobatics FV 12",
+      "requirement_sv": "Hoppa & klättra FV 12",
+      "wp_cost": "varies",
+      "mechanical_effects": [
+        {
+          "type": "reduce_damage",
+          "value": "1d6_per_wp",
+          "trigger": "on_fall",
+          "note": "Can roll Acrobatics first, then decide to activate"
+        }
+      ]
+    },
+    {
+      "id": "kraftslag",
+      "name": "Massive blow",
+      "name_sv": "Kraftslag",
+      "translation_official": true,
+      "requirement": "STR-based melee FV 12",
+      "requirement_sv": "STY-baserat närstridsvapen FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "bonus_damage",
+          "value": "1d8",
+          "trigger": "after_hit",
+          "condition": {
+            "weapon_type": "two_handed_melee"
+          }
+        },
+        {
+          "type": "restrict",
+          "value": "move",
+          "trigger": "after_hit",
+          "duration": "round"
+        }
+      ]
+    },
+    {
+      "id": "kvartermastare",
+      "name": "Quartermaster",
+      "name_sv": "Kvartermästare",
+      "translation_official": true,
+      "requirement": "Bushcraft FV 12",
+      "requirement_sv": "Vildmarksvana FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "skill": "bushcraft"
+          },
+          "trigger": "on_camp"
+        }
+      ]
+    },
+    {
+      "id": "lonnmordare",
+      "name": "Assassin",
+      "name_sv": "Lönnmördare",
+      "translation_official": true,
+      "requirement": "Knives FV 12",
+      "requirement_sv": "Kniv FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "bonus_damage",
+          "value": "1d8",
+          "trigger": "after_hit",
+          "condition": {
+            "attack_is": "sneak"
+          },
+          "note": "Can combine with Backstabbing"
+        }
+      ]
+    },
+    {
+      "id": "magisk_talang",
+      "name": "Magic School",
+      "name_sv": "Magisk talang",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 0,
+      "mechanical_effects": [
+        {
+          "type": "unlock",
+          "value": "magic_school",
+          "when": "always",
+          "stackable": true,
+          "note": "Requires separate training. Non-mages can learn."
+        }
+      ]
+    },
+    {
+      "id": "monsterjagare",
+      "name": "Monster Hunter",
+      "name_sv": "Monsterjägare",
+      "translation_official": true,
+      "requirement": "Beast Lore FV 12",
+      "requirement_sv": "Bestiologi FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "At a crossroads, learn which direction holds the most dangerous enemies. GM-mediated.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "masterbesvjarjare",
+      "name": "Master spellcaster",
+      "name_sv": "Mästerbesvärjare",
+      "translation_official": true,
+      "requirement": "Magic school FV 12",
+      "requirement_sv": "Magiskola FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "cast_spell",
+          "trigger": "on_attack",
+          "note": "Must be two different spells. Each spell costs its own WP. Can activate after first spell succeeds."
+        }
+      ]
+    },
+    {
+      "id": "masterkock",
+      "name": "Master Chef",
+      "name_sv": "Mästerkock",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "skill": "bushcraft"
+          },
+          "trigger": "free",
+          "note": "Applies to cooking only"
+        }
+      ]
+    },
+    {
+      "id": "mastersmed",
+      "name": "Master blacksmith",
+      "name_sv": "Mästersmed",
+      "translation_official": true,
+      "requirement": "Crafting FV 12",
+      "requirement_sv": "Hantverk FV 12",
+      "wp_cost": "varies",
+      "mechanical_effects_mode_a": [
+        {
+          "type": "reduce_damage",
+          "value": "armor_step_-1",
+          "phase": "while_active",
+          "note": "Sharpen: 3 WP, 15 min. Target armor counts as one step lower against this weapon."
+        }
+      ],
+      "mechanical_effects_mode_b": [
+        {
+          "type": "constraint",
+          "value": "Craft any metal weapon or armor from equipment lists. Requires anvil, forge, iron. One shift.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "mastersnickare",
+      "name": "Master Carpenter",
+      "name_sv": "Mästersnickare",
+      "translation_official": true,
+      "requirement": "Crafting FV 12",
+      "requirement_sv": "Hantverk FV 12",
+      "wp_cost": "varies",
+      "mechanical_effects_mode_a": [
+        {
+          "type": "damage",
+          "value": "1d12_per_wp",
+          "target": {
+            "object": true
+          },
+          "trigger": "free",
+          "note": "Ignores target protection. Costs an action."
+        }
+      ],
+      "mechanical_effects_mode_b": [
+        {
+          "type": "constraint",
+          "value": "Craft any wooden item from equipment lists. Requires carpentry tools. One shift.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "ormmänniska",
+      "name": "Contortionist",
+      "name_sv": "Ormmänniska",
+      "translation_official": true,
+      "requirement": "Evade FV 12",
+      "requirement_sv": "Undvika FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "action": "escape_bonds"
+          },
+          "trigger": "free"
+        },
+        {
+          "type": "auto_succeed",
+          "target": {
+            "action": "squeeze_through_narrow"
+          },
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "oradd",
+      "name": "Fearless",
+      "name_sv": "Orädd",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "action": "resist_fear"
+          },
+          "trigger": "on_fear_check"
+        }
+      ]
+    },
+    {
+      "id": "pilparad",
+      "name": "Deflect arrow",
+      "name_sv": "Pilparad",
+      "translation_official": true,
+      "requirement": "Melee weapon FV 12",
+      "requirement_sv": "Närstridsvapen FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "unlock",
+          "value": "parry_ranged_with_melee",
+          "trigger": "on_incoming_attack"
+        }
+      ]
+    },
+    {
+      "id": "sjoben",
+      "name": "Sea Legs",
+      "name_sv": "Sjöben",
+      "translation_official": true,
+      "requirement": "Swimming FV 12",
+      "requirement_sv": "Simma FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "Negate ALL negative effects of being in water, including drowning risk",
+          "trigger": "free",
+          "duration": "1_round"
+        }
+      ]
+    },
+    {
+      "id": "skattletare",
+      "name": "Treasure Hunter",
+      "name_sv": "Skattletare",
+      "translation_official": true,
+      "requirement": "Bartering FV 12",
+      "requirement_sv": "Köpslå FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "constraint",
+          "value": "At a crossroads, learn which direction holds the greatest treasures. GM-mediated.",
+          "trigger": "free"
+        }
+      ]
+    },
+    {
+      "id": "skoldblockad",
+      "name": "Shield Block",
+      "name_sv": "Sköldblockad",
+      "translation_official": true,
+      "requirement": "STR-based melee FV 12",
+      "requirement_sv": "STY-baserat närstridsvapen FV 12",
+      "wp_cost": 2,
+      "mechanical_effects": [
+        {
+          "type": "boon",
+          "target": {
+            "action": "parry"
+          },
+          "trigger": "on_parry",
+          "condition": {
+            "requires_equipped": "shield"
+          }
+        },
+        {
+          "type": "unlock",
+          "value": "parry_unparriable_monster_attack",
+          "trigger": "on_parry",
+          "condition": {
+            "requires_equipped": "shield"
+          },
+          "note": "Non-area monster attacks only"
+        }
+      ]
+    },
+    {
+      "id": "stigfinnare",
+      "name": "Pathfinder",
+      "name_sv": "Stigfinnare",
+      "translation_official": true,
+      "requirement": "Bushcraft FV 12",
+      "requirement_sv": "Vildmarksvana FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "auto_succeed",
+          "target": {
+            "skill": "bushcraft"
+          },
+          "trigger": "on_navigation"
+        }
+      ]
+    },
+    {
+      "id": "stridsrop",
+      "name": "Battle cry",
+      "name_sv": "Stridsrop",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "remove_condition",
+          "value": "any",
+          "target": {
+            "allies": true,
+            "range": "earshot"
+          },
+          "trigger": "free",
+          "note": "Costs an action. Combat only. Cannot target self."
+        }
+      ]
+    },
+    {
+      "id": "stridsvana",
+      "name": "Veteran",
+      "name_sv": "Stridsvana",
+      "translation_official": true,
+      "requirement": "Weapon skill FV 12",
+      "requirement_sv": "Vapenfärdighet FV 12",
+      "wp_cost": 1,
+      "mechanical_effects": [
+        {
+          "type": "modify_initiative",
+          "value": "keep_previous",
+          "trigger": "on_initiative"
+        }
+      ]
+    },
+    {
+      "id": "tjuvhugg",
+      "name": "Backstabbing",
+      "name_sv": "Tjuvhugg",
+      "translation_official": true,
+      "requirement": "Knives FV 12",
+      "requirement_sv": "Kniv FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "boon",
+          "target": {
+            "action": "melee_attack"
+          },
+          "trigger": "on_attack",
+          "condition": {
+            "ally_in_melee_range": "2m",
+            "weapon_type": "agile"
+          }
+        },
+        {
+          "type": "bonus_damage",
+          "value": "+1_damage_die",
+          "trigger": "after_hit",
+          "condition": {
+            "ally_in_melee_range": "2m",
+            "weapon_type": "agile"
+          }
+        },
+        {
+          "type": "constraint",
+          "value": "Attack is treated as sneak attack: cannot be dodged or parried. Not an action modifier on existing attack.",
+          "trigger": "on_attack"
+        }
+      ]
+    },
+    {
+      "id": "tonkonst",
+      "name": "Musician",
+      "name_sv": "Tonkonst",
+      "translation_official": true,
+      "requirement": "Performance FV 12",
+      "requirement_sv": "Uppträda FV 12",
+      "wp_cost": 3,
+      "mechanical_effects_mode_a": [
+        {
+          "type": "boon",
+          "target": {
+            "allies": true,
+            "range": "10m"
+          },
+          "phase": "while_active",
+          "note": "Advantage on ALL rolls. Costs an action. Lasts until your next turn."
+        }
+      ],
+      "mechanical_effects_mode_b": [
+        {
+          "type": "bane",
+          "target": {
+            "enemies": true,
+            "range": "10m"
+          },
+          "phase": "while_active",
+          "note": "Disadvantage on ALL rolls. Costs an action. Lasts until your next turn."
+        }
+      ]
+    },
+    {
+      "id": "tvillingpil",
+      "name": "Twin shot",
+      "name_sv": "Tvillingpil",
+      "translation_official": true,
+      "requirement": "Bows FV 12",
+      "requirement_sv": "Pilbåge FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "ranged_attack_second_arrow",
+          "trigger": "on_attack",
+          "condition": {
+            "weapon_type": "bow"
+          }
+        },
+        {
+          "type": "bane",
+          "target": {
+            "action": "ranged_attack"
+          },
+          "trigger": "on_attack",
+          "note": "Single attack roll with disadvantage applies to both arrows"
+        },
+        {
+          "type": "constraint",
+          "value": "Separate damage rolls. Can target same or different targets.",
+          "trigger": "on_attack"
+        }
+      ]
+    },
+    {
+      "id": "tva_vapen",
+      "name": "Dual wield",
+      "name_sv": "Två vapen",
+      "translation_official": true,
+      "requirement": "Melee weapon FV 12",
+      "requirement_sv": "Närstridsvapen FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "extra_action",
+          "value": "attack",
+          "trigger": "on_attack",
+          "condition": {
+            "weapon_type": "dual_wield"
+          }
+        },
+        {
+          "type": "bane",
+          "target": {
+            "action": "melee_attack"
+          },
+          "trigger": "on_attack",
+          "note": "Applies to the second (off-hand) attack only"
+        },
+        {
+          "type": "constraint",
+          "value": "Off-hand weapon STR requirement is +3 above normal. Can combine with Double Slash.",
+          "trigger": "on_attack"
+        }
+      ]
+    },
+    {
+      "id": "talig",
+      "name": "Robust",
+      "name_sv": "Tålig",
+      "translation_official": true,
+      "requirement": null,
+      "requirement_sv": null,
+      "wp_cost": 0,
+      "mechanical_effects": [
+        {
+          "type": "modify_stat",
+          "target": {
+            "stat": "hp"
+          },
+          "value": 2,
+          "when": "always",
+          "stackable": true
+        }
+      ]
+    },
+    {
+      "id": "ynkrygg",
+      "name": "Weasel",
+      "name_sv": "Ynkrygg",
+      "translation_official": true,
+      "requirement": "Evade FV 12",
+      "requirement_sv": "Undvika FV 12",
+      "wp_cost": 3,
+      "mechanical_effects": [
+        {
+          "type": "redirect",
+          "target": {
+            "allies": true,
+            "range": "2m"
+          },
+          "trigger": "on_incoming_attack",
+          "note": "Must use before dodge/parry. No effect on area attacks."
+        }
+      ]
+    }
+  ]
+}

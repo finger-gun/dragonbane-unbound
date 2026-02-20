@@ -1,0 +1,731 @@
+{
+  "_meta": {
+    "source": "Den_brnda_jorden_231003.pdf",
+    "source_title": "Den brända jorden (The Scorched Earth)",
+    "purpose": "New magic school (Dark Magic) from the Den brända jorden third-party adventure module. Designed as a separate data package that can be enabled or disabled independently.",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields. This is a third-party adventure module with no official English translation; all English translations are unofficial and flagged with 'translation_official: false'.",
+    "extracted": "2026-02-20",
+    "version": "1.4",
+    "compatibility": "Adds one new magic school (Dark Magic). Used by the Dark Mage profession from brandajorden-professions.json.",
+    "content_license": "personal-use-only"
+  },
+  "magic_schools": [
+    {
+      "id": "dark_magic",
+      "name": "Dark Magic",
+      "name_sv": "Mörkermagi",
+      "translation_official": false,
+      "linked_attribute": "INT",
+      "cantrips": [
+        {
+          "name": "Dim and Cold",
+          "name_sv": "Dunkelt och kallt",
+          "translation_official": false,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "value": "Persuasion",
+              "trigger": "free",
+              "note": "Dimness around caster. Cold sensation fades after 1 round."
+            }
+          ]
+        },
+        {
+          "name": "Give and Take",
+          "name_sv": "Ge och ta",
+          "translation_official": false,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "value": "Performance",
+              "trigger": "free",
+              "note": "Drain/infuse life in small plants by touch. Contextual — GM-dependent."
+            }
+          ]
+        },
+        {
+          "name": "Shadow Play",
+          "name_sv": "Skuggspel",
+          "translation_official": false,
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "value": "Performance",
+              "trigger": "free",
+              "note": "Animate shadows within 10 m and line of sight. Can distract antagonists."
+            }
+          ]
+        }
+      ],
+      "spells": [
+        {
+          "name": "Stumbling in the Dark",
+          "name_sv": "I mörkret stapplande omkull",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "10 meters diameter",
+          "duration": "1d10 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Creates darkness in 5 m radius from caster. Caster is also affected. Only magical light penetrates. All in area follow Darkness rules (core rulebook p.52). Duration 1d10 minutes.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Soothe Pain and Ailment",
+          "name_sv": "Lindra kval och krämpa",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words, touch",
+          "components_sv": "Ord, beröring",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "1d6+3",
+              "trigger": "free",
+              "note": "Drains HP from one creature by touch. Cannot drain more than target has remaining."
+            },
+            {
+              "type": "heal",
+              "value": "1d6+3",
+              "trigger": "free",
+              "note": "Transfers drained HP to another creature (or self). All must be in contact with caster."
+            },
+            {
+              "type": "constraint",
+              "value": "Intelligent creatures may optionally resist (WIL). On success, spell fails. No resistance roll allowed on unconscious targets.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Calm Dark Torment",
+          "name_sv": "Lugna mörka kval",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "1d4 actions",
+          "mechanical_effects": [
+            {
+              "type": "restrict",
+              "value": "all_actions",
+              "phase": "while_active",
+              "note": "Wild animals or monsters only. Duration 1d4 of the creature's actions."
+            },
+            {
+              "type": "constraint",
+              "value": "Effect breaks immediately if anyone attacks the calmed creature.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "Night Walk",
+          "name_sv": "Nattgång",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Personal",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "shadow_walk",
+              "trigger": "free",
+              "note": "Pass through anything that lets light through (barred windows, glass, gaps in boards). Personal only."
+            }
+          ]
+        },
+        {
+          "name": "When My Flame Burns Out",
+          "name_sv": "När min låga brinner ut",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words, touch",
+          "components_sv": "Ord, beröring",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "1d4",
+              "trigger": "free",
+              "note": "Self-damage to the caster."
+            },
+            {
+              "type": "constraint",
+              "value": "Touch. Used only on the dying as an act of mercy. Eases final suffering, believed to prevent the deceased from becoming a ghost. No other mechanical effect.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Still the Mind",
+          "name_sv": "Stilla sinnet",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words, touch",
+          "components_sv": "Ord, beröring",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "remove_condition",
+              "value": "angry",
+              "trigger": "free",
+              "note": "Touch."
+            },
+            {
+              "type": "remove_condition",
+              "value": "scared",
+              "trigger": "free"
+            },
+            {
+              "type": "remove_condition",
+              "value": "disheartened",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "We Are Shadows",
+          "name_sv": "Vi är skuggor",
+          "translation_official": false,
+          "rank": 1,
+          "requirement": "Dark Magic",
+          "requirement_sv": "Mörkermagi",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "25 meters",
+          "duration": "1d10 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Creates shadow copy of caster within 25 m and line of sight. Copy has caster's physical attributes and skill values but no will/intelligence. Can grasp physical objects, cannot be damaged by them. Duration 1d10 minutes.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Dance, My Puppet",
+          "name_sv": "Dansa min docka",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "Still the Mind",
+          "requirement_sv": "Stilla sinnet",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "15 minutes",
+          "range": "10 meters",
+          "duration": "1d10 minutes",
+          "mechanical_effects": [
+            {
+              "type": "restrict",
+              "value": "all_actions",
+              "phase": "while_active",
+              "note": "Caster controls target's consciousness. Duration 1d10 minutes. Range 10 m. Casting time 15 minutes."
+            },
+            {
+              "type": "constraint",
+              "value": "After casting, roll d20 on side_effect_table. Results 18-20 may cause permanent mental attribute changes (+/-1 to random WIL/INT/CHA) and narrative effects (lost/gained memories or feelings).",
+              "trigger": "free"
+            }
+          ],
+          "side_effect_table": {
+            "note": "Roll d20 after casting. Result 17 is absent from the source material (likely a misprint).",
+            "entries": [
+              {
+                "roll": [
+                  1,
+                  16
+                ],
+                "result": "Nothing happens.",
+                "result_sv": "Ingenting händer."
+              },
+              {
+                "roll": [
+                  18
+                ],
+                "result": "The mage loses 1 point in a random mental attribute (d6: 1-2 WIL, 3-4 INT, 5-6 CHA). With this, something more is lost: perhaps a memory, a feeling (such as love for a person, longing, ambition, faith, or something else of narrative rather than mechanical nature).",
+                "result_sv": "Magikern förlorar 1 poäng i en slumpmässig mental grundegenskap (T6: 1–2 PSY, 3–4 INT, 5–6 KAR). Med detta förloras också något mer: kanske ett minne, en känsla (som kärlek till en person, längtan, ambition, tro eller något annat av narrativ snarare än mekanisk natur)."
+              },
+              {
+                "roll": [
+                  19
+                ],
+                "result": "The mage gains 1 point in a random mental attribute (d6: 1-2 WIL, 3-4 INT, 5-6 CHA). With this, the mage also brings back something more: a memory, a feeling (such as love for a person, longing, or something else of narrative rather than mechanical nature).",
+                "result_sv": "Magikern får 1 poäng i en slumpmässig mental grundegenskap (T6: 1–2 PSY, 3–4 INT, 5–6 KAR). Med detta tar magikern också med sig tillbaka något mer: ett minne, en känsla (som kärlek till en person, längtan eller något annat av narrativ snarare än mekanisk natur)."
+              },
+              {
+                "roll": [
+                  20
+                ],
+                "result": "The mage both loses and gains something. NOTE: When rolling to determine what, you must first decide whether to roll separate dice for loss and gain (and in which order) or a single die for both (with the result that only one memory or feeling changes places).",
+                "result_sv": "Magikern både förlorar och vinner något. OBS: När man slår för att avgöra vad, måste man först bestämma om man slår separata tärningar för förlust och vinst (och i vilken ordning) eller en enda tärning för båda (med resultatet att bara ett minne eller en känsla byter plats)."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Darken",
+          "name_sv": "Förmörka",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "Stumbling in the Dark",
+          "requirement_sv": "I mörkret stapplande omkull",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "100 meters diameter",
+          "duration": "2d10 minutes",
+          "mechanical_effects": [
+            {
+              "type": "bane",
+              "value": "combat_and_AGL_skills",
+              "phase": "while_active",
+              "note": "All in area. Bane on combat rolls and AGL-based skill rolls."
+            },
+            {
+              "type": "constraint",
+              "value": "100 m diameter pitch darkness. No natural light penetrates. Darkness rules (core rulebook p.52) apply. Duration 2d10 minutes.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "My Shadow Was My Companion",
+          "name_sv": "Min skugga var min kamrat",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "We Are Shadows",
+          "requirement_sv": "Vi är skuggor",
+          "components": "Shadow or darkness within reach",
+          "components_sv": "Skugga eller mörker inom räckhåll",
+          "casting_time": "30 minutes",
+          "range": "Touch",
+          "duration": "1d20 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Summons a shadow copy of caster with its own will. Casting time 30 minutes, touch, duration 1d20 minutes. Destroyed by direct sunlight. Immune to physical weapons.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "mechanical_effects": [
+              {
+                "type": "constraint",
+                "value": "Immune to physical weapons. Destroyed by direct sunlight.",
+                "when": "always"
+              }
+            ],
+            "monster_attacks": [
+              {
+                "roll": [
+                  1,
+                  2
+                ],
+                "name": "Despair",
+                "name_sv": "Förtvivlan",
+                "mechanical_effects": [
+                  {
+                    "type": "restrict",
+                    "value": "all_actions",
+                    "trigger": "free",
+                    "note": "1d10 rounds. Target may resist (WIL roll against 12)."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  3,
+                  4
+                ],
+                "name": "Blind",
+                "name_sv": "Förblinda",
+                "mechanical_effects": [
+                  {
+                    "type": "bane",
+                    "value": "all_physical_actions",
+                    "phase": "while_active",
+                    "note": "Duration 2d10 minutes."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  5,
+                  6
+                ],
+                "name": "Wither",
+                "name_sv": "Förtvina",
+                "mechanical_effects": [
+                  {
+                    "type": "damage",
+                    "value": "1d6",
+                    "trigger": "free"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Empty and Cruel and Black as Soot",
+          "name_sv": "Tomt och grymt och svart som sot",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "Soothe Pain and Ailment",
+          "requirement_sv": "Lindra kval och krämpa",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6",
+              "trigger": "free",
+              "note": "Touch. Drains HP from target. Opposed WIL roll required."
+            },
+            {
+              "type": "heal",
+              "value": "half_of_drained",
+              "trigger": "free",
+              "note": "Half of drained HP (rounded down) transferred to self, another person, or an object (as per Charge, core rulebook p.62). Can alternatively restore WP or heal someone the caster touches."
+            }
+          ]
+        },
+        {
+          "name": "Walk with Shadows",
+          "name_sv": "Vandrar med skuggor",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "Night Walk",
+          "requirement_sv": "Nattgång",
+          "components": "Darkness, words, gesture",
+          "components_sv": "Mörker, ord, gest",
+          "casting_time": "2 actions",
+          "range": "200 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "shadow_teleport_200m_per_pl",
+              "trigger": "free",
+              "note": "Instantaneous travel to a known location. 200 m per PL. Personal only. Shadow or darkness must exist at destination, otherwise spell fails. Casting time 2 actions."
+            }
+          ]
+        },
+        {
+          "name": "Rest Weary Bones",
+          "name_sv": "Vila seniga ben",
+          "translation_official": false,
+          "rank": 2,
+          "requirement": "When My Flame Burns Out",
+          "requirement_sv": "När min låga brinner ut",
+          "components": "Words, gestures",
+          "components_sv": "Ord, gester",
+          "casting_time": "15 minutes per 10 HP the ghost/spirit has",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Dissolve a ghost or spirit, sending it to the realm of the dead. Casting time: 15 minutes per 10 HP the ghost/spirit has. Each 15-minute interval requires a new roll and WP cost. Any failed roll interrupts the spell — must restart from beginning. Range 10 m.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Hard Dead Bones",
+          "name_sv": "Hårda döda ben",
+          "translation_official": false,
+          "rank": 3,
+          "requirement": "Empty and Cruel and Black as Soot",
+          "requirement_sv": "Tomt och grymt och svart som sot",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "1d10",
+              "trigger": "free",
+              "note": "Drains HP from a target by touch."
+            },
+            {
+              "type": "damage",
+              "value": "1d10",
+              "trigger": "free",
+              "note": "Self-damage to the caster."
+            },
+            {
+              "type": "heal",
+              "value": "2d10",
+              "trigger": "free",
+              "note": "Transfers all drained HP (from target + self) to a recipient (not caster). Can heal most injuries, even lost body parts. Has been used to resurrect the dead."
+            },
+            {
+              "type": "constraint",
+              "value": "Drained bodies risk becoming emaciated and near-mummified depending on HP drained.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Possess Mind",
+          "name_sv": "Besätta sinne",
+          "translation_official": false,
+          "rank": 3,
+          "requirement": "Dance, My Puppet",
+          "requirement_sv": "Dansa min docka",
+          "components": "Words, belonging of the target",
+          "components_sv": "Ord, tillhörighet från offret",
+          "casting_time": "2 shifts",
+          "range": "100 meters",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Permanently possess another's body. Requires belonging of target, 2 shifts casting, 100 m range. Mage controls only when host sleeps or is unconscious. Mage retains skills and mental abilities; skill values decrease if host body has lower attributes (by the difference), unchanged if higher. HP, damage bonus, and movement change to host body's values. Cannot leave without a new ritual. Forbidden spell.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "And Slowly the Shadows Crept",
+          "name_sv": "Och sakta kröpo skuggorna",
+          "translation_official": false,
+          "rank": 3,
+          "requirement": "My Shadow Was My Companion",
+          "requirement_sv": "Min skugga, var min kamrat",
+          "components": "Nearby shadow",
+          "components_sv": "Skugga i närheten",
+          "casting_time": "45 minutes",
+          "range": "Touch",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Awakens all small shadows nearby into creatures filled with a single feeling (worship or hatred toward a general concept — a kin, a place, etc., not individuals). Casting time 45 minutes, touch, permanent. Once awakened, caster cannot control or dismiss them.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "initiative": 2,
+            "size": "Normal",
+            "movement": 8,
+            "armor": 0,
+            "hp": 12,
+            "monster_attacks": [
+              {
+                "roll": [
+                  1
+                ],
+                "name": "Drown",
+                "name_sv": "Dränka",
+                "mechanical_effects": [
+                  {
+                    "type": "damage",
+                    "value": "1d8",
+                    "trigger": "free"
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  2
+                ],
+                "name": "Despair",
+                "name_sv": "Förtvivlan",
+                "mechanical_effects": [
+                  {
+                    "type": "restrict",
+                    "value": "all_actions",
+                    "trigger": "free",
+                    "note": "1d10 rounds. Target may resist (WIL roll against 12)."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  3
+                ],
+                "name": "Spirit from Flesh",
+                "name_sv": "Ande ur kött",
+                "mechanical_effects": [
+                  {
+                    "type": "damage",
+                    "value": "1d10",
+                    "trigger": "free"
+                  },
+                  {
+                    "type": "restrict",
+                    "value": "all_actions",
+                    "trigger": "free",
+                    "note": "1d4 rounds to regain composure."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  4
+                ],
+                "name": "Blind",
+                "name_sv": "Förblinda",
+                "mechanical_effects": [
+                  {
+                    "type": "bane",
+                    "value": "all_physical_actions",
+                    "phase": "while_active",
+                    "note": "Duration 2d10 minutes."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  5
+                ],
+                "name": "Mirror",
+                "name_sv": "Spegla",
+                "mechanical_effects": [
+                  {
+                    "type": "restrict",
+                    "value": "all_actions",
+                    "trigger": "free",
+                    "note": "1d10 rounds."
+                  }
+                ]
+              },
+              {
+                "roll": [
+                  6
+                ],
+                "name": "Wither",
+                "name_sv": "Förtvina",
+                "mechanical_effects": [
+                  {
+                    "type": "damage",
+                    "value": "1d8",
+                    "trigger": "free"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Shadow Combat",
+          "name_sv": "Skuggstrid",
+          "translation_official": false,
+          "rank": 3,
+          "requirement": "Walk with Shadows",
+          "requirement_sv": "Vandrar med skuggor",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "5 minutes",
+          "range": "1 km",
+          "duration": "1d10 minutes",
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "value": "combat",
+              "phase": "while_active",
+              "note": "Boon on all combat rolls while in shadow form."
+            },
+            {
+              "type": "damage",
+              "value": "WIL_div_6_d6",
+              "trigger": "free",
+              "note": "Damage = WIL/6 d6s (rounded down). Affects target's physical body."
+            },
+            {
+              "type": "constraint",
+              "value": "Caster leaves body and fights in shadow form. Can only be harmed by magical weapons, bright light, and spells. Range 1 km, casting time 5 minutes, duration 1d10 minutes.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "From the Grave's Soil",
+          "name_sv": "Ur gravens mull",
+          "translation_official": false,
+          "rank": 3,
+          "requirement": "Rest Weary Bones",
+          "requirement_sv": "Vila seniga ben",
+          "components": "Words, gestures, relic",
+          "components_sv": "Ord, gester, relik",
+          "casting_time": "1 hour per power level",
+          "range": "100 meters diameter",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Animate all dead within 100 m diameter. Undead have no will but are given purpose by the caster. Use Death Walker stats from the creatures chapter. Casting time 1 hour per PL. Range doubles per additional PL (200 m at PL 2, 400 m at PL 3). Requires relic component.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Forge Steel, Forge Shadow",
+          "name_sv": "Smid stål, smid skugga",
+          "translation_official": false,
+          "rank": 4,
+          "requirement": "Hard Dead Bones",
+          "requirement_sv": "Hårda, döda ben",
+          "components": "Words, smithing tools and forge",
+          "components_sv": "Ord, samt smidesverktyg och ässja",
+          "casting_time": "2 shifts",
+          "range": "Touch",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Forge a weapon of steel and shadow. Permanent. Weapon weighs half of equivalent metal weapon. Dragon roll (critical) range increases by 1 step per PL. Can also repair broken weapons. Casting time 2 shifts, touch. Requires smithing tools and forge.",
+              "trigger": "free"
+            },
+            {
+              "type": "heal",
+              "value": "half_of_damage_dealt",
+              "when": "equipped",
+              "note": "Wielder heals HP equal to half the damage dealt to others with this weapon."
+            }
+          ]
+        }
+      ],
+      "source_pages": "131-136"
+    }
+  ]
+}

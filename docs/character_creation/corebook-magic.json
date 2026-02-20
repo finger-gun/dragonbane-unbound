@@ -1,0 +1,1571 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "magic",
+    "purpose": "Magic system rules and all four magic schools (General, Animism, Elementalism, Mentalism) with complete spell data from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.3",
+    "content_license": "personal-use-only"
+  },
+  "magic_rules": {
+    "schools": [
+      {
+        "id": "animism",
+        "name": "Animism",
+        "name_sv": "Animism"
+      },
+      {
+        "id": "elementalism",
+        "name": "Elementalism",
+        "name_sv": "Elementalism"
+      },
+      {
+        "id": "mentalism",
+        "name": "Mentalism",
+        "name_sv": "Mentalism"
+      }
+    ],
+    "prepared_spells_max": "INT base chance (from skill_base_chance brackets)",
+    "prepared_spells_max_sv": "INT grundchans (från grundchans-tabellen)",
+    "cantrips_always_prepared": true,
+    "power_levels": [
+      1,
+      2,
+      3
+    ]
+  },
+  "magic_schools": [
+    {
+      "id": "general",
+      "name": "General Magic",
+      "name_sv": "Allmän magi",
+      "translation_official": true,
+      "linked_attribute": null,
+      "cantrips": [
+        {
+          "name": "Fetch",
+          "name_sv": "Hämta",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Move one loose object (max weight 1) within 10m to your hand",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Flick",
+          "name_sv": "Knäpp",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": 1,
+              "trigger": "free",
+              "note": "Range 10m. Can shatter glass objects."
+            }
+          ]
+        },
+        {
+          "name": "Sense Magic",
+          "name_sv": "Känna magi",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Detect whether a place you occupy or object you hold is affected by magic, and identify the type",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Mend Clothes",
+          "name_sv": "Laga kläder"
+        },
+        {
+          "name": "Light",
+          "name_sv": "Ljus",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Illuminates 10m radius from focus item. Lasts one shift. Extinguishes if you reach 0 HP.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Open/Close",
+          "name_sv": "Öppna/stänga",
+          "mechanical_effects": [
+            {
+              "type": "unlock",
+              "value": "open_or_close_unlocked_door",
+              "trigger": "free",
+              "note": "Range 10m, line of sight required"
+            }
+          ]
+        }
+      ],
+      "spells": [
+        {
+          "name": "Protector",
+          "name_sv": "Beskyddare",
+          "rank": 1,
+          "requirement": "Any magic school",
+          "requirement_sv": "Valfri magiskola",
+          "components": "Gesture, ingredient (something to draw with)",
+          "components_sv": "Gest, ingrediens (något att rita med)",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Reduce power level of all spells targeting the protected person/place by your Protector power level. Also reduces monster magical attack dice by 1 per PL.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "Dispel",
+          "name_sv": "Skingra",
+          "rank": 1,
+          "requirement": "Any magic school",
+          "requirement_sv": "Valfri magiskola",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Cancel one ongoing spell with power level equal to or lower than your Dispel power level. GM may allow breaking other magical effects.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Anti-Magic",
+          "name_sv": "Antimagi",
+          "rank": 2,
+          "requirement": "Protector or Dispel",
+          "requirement_sv": "Beskyddare eller Skingra",
+          "components": "Gesture",
+          "components_sv": "Gest",
+          "casting_time": "Reactive",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Reactive — activate after opponent succeeds on spell roll but before effects resolve. Reduce target's power level by your Anti-Magic power level. If reduced to 0 or less, the spell has no effect. Also reduces monster magical attack dice by 1 per PL. Does not replace your action.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Power Transfer",
+          "name_sv": "Kraftöverföring",
+          "rank": 3,
+          "requirement": "Anti-Magic",
+          "requirement_sv": "Antimagi",
+          "components": "Gesture",
+          "components_sv": "Gest",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects_mode_a": [
+            {
+              "type": "constraint",
+              "value": "Drain up to 4+4_per_pl WP from a humanoid creature (touch). WP spent casting are lost. Cannot exceed your max WP. If target resists, roll with bane.",
+              "trigger": "free"
+            }
+          ],
+          "mechanical_effects_mode_b": [
+            {
+              "type": "constraint",
+              "value": "Transfer up to 4+4_per_pl of your WP to another humanoid creature (touch). WP spent casting are lost. Cannot exceed target's max WP.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Seal",
+          "name_sv": "Sigill",
+          "rank": 4,
+          "requirement": "Power Transfer",
+          "requirement_sv": "Kraftöverföring",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 shift",
+          "range": "Touch",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Bind a spell to an inanimate object at Seal's power level. You set the trigger condition. Activating person's WP are used. Without Permanence, seal is consumed on activation. Can combine with Charge or Permanence.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Charge",
+          "name_sv": "Laddning",
+          "rank": 4,
+          "requirement": "Power Transfer",
+          "requirement_sv": "Kraftöverföring",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "15 minutes",
+          "range": "Touch",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Transfer up to 10_per_pl of your WP into an inanimate object (battery). Anyone touching the object can use its WP. Charged WP dissipate after one shift unless combined with Permanence. Can combine with Seal.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Permanence",
+          "name_sv": "Permanens",
+          "rank": 5,
+          "requirement": "Seal",
+          "requirement_sv": "Sigill",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 shift",
+          "range": "Touch",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "modify_stat",
+              "target": {
+                "stat": "wil"
+              },
+              "value": -1,
+              "trigger": "free",
+              "note": "Permanent. Reduces max WP by 1."
+            },
+            {
+              "type": "constraint",
+              "value": "Cast together with another spell to make it permanent. PL must match target spell's PL. Cannot be used on immediate-duration spells. With Seal, the seal becomes permanent and reusable.",
+              "trigger": "free"
+            }
+          ]
+        }
+      ],
+      "source_pages": "61-62"
+    },
+    {
+      "id": "animism",
+      "name": "Animism",
+      "name_sv": "Animism",
+      "translation_official": true,
+      "linked_attribute": "INT",
+      "cantrips": [
+        {
+          "name": "Flower Trail",
+          "name_sv": "Blomsterspår"
+        },
+        {
+          "name": "Hairstyle",
+          "name_sv": "Frisyr",
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "bluffing"
+              },
+              "trigger": "on_skill_roll",
+              "condition": {
+                "context": "disguise_or_deception"
+              },
+              "note": "GM decides if context is appropriate"
+            },
+            {
+              "type": "boon",
+              "target": {
+                "skill": "persuasion"
+              },
+              "trigger": "on_skill_roll",
+              "condition": {
+                "context": "appearance_matters"
+              },
+              "note": "GM decides if context is appropriate"
+            }
+          ]
+        },
+        {
+          "name": "Birdsong",
+          "name_sv": "Fågelsång",
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "awareness"
+              },
+              "trigger": "free",
+              "duration": "15_minutes",
+              "condition": {
+                "environment": "outdoors"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cook",
+          "name_sv": "Laga mat",
+          "mechanical_effects": [
+            {
+              "type": "auto_succeed",
+              "target": {
+                "skill": "bushcraft"
+              },
+              "trigger": "free",
+              "condition": {
+                "action_is": "cooking"
+              },
+              "note": "Instant (one action) instead of normal cooking time"
+            }
+          ]
+        },
+        {
+          "name": "Tidy",
+          "name_sv": "Städa"
+        }
+      ],
+      "spells": [
+        {
+          "name": "Banish",
+          "name_sv": "Fördriva",
+          "rank": 1,
+          "requirement": "Animism",
+          "requirement_sv": "Animism",
+          "components": "Words, gesture, focus (holy symbol)",
+          "components_sv": "Ord, gest, fokus (helig symbol)",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d8+1d8_per_pl",
+              "trigger": "free",
+              "condition": {
+                "target_is": "demon_or_undead"
+              },
+              "note": "Armor and natural protection have no effect. Cannot be dodged or parried."
+            }
+          ]
+        },
+        {
+          "name": "Lightning",
+          "name_sv": "Ljungeld",
+          "rank": 1,
+          "requirement": "Animism",
+          "requirement_sv": "Animism",
+          "components": "Gesture",
+          "components_sv": "Gest",
+          "casting_time": "1 action",
+          "range": "30 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Primary target. Range 30m. Can be dodged/parried as ranged attack."
+            },
+            {
+              "type": "damage",
+              "value": "2d4+1d4_per_pl",
+              "trigger": "free",
+              "note": "Chains to random creature within 2m. No chain if primary is dodged/parried."
+            },
+            {
+              "type": "constraint",
+              "value": "Metal armor provides no protection. Costs double WP indoors. If dodged/parried, no further targets are hit.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Heal",
+          "name_sv": "Läka",
+          "rank": 1,
+          "requirement": "Animism",
+          "requirement_sv": "Animism",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "heal",
+              "target": {
+                "stat": "hp"
+              },
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Touch. Self or another living creature."
+            }
+          ]
+        },
+        {
+          "name": "Ensnare",
+          "name_sv": "Snärja",
+          "rank": 1,
+          "requirement": "Animism",
+          "requirement_sv": "Animism",
+          "components": "Gesture, ingredient (branches or roots nearby)",
+          "components_sv": "Gest, ingrediens (grenar eller rötter i närheten)",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "restrict",
+              "value": "move",
+              "phase": "while_active",
+              "condition": {
+                "target_is": "person"
+              },
+              "note": "No effect on monsters"
+            },
+            {
+              "type": "constraint",
+              "value": "Break free requires Evade roll: boon at PL 1, normal at PL 2, bane at PL 3. Each attempt is one action, max once per round. Others can assist.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "Speak with Animals",
+          "name_sv": "Tala med djur",
+          "rank": 1,
+          "requirement": "Animism",
+          "requirement_sv": "Animism",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "15 minutes",
+          "range": "2 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Ask a mammal or bird up to 1 question per power level. Answers are based on what the animal has seen, heard, and smelled. Answers may be cryptic. Animals never lie.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Chain Lightning",
+          "name_sv": "Blixt",
+          "rank": 2,
+          "requirement": "Lightning",
+          "requirement_sv": "Ljungeld",
+          "components": "Gesture",
+          "components_sv": "Gest",
+          "casting_time": "1 action",
+          "range": "40 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d8+1d8_per_pl",
+              "trigger": "free",
+              "note": "Primary target. Range 40m. Can be dodged/parried as ranged attack."
+            },
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Chains to 2nd creature within 2m."
+            },
+            {
+              "type": "damage",
+              "value": "2d4+1d4_per_pl",
+              "trigger": "free",
+              "note": "Chains to 3rd creature within 2m."
+            },
+            {
+              "type": "constraint",
+              "value": "Metal armor provides no protection. Costs double WP indoors. If dodged/parried, no further targets are hit.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Purge",
+          "name_sv": "Förinta",
+          "rank": 2,
+          "requirement": "Banish",
+          "requirement_sv": "Fördriva",
+          "components": "Words, gesture, focus (holy symbol)",
+          "components_sv": "Ord, gest, fokus (helig symbol)",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d10+1d10_per_pl",
+              "trigger": "free",
+              "condition": {
+                "target_is": "demon_or_undead"
+              },
+              "note": "Armor and natural protection have no effect. Cannot be dodged or parried."
+            }
+          ]
+        },
+        {
+          "name": "Heal Wound",
+          "name_sv": "Hela",
+          "rank": 2,
+          "requirement": "Heal",
+          "requirement_sv": "Läka",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "heal",
+              "target": {
+                "stat": "hp"
+              },
+              "value": "2d8+1d8_per_pl",
+              "trigger": "free",
+              "note": "Touch. Self or another living creature."
+            },
+            {
+              "type": "remove_condition",
+              "value": "severe_injury_non_permanent",
+              "trigger": "free",
+              "note": "Optional rule (p.51). Cures one non-permanent severe injury."
+            }
+          ]
+        },
+        {
+          "name": "Engulfing Forest",
+          "name_sv": "Snårskog",
+          "rank": 2,
+          "requirement": "Ensnare",
+          "requirement_sv": "Snärja",
+          "components": "Gesture, ingredient (branches or roots nearby)",
+          "components_sv": "Gest, ingrediens (grenar eller rötter i närheten)",
+          "casting_time": "1 action",
+          "range": "10 meters (sphere)",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "10m sphere becomes difficult terrain for the duration",
+              "phase": "while_active"
+            },
+            {
+              "type": "restrict",
+              "value": "move",
+              "phase": "while_active",
+              "condition": {
+                "target_is": "person"
+              },
+              "note": "All persons (not monsters) except caster within area are ensnared"
+            },
+            {
+              "type": "constraint",
+              "value": "Break free requires Evade roll: boon at PL 1, normal at PL 2, bane at PL 3. Each attempt is one action, max once per round. Non-ensnared persons can assist.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "Sleep",
+          "name_sv": "Söva",
+          "rank": 2,
+          "requirement": "Heal",
+          "requirement_sv": "Läka",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "restrict",
+              "value": "all_actions",
+              "phase": "while_active",
+              "duration": "15_minutes",
+              "note": "Target falls asleep. Wakes if damaged. Very hard to wake otherwise."
+            },
+            {
+              "type": "apply_condition",
+              "value": "dazed",
+              "trigger": "free",
+              "note": "Applied if target succeeds WIL roll (resists sleep but still Dazed)"
+            },
+            {
+              "type": "constraint",
+              "value": "Opposed WIL roll. GM rolls vs max WP (reduced by 2 per Focused level) or vs 10. Target rolls with boon at PL 1, normal at PL 2, bane at PL 3. Only affects living persons, no effect on monsters.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Restoration",
+          "name_sv": "Kurera",
+          "rank": 3,
+          "requirement": "Heal Wound",
+          "requirement_sv": "Hela",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "heal",
+              "target": {
+                "stat": "hp"
+              },
+              "value": "2d10+1d10_per_pl",
+              "trigger": "free",
+              "note": "Touch. Self or another living creature."
+            },
+            {
+              "type": "remove_condition",
+              "value": "severe_injury",
+              "trigger": "free",
+              "note": "Optional rule (p.51). Cures one severe injury, even permanent."
+            }
+          ]
+        },
+        {
+          "name": "Thunderbolt",
+          "name_sv": "Åskvigg",
+          "rank": 3,
+          "requirement": "Chain Lightning",
+          "requirement_sv": "Blixt",
+          "components": "Gesture",
+          "components_sv": "Gest",
+          "casting_time": "1 action",
+          "range": "50 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d10+1d10_per_pl",
+              "trigger": "free",
+              "note": "Primary target. Range 50m. Can be dodged/parried as ranged attack."
+            },
+            {
+              "type": "damage",
+              "value": "2d8+1d8_per_pl",
+              "trigger": "free",
+              "note": "Chains to 2nd creature within 2m."
+            },
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Chains to 3rd creature within 2m."
+            },
+            {
+              "type": "damage",
+              "value": "2d4+1d4_per_pl",
+              "trigger": "free",
+              "note": "Chains to 4th creature within 2m."
+            },
+            {
+              "type": "constraint",
+              "value": "Metal armor provides no protection. Costs double WP indoors. If dodged/parried, no further targets are hit.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Resurrection",
+          "name_sv": "Återuppväcka",
+          "rank": 3,
+          "requirement": "Heal Wound",
+          "requirement_sv": "Hela",
+          "components": "Words, gesture, ingredient (the dead person's body)",
+          "components_sv": "Ord, gest, ingrediens (den dödes kropp)",
+          "casting_time": "1 shift",
+          "range": "Touch",
+          "duration": "Permanent",
+          "mechanical_effects": [
+            {
+              "type": "modify_stat",
+              "target": {
+                "stat": "wil"
+              },
+              "value": -1,
+              "trigger": "free",
+              "note": "Permanent. Caster loses 1 WIL (reduces max WP by 1)."
+            },
+            {
+              "type": "constraint",
+              "value": "Revive a dead person (truly alive, not undead). PL 1: within same shift. PL 2: within one day. PL 3: within one week. Beyond one week: impossible. Only one attempt — failure means irrevocable death. Resurrected person loses 1d3 levels in all CHA-based skills (minimum 3).",
+              "trigger": "free"
+            }
+          ]
+        }
+      ],
+      "source_pages": "63-65"
+    },
+    {
+      "id": "elementalism",
+      "name": "Elementalism",
+      "name_sv": "Elementalism",
+      "translation_official": true,
+      "linked_attribute": "INT",
+      "cantrips": [
+        {
+          "name": "Puff of Smoke",
+          "name_sv": "Rökpuff",
+          "mechanical_effects": [
+            {
+              "type": "boon",
+              "target": {
+                "skill": "sneaking"
+              },
+              "trigger": "on_skill_roll",
+              "note": "GM decides if context is appropriate"
+            }
+          ]
+        },
+        {
+          "name": "Ignite",
+          "name_sv": "Tända",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Light or extinguish a candle, torch, or lantern within 10m",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Heat/Chill",
+          "name_sv": "Värma/kyla",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Protects against cold (p.54) for one shift. 10m radius.",
+              "trigger": "free"
+            }
+          ]
+        }
+      ],
+      "spells": [
+        {
+          "name": "Fireball",
+          "name_sv": "Flamma",
+          "rank": 1,
+          "requirement": "Elementalism",
+          "requirement_sv": "Elementalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "20 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Fire damage. Range 20m. Can be dodged/parried as ranged attack. Ignites flammable objects."
+            },
+            {
+              "type": "constraint",
+              "value": "Each additional PL can add 1d6 damage to same target OR create another flame at a different target within range (split damage).",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Frost",
+          "name_sv": "Frost",
+          "rank": 1,
+          "requirement": "Elementalism",
+          "requirement_sv": "Elementalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "4 meters (sphere)",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "1d6",
+              "trigger": "free",
+              "note": "HP damage to all living creatures in area. Base radius 4m, +4m per additional PL."
+            },
+            {
+              "type": "damage",
+              "value": "1d6",
+              "target": {
+                "stat": "wp"
+              },
+              "trigger": "free",
+              "note": "WP damage to all living creatures in area."
+            },
+            {
+              "type": "constraint",
+              "value": "All affected creatures become chilled (p.54) — cannot heal HP or WP until warmed. Natural fires in area extinguished. Water freezes to ice.",
+              "trigger": "free"
+            },
+            {
+              "type": "restrict",
+              "value": "all_actions",
+              "phase": "while_active",
+              "duration": "15_minutes",
+              "condition": {
+                "target_is": "person"
+              },
+              "note": "Humanoids (not monsters) are frozen solid. Each turn may roll STR (not an action) to break free. Cannot act even reactively while frozen."
+            }
+          ]
+        },
+        {
+          "name": "Pillar",
+          "name_sv": "Pelare",
+          "rank": 1,
+          "requirement": "Elementalism",
+          "requirement_sv": "Elementalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Raise 3m-high, 1m-wide stone pillar from ground. +3m height per additional PL. Anyone on the spot must pass Climb & Jump (not an action) or fall. Under low ceiling, failed roll deals 2d6 crush damage instead. Increased height increases fall damage (p.53).",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Shatter",
+          "name_sv": "Splittra",
+          "rank": 1,
+          "requirement": "Elementalism",
+          "requirement_sv": "Elementalism",
+          "components": "Words",
+          "components_sv": "Ord",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d10+1d10_per_pl",
+              "trigger": "free",
+              "condition": {
+                "target_is": "non_living_non_magical_object"
+              },
+              "note": "Touch. Protection values give no protection."
+            }
+          ]
+        },
+        {
+          "name": "Gust of Wind",
+          "name_sv": "Vindpust",
+          "rank": 1,
+          "requirement": "Elementalism",
+          "requirement_sv": "Elementalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters (cone)",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d4+1d4_per_pl",
+              "trigger": "free",
+              "note": "Crush damage. 10m cone. Pushes targets equal meters. No effect on Large or Enormous monsters."
+            },
+            {
+              "type": "constraint",
+              "value": "Against swarms: deals 2d6+1d6_per_pl damage instead. All human-sized or smaller creatures pushed equal meters to damage dealt.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Fire Blast",
+          "name_sv": "Eldklot",
+          "rank": 2,
+          "requirement": "Fireball",
+          "requirement_sv": "Flamma",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "30 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d8+1d8_per_pl",
+              "trigger": "free",
+              "note": "Fire damage. Range 30m. Can be dodged/parried as ranged attack. Ignites flammable objects."
+            },
+            {
+              "type": "constraint",
+              "value": "Each additional PL can add 1d8 damage to same target OR create another fire blast at a different target within range (split damage).",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Tidal Wave",
+          "name_sv": "Flodvåg",
+          "rank": 2,
+          "requirement": "Frost",
+          "requirement_sv": "Frost",
+          "components": "Words, gesture, ingredient (water source)",
+          "components_sv": "Ord, gest, ingrediens (vattenkälla)",
+          "casting_time": "1 action",
+          "range": "20 meters (cone)",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Crush damage. 20m cone from water source. Pushes targets equal meters from source. Requires water source within range."
+            }
+          ]
+        },
+        {
+          "name": "Stone Shield",
+          "name_sv": "Stensköld",
+          "rank": 2,
+          "requirement": "Pillar",
+          "requirement_sv": "Pelare",
+          "components": "Gesture, ingredient (pebbles)",
+          "components_sv": "Gest, ingrediens (småsten)",
+          "casting_time": "Reactive",
+          "range": "Personal",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "reduce_damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "on_incoming_attack",
+              "note": "Reactive. Cast after knowing hit lands but before damage roll. Stacks with armor."
+            }
+          ]
+        },
+        {
+          "name": "Stonewall",
+          "name_sv": "Stenvägg",
+          "rank": 2,
+          "requirement": "Pillar",
+          "requirement_sv": "Pelare",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Shift",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Raise a wall (1m thick, 2m high, 3m wide) from ground. Each additional PL creates another section. Anyone on the spot must pass Climb & Jump (not an action) or fall. Under low ceiling, failed roll deals 2d6 crush damage.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Whirlwind",
+          "name_sv": "Virvelvind",
+          "rank": 2,
+          "requirement": "Gust of Wind",
+          "requirement_sv": "Vindpust",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "4 meters (sphere)",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d4+1d4_per_pl",
+              "trigger": "free",
+              "note": "Crush damage. 4m sphere, +4m per additional PL. Pushes targets equal meters. Targets land prone."
+            },
+            {
+              "type": "constraint",
+              "value": "With bane on the roll, you can direct-fling a single person to a specific spot within range, choosing whether they take damage and whether they land prone.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Firebird",
+          "name_sv": "Eldfågel",
+          "rank": 3,
+          "requirement": "Fire Blast",
+          "requirement_sv": "Eldklot",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "40 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d10+1d10_per_pl",
+              "trigger": "free",
+              "note": "Fire damage. Range 40m. Can be dodged/parried as ranged attack. Ignites flammable objects."
+            },
+            {
+              "type": "constraint",
+              "value": "Each additional PL can add 1d10 damage to same target OR create another firebird at a different target within range (split damage).",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Firestorm",
+          "name_sv": "Eldvirvel",
+          "rank": 3,
+          "requirement": "Fire Blast and Whirlwind",
+          "requirement_sv": "Eldklot och Virvelvind",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "4 meters (sphere)",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Fire damage. 4m sphere, +4m per additional PL. Hits all targets in area."
+            }
+          ]
+        },
+        {
+          "name": "Gnome",
+          "name_sv": "Gnom",
+          "rank": 3,
+          "requirement": "Stonewall",
+          "requirement_sv": "Stenvägg",
+          "components": "Words, gesture, ingredient (stone or earth)",
+          "components_sv": "Ord, gest, ingrediens (sten eller jord)",
+          "casting_time": "15 minutes",
+          "range": "4 meters",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Summon earth elemental. Counts as monster in combat. Follows creator's commands (free action). Acts independently with own initiative. Must stay within line of sight of caster. Duration 15 minutes.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "movement": 8,
+            "hp": "5_per_pl",
+            "armor": 4,
+            "weapon": {
+              "name": "Stone fists",
+              "name_sv": "Nävar av sten",
+              "mechanical_effects": [
+                {
+                  "type": "damage",
+                  "value": "1d6_per_pl",
+                  "trigger": "on_attack",
+                  "note": "Crush damage. Auto-hit in melee. Can be dodged or parried."
+                }
+              ]
+            },
+            "spell_ability": {
+              "spell": "Pillar",
+              "spell_sv": "Pelare"
+            }
+          }
+        },
+        {
+          "name": "Salamander",
+          "name_sv": "Salamander",
+          "rank": 3,
+          "requirement": "Fire Blast",
+          "requirement_sv": "Eldklot",
+          "components": "Words, gesture, ingredient (open flame)",
+          "components_sv": "Ord, gest, ingrediens (öppen eld)",
+          "casting_time": "15 minutes",
+          "range": "4 meters",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Summon fire elemental. Counts as monster in combat. Follows creator's commands (free action). Acts independently with own initiative. Must stay within line of sight of caster. Duration 15 minutes.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "movement": 12,
+            "hp": "5_per_pl",
+            "armor": 0,
+            "weapon": {
+              "name": "Flaming grasp",
+              "name_sv": "Flammande grepp",
+              "mechanical_effects": [
+                {
+                  "type": "damage",
+                  "value": "1d6_per_pl",
+                  "trigger": "on_attack",
+                  "note": "Fire damage. Auto-hit in melee. Can be dodged but not parried. Armor gives no protection."
+                }
+              ]
+            },
+            "spell_ability": {
+              "spell": "Fire Blast",
+              "spell_sv": "Eldklot"
+            },
+            "resistant": "Piercing damage halved",
+            "resistant_sv": "Stickskada halveras",
+            "immunity": "Immune to fire damage, including magical fire",
+            "immunity_sv": "Immun mot skada från eld, även magisk",
+            "mechanical_effects": [
+              {
+                "type": "reduce_damage",
+                "value": "half",
+                "when": "always",
+                "condition": {
+                  "damage_type": "piercing"
+                }
+              },
+              {
+                "type": "constraint",
+                "value": "Immune to fire damage, including magical fire",
+                "when": "always"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sylph",
+          "name_sv": "Sylf",
+          "rank": 3,
+          "requirement": "Whirlwind",
+          "requirement_sv": "Virvelvind",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "15 minutes",
+          "range": "4 meters",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Summon wind elemental. Counts as monster in combat. Follows creator's commands (free action). Acts independently with own initiative. Must stay within line of sight of caster. Duration 15 minutes.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "movement": 24,
+            "hp": "5_per_pl",
+            "armor": 0,
+            "weapon": {
+              "name": "Howling winds",
+              "name_sv": "Vinande vindar",
+              "mechanical_effects": [
+                {
+                  "type": "damage",
+                  "value": "1d4_per_pl",
+                  "trigger": "on_attack",
+                  "note": "Crush damage. Auto-hit in melee. Can be dodged but not parried. Pushes target equal meters."
+                }
+              ]
+            },
+            "spell_ability": {
+              "spell": "Gust of Wind",
+              "spell_sv": "Vindpust"
+            },
+            "resistant": "Piercing damage halved",
+            "resistant_sv": "Stickskada halveras",
+            "mechanical_effects": [
+              {
+                "type": "reduce_damage",
+                "value": "half",
+                "when": "always",
+                "condition": {
+                  "damage_type": "piercing"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Undine",
+          "name_sv": "Undin",
+          "rank": 3,
+          "requirement": "Tidal Wave",
+          "requirement_sv": "Flodvåg",
+          "components": "Words, gesture, ingredient (water)",
+          "components_sv": "Ord, gest, ingrediens (vatten)",
+          "casting_time": "15 minutes",
+          "range": "4 meters",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Summon water elemental. Counts as monster in combat. Follows creator's commands (free action). Acts independently with own initiative. Must stay within line of sight of caster. Duration 15 minutes.",
+              "trigger": "free"
+            }
+          ],
+          "summoned_creature": {
+            "movement": 12,
+            "hp": "5_per_pl",
+            "armor": 0,
+            "weapon": {
+              "name": "Wet embrace",
+              "name_sv": "Blöt omfamning",
+              "mechanical_effects": [
+                {
+                  "type": "damage",
+                  "value": "1d6_per_pl",
+                  "trigger": "on_attack",
+                  "note": "Auto-hit in melee. Can be dodged but not parried. Armor gives no protection."
+                }
+              ]
+            },
+            "spell_ability": {
+              "spell": "Tidal Wave",
+              "spell_sv": "Flodvåg"
+            },
+            "resistant": "Piercing damage halved",
+            "resistant_sv": "Stickskada halveras",
+            "mechanical_effects": [
+              {
+                "type": "reduce_damage",
+                "value": "half",
+                "when": "always",
+                "condition": {
+                  "damage_type": "piercing"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "source_pages": "65-69"
+    },
+    {
+      "id": "mentalism",
+      "name": "Mentalism",
+      "name_sv": "Mentalism",
+      "translation_official": true,
+      "linked_attribute": "INT",
+      "cantrips": [
+        {
+          "name": "Slow Fall",
+          "name_sv": "Bromsa fall",
+          "mechanical_effects": [
+            {
+              "type": "reduce_damage",
+              "value": "all",
+              "trigger": "on_fall",
+              "note": "Negates all fall damage regardless of height"
+            }
+          ]
+        },
+        {
+          "name": "Lock/Unlock",
+          "name_sv": "Låsa/låsa upp",
+          "mechanical_effects": [
+            {
+              "type": "unlock",
+              "value": "lock_or_unlock_non_magical_lock",
+              "trigger": "free",
+              "note": "Touch. Non-magical locks only."
+            }
+          ]
+        },
+        {
+          "name": "Magic Stool",
+          "name_sv": "Magisk pall"
+        }
+      ],
+      "spells": [
+        {
+          "name": "Farsight",
+          "name_sv": "Fjärrsyn",
+          "rank": 1,
+          "requirement": "Mentalism",
+          "requirement_sv": "Mentalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "1 kilometer",
+          "duration": "Concentration",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "See and hear a remote location (must see it or have visited). Range: 1 km at PL 1, 10 km at PL 2, 100 km at PL 3. Concentration duration. Cannot see other dimensions.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Power Fist",
+          "name_sv": "Kraftnäve",
+          "rank": 1,
+          "requirement": "Mentalism",
+          "requirement_sv": "Mentalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Personal",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "bonus_damage",
+              "value": "1d6_per_pl",
+              "phase": "while_active",
+              "note": "Unarmed attacks only. Duration 15 minutes."
+            }
+          ]
+        },
+        {
+          "name": "Levitate",
+          "name_sv": "Lyft",
+          "rank": 1,
+          "requirement": "Mentalism",
+          "requirement_sv": "Mentalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "6 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "float_6m",
+              "trigger": "free",
+              "note": "Lift self, person, or object up to human size, float up to 6 m in any direction, then land softly or drop. +2 m per additional PL, or +1 additional target per PL."
+            },
+            {
+              "type": "constraint",
+              "value": "Lifting an unwilling creature imposes bane on the casting roll.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Longstrider",
+          "name_sv": "Långstige",
+          "rank": 1,
+          "requirement": "Mentalism",
+          "requirement_sv": "Mentalism",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "double_movement",
+              "phase": "while_active",
+              "note": "Touch. Duration 15 minutes. +1 additional target per additional PL."
+            }
+          ]
+        },
+        {
+          "name": "Stone Skin",
+          "name_sv": "Stenhud",
+          "rank": 1,
+          "requirement": "Mentalism",
+          "requirement_sv": "Mentalism",
+          "components": "Words, gesture, ingredient (stone)",
+          "components_sv": "Ord, gest, ingrediens (sten)",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "modify_stat",
+              "target": {
+                "stat": "armor"
+              },
+              "value": "4+2_per_pl",
+              "phase": "while_active",
+              "note": "Touch. Duration 15 minutes. Does not stack with worn armor — only the higher value applies."
+            }
+          ]
+        },
+        {
+          "name": "Divination",
+          "name_sv": "Fornsyn",
+          "rank": 2,
+          "requirement": "Farsight",
+          "requirement_sv": "Fjärrsyn",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Concentration",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "See past events at current location. PL 1: one day back. PL 2: one year back. PL 3: centuries. Visions are fragmentary and cryptic — GM decides content. Concentration duration.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Enchant Weapon",
+          "name_sv": "Förtrolla vapen",
+          "rank": 2,
+          "requirement": "Power Fist",
+          "requirement_sv": "Kraftnäve",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Touch. Dragon roll range on attacks and parries: 1–2 at PL 1, 1–3 at PL 2, 1–4 at PL 3. Weapon counts as magical. Duration 15 minutes.",
+              "phase": "while_active"
+            }
+          ]
+        },
+        {
+          "name": "Mental Strike",
+          "name_sv": "Kraftstöt",
+          "rank": 2,
+          "requirement": "Power Fist",
+          "requirement_sv": "Kraftnäve",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "damage",
+              "value": "2d6+1d6_per_pl",
+              "trigger": "free",
+              "note": "Range 10 m. Also pushes target an equal number of meters away."
+            }
+          ]
+        },
+        {
+          "name": "Telepathy",
+          "name_sv": "Tankeöverföring",
+          "rank": 2,
+          "requirement": "Farsight",
+          "requirement_sv": "Fjärrsyn",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Concentration",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Read surface thoughts (range 10 m, concentration). PL 2+ required for deeper memories — recency determines difficulty. Can also send your own thoughts. GM has final say.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Scrying",
+          "name_sv": "Varseblivning",
+          "rank": 2,
+          "requirement": "Farsight",
+          "requirement_sv": "Fjärrsyn",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "100 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "Detect direction to nearest specified object, substance, creature type, or phenomenon within range. Range: 100 m at PL 1, 200 m at PL 2, 400 m at PL 3. Immediate.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Dominate",
+          "name_sv": "Dominera",
+          "rank": 3,
+          "requirement": "Telepathy",
+          "requirement_sv": "Tankeöverföring",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "10 meters",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "restrict",
+              "value": "all_actions",
+              "trigger": "free",
+              "note": "Target must perform one movement + one action of caster's choosing (no WP-costing actions). Target loses next turn. Can still speak."
+            },
+            {
+              "type": "constraint",
+              "value": "Opposed WIL roll. GM rolls against target's max WP (reduced by 2 per Focused level), or 10 if WP not listed. PL 1: bane on caster's roll. PL 2: normal. PL 3: boon. No effect on monsters. Range 10 m.",
+              "trigger": "free"
+            }
+          ]
+        },
+        {
+          "name": "Flight",
+          "name_sv": "Flyga",
+          "rank": 3,
+          "requirement": "Levitate",
+          "requirement_sv": "Lyft",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "15 minutes",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "flight",
+              "phase": "while_active",
+              "note": "Touch. Movement value: 6 at PL 1, 12 at PL 2, 24 at PL 3. Ignores obstacles and terrain. Duration 15 minutes. Up to human size."
+            }
+          ]
+        },
+        {
+          "name": "Teleport",
+          "name_sv": "Teleportera",
+          "rank": 3,
+          "requirement": "Farsight",
+          "requirement_sv": "Fjärrsyn",
+          "components": "Words, gesture",
+          "components_sv": "Ord, gest",
+          "casting_time": "1 action",
+          "range": "Touch",
+          "duration": "Immediate",
+          "mechanical_effects": [
+            {
+              "type": "movement",
+              "value": "teleport_100m",
+              "trigger": "free",
+              "note": "Must see destination or have visited it. Each additional PL: +1 human-sized passenger OR double range. Cannot cross dimensions."
+            }
+          ]
+        }
+      ],
+      "source_pages": "69-71"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "source": "Drakborgen_-_Ath_Ungols_Hemlighet_Beta_SE_10.pdf",
+    "purpose": "New kin (Half-Elf) from the Drakborgen adventure module. Designed as a separate data package that can be enabled or disabled independently.",
+    "language_note": "Swedish original terms preserved in 'name_sv' and 'description_sv' fields. This is a third-party adventure module with no official English translation; all English translations are unofficial and flagged with 'translation_official: false'.",
+    "extracted": "2026-02-20",
+    "version": "1.4",
+    "compatibility": "Adds one new kin. The kin is not part of any kin roll table — it must be chosen freely by the player with GM approval.",
+    "content_license": "personal-use-only"
+  },
+  "kins": [
+    {
+      "id": "half_elf",
+      "name": "Half-Elf",
+      "name_sv": "Halvalv",
+      "translation_official": false,
+      "roll_value": null,
+      "roll_die": null,
+      "movement": 10,
+      "modifiers": [],
+      "not_monster": true,
+      "abilities": [
+        {
+          "name": "Willpower",
+          "name_sv": "Viljekraft",
+          "translation_official": false,
+          "wp_cost": 0,
+          "mechanical_effects": [
+            {
+              "type": "constraint",
+              "value": "The first WP spent on any activation automatically counts as 2 WP. Involuntary — does not count toward the cost. Effective power level of the ability is increased by 1.",
+              "when": "always"
+            }
+          ]
+        },
+        {
+          "name": "Focus",
+          "name_sv": "Fokus",
+          "translation_official": false,
+          "wp_cost": 3,
+          "mechanical_effects": [
+            {
+              "type": "modify_stat",
+              "target": {
+                "skill": "spot_hidden"
+              },
+              "value": 2,
+              "trigger": "on_skill_roll",
+              "note": "Choose Spot Hidden OR Awareness per activation, not both"
+            },
+            {
+              "type": "modify_stat",
+              "target": {
+                "skill": "awareness"
+              },
+              "value": 2,
+              "trigger": "on_skill_roll",
+              "note": "Choose Spot Hidden OR Awareness per activation, not both"
+            }
+          ]
+        }
+      ],
+      "names": [
+        "Elrian",
+        "Sylwen",
+        "Thalir",
+        "Aranel",
+        "Kaelin",
+        "Liora"
+      ],
+      "source_page": 15
+    }
+  ]
+}

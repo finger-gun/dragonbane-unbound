@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "weaknesses",
+    "purpose": "d20 weakness table from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' and 'description_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.2",
+    "content_license": "personal-use-only"
+  },
+  "weaknesses": {
+    "roll_die": "1d20",
+    "optional": true,
+    "list": [
+      {
+        "roll": 1,
+        "name_sv": "Godtrogen",
+        "name": "Gullible"
+      },
+      {
+        "roll": 2,
+        "name_sv": "Girig",
+        "name": "Greedy"
+      },
+      {
+        "roll": 3,
+        "name_sv": "Lättkränkt",
+        "name": "Easily Offended"
+      },
+      {
+        "roll": 4,
+        "name_sv": "Dumdristig",
+        "name": "Foolhardy"
+      },
+      {
+        "roll": 5,
+        "name_sv": "Räddhågsen",
+        "name": "Fearful"
+      },
+      {
+        "roll": 6,
+        "name_sv": "Monsterhatare",
+        "name": "Monster Hater"
+      },
+      {
+        "roll": 7,
+        "name_sv": "Intolerant",
+        "name": "Intolerant"
+      },
+      {
+        "roll": 8,
+        "name_sv": "Lättjefull",
+        "name": "Lazy"
+      },
+      {
+        "roll": 9,
+        "name_sv": "Matglad",
+        "name": "Foodie"
+      },
+      {
+        "roll": 10,
+        "name_sv": "Kleptoman",
+        "name": "Kleptomaniac"
+      },
+      {
+        "roll": 11,
+        "name_sv": "Fåfäng",
+        "name": "Vain"
+      },
+      {
+        "roll": 12,
+        "name_sv": "Våghals",
+        "name": "Daredevil"
+      },
+      {
+        "roll": 13,
+        "name_sv": "Arkanofob",
+        "name": "Arcanophobe"
+      },
+      {
+        "roll": 14,
+        "name_sv": "Bokmal",
+        "name": "Bookworm"
+      },
+      {
+        "roll": 15,
+        "name_sv": "Vilde",
+        "name": "Wild"
+      },
+      {
+        "roll": 16,
+        "name_sv": "Skrävlare",
+        "name": "Braggart"
+      },
+      {
+        "roll": 17,
+        "name_sv": "Våldsam",
+        "name": "Violent"
+      },
+      {
+        "roll": 18,
+        "name_sv": "Besserwisser",
+        "name": "Know-It-All"
+      },
+      {
+        "roll": 19,
+        "name_sv": "Pessimist",
+        "name": "Pessimist"
+      },
+      {
+        "roll": 20,
+        "name_sv": "Högfärdig",
+        "name": "Haughty"
+      }
+    ]
+  }
+}

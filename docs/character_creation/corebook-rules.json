@@ -1,0 +1,415 @@
+{
+  "_meta": {
+    "source": "DoD_Regelboken_v2.pdf",
+    "type": "rules",
+    "purpose": "Character creation flow, attributes, age, derived ratings, conditions, encumbrance, currency, and experience rules from the Dragonbane core rulebook",
+    "language_note": "Swedish original terms preserved in 'name_sv' fields; English translations verified against the official Dragonbane Dictionary v1.1.",
+    "extracted": "2026-02-20",
+    "version": "2.2",
+    "content_license": "personal-use-only"
+  },
+  "creation_steps": [
+    {
+      "step": 1,
+      "id": "choose_kin",
+      "data_ref": {
+        "file": "corebook-kins.json",
+        "key": "kins"
+      }
+    },
+    {
+      "step": 2,
+      "id": "note_kin_ability",
+      "data_ref": {
+        "file": "corebook-kins.json",
+        "key": "kins[].abilities"
+      }
+    },
+    {
+      "step": 3,
+      "id": "choose_profession",
+      "data_ref": {
+        "file": "corebook-professions.json",
+        "key": "professions"
+      }
+    },
+    {
+      "step": 4,
+      "id": "choose_age",
+      "data_ref": {
+        "file": "corebook-rules.json",
+        "key": "age"
+      }
+    },
+    {
+      "step": 5,
+      "id": "choose_name",
+      "data_ref": null
+    },
+    {
+      "step": 6,
+      "id": "roll_attributes",
+      "data_ref": {
+        "file": "corebook-rules.json",
+        "key": "attributes"
+      }
+    },
+    {
+      "step": 7,
+      "id": "calculate_derived",
+      "data_ref": {
+        "file": "corebook-rules.json",
+        "key": "derived_ratings"
+      }
+    },
+    {
+      "step": 8,
+      "id": "choose_trained_skills",
+      "data_ref": [
+        {
+          "file": "corebook-skills.json",
+          "key": "skills"
+        },
+        {
+          "file": "corebook-skills.json",
+          "key": "skill_base_chance"
+        },
+        {
+          "file": "corebook-professions.json",
+          "key": "professions[].skills"
+        },
+        {
+          "file": "corebook-rules.json",
+          "key": "age.categories[].trained_skills_total"
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "id": "note_heroic_ability",
+      "data_ref": [
+        {
+          "file": "corebook-heroic-abilities.json",
+          "key": "heroic_abilities"
+        },
+        {
+          "file": "corebook-professions.json",
+          "key": "professions[].heroic_ability"
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "id": "choose_weakness",
+      "data_ref": {
+        "file": "corebook-weaknesses.json",
+        "key": "weaknesses"
+      }
+    },
+    {
+      "step": 11,
+      "id": "choose_gear",
+      "data_ref": [
+        {
+          "file": "corebook-professions.json",
+          "key": "professions[].gear"
+        },
+        {
+          "file": "corebook-equipment.json",
+          "key": "equipment"
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "id": "choose_memento",
+      "data_ref": {
+        "file": "corebook-appearance.json",
+        "key": "mementos"
+      }
+    },
+    {
+      "step": 13,
+      "id": "choose_appearance",
+      "data_ref": {
+        "file": "corebook-appearance.json",
+        "key": "appearance"
+      }
+    }
+  ],
+  "attributes": {
+    "roll_method": {
+      "dice": "4d6",
+      "method": "drop_lowest",
+      "range": [
+        3,
+        18
+      ],
+      "count": 6,
+      "assignment": "assign_in_order_then_swap_two"
+    },
+    "list": [
+      {
+        "id": "STR",
+        "name": "Strength",
+        "name_sv": "Styrka (STY)",
+        "abbreviation_sv": "STY"
+      },
+      {
+        "id": "CON",
+        "name": "Constitution",
+        "name_sv": "Fysik (FYS)",
+        "abbreviation_sv": "FYS"
+      },
+      {
+        "id": "AGL",
+        "name": "Agility",
+        "name_sv": "Smidighet (SMI)",
+        "abbreviation_sv": "SMI"
+      },
+      {
+        "id": "INT",
+        "name": "Intelligence",
+        "name_sv": "Intelligens (INT)",
+        "abbreviation_sv": "INT"
+      },
+      {
+        "id": "WIL",
+        "name": "Willpower",
+        "name_sv": "Psykisk kraft (PSY)",
+        "abbreviation_sv": "PSY"
+      },
+      {
+        "id": "CHA",
+        "name": "Charisma",
+        "name_sv": "Karisma (KAR)",
+        "abbreviation_sv": "KAR"
+      }
+    ]
+  },
+  "age": {
+    "roll": "1d6",
+    "categories": [
+      {
+        "id": "young",
+        "name": "Young",
+        "name_sv": "Ung",
+        "roll_range": [
+          1,
+          3
+        ],
+        "trained_skills_total": 8,
+        "trained_skills_from_profession": 6,
+        "trained_skills_free_choice": 2,
+        "attribute_modifiers": {
+          "AGL": 1,
+          "CON": 1
+        },
+        "modifier_note": "Up to max 18",
+        "modifier_note_sv": "Upp till max 18"
+      },
+      {
+        "id": "middle_aged",
+        "name": "Middle-Aged",
+        "name_sv": "Medelålders",
+        "roll_range": [
+          4,
+          5
+        ],
+        "trained_skills_total": 10,
+        "trained_skills_from_profession": 6,
+        "trained_skills_free_choice": 4,
+        "attribute_modifiers": {}
+      },
+      {
+        "id": "old",
+        "name": "Old",
+        "name_sv": "Gammal",
+        "roll_range": [
+          6,
+          6
+        ],
+        "trained_skills_total": 12,
+        "trained_skills_from_profession": 6,
+        "trained_skills_free_choice": 6,
+        "attribute_modifiers": {
+          "STR": -2,
+          "AGL": -2,
+          "CON": -2,
+          "INT": 1,
+          "WIL": 1
+        },
+        "modifier_note": "Up to max 18, modifiers are not cumulative with young",
+        "modifier_note_sv": "Upp till max 18, modifieringar är inte kumulativa med ung"
+      }
+    ]
+  },
+  "derived_ratings": {
+    "movement": {
+      "base_by_kin": {
+        "human": 10,
+        "halfling": 8,
+        "dwarf": 8,
+        "elf": 10,
+        "mallard": 8,
+        "wolfkin": 12
+      },
+      "agl_modifiers": [
+        {
+          "agl_range": [
+            1,
+            6
+          ],
+          "modifier": -4
+        },
+        {
+          "agl_range": [
+            7,
+            9
+          ],
+          "modifier": -2
+        },
+        {
+          "agl_range": [
+            10,
+            12
+          ],
+          "modifier": 0
+        },
+        {
+          "agl_range": [
+            13,
+            15
+          ],
+          "modifier": 2
+        },
+        {
+          "agl_range": [
+            16,
+            18
+          ],
+          "modifier": 4
+        }
+      ]
+    },
+    "damage_bonus": {
+      "brackets": [
+        {
+          "range": [
+            1,
+            12
+          ],
+          "bonus": null
+        },
+        {
+          "range": [
+            13,
+            16
+          ],
+          "bonus": "1d4"
+        },
+        {
+          "range": [
+            17,
+            18
+          ],
+          "bonus": "1d6"
+        }
+      ]
+    },
+    "hit_points": {
+      "id": "HP",
+      "name": "Hit Points",
+      "name_sv": "Kroppspoäng (KP)",
+      "formula": {
+        "id": "max_hp",
+        "base": "CON",
+        "modifier": {
+          "heroic_ability": "robust",
+          "per_take": 2,
+          "formula": "CON + (robust_count * 2)"
+        }
+      }
+    },
+    "willpower_points": {
+      "id": "WP",
+      "name": "Willpower Points",
+      "name_sv": "Viljepoäng (VP)",
+      "formula": {
+        "id": "max_wp",
+        "base": "WIL",
+        "modifier": {
+          "heroic_ability": "focused",
+          "per_take": 2,
+          "formula": "WIL + (focused_count * 2)"
+        }
+      }
+    }
+  },
+  "conditions": {
+    "list": [
+      {
+        "id": "exhausted",
+        "name": "Exhausted",
+        "name_sv": "Utmattad",
+        "attribute": "STR"
+      },
+      {
+        "id": "sickly",
+        "name": "Sickly",
+        "name_sv": "Krasslig",
+        "attribute": "CON"
+      },
+      {
+        "id": "dazed",
+        "name": "Dazed",
+        "name_sv": "Omtöcknad",
+        "attribute": "AGL"
+      },
+      {
+        "id": "angry",
+        "name": "Angry",
+        "name_sv": "Arg",
+        "attribute": "INT"
+      },
+      {
+        "id": "scared",
+        "name": "Scared",
+        "name_sv": "Rädd",
+        "attribute": "WIL"
+      },
+      {
+        "id": "disheartened",
+        "name": "Disheartened",
+        "name_sv": "Uppgiven",
+        "attribute": "CHA"
+      }
+    ],
+    "rules": {
+      "max_conditions": 6,
+      "cannot_push_with_all_conditions": true
+    }
+  },
+  "encumbrance": {
+    "carrying_capacity": {
+      "id": "carrying_capacity",
+      "formula": "ceil(STR / 2)"
+    },
+    "weapons_at_hand": {
+      "max": 3
+    },
+    "backpack": {
+      "id": "backpack_bonus",
+      "formula": "carrying_capacity + 2",
+      "max": 1
+    }
+  },
+  "currency": {
+    "copper_per_silver": 10,
+    "silver_per_gold": 10,
+    "base_unit": "silver"
+  },
+  "experience": {
+    "improvement_marks": {}
+  }
+}

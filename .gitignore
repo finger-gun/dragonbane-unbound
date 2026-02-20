@@ -51,3 +51,6 @@ coverage/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Project specific
+source_data/

@@ -1,6 +1,6 @@
 # Dragonbane Unbound – Legal & License Guidance
 
-*Version 0.2*
+*Version 0.4*
 *Last updated: 2026‑02‑20*
 
 > **Disclaimer:** This document is not a legal contract or advice. It is a practical compliance guide for keeping Dragonbane Unbound within the scope of Free League’s third‑party license and general copyright/trademark boundaries.
@@ -216,6 +216,38 @@ References:
 
 * [https://www.chaosium.com/orclicense/](https://www.chaosium.com/orclicense/)
 * [https://www.chaosium.com/content/orclicense/ORC_License_FINAL.pdf](https://www.chaosium.com/content/orclicense/ORC_License_FINAL.pdf)
+
+---
+
+## Project Licensing
+
+### Platform License: Apache-2.0
+
+All platform code, engine modules, and community contributions in this repository are licensed under **Apache-2.0**. The full license text is in the repository root (`LICENSE`).
+
+The `license` field is declared in the root `package.json` and all workspace sub-packages. All documentation references have been aligned to Apache-2.0.
+
+### Why Apache-2.0 Over MIT
+
+Both are permissive open-source licenses, but Apache-2.0 was chosen for specific reasons:
+
+- **Explicit patent grant** — Apache-2.0 includes a patent license that protects contributors and users from patent claims. MIT does not address patents at all.
+- **Attribution requirements** — Apache-2.0 requires derivative works to include a copy of the license and a NOTICE file if one exists. This gives the project more visibility when forked or redistributed.
+- **Better fit for publisher interaction** — A project that interfaces with publisher-owned content benefits from the clearer legal framework that Apache-2.0 provides compared to MIT's minimalist terms.
+
+### Content Pack Licensing
+
+The platform license (Apache-2.0) covers the *software and engine*. Individual content packs may carry different licenses depending on their origin:
+
+- **Original/community content** — covered by Apache-2.0 or the author's chosen license
+- **Publisher-licensed content** — would carry the publisher's own license terms, pending formal agreements
+- **Personal-use reference data** — marked `"content_license": "personal-use-only"` in pack manifests; not for distribution
+
+The `content_license` field in each pack's `_meta` block handles per-pack licensing independently from the platform license. See `docs/package-example.md` for manifest examples.
+
+### Third-Party Tooling Plugins
+
+The `.kilocode/`, `.codex/`, and `.github/skills/` directories contain third-party AI tooling plugins (SKILL.md files) that declare `license: MIT`. These are independent of the project license — they are tooling configuration files authored by their respective tool vendors, not project source code.
 
 ---
 
@@ -654,7 +686,7 @@ The following practices are already in use and should be maintained:
 2. **Short-term:** Address High items (LR‑005 through LR‑009). Strip descriptions from kins, equipment, skills, professions, and rules files. Retain only engine-necessary data plus page references.
 3. **Before partnership outreach:** Address LR‑016 and LR‑017. Reframe the platform manifest to separate what can be built now from what requires publisher agreement. Replace official content in package examples with original homebrew. Fix the "legal escape hatch" language (LR‑019). Correct the Legal Philosophy section to reflect actual state (LR‑020).
 4. **Medium-term:** Address Medium items (LR‑010 through LR‑014). Refactor guide documents to reference rather than reproduce content. Replace verbatim examples in technical specs.
-5. **Ongoing:** Resolve license inconsistency (LR‑015). Add legal prerequisites section to project manifest (LR‑018). Establish `content_license` field in pack manifest schema (LR‑017).
+5. **Ongoing:** Add legal prerequisites section to project manifest (LR‑018). Establish `content_license` field in pack manifest schema (LR‑017).
 
 ---
 
@@ -674,6 +706,7 @@ The following practices are already in use and should be maintained:
 | LR‑013 | **Resolved** | Stripped `description`/`description_sv` from weaknesses in corebook-weaknesses.json. Stripped `mementos.effect`/`effect_sv` from corebook-appearance.json. |
 | LR‑014 | **Resolved** | Stripped `description`/`description_sv` and `special_note`/`special_note_sv` from drakborgen-heroic-abilities.json. |
 | LR‑017 (point 3) | **Resolved** | Added `content_license` field to `_meta` in all 16 data files with `_meta` blocks. Added `content_license` to all 3 pack manifest examples in `docs/package-example.md`. Values: `personal-use-only` (game data), `fair-use-reference` (dictionary), `original` (schema, sample character). |
+| LR‑015 | **Resolved** | Standardized on Apache-2.0 across all project files. Fixed MIT references in `docs/manifest.md`, `docs/platform-manifest.md`, and `README.md`. Added `"license": "Apache-2.0"` to root `package.json` and all 8 sub-package `package.json` files. Added "Project Licensing" section to `docs/legal.md` documenting the license choice, rationale, content pack licensing model, and third-party tooling plugin status. |
 
 Full-text reference copies preserved in `source_data/reference-data/` (gitignored) before stripping.
 

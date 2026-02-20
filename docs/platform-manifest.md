@@ -39,7 +39,7 @@ No locked characters behind subscriptions.
 
 The core engine will always be:
 
-* MIT licensed
+* Apache-2.0 licensed
 * fully inspectable
 * runnable offline
 * independent of any publisher content

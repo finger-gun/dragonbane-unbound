@@ -4,7 +4,7 @@
 
 <h3>Run Dragonbane at the speed of play.</h3>
 
-Dragonbane Unbound is an open-source, local-first platform for fast character creation, smooth encounters, and a community-driven content ecosystem. It is modular, self-hostable, and MIT-licensed, built for players, GMs, publishers, and developers.
+Dragonbane Unbound is an open-source, local-first platform for fast character creation, smooth encounters, and a community-driven content ecosystem. It is modular, self-hostable, and Apache-2.0-licensed, built for players, GMs, publishers, and developers.
 
 </div>
 

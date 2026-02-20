@@ -52,7 +52,7 @@ Completed and historical changes, for long-term reference.
 2. **Modular**: Components can be used independently or together
 3. **Extensible**: Plugin architecture for community extensions
 4. **Self-Hostable**: Can be deployed on personal infrastructure
-5. **Open Source**: Full MIT licensing for maximum flexibility
+5. **Open Source**: Apache-2.0 licensed for maximum flexibility with patent protection
 
 ## Target Users
 - **Players**: Create and manage characters, track progression

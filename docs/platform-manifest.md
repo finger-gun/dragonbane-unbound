@@ -273,28 +273,30 @@ Dragonbane Unbound becomes:
 
 ## Legal Prerequisites
 
-The following planned features **require explicit publisher permission** before implementation. They are documented here as aspirational goals, not current capabilities. See `docs/legal.md` Section 8 for full guidance.
+This project operates under two Free League third-party licenses (English and Swedish, both v1.0). See `docs/legal.md` Section 0 for the full license analysis. The following tables separate what the licenses cover from what requires additional agreements.
 
-### Requires Free League agreement
+### Covered by the third-party licenses (can build now)
 
-| Feature | Why |
-|---------|-----|
-| Licensed publisher content packs | Distributing official content requires publisher authorization |
-| Content marketplace (paid or free) | Positioning as a distribution channel for publisher IP requires a formal relationship |
-| Cryptographic signing of official packs | Implies an authentication/trust model that only works with a formal agreement |
-| Bilingual (Swedish + English) official content | Supporting both official language lines simultaneously is flagged as requiring contact |
-
-### Can build now (no publisher agreement needed)
-
-| Feature | Why |
-|---------|-----|
-| Core engine (rules evaluation, dice, effects) | Original engineering work, system-agnostic |
-| Character sheet framework | State management and UI — no copyrighted content |
-| Community homebrew system | User-created original content |
-| Local-first / self-hosted deployment | Infrastructure, no content concerns |
+| Feature | License Basis |
+|---------|---------------|
+| Core engine (rules evaluation, dice, effects) | Original engineering work + License Section 1 (VTT grant) |
+| Character sheet framework | License Section 1, Section 2 (reference rules) |
+| Community homebrew system | License Section 4 (additions: new kin, spells, professions, etc.) |
+| Bilingual (Swedish + English) data and UI | EN license Section 1 + SV license Section 1 combined |
+| Mechanical data packs (game-mechanics-only) | License Section 1 (VTT), Section 2 (terminology, references) |
+| Selling the supplement | License Section 1 ("create, sell, publish, and distribute") |
+| Local-first / self-hosted deployment | Original engineering work, no content concerns |
 | Hosted convenience services | Our own infrastructure offering |
 | Mobile companion app | Our own client application |
 | Content pack architecture (empty templates) | The architecture itself is original work |
+
+### Requires additional agreement (beyond what the licenses grant)
+
+| Feature | Why |
+|---------|-----|
+| Licensed publisher content packs | Distributing Free League's own products goes beyond creating our supplement |
+| Content marketplace (paid or free) | Positioning as a distribution channel for publisher IP goes beyond the license |
+| Cryptographic signing of official packs | Implies an official partnership/trust model not established by the license |
 
 ### The path forward
 

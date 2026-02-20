@@ -1,9 +1,61 @@
 # Dragonbane Unbound – Legal & License Guidance
 
-*Version 0.6*
+*Version 0.7*
 *Last updated: 2026‑02‑20*
 
-> **Disclaimer:** This document is not a legal contract or advice. It is a practical compliance guide for keeping Dragonbane Unbound within the scope of Free League’s third‑party license and general copyright/trademark boundaries.
+> **Disclaimer:** This document is not a legal contract or advice. It is a practical compliance guide for keeping Dragonbane Unbound within the scope of Free League's third‑party licenses and general copyright/trademark boundaries.
+
+---
+
+## 0. License Foundation
+
+This project operates under **two** Free League third‑party licenses:
+
+| License                                               | File                                            | Language                     | Covers                                          |
+|-------------------------------------------------------|-------------------------------------------------|------------------------------|-------------------------------------------------|
+| Dragonbane Third‑Party Tabletop Module License (v1.0) | `docs/Dragonbane-License-Agreement.pdf`         | English‑language supplements | English data, English UI, English documentation |
+| Drakar och Demoner tredjepartslicens (v1.0)           | `docs/Drakar-och-Demoner-tredjepartslicens.pdf` | Swedish‑language supplements | Swedish data (`name_sv`, `_sv` fields)          |
+
+Both licenses are dated March 28, 2023 and have identical structure and permissions — one for English, one for Swedish. Together they cover our bilingual data model completely.
+
+### What the Licenses Grant
+
+Both licenses grant a **worldwide, perpetual, non‑exclusive, irrevocable** (so long as we comply) right to create, sell, publish, and distribute supplements compatible with Dragonbane / Drakar och Demoner — in printed form, as PDF, or as a **virtual tabletop module ("VTT")**. Dragonbane Unbound, as a companion app / VTT tool, falls squarely within this grant.
+
+### Section‑by‑Section Analysis
+
+**Section 1 — LICENSE:** VTT modules are explicitly covered. The English license covers English‑language supplements; the Swedish license covers Swedish‑language supplements. Our bilingual data (`name` + `name_sv` throughout all data files) is therefore fully licensed under the combination of both.
+
+**Section 2 — SCOPE:** We may create a supplement *based on* the rules but may not *include a copy of those rules*. We may *reference* rules, use *terminology*, *creature names*, and *locations*. We may include *page references*. Our approach — stripped prose, mechanical data only, page references throughout — is exactly this. VTT modules by definition encode game mechanics (formulas, brackets, skill‑attribute links, spell costs, armor values); every Foundry VTT module for Dragonbane does the same. The license explicitly covering VTT modules validates our mechanical data approach.
+
+**Section 3 — LOGO:** We must place the "A Supplement For Dragonbane" logo (red or black version) on the cover (lower half, max half cover width). For a web application, "cover" translates to the primary landing surface — our README and eventual landing page. Currently using the compatibility logo in `README.md`; need to verify it matches the Section 3 logo. The Swedish license requires the "Ett tillbehör till Drakar och Demoner" logo equivalently.
+
+**Section 4 — RULE MODIFICATIONS:** May include *additions* but not replacements. Explicitly allowed: new kin, innate abilities, professions, secondary skills, heroic abilities, magic schools, spells, monsters, weapons, armor, equipment, and rules for anything not covered by core. This directly validates our homebrew content pack architecture.
+
+**Section 5 — EXCLUSIONS:** May not use any Dragonbane text, artwork, or trade dress. Combined with Section 2's "may reference terminology," this creates a clear line: **names and terminology = allowed; prose and descriptions = not allowed.** Our prose stripping (LR‑001 through LR‑014) directly implements this boundary.
+
+**Section 6 — OWNERSHIP:** Free League owns all rights in Dragonbane. Acknowledged.
+
+**Section 7 — YOUR SUPPLEMENT:** We own our supplement (the platform, engine, architecture, effect primitives spec). Consistent with our Apache‑2.0 license on original engineering work.
+
+**Section 8 — NOTICE:** Must include a notice that the supplement is not sponsored/endorsed. Recommended English text: *"This game is not affiliated with, sponsored, or endorsed by Fria Ligan AB. This Supplement was created under Fria Ligan AB's Dragonbane Third Party Supplement License."* Recommended Swedish text: *"[Produktnamn] är en oberoende publikation av [kreatör eller förlag] och har ingen koppling till Fria Ligan AB. Den är publicerad under tredjepartslicensen för Drakar och Demoner (version 1.0). Drakar och Demoner och Ereb Altor är registrerade varumärken tillhörande Fria Ligan AB."*
+
+**Section 9 — RESTRICTIONS:** Cannot state or imply Free League endorses our work. Our existing disclaimers address this.
+
+**Sections 10–12:** Standard provisions (representations, disclaimer, miscellaneous). No project‑specific concerns.
+
+### Key Implications for Dragonbane Unbound
+
+1. **Mechanical data is justified.** VTT modules by definition encode game mechanics. The license explicitly covers VTT modules. Our `game-mechanics-only` data files are within scope.
+2. **Prose stripping was correct.** Section 5 says no Dragonbane text; Section 2 says you may reference terminology. Our stripped data files (names + mechanical values + page references, no prose) implement this boundary precisely.
+3. **Bilingual data is fully covered.** The English license covers our `name` fields; the Swedish license covers our `name_sv` fields. No separate permission needed.
+4. **Homebrew content packs are validated.** Section 4 explicitly allows adding new kin, abilities, professions, spells, monsters, equipment — exactly what our content pack system supports.
+5. **The "rulebook must remain necessary" principle holds.** Both licenses define a supplement as requiring the core game. It cannot be a standalone product. This aligns with our guiding principle.
+6. **The project name "Dragonbane Unbound"** — Section 2 restricts using "the names of creatures, and locations" in your title. "Dragonbane" is the game name, not a creature or location. The compatibility logo system and Section 2's explicit permission to "state that your publication is a third‑party Supplement for Dragonbane" further support using the game name. However, this deserves periodic review.
+7. **`content_license: game-mechanics-only`** is well‑justified under these licenses. Distributing mechanical data as a VTT module is explicitly licensed.
+8. **Some items previously flagged as "requires publisher agreement" are actually covered by the license.** See updated tables in Sections 7 and 8 below.
+
+---
 
 ## 1. Project Intent
 
@@ -28,27 +80,28 @@ It is **not** intended to:
 
 **The rulebook must remain necessary.**
 
-The tool may calculate and track mechanics, but it must not reproduce the rulebook’s written rules or provide enough content to play without owning the official game.
+The tool may calculate and track mechanics, but it must not reproduce the rulebook's written rules or provide enough content to play without owning the official game. This aligns directly with the license definition of a supplement: "requires the Dragonbane core game to be used. It cannot be a standalone product."
 
 ---
 
 ## 3. Allowed vs Not Allowed (High-Level)
 
-| Category        | Allowed                                 | Not Allowed                              |
-|-----------------|-----------------------------------------|------------------------------------------|
-| Companion tools | Character sheets, calculators, trackers | Standalone playable digital Dragonbane   |
-| Mechanics       | Internal math, modifiers, dice logic    | Full reproduction of core rules chapters |
-| Content         | Community-created original material     | Shipping official spells/abilities text  |
-| Encounters      | Tracking initiative/HP/conditions       | Fully automated combat resolution engine |
-| Branding        | Compatibility logo + disclaimer         | Using trademarks as if official          |
+| Category        | Allowed                                   | Not Allowed                              | License Basis                                |
+|-----------------|-------------------------------------------|------------------------------------------|----------------------------------------------|
+| Companion tools | Character sheets, calculators, trackers   | Standalone playable digital Dragonbane   | Section 1 (VTT), supplement definition       |
+| Mechanics       | Internal math, modifiers, dice logic      | Full reproduction of core rules chapters | Section 2 (reference, not copy)              |
+| Content         | Community-created original material       | Shipping official spells/abilities text  | Section 4 (additions), Section 5 (no text)   |
+| Terminology     | Official names, creature names, locations | Reproducing official prose/descriptions  | Section 2 (terminology), Section 5 (no text) |
+| Encounters      | Tracking initiative/HP/conditions         | Fully automated combat resolution engine | Supplement definition (not standalone)       |
+| Branding        | Compatibility logo + disclaimer           | Using trademarks as if official          | Sections 3, 8, 9                             |
 
 ---
 
-## 4. DO / DON’T Tables
+## 4. DO / DON'T Tables
 
 ### Character Builder
 
-| DO                                    | DON’T                                    |
+| DO                                    | DON'T                                    |
 |---------------------------------------|------------------------------------------|
 | Calculate skill bases from attributes | Copy-paste character creation text       |
 | Let players select abilities by name  | Include full heroic ability descriptions |
@@ -58,26 +111,26 @@ The tool may calculate and track mechanics, but it must not reproduce the rulebo
 
 ### Status Effects & Conditions
 
-| DO                                               | DON’T                                                 |
+| DO                                               | DON'T                                                 |
 |--------------------------------------------------|-------------------------------------------------------|
 | Track conditions like Angry, Scared, Poisoned    | Include the full rulebook wording for them            |
 | Apply mechanical flags (e.g., Bane on STR rolls) | Explain the entire procedure of when/how they trigger |
-| Provide short reminders + page refs              | Replace the rulebook’s condition section              |
+| Provide short reminders + page refs              | Replace the rulebook's condition section              |
 
 ---
 
 ### Dice & Modifiers
 
-| DO                                                       | DON’T                                        |
+| DO                                                       | DON'T                                        |
 |----------------------------------------------------------|----------------------------------------------|
-| Implement dice mechanics (Bane = roll twice, keep worst) | Provide full “how to resolve checks” text    |
+| Implement dice mechanics (Bane = roll twice, keep worst) | Provide full "how to resolve checks" text    |
 | Offer a dice roller integrated with sheets               | Turn the app into a complete rules simulator |
 
 ---
 
 ### Encounter Support
 
-| DO                                    | DON’T                                      |
+| DO                                    | DON'T                                      |
 |---------------------------------------|--------------------------------------------|
 | Track initiative order and HP         | Fully automate combat start-to-finish      |
 | Allow GM to apply conditions manually | Auto-run encounters without GM involvement |
@@ -87,11 +140,11 @@ The tool may calculate and track mechanics, but it must not reproduce the rulebo
 
 ### Community Content
 
-| DO                                                    | DON’T                                   |
+| DO                                                    | DON'T                                   |
 |-------------------------------------------------------|-----------------------------------------|
 | Allow users to create original kin/professions/spells | Allow uploads of copied official text   |
 | Provide structured templates and tools                | Host official content packs             |
-| Encourage creative homebrew                           | Market as “official Dragonbane content” |
+| Encourage creative homebrew                           | Market as "official Dragonbane content" |
 
 ---
 
@@ -104,9 +157,9 @@ The tool may calculate and track mechanics, but it must not reproduce the rulebo
 3. No bundled official text or descriptions
 4. Always include rulebook references
 
-This reduces risk of the tool being seen as a replacement rule system.
+This reduces risk of the tool being seen as a replacement rule system. The third‑party licenses (Section 4) explicitly allow adding new content through supplements, and the VTT grant (Section 1) covers the delivery mechanism.
 
-### Current Gap
+### Current State
 
 The architecture described in `docs/package-example.md` and `docs/platform-manifest.md` follows this structure in principle. The following items have been addressed:
 
@@ -115,63 +168,89 @@ The architecture described in `docs/package-example.md` and `docs/platform-manif
 3. ~~Add a `content_license` field to the pack manifest schema~~ — Done. All data files and example manifests include `content_license` (LR‑017 point 3).
 4. ~~Clearly document that the "user-assembled" model is the expected path for official Dragonbane content~~ — Done. `package-example.md` now documents the user-assembled model with workflow explanation.
 
-The reference data files in `docs/character_creation/` still contain structured data from official sourcebooks (numerical tables, brackets, formulas) but all prose/descriptions have been stripped (LR‑001 through LR‑014). These files are development reference data marked `"content_license": "personal-use-only"` and are not intended for distribution.
+The reference data files in `docs/character_creation/` contain structured mechanical data from official sourcebooks (numerical tables, brackets, formulas) with all prose/descriptions stripped (LR‑001 through LR‑014). Under the third‑party licenses, this type of mechanical data is what VTT modules contain by definition. These files are currently marked `"content_license": "game-mechanics-only"` in their `_meta` blocks.
+
+> **Note on `content_license` values:** The `game-mechanics-only` value is justified under the third‑party licenses. VTT modules by definition encode game mechanics — formulas, brackets, skill‑attribute links, spell costs, armor values. Section 1 explicitly covers VTT modules, and Section 2 permits referencing rules and terminology. The stripped data files contain exactly this: mechanical data + terminology + page references, with no prose or creative expression.
 
 ---
 
 ## 6. Required Disclaimers
 
-All distributions should include:
+Per Section 8 of both licenses, all distributions must include a notice that the supplement is not sponsored or endorsed by Free League.
 
-> Dragonbane Unbound is an independent, fan-made tool. It is not affiliated with or endorsed by Free League Publishing.
+### English Notice (per Dragonbane Third‑Party License, Section 8)
 
-> Dragonbane / Drakar och Demoner is a trademark of Free League Publishing.
+> Dragonbane Unbound is not affiliated with, sponsored, or endorsed by Fria Ligan AB. This project was created under Fria Ligan AB's Dragonbane Third Party Supplement License.
+
+### Swedish Notice (per Drakar och Demoner tredjepartslicens, Section 8)
+
+> Dragonbane Unbound är en oberoende publikation av finger-gun och har ingen koppling till Fria Ligan AB. Den är publicerad under tredjepartslicensen för Drakar och Demoner (version 1.0). Drakar och Demoner och Ereb Altor är registrerade varumärken tillhörande Fria Ligan AB.
+
+### Trademark Acknowledgment
+
+> Dragonbane is a trademark of Fria Ligan AB. Drakar och Demoner and Ereb Altor are registered trademarks of Fria Ligan AB.
 
 ---
 
 ## 7. Risk Levels for Features
 
-| Feature                                       | Risk Level | Notes                                                     |
-|-----------------------------------------------|------------|-----------------------------------------------------------|
-| Character sheet management                    | Low        | Core companion tool behavior                              |
-| Derived stat calculation                      | Low        | Internal math                                             |
-| Status effect tracking                        | Low        | State management                                          |
-| Dice roller with modifiers                    | Low        | Mechanical automation                                     |
-| Ability selection by name only                | Medium-Low | Add page references                                       |
-| Bundling short original reminders per ability | Medium     | Keep wording original, not copied                         |
-| Data-driven rules engine (formulas, brackets) | Medium     | Safe if no rulebook text is embedded                      |
-| Content pack system (architecture)            | Medium     | Architecture is fine; what ships in packs determines risk |
-| Bilingual Swedish + English data              | Medium     | See Section 8 — triggers "both official lines"            |
-| Full automation of combat procedures          | High       | Keep GM decisions manual                                  |
-| Distributing packs with official content      | Very High  | Requires publisher permission regardless of format        |
-| Bundling official spell/ability text          | Very High  | Full descriptions are protected expression                |
-| Official content marketplace/distribution     | Very High  | Requires formal Free League partnership                   |
-| Commercializing the platform at scale         | Very High  | Requires Free League contact per Section 8                |
+| Feature                                       | Risk Level | Notes                                                            | License Reference                           |
+|-----------------------------------------------|------------|------------------------------------------------------------------|---------------------------------------------|
+| Character sheet management                    | Low        | Core companion tool behavior                                     | Section 1 (VTT grant)                       |
+| Derived stat calculation                      | Low        | Internal math                                                    | Section 2 (reference rules)                 |
+| Status effect tracking                        | Low        | State management                                                 | Section 2                                   |
+| Dice roller with modifiers                    | Low        | Mechanical automation                                            | Section 2                                   |
+| Bilingual Swedish + English data              | Low        | Covered by both licenses combined                                | EN license Section 1 + SV license Section 1 |
+| Ability selection by name only                | Low        | Explicitly allowed: terminology and names                        | Section 2 (terminology, creature names)     |
+| Data-driven rules engine (formulas, brackets) | Low        | VTT modules encode mechanics by definition                       | Section 1 (VTT grant), Section 2            |
+| Content pack system (architecture)            | Low        | Architecture is original engineering work                        | Section 7 (you own your supplement)         |
+| Bundling short original reminders per ability | Medium     | Keep wording original, not copied                                | Section 5 (no text)                         |
+| Distributing game-mechanics-only data packs   | Medium     | Within license scope if no prose; caution still warranted        | Section 1, 2, 5                             |
+| Full automation of combat procedures          | Medium     | VTT modules automate combat by definition; doesn't make it standalone | Section 1 (VTT grant), Supplement definition |
+| Bundling official spell/ability text          | Very High  | Full descriptions are protected expression                       | Section 5 (no text)                         |
+| Official content marketplace/distribution     | Very High  | Requires additional formal Free League partnership               | Beyond license scope                        |
+| Commercializing the platform at scale         | Low        | License explicitly grants worldwide rights to sell/distribute with no scale cap | Section 1 (sell/distribute)                 |
 
 ---
 
 ## 8. When to Contact Free League
 
-You should strongly consider direct permission if you plan to:
+The third‑party licenses cover a broad range of activities. Some planned features go beyond what the licenses grant and require additional agreements.
 
-* Distribute official-like content packs
-* Automate full encounter resolution
-* Commercialize the platform at scale
-* Support both Swedish and English official lines simultaneously
+### Covered by the Existing Licenses (no additional contact needed)
 
-### Features in Current Plans That Trigger This Section
+* Creating and distributing a VTT companion tool (Section 1)
+* Encoding game mechanics in data files (Section 2 — reference rules, not copy)
+* Using official terminology and names (Section 2)
+* Including page references to official publications (Section 2)
+* Bilingual (English + Swedish) data and UI (both licenses combined)
+* Creating and distributing homebrew content (Section 4 — additions)
+* Selling the supplement (Section 1 — "create, sell, publish, and distribute")
 
-Based on `docs/platform-manifest.md` and `docs/package-example.md`, the following planned features require publisher contact before implementation:
+### Requires Additional Agreement (beyond what the licenses grant)
 
-| Planned Feature                           | Source Document                       | Trigger                              |
-|-------------------------------------------|---------------------------------------|--------------------------------------|
-| Licensed publisher add-ons as revenue     | `platform-manifest.md` lines 156–161  | Commercialization + official content |
-| Digital marketplace for content           | `platform-manifest.md` line 264       | Official content distribution        |
-| Cryptographic signing of licensed packs   | `platform-manifest.md` lines 253, 403 | Implies official partnership         |
-| Bilingual (EN + SV) data across all files | All `character_creation/*.json`       | Both official language lines         |
-| Core system pack with official content    | `package-example.md` lines 9–41       | Distributing official content        |
+You should pursue a direct conversation with Free League before:
 
-None of these should be built or shipped before obtaining explicit permission.
+* **Operating an official content marketplace** — positioning the platform as a distribution channel for Free League's own products goes beyond creating your own supplement
+* **Distributing Free League's prose/creative text** — the licenses explicitly prohibit this (Section 5)
+* **Official partnership branding** — implying Free League endorses the project (Section 9)
+* **Cryptographic signing implying official status** — an authentication/trust model for "official" packs implies a relationship that doesn't exist under the license alone
+
+### Features in Current Plans That Require Additional Agreement
+
+| Planned Feature                         | Source Document        | Why Additional Agreement Needed                             |
+|-----------------------------------------|------------------------|-------------------------------------------------------------|
+| Licensed publisher add-ons as revenue   | `platform-manifest.md` | Distributing Free League's own products, not our supplement |
+| Digital marketplace for content         | `platform-manifest.md` | Positioning as a distribution channel for publisher IP      |
+| Cryptographic signing of official packs | `platform-manifest.md` | Implies official partnership/trust model                    |
+
+### Features Previously Flagged That Are Now Covered
+
+| Feature                            | Previously Flagged As           | Updated Status | Reason                                              |
+|------------------------------------|---------------------------------|----------------|-----------------------------------------------------|
+| Bilingual (EN + SV) data           | "Requires publisher contact"    | **Covered**    | Both EN and SV licenses exist                       |
+| Distributing mechanical data packs | "Requires publisher permission" | **Covered**    | VTT grant (Section 1) + reference scope (Section 2) |
+| Selling the supplement             | "Requires Free League contact"  | **Covered**    | Section 1 explicitly grants right to sell           |
 
 ---
 
@@ -188,21 +267,21 @@ This guidance should be updated as:
 Dragonbane is mechanically inspired by classic roll‑under systems such as Basic Roleplaying (BRP). However:
 
 * Dragonbane is **not** published under the ORC license.
-* The ORC license only applies to material explicitly released as “Licensed Content” under ORC.
+* The ORC license only applies to material explicitly released as "Licensed Content" under ORC.
 * Similar mechanics (e.g., roll‑under d20 skill checks) do **not** automatically grant reuse rights.
 
 Therefore:
 
 * ORC does not provide additional permission to reproduce Dragonbane rules, text, or structured rule content.
-* Dragonbane support within this project must comply exclusively with Free League’s third‑party license.
+* Dragonbane support within this project must comply with Free League's third‑party licenses.
 
 ### Practical Implications for Dragonbane Unbound
 
 | Scenario                                         | ORC Applies?                                          | Notes                                                          |
 |--------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|
 | Using generic roll‑under mechanics in the engine | Yes (if our own content is released under ORC/Apache) | Mechanics themselves are not owned by Dragonbane               |
-| Reproducing Dragonbane rule text                 | No                                                    | Governed by Free League license                                |
-| Bundling official Dragonbane content             | No                                                    | Requires Free League permission                                |
+| Reproducing Dragonbane rule text                 | No                                                    | Governed by Free League licenses                               |
+| Bundling official Dragonbane content             | No                                                    | Section 5 of both licenses prohibits this                      |
 | Creating an open system‑agnostic engine          | Yes                                                   | If the engine is original and not derived from Dragonbane text |
 
 ### Recommended Structural Separation
@@ -242,7 +321,8 @@ Both are permissive open-source licenses, but Apache-2.0 was chosen for specific
 The platform license (Apache-2.0) covers the *software and engine*. Individual content packs may carry different licenses depending on their origin:
 
 - **Original/community content** — covered by Apache-2.0 or the author's chosen license
-- **Publisher-licensed content** — would carry the publisher's own license terms, pending formal agreements
+- **Game-mechanics-only data** — marked `"content_license": "game-mechanics-only"` in pack manifests; distributable under the third‑party licenses as VTT module data
+- **Publisher-licensed content** — would carry the publisher's own license terms, pending formal agreements beyond the third‑party license
 - **Personal-use reference data** — marked `"content_license": "personal-use-only"` in pack manifests; not for distribution
 
 The `content_license` field in each pack's `_meta` block handles per-pack licensing independently from the platform license. See `docs/package-example.md` for manifest examples.
@@ -255,18 +335,18 @@ The `.kilocode/`, `.codex/`, and `.github/skills/` directories contain third-par
 
 ## 11. Mechanics vs Expression – What Is Likely Protected?
 
-This section provides practical guidance on the difference between **game mechanics** (usually not protected on their own) and **creative expression** (protected text, presentation, and trademarks).
+This section provides practical guidance on the difference between **game mechanics** (usually not protected on their own) and **creative expression** (protected text, presentation, and trademarks). The third‑party licenses reinforce this distinction: Section 2 permits referencing rules and terminology; Section 5 prohibits using Dragonbane text.
 
 > This is not a legal contract or advice — it is a project design guideline.
 
 ### A. Generally Safer: Mechanics / Systems
 
-These are typically abstract mechanics or mathematical relationships. Implementing them in code is usually lower risk, as long as you do not copy explanatory rulebook text.
+These are typically abstract mechanics or mathematical relationships. Implementing them in code is usually lower risk, as long as you do not copy explanatory rulebook text. The VTT grant (Section 1) and reference scope (Section 2) further support encoding these in data.
 
 | Example                                        | Risk Level | Notes                      |
 |------------------------------------------------|------------|----------------------------|
-| “Roll under your skill on a d20”               | Low        | Generic resolution concept |
-| “Bane = roll twice, keep the worst”            | Low        | Dice mechanic              |
+| "Roll under your skill on a d20"               | Low        | Generic resolution concept |
+| "Bane = roll twice, keep the worst"            | Low        | Dice mechanic              |
 | Attribute → skill base formulas                | Low        | Mathematical calculation   |
 | Applying numeric modifiers from conditions     | Low        | Mechanical adjustment      |
 | Tracking HP, initiative, inventory, conditions | Low        | State management           |
@@ -275,7 +355,7 @@ These are typically abstract mechanics or mathematical relationships. Implementi
 
 ### B. Higher Risk: Protected Expression
 
-These elements are usually protected because they are written creative content or distinctive presentation.
+These elements are usually protected because they are written creative content or distinctive presentation. Section 5 of both licenses explicitly prohibits using Dragonbane text.
 
 | Example                                             | Risk Level | Why                      |
 |-----------------------------------------------------|------------|--------------------------|
@@ -293,7 +373,7 @@ Some features are useful but must be implemented carefully.
 
 | Example                                         | Risk Level | Mitigation                        |
 |-------------------------------------------------|------------|-----------------------------------|
-| Listing ability names without descriptions      | Medium-Low | Add page references               |
+| Listing ability names without descriptions      | Low        | Explicitly allowed (Section 2)    |
 | Short 1-line reminders                          | Medium     | Keep wording original and minimal |
 | Structured data representing official abilities | Medium     | Avoid bundling official text      |
 | Full procedural automation of combat            | High       | Keep GM decisions manual          |
@@ -304,8 +384,8 @@ Some features are useful but must be implemented carefully.
 
 Ask:
 
-* **Could someone play Dragonbane without owning the book?** → Risk increases.
-* **Does this only calculate/track something defined elsewhere?** → Safer companion behavior.
+* **Could someone play Dragonbane without owning the book?** → Risk increases. The license requires that a supplement "requires the Dragonbane core game to be used."
+* **Does this only calculate/track something defined elsewhere?** → Safer companion behavior. This is what VTT modules do.
 
 This principle should guide feature scope decisions throughout the project.
 
@@ -316,7 +396,7 @@ This principle should guide feature scope decisions throughout the project.
 *Audit performed: 2026‑02‑20*
 *Scope: All 28 files in `docs/`*
 
-This section documents every legal risk identified by cross‑referencing the files in `docs/` against the guidance in Sections 1–11 above. Each risk has a unique ID, the affected file(s), a severity level, a description of the misalignment, and a concrete mitigation.
+This section documents every legal risk identified by cross‑referencing the files in `docs/` against the guidance in Sections 0–11 above. Each risk has a unique ID, the affected file(s), a severity level, a description of the misalignment, and a concrete mitigation.
 
 ### Severity Definitions
 
@@ -334,7 +414,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑001 — Full Spell Descriptions (Critical)
 
 **File:** `docs/character_creation/corebook-magic.json`
-**Sections violated:** 3 (Not Allowed: "Shipping official spells/abilities text"), 4 Character Builder DON'T ("Include full heroic ability descriptions"), 7 (Very High: "Bundling official spell/ability text"), 11B (Very High: "Full heroic ability or spell descriptions")
+**Sections violated:** 3 (Not Allowed: "Shipping official spells/abilities text"), 4 Character Builder DON'T ("Include full heroic ability descriptions"), 7 (Very High: "Bundling official spell/ability text"), 11B (Very High: "Full heroic ability or spell descriptions"), License Section 5 (no Dragonbane text)
 
 **Description:** Contains complete `description` and `description_sv` fields for every spell across all four magic schools (General, Animism, Elementalism, Mentalism) — including cantrips, rank 1–3 spells, casting times, ranges, durations, components, damage values, and detailed mechanical narratives. Both English and Swedish text are reproduced verbatim. This file alone constitutes a full reproduction of the Magic chapter's spell list.
 
@@ -349,7 +429,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑002 — Full Heroic Ability Descriptions (Critical)
 
 **File:** `docs/character_creation/corebook-heroic-abilities.json`
-**Sections violated:** 3, 4 Character Builder DON'T, 7, 11B
+**Sections violated:** 3, 4 Character Builder DON'T, 7, 11B, License Section 5
 
 **Description:** Contains `description` and `description_sv` for all 44 heroic abilities with complete mechanical narratives — activation conditions, WP costs, restrictions, durations, and precise effect text. This is a near-verbatim reproduction of the Heroic Abilities chapter.
 
@@ -363,7 +443,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑003 — Full Dark Magic Spell Descriptions (Critical)
 
 **File:** `docs/character_creation/brandajorden-magic.json`
-**Sections violated:** 3, 4, 7, 11B
+**Sections violated:** 3, 4, 7, 11B, License Section 5
 
 **Description:** Reproduces the entire Dark Magic school from "Den brända jorden" — 19 spells plus 3 cantrips with full `description`/`description_sv` text. Also includes summoned creature stat blocks and monster attack tables. As a third‑party adventure module, this content is protected by its own publisher's copyright.
 
@@ -377,7 +457,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑004 — Full Profession Flavor Text (Critical)
 
 **File:** `docs/character_creation/brandajorden-professions.json`
-**Sections violated:** 11B (Very High: "Profession/kin narrative write-ups")
+**Sections violated:** 11B (Very High: "Profession/kin narrative write-ups"), License Section 5
 
 **Description:** Contains multi-paragraph lore descriptions for the Dark Mage and Dark Knight professions — narrative flavor text reproduced from the adventure module. This is creative expression, not mechanical data.
 
@@ -390,7 +470,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑005 — Full Kin Ability Descriptions (High)
 
 **Files:** `docs/character_creation/corebook-kins.json`, `docs/character_creation/monsterboken-kins.json`, `docs/character_creation/drakborgen-kins.json`
-**Sections violated:** 4 Character Builder DON'T, 11B
+**Sections violated:** 4 Character Builder DON'T, 11B, License Section 5
 
 **Description:** All kin files contain full ability descriptions with complete mechanical effects text for every kin ability. The Monsterbook file additionally includes Nightkin/Melancholy modifier rules and an expanded kin table. The Drakborgen file includes the complete Half-Elf kin entry.
 
@@ -513,7 +593,7 @@ This section documents every legal risk identified by cross‑referencing the fi
 #### LR‑014 — Drakborgen Heroic Ability (Medium)
 
 **File:** `docs/character_creation/drakborgen-heroic-abilities.json`
-**Sections violated:** 11B
+**Sections violated:** 11B, License Section 5
 
 **Description:** Contains the "Lucky" heroic ability with full description text from the Drakborgen module.
 
@@ -548,32 +628,29 @@ Apache-2.0 and MIT have meaningful differences — Apache-2.0 includes an explic
 
 **Description:** The platform manifest describes an ambitious commercial and distribution model that directly triggers multiple items from Section 8 ("When to Contact Free League"). Specifically:
 
-1. **Licensed publisher add-ons** (lines 156–161): Plans to sell "official content packs," "premium adventures," and "sanctioned expansions" as a revenue stream. Section 7 rates "Official content marketplace/distribution" as **Very High** risk. Section 8 says you "should strongly consider direct permission" before distributing "official-like content packs."
+1. **Licensed publisher add-ons** (lines 156–161): Plans to sell "official content packs," "premium adventures," and "sanctioned expansions" as a revenue stream. Section 7 rates "Official content marketplace/distribution" as **Very High** risk. These features go beyond the third‑party license scope.
 
-2. **Publisher-friendly digital marketplace** (line 264): The long-term vision includes becoming "a publisher-friendly digital marketplace." This is not just a technical feature — it's a business model that positions the platform as a *distribution channel for Free League's IP*. This requires explicit licensing/partnership, not just compliance.
+2. **Publisher-friendly digital marketplace** (line 264): The long-term vision includes becoming "a publisher-friendly digital marketplace." This is not just a technical feature — it's a business model that positions the platform as a *distribution channel for Free League's IP*. This goes beyond creating your own supplement under the license.
 
-3. **Commercialization at scale** (lines 137–162): The business model section describes hosted services, a mobile app, and licensed publisher add-ons as revenue sources. Section 8 explicitly flags "Commercialize the platform at scale" as requiring Free League contact.
+3. **Commercialization at scale** (lines 137–162): The business model section describes hosted services, a mobile app, and licensed publisher add-ons as revenue sources. Note: the license *does* permit selling supplements, but operating a marketplace for publisher content is a different matter.
 
 4. **"Licensed content is the official expansion layer"** (line 123): This framing implies an expectation of an official relationship that does not yet exist. The word "licensed" here is aspirational, not factual.
 
 5. **Cryptographic signing of licensed packs** (lines 253, 403): Implies a trust/authentication model for official content that would require a formal agreement to implement.
 
-6. **Bilingual support** (present across all data files): Section 8 flags "Support both Swedish and English official lines simultaneously" as requiring contact. The platform already does this across all JSON data files.
-
 **Mitigation:**
-1. Add a **"Legal Prerequisites"** section to `platform-manifest.md` that explicitly lists which planned features require Free League permission before implementation.
-2. Separate the manifest's vision into "can build now" (engine, homebrew, local-first) vs "requires partnership" (official packs, marketplace, licensed add-ons).
+1. Add a **"Legal Prerequisites"** section to `platform-manifest.md` that explicitly lists which planned features require agreements beyond the third‑party license.
+2. Separate the manifest's vision into "can build now" (engine, homebrew, local-first, VTT companion) vs "requires additional partnership" (official packs, marketplace, licensed add-ons).
 3. Do not build marketplace, content signing, or licensed pack infrastructure until a formal agreement exists.
 4. Reword "Licensed content is the official expansion layer" to "Licensed content would become the official expansion layer, pending publisher agreements."
 5. Add a cross-reference to `docs/legal.md` Section 8 in the platform manifest.
-6. Consider whether the bilingual data (Swedish + English) already crosses the line identified in Section 8 and should be flagged early.
 
 ---
 
 #### LR‑017 — Content Pack Architecture as a Distribution Vehicle (High)
 
 **File:** `docs/package-example.md`
-**Sections violated:** 4 Community Content DON'T ("Host official content packs"), 5 (Content Packaging Strategy: "No bundled official text"), 3 (Not Allowed: "Distribute official Free League content")
+**Sections violated:** 4 Community Content DON'T ("Host official content packs"), 5 (Content Packaging Strategy: "No bundled official text"), 3 (Not Allowed: "Distribute official Free League content"), License Section 5
 
 **Description:** The package example document demonstrates a content pack architecture that, as designed, is a ready-made pipeline for distributing official Dragonbane content:
 
@@ -666,10 +743,11 @@ This is written as a statement of current practice, but the actual state of the 
 
 The following practices are already in use and should be maintained:
 
-1. **Source page references** — Most data files include `source_page` or source metadata pointing back to the rulebook. This is good practice per Section 5.
+1. **Source page references** — Most data files include `source_page` or source metadata pointing back to the rulebook. This is good practice per License Section 2.
 2. **Translation flags** — `translation_official: true/false` flags correctly distinguish official translations from unofficial ones.
 3. **Source separation** — Content is separated by source book (corebook, monsterboken, brandajorden, drakborgen), making it easy to toggle or remove specific content.
 4. **Mechanical effects arrays** — The `mechanical_effects` structure provides a machine-readable data layer that is original engineering work, distinct from the description text.
+5. **Dual license coverage** — Both English and Swedish third‑party licenses are in place, covering the bilingual data model completely.
 
 ---
 
@@ -684,40 +762,39 @@ The following practices are already in use and should be maintained:
 
 ### Recommended Priority of Action
 
-1. **Immediate (before any public release):** Address all Critical items (LR‑001 through LR‑004). Strip `description`/`description_sv` fields from magic and heroic ability JSON files. Remove monster stat blocks from brandajorden-magic.json. Remove narrative flavor text from brandajorden-professions.json.
-2. **Short-term:** Address High items (LR‑005 through LR‑009). Strip descriptions from kins, equipment, skills, professions, and rules files. Retain only engine-necessary data plus page references.
-3. **Before partnership outreach:** ~~LR‑016, LR‑017, LR‑019, LR‑020 resolved.~~
-4. **Medium-term:** ~~LR‑010 through LR‑014 resolved. Guide documents refactored to reference rather than reproduce content. Effect primitives spec examples sanitized.~~
-5. **Ongoing:** ~~LR‑018 resolved. Legal prerequisites section added to project manifest.~~
+1. ~~**Immediate (before any public release):** Address all Critical items (LR‑001 through LR‑004).~~ Done.
+2. ~~**Short-term:** Address High items (LR‑005 through LR‑009).~~ Done.
+3. ~~**Before partnership outreach:** LR‑016, LR‑017, LR‑019, LR‑020 resolved.~~ Done.
+4. ~~**Medium-term:** LR‑010 through LR‑014 resolved.~~ Done.
+5. ~~**Ongoing:** LR‑018 resolved.~~ Done.
 6. **Before public release:** Rewrite git history to remove pre-remediation versions of data files and documentation from all commits. Use `git filter-repo` to purge stripped content from history, then force-push to remote.
 
 ---
 
 ### Remediation Status (updated 2026‑02‑20)
 
-| LR ID | Status | Action Taken |
-|-------|--------|-------------|
-| LR‑001 | **Resolved** | Stripped all `description`/`description_sv` from corebook-magic.json. Also stripped `magic_rules` prose (`general_magic`, `spell_book`, `metal_restriction`, `learning_new_spells` and `_sv` variants). Summoned creature `weapon.description` and `spell_ability.description` stripped. `mechanical_effects` and `note` fields preserved. |
-| LR‑002 | **Resolved** | Stripped all `description`/`description_sv` from 44 heroic abilities in corebook-heroic-abilities.json. |
-| LR‑003 | **Resolved** | Stripped all `description`/`description_sv` from brandajorden-magic.json spells/cantrips. Also stripped `special_rule`/`special_rule_sv` on school, `side_effect_table.entries[].result`/`result_sv`, and summoned creature `monster_attacks[].description`. |
-| LR‑004 | **Resolved** | Stripped `description`/`description_sv`, `special_rule`/`special_rule_sv`, `flavor_note`/`flavor_note_sv`, `heroic_ability_note`/`heroic_ability_note_sv`, `skill_count_note`/`skill_count_note_sv` from brandajorden-professions.json. |
-| LR‑005 | **Resolved** | Stripped `abilities[].description`/`description_sv` and `playable_note`/`playable_note_sv` from corebook-kins.json, monsterboken-kins.json, and drakborgen-kins.json. Also stripped modifier descriptions in monsterboken-kins.json and the `expanded_kin_table` description/note. |
-| LR‑006 | **Resolved** | Stripped armor `effect`/`effect_sv`, weapon property `description`/`description_sv`, and masterwork `description`/`description_sv` from corebook-equipment.json. All numerical stats preserved. |
-| LR‑007 | **Resolved** | Stripped all prose from corebook-rules.json: `creation_steps[].description`, `attributes.description`, `roll_method.notes`, `attributes.list[].description`, `derived_ratings` prose, `conditions.description`/`rules.healing`, all `encumbrance` prose, all `experience` prose. Preserved all formulas, numerical tables, brackets, and `modifier_note` computational constraints. |
-| LR‑008 | **Resolved** | Stripped all `description`/`description_sv` from skills in corebook-skills.json, plus `skill_base_chance` prose, `trained_skill_value` description, `trained_skill_note`, and `secondary_skills_note`. |
-| LR‑009 | **Resolved** | Stripped `heroic_ability_note`/`heroic_ability_note_sv` from corebook-professions.json. |
-| LR‑013 | **Resolved** | Stripped `description`/`description_sv` from weaknesses in corebook-weaknesses.json. Stripped `mementos.effect`/`effect_sv` from corebook-appearance.json. |
-| LR‑014 | **Resolved** | Stripped `description`/`description_sv` and `special_note`/`special_note_sv` from drakborgen-heroic-abilities.json. |
-| LR‑017 (point 3) | **Resolved** | Added `content_license` field to `_meta` in all 16 data files with `_meta` blocks. Added `content_license` to all 3 pack manifest examples in `docs/package-example.md`. Values: `personal-use-only` (game data), `fair-use-reference` (dictionary), `original` (schema, sample character). |
-| LR‑015 | **Resolved** | Standardized on Apache-2.0 across all project files. Fixed MIT references in `docs/manifest.md`, `docs/platform-manifest.md`, and `README.md`. Added `"license": "Apache-2.0"` to root `package.json` and all 8 sub-package `package.json` files. Added "Project Licensing" section to `docs/legal.md` documenting the license choice, rationale, content pack licensing model, and third-party tooling plugin status. |
-| LR‑016 | **Resolved** | Rewrote `docs/platform-manifest.md` to separate aspirational features from current capabilities. Reframed "Licensed content is the official expansion layer" as conditional/future. Reframed "Licensed publisher add-ons" revenue section with caveats. Rewrote Legal Philosophy to reflect actual current state. Added caveats to cryptographic signing references. Added "Legal Prerequisites" section with explicit tables separating "can build now" from "requires publisher agreement." Updated `docs/manifest.md` Publishers target user line. |
-| LR‑019 | **Resolved** | Replaced "legal escape hatch" framing in `docs/platform-manifest.md` with design-benefit language: "This modular separation ensures the platform's core value is independent of any specific content." |
-| LR‑020 | **Resolved** | Rewrote `docs/platform-manifest.md` Legal Philosophy section to reflect current reality. Now acknowledges that development reference data exists, states what we provide vs. do not provide, and cross-references `docs/legal.md` for full compliance status. |
+| LR ID                      | Status       | Action Taken                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|----------------------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LR‑001                     | **Resolved** | Stripped all `description`/`description_sv` from corebook-magic.json. Also stripped `magic_rules` prose (`general_magic`, `spell_book`, `metal_restriction`, `learning_new_spells` and `_sv` variants). Summoned creature `weapon.description` and `spell_ability.description` stripped. `mechanical_effects` and `note` fields preserved.                                                                                                                                                                                                                                                           |
+| LR‑002                     | **Resolved** | Stripped all `description`/`description_sv` from 44 heroic abilities in corebook-heroic-abilities.json.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| LR‑003                     | **Resolved** | Stripped all `description`/`description_sv` from brandajorden-magic.json spells/cantrips. Also stripped `special_rule`/`special_rule_sv` on school, `side_effect_table.entries[].result`/`result_sv`, and summoned creature `monster_attacks[].description`.                                                                                                                                                                                                                                                                                                                                         |
+| LR‑004                     | **Resolved** | Stripped `description`/`description_sv`, `special_rule`/`special_rule_sv`, `flavor_note`/`flavor_note_sv`, `heroic_ability_note`/`heroic_ability_note_sv`, `skill_count_note`/`skill_count_note_sv` from brandajorden-professions.json.                                                                                                                                                                                                                                                                                                                                                              |
+| LR‑005                     | **Resolved** | Stripped `abilities[].description`/`description_sv` and `playable_note`/`playable_note_sv` from corebook-kins.json, monsterboken-kins.json, and drakborgen-kins.json. Also stripped modifier descriptions in monsterboken-kins.json and the `expanded_kin_table` description/note.                                                                                                                                                                                                                                                                                                                   |
+| LR‑006                     | **Resolved** | Stripped armor `effect`/`effect_sv`, weapon property `description`/`description_sv`, and masterwork `description`/`description_sv` from corebook-equipment.json. All numerical stats preserved.                                                                                                                                                                                                                                                                                                                                                                                                      |
+| LR‑007                     | **Resolved** | Stripped all prose from corebook-rules.json: `creation_steps[].description`, `attributes.description`, `roll_method.notes`, `attributes.list[].description`, `derived_ratings` prose, `conditions.description`/`rules.healing`, all `encumbrance` prose, all `experience` prose. Preserved all formulas, numerical tables, brackets, and `modifier_note` computational constraints.                                                                                                                                                                                                                  |
+| LR‑008                     | **Resolved** | Stripped all `description`/`description_sv` from skills in corebook-skills.json, plus `skill_base_chance` prose, `trained_skill_value` description, `trained_skill_note`, and `secondary_skills_note`.                                                                                                                                                                                                                                                                                                                                                                                               |
+| LR‑009                     | **Resolved** | Stripped `heroic_ability_note`/`heroic_ability_note_sv` from corebook-professions.json.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| LR‑013                     | **Resolved** | Stripped `description`/`description_sv` from weaknesses in corebook-weaknesses.json. Stripped `mementos.effect`/`effect_sv` from corebook-appearance.json.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| LR‑014                     | **Resolved** | Stripped `description`/`description_sv` and `special_note`/`special_note_sv` from drakborgen-heroic-abilities.json.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| LR‑017 (point 3)           | **Resolved** | Added `content_license` field to `_meta` in all 16 data files with `_meta` blocks. Added `content_license` to all 3 pack manifest examples in `docs/package-example.md`. Values: `personal-use-only` (game data), `fair-use-reference` (dictionary), `original` (schema, sample character).                                                                                                                                                                                                                                                                                                          |
+| LR‑015                     | **Resolved** | Standardized on Apache-2.0 across all project files. Fixed MIT references in `docs/manifest.md`, `docs/platform-manifest.md`, and `README.md`. Added `"license": "Apache-2.0"` to root `package.json` and all 8 sub-package `package.json` files. Added "Project Licensing" section to `docs/legal.md` documenting the license choice, rationale, content pack licensing model, and third-party tooling plugin status.                                                                                                                                                                               |
+| LR‑016                     | **Resolved** | Rewrote `docs/platform-manifest.md` to separate aspirational features from current capabilities. Reframed "Licensed content is the official expansion layer" as conditional/future. Reframed "Licensed publisher add-ons" revenue section with caveats. Rewrote Legal Philosophy to reflect actual current state. Added caveats to cryptographic signing references. Added "Legal Prerequisites" section with explicit tables separating "can build now" from "requires publisher agreement." Updated `docs/manifest.md` Publishers target user line.                                                |
+| LR‑019                     | **Resolved** | Replaced "legal escape hatch" framing in `docs/platform-manifest.md` with design-benefit language: "This modular separation ensures the platform's core value is independent of any specific content."                                                                                                                                                                                                                                                                                                                                                                                               |
+| LR‑020                     | **Resolved** | Rewrote `docs/platform-manifest.md` Legal Philosophy section to reflect current reality. Now acknowledges that development reference data exists, states what we provide vs. do not provide, and cross-references `docs/legal.md` for full compliance status.                                                                                                                                                                                                                                                                                                                                        |
 | LR‑017 (points 1, 2, 4, 5) | **Resolved** | Rewrote `docs/package-example.md`. Restructured system pack to contain only engine data (tables, rules, creation flow) — removed `content/` subdirectories from the system pack. Replaced official content examples (Monsterbook orc, Den branda jorden) with original homebrew (Ironborn kin, Runesmith profession from fictional "Ironvale" setting). Added prominent legal notice at top. Documented user-assembled content model with explanation, templates, and workflow. Added expansion content template showing the user-assembled pattern. Added `content_license` values reference table. |
-| LR‑010 | **Resolved** | Rewrote `docs/character_creation/character-creation-guide.md` as a process reference document. Removed all reproduced tables (kin abilities, profession lists, full skill tables, armor/weapon tables, gear packages, spell summaries). Replaced with data file references (`corebook-kins.json`, `corebook-professions.json`, etc.) and partial example tables (1–2 rows) for illustrative purposes. Trimmed worked example to show process flow without reproducing content. |
-| LR‑011 | **Resolved** | Rewrote `docs/character_creation/character-sheet-guide.md` as a field mapping reference. Removed all reproduced tables (full skill lists, full armor tables, rest mechanics). Replaced with data source references per section and partial example tables. Worked example trimmed to derived values and data file pointers. |
-| LR‑012 | **Resolved** | Sanitized `docs/character_creation/effect-primitives-spec.md` worked examples. Generalized `constraint` value strings and `note` fields that paraphrased specific rulebook text too closely. Added disclaimer noting examples use ability names as identifiers and that constraint values are engineering annotations, not rulebook reproductions. The spec's JSON structures and primitive type system are original engineering work and were preserved intact. |
-| LR‑018 | **Resolved** | Added "Legal Constraints" section to `docs/manifest.md` with two tables: "Can build now" (rules engine, character builder, homebrew packs, local-first, self-hosting) vs "Requires publisher agreement" (official content packs, marketplace, licensed add-ons, cryptographic signing). Added cross-reference to `docs/legal.md` and `CONTRIBUTING.md`. Updated date. |
+| LR‑010                     | **Resolved** | Rewrote `docs/character_creation/character-creation-guide.md` as a process reference document. Removed all reproduced tables (kin abilities, profession lists, full skill tables, armor/weapon tables, gear packages, spell summaries). Replaced with data file references (`corebook-kins.json`, `corebook-professions.json`, etc.) and partial example tables (1–2 rows) for illustrative purposes. Trimmed worked example to show process flow without reproducing content.                                                                                                                       |
+| LR‑011                     | **Resolved** | Rewrote `docs/character_creation/character-sheet-guide.md` as a field mapping reference. Removed all reproduced tables (full skill lists, full armor tables, rest mechanics). Replaced with data source references per section and partial example tables. Worked example trimmed to derived values and data file pointers.                                                                                                                                                                                                                                                                          |
+| LR‑012                     | **Resolved** | Sanitized `docs/character_creation/effect-primitives-spec.md` worked examples. Generalized `constraint` value strings and `note` fields that paraphrased specific rulebook text too closely. Added disclaimer noting examples use ability names as identifiers and that constraint values are engineering annotations, not rulebook reproductions. The spec's JSON structures and primitive type system are original engineering work and were preserved intact.                                                                                                                                     |
+| LR‑018                     | **Resolved** | Added "Legal Constraints" section to `docs/manifest.md` with two tables: "Can build now" (rules engine, character builder, homebrew packs, local-first, self-hosting) vs "Requires publisher agreement" (official content packs, marketplace, licensed add-ons, cryptographic signing). Added cross-reference to `docs/legal.md` and `CONTRIBUTING.md`. Updated date.                                                                                                                                                                                                                                |
 
 Full-text reference copies preserved in `source_data/reference-data/` (gitignored) before stripping.
-

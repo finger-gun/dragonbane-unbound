@@ -126,10 +126,10 @@ This project is licensed under [Apache-2.0](LICENSE). See [docs/legal.md](docs/l
 
 <div align="center">
 
-<img src="https://freeleaguepublishing.com/wp-content/uploads/2023/11/Dragonbane-license-logo-black.png" alt="Dragonbane Compatibility Logo" width="200">
+<img src="https://freeleaguepublishing.com/wp-content/uploads/2023/11/Dragonbane-license-logo-black.png" alt="A Supplement For Dragonbane" width="200">
 
-Dragonbane Unbound is an independent, fan-made tool. It is not affiliated with or endorsed by Free League Publishing.
+Dragonbane Unbound is not affiliated with, sponsored, or endorsed by Fria Ligan AB. This project was created under Fria Ligan AB's Dragonbane Third Party Supplement License.
 
-Dragonbane / Drakar och Demoner is a trademark of Free League Publishing.
+Dragonbane is a trademark of Fria Ligan AB. Drakar och Demoner and Ereb Altor are registered trademarks of Fria Ligan AB.
 
 </div>

@@ -62,28 +62,29 @@ Completed and historical changes, for long-term reference.
 
 ## Legal Constraints
 
-This project operates within the boundaries of Free League Publishing's third-party license and general copyright/trademark law. See [docs/legal.md](legal.md) for the full compliance guide.
+This project operates under Free League Publishing's third-party licenses (both English and Swedish) and general copyright/trademark law. See [docs/legal.md](legal.md) for the full compliance guide, including the section-by-section license analysis.
 
-**Can build now:**
+**Covered by the third-party licenses (can build now):**
 
-| Capability | Status |
-|------------|--------|
-| Rules engine (formulas, brackets, derived stats) | Architecture ready |
-| Character builder (creation flow, validation) | Architecture ready |
-| Encounter runner (initiative, conditions, rolls) | Planned |
-| Original homebrew content packs | Architecture ready |
-| User-assembled content from owned rulebooks | Architecture ready |
-| Local-first offline operation | Architecture ready |
-| Self-hosting | Architecture ready |
+| Capability | Status | License Basis |
+|------------|--------|---------------|
+| Rules engine (formulas, brackets, derived stats) | Architecture ready | License Section 1 (VTT grant), Section 2 (reference rules) |
+| Character builder (creation flow, validation) | Architecture ready | License Section 1, Section 2 |
+| Encounter runner (initiative, conditions, rolls) | Planned | License Section 1 |
+| Bilingual (English + Swedish) data and UI | Architecture ready | EN license + SV license combined |
+| Mechanical data packs (game-mechanics-only) | Architecture ready | License Section 1 (VTT), Section 2 (terminology) |
+| Original homebrew content packs | Architecture ready | License Section 4 (additions) |
+| User-assembled content from owned rulebooks | Architecture ready | License Section 4 |
+| Local-first offline operation | Architecture ready | Original engineering work |
+| Self-hosting | Architecture ready | Original engineering work |
 
-**Requires publisher agreement (do not build until agreements exist):**
+**Requires additional agreement beyond the third-party license (do not build until agreements exist):**
 
 | Capability | Dependency |
 |------------|------------|
-| Official content packs (spells, abilities, monsters) | Free League license |
-| Content marketplace / distribution | Free League partnership |
-| Licensed publisher add-ons | Free League partnership |
-| Cryptographic signing of official packs | Free League partnership |
+| Official content marketplace / distribution | Free League partnership (beyond license scope) |
+| Licensed publisher add-ons | Free League partnership (beyond license scope) |
+| Cryptographic signing of official packs | Free League partnership (implies official trust model) |
 
 Contributions must not include official rulebook text or copyrighted content. See [CONTRIBUTING.md](../CONTRIBUTING.md) for content guidelines.
 

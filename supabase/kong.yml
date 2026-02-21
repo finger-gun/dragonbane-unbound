@@ -7,6 +7,29 @@ services:
       - name: auth
         paths:
           - /auth/v1
+    plugins:
+      - name: cors
+        config:
+          origins:
+            - http://localhost:3001
+            - http://localhost:3003
+          methods:
+            - GET
+            - POST
+            - PUT
+            - PATCH
+            - DELETE
+            - OPTIONS
+          headers:
+            - Authorization
+            - Content-Type
+            - apikey
+            - x-client-info
+            - x-supabase-api-version
+          exposed_headers:
+            - Authorization
+          credentials: true
+          max_age: 3600
   - name: rest
     url: http://rest:3000/
     routes:

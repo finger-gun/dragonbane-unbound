@@ -21,12 +21,15 @@ This project runs Supabase locally via Docker Compose. The local stack provides 
    cp apps/api/.env.example apps/api/.env
    ```
 3. Generate local keys (recommended):
+
    ```bash
    openssl rand -base64 32
    ```
+
    Use the result for `SUPABASE_JWT_SECRET`, then generate anon/service keys with the Supabase CLI or a local JWT helper.
 
 4. Apply the auth roles schema (required for baseline auth):
+
    ```bash
    psql "postgresql://postgres:<password>@localhost:${SUPABASE_DB_PORT}/postgres" -f supabase/sql/001_user_roles.sql
    ```
@@ -49,8 +52,10 @@ docker compose up -d
 - Auth: `http://localhost:9999`
 - Storage: `http://localhost:${SUPABASE_STORAGE_PORT}`
 - Studio (control panel): `http://localhost:${SUPABASE_STUDIO_PORT}`
+- Mailpit (local email inbox): `http://localhost:8025`
 
 ## Notes
 
 - The compose file is intended for local development only.
 - If you change ports or secrets, update `.env` and app env files accordingly.
+- Local auth emails (signup confirmation, password reset) are delivered to Mailpit.

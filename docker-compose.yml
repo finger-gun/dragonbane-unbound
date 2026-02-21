@@ -14,6 +14,7 @@ services:
     image: supabase/gotrue:v2.162.0
     depends_on:
       - db
+      - mailpit
     environment:
       GOTRUE_API_HOST: 0.0.0.0
       GOTRUE_API_PORT: 9999
@@ -21,13 +22,32 @@ services:
       GOTRUE_DB_DATABASE_URL: postgresql://${SUPABASE_DB_USER}:${SUPABASE_DB_PASSWORD}@db:5432/${SUPABASE_DB_NAME}?search_path=auth
       GOTRUE_DB_SCHEMA: auth
       API_EXTERNAL_URL: ${SUPABASE_URL}
+      GOTRUE_API_EXTERNAL_URL: ${SUPABASE_URL}
+      GOTRUE_EXTERNAL_URL: ${SUPABASE_URL}
+      EXTERNAL_URL: ${SUPABASE_URL}
       GOTRUE_SITE_URL: ${SUPABASE_SITE_URL}
-      GOTRUE_URI_ALLOW_LIST: ${SUPABASE_SITE_URL}
+      SITE_URL: ${SUPABASE_SITE_URL}
+      GOTRUE_URI_ALLOW_LIST: ${SUPABASE_ALLOWED_ORIGINS}
       GOTRUE_JWT_SECRET: ${SUPABASE_JWT_SECRET}
       GOTRUE_JWT_DEFAULT_GROUP_NAME: authenticated
       GOTRUE_DISABLE_SIGNUP: 'false'
+      GOTRUE_MAILER_AUTOCONFIRM: 'true'
+      GOTRUE_MAILER_URLPATHS_CONFIRMATION: ${SUPABASE_URL}/auth/v1/verify
+      GOTRUE_MAILER_URLPATHS_RECOVERY: ${SUPABASE_URL}/auth/v1/verify
+      GOTRUE_MAILER_URLPATHS_EMAIL_CHANGE: ${SUPABASE_URL}/auth/v1/verify
+      GOTRUE_SMTP_HOST: mailpit
+      GOTRUE_SMTP_PORT: 1025
+      GOTRUE_SMTP_ADMIN_EMAIL: no-reply@local.test
+      GOTRUE_SMTP_SENDER_NAME: Dragonbane Unbound (Local)
     ports:
       - '9999:9999'
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - '8025:8025'
+    expose:
+      - '1025'
 
   rest:
     image: postgrest/postgrest:v11.2.2

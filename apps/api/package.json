@@ -9,18 +9,23 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "lint": "eslint .",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@dbu/adapters": "workspace:*",
+    "@dbu/engine": "workspace:*",
     "@dbu/types": "workspace:*",
     "@dbu/utils": "workspace:*",
-    "fastify": "^4.26.2",
+    "@fastify/cors": "^8.5.0",
     "@supabase/supabase-js": "^2.49.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
     "tsx": "^4.7.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "vitest": "^2.1.9"
   }
 }

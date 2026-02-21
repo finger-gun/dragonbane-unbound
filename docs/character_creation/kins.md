@@ -1,0 +1,16 @@
+- Human
+- Halfling
+- Dwarf
+- Elf
+- Mallard
+- Wolfkin
+- Half-Elf
+- Orc
+- Ogre
+- Goblin
+- Hobgoblin
+- Frog People
+- Karkion
+- Cat People
+- Lizard People
+- Satyr

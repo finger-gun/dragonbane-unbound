@@ -26,8 +26,17 @@ export default function Home() {
           <a className="cta" href="/login">
             Sign in
           </a>
-          <a className="cta" href="/">
-            Explore the platform vision
+          <a className="cta" href="/characters">
+            Character library
+          </a>
+          <a className="cta" href="/characters/new">
+            Create a character
+          </a>
+          <a className="cta" href="/adventures">
+            Adventures
+          </a>
+          <a className="cta" href="/encounters/new">
+            Start an encounter
           </a>
         </div>
       </section>

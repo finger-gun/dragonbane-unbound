@@ -12,5 +12,11 @@
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --test"
+  },
+  "dependencies": {
+    "@dbu/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30"
   }
 }

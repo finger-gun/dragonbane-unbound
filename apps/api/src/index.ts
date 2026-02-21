@@ -1,9 +1,14 @@
 import Fastify from 'fastify';
+import cors from '@fastify/cors';
 
 import { AppInfo } from '@dbu/types';
 import { serviceLabel } from '@dbu/utils';
 
 import { requireAuth, requireRole } from './auth.js';
+import { registerAdventureRoutes } from './adventureRoutes.js';
+import { registerCharacterRoutes } from './characterRoutes.js';
+import { registerEncounterRoutes } from './encounterRoutes.js';
+import { registerPackRoutes } from './packRoutes.js';
 
 const appInfo: AppInfo = {
   name: 'Dragonbane Unbound API',
@@ -12,6 +17,31 @@ const appInfo: AppInfo = {
 };
 
 const server = Fastify({ logger: true });
+
+const splitOrigins = (value: string | undefined) =>
+  (value ?? '')
+    .split(',')
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+
+const allowedOrigins = splitOrigins(process.env.API_CORS_ORIGINS).concat(
+  splitOrigins(process.env.SUPABASE_ALLOWED_ORIGINS),
+);
+
+await server.register(cors, {
+  origin: (origin, cb) => {
+    // Allow non-browser clients (no Origin header).
+    if (!origin) return cb(null, true);
+
+    // If no allowlist configured, allow all origins in dev.
+    if (allowedOrigins.length === 0) return cb(null, true);
+
+    return cb(null, allowedOrigins.includes(origin));
+  },
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 204,
+});
 
 server.get('/health', async () => {
   return {
@@ -37,6 +67,11 @@ server.get('/admin/ping', { preHandler: requireRole(['admin']) }, async () => {
 server.get('/gm/ping', { preHandler: requireRole(['game-master']) }, async () => {
   return { status: 'ok', role: 'game-master' };
 });
+
+registerCharacterRoutes(server);
+registerEncounterRoutes(server);
+registerPackRoutes(server);
+registerAdventureRoutes(server);
 
 const port = Number(process.env.API_PORT ?? process.env.PORT ?? 4000);
 

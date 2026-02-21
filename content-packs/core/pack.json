@@ -1,0 +1,9 @@
+{
+  "id": "core",
+  "name": "Core Pack",
+  "version": "0.1.0",
+  "description": "Local dev core content pack",
+  "author": "Dragonbane Unbound",
+  "tags": ["core", "mvp"],
+  "content_version": "1.0"
+}

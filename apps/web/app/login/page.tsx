@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { getSupabaseClient } from '../../lib/supabaseClient';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -24,7 +26,8 @@ export default function LoginPage() {
     if (error) {
       setMessage(error.message);
     } else {
-      setMessage('Signed in successfully.');
+      setMessage('Signed in successfully. Redirecting…');
+      router.push('/');
     }
 
     setLoading(false);
@@ -64,6 +67,13 @@ export default function LoginPage() {
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
           {message ? <p className="form-message">{message}</p> : null}
+
+          <p className="form-message">
+            New here? <a href="/signup">Create an account</a>.
+          </p>
+          <p className="form-message">
+            <a href="/forgot-password">Forgot your password?</a>
+          </p>
         </form>
       </section>
     </main>

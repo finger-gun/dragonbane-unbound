@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "rope",
+      "kind": "item",
+      "name": "Rope",
+      "name_sv": "Rep",
+      "description": "A sturdy length of rope."
+    },
+    {
+      "id": "torch",
+      "kind": "item",
+      "name": "Torch",
+      "name_sv": "Fackla",
+      "description": "Provides light for a short time."
+    },
+    {
+      "id": "practice_sword",
+      "kind": "weapon",
+      "name": "Practice sword",
+      "name_sv": "Träningssvärd",
+      "description": "A blunt training blade.",
+      "damage": "1d6"
+    },
+    {
+      "id": "leather_cap",
+      "kind": "armor",
+      "name": "Leather cap",
+      "name_sv": "Läderhätta",
+      "description": "Simple head protection.",
+      "protection": 1
+    }
+  ]
+}

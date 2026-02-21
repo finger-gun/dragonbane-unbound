@@ -1,0 +1,12 @@
+- Bard
+- Artisan
+- Hunter
+- Fighter
+- Scholar
+- Mage
+- Merchant
+- Knight
+- Mariner
+- Thief
+- Dark Mage
+- Dark Knight

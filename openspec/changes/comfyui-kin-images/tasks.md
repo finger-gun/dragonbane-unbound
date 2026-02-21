@@ -33,4 +33,4 @@
 ## 6. Verification
 
 - [x] 6.1 Add a small test harness (or smoke-test script) that validates config parsing, slugify behavior, and checkpoint resolution without requiring a running ComfyUI server
-- [ ] 6.2 Manually verify end-to-end: setup -> run server -> generate at least one image -> output saved under `assets/portraits/kins/`
+- [x] 6.2 Manually verify end-to-end: setup -> run server -> generate at least one image -> output saved under `assets/portraits/kins/`

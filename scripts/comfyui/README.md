@@ -1,58 +1,83 @@
-# ComfyUI (Local) - Batch Image Generation
+# ComfyUI (Local) - Automated Image Generation
 
-This repo includes a small batch runner that talks to a locally running ComfyUI server and generates one portrait per kin prompt.
+This repo uses a developer-local ComfyUI install (gitignored) to generate images (e.g., unique kin portraits) without shipping model weights or risking copyright/licensing issues.
 
-## 1) Start ComfyUI
+Key constraints:
 
-ComfyUI is vendored in `tools/ComfyUI`.
+- `tools/ComfyUI/` is intentionally gitignored (each developer installs locally)
+- model weights are not committed
 
-Install deps (already done if you ran the setup once):
+## Happy Path
 
-```bash
-python3.11 -m venv tools/ComfyUI/.venv
-tools/ComfyUI/.venv/bin/pip install -U pip
-tools/ComfyUI/.venv/bin/pip install -r tools/ComfyUI/requirements.txt
-```
-
-Run the server:
+1. Setup ComfyUI (clone + venv + deps)
 
 ```bash
-scripts/comfyui/run_server.sh
+python3 scripts/comfyui/comfyui.py setup
 ```
 
-Optional: if your models live elsewhere, copy `scripts/comfyui/extra_model_paths.example.yaml` to `scripts/comfyui/extra_model_paths.yaml` and set the paths. `scripts/comfyui/run_server.sh` will pick it up automatically.
+2. Start the server
 
-By default ComfyUI will listen on `http://127.0.0.1:8188`.
+```bash
+python3 scripts/comfyui/comfyui.py run-server
+```
 
-## 2) Put a checkpoint model in ComfyUI
+3. Verify your setup
 
-Add at least one checkpoint to:
+```bash
+python3 scripts/comfyui/comfyui.py doctor
+```
+
+4. Generate kin portraits from the job config
+
+```bash
+python3 scripts/comfyui/comfyui.py generate --job scripts/comfyui/jobs/kins.example.yaml
+```
+
+Outputs land in `assets/portraits/kins/` by default.
+
+## Checkpoint Models
+
+Put at least one checkpoint into:
 
 `tools/ComfyUI/models/checkpoints/`
 
-Example filenames you might have:
-
-- `sd_xl_base_1.0.safetensors`
-- `juggernautXL_v9.safetensors`
-
-## 3) Generate kin portraits
-
-Prompts live in:
-
-`docs/character_creation/kin-profile-portrait-prompts.md`
-
-Run the batch generator:
+If you want the helper to download SDXL base (recommended starting point):
 
 ```bash
-python3 scripts/comfyui/batch_generate_kin_portraits.py \
+tools/ComfyUI/.venv/bin/python scripts/comfyui/download_model.py
+```
+
+Notes:
+
+- Some models require you to accept a license on Hugging Face and set `HF_TOKEN`.
+- You can avoid passing `--ckpt` repeatedly by setting `COMFYUI_CKPT="..."`.
+
+## Job Configs
+
+Job configs are data-only YAML/JSON. See:
+
+- `scripts/comfyui/jobs/kins.example.yaml`
+
+## Ad-Hoc Generation
+
+Generate a single image from a prompt (still requires a running server):
+
+```bash
+python3 scripts/comfyui/comfyui.py generate \
+  --name "mallsing" \
+  --prompt "<your prompt here>" \
   --ckpt "sd_xl_base_1.0.safetensors"
 ```
 
-Outputs are downloaded into:
+## Optional: External Model Paths
 
-`assets/portraits/kins/`
+If your models live elsewhere, copy:
+
+`scripts/comfyui/extra_model_paths.example.yaml` -> `scripts/comfyui/extra_model_paths.yaml`
+
+Then edit the absolute paths. The server runner will pick it up automatically.
 
 ## Notes
 
-- If you want different output size/steps/sampler, see `--help` on the batch script.
 - This uses ComfyUI's HTTP API (`/prompt`, `/history`, `/view`).
+- Default behavior avoids overwriting existing outputs (configurable per job).

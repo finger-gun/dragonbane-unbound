@@ -1,0 +1,40 @@
+# Example job: generate one portrait per kin prompt.
+version: 1
+
+server:
+  url: http://127.0.0.1:8188
+  # Set true to have the generator start ComfyUI for you.
+  start: false
+  host: 127.0.0.1
+  port: 8188
+  ready_timeout_s: 30
+
+checkpoint:
+  # Either set this, pass --ckpt, or set COMFYUI_CKPT.
+  name: sd_xl_base_1.0.safetensors
+
+generate:
+  width: 1024
+  height: 1024
+  steps: 28
+  cfg: 6.0
+  sampler: dpmpp_2m
+  scheduler: karras
+  negative: >-
+    low quality, worst quality, blurry, noisy, jpeg artifacts, oversaturated, text,
+    watermark, logo, signature, frame, border, extra limbs, deformed
+  seed:
+    # fixed = deterministic (base seed + item index)
+    # random = random per image (seed printed per item)
+    mode: fixed
+    value: 123456
+  timeout_s: 1800
+
+output:
+  dir: assets/portraits/kins
+  ext: png
+  overwrite: false
+
+source:
+  type: kin_prompts_markdown
+  path: docs/character_creation/kin-profile-portrait-prompts.md

@@ -92,6 +92,11 @@ export const registerCharacterRoutes = (server: FastifyInstance) => {
         trainedSkillIds: payload.trained_skill_ids,
       });
 
+      sheet.portrait = {
+        kind: 'kin',
+        kin_ref: `core:${payload.header.kin_id}`,
+      };
+
       const id = randomUUID();
       const record: CharacterRecord = {
         id,

@@ -69,7 +69,9 @@ h1 {
   border-radius: 16px;
   box-shadow: 0 18px 40px var(--shadow);
   border: 1px solid rgba(17, 19, 24, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -99,7 +101,9 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   box-shadow: 0 14px 30px rgba(196, 90, 59, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .cta:hover {
@@ -132,6 +136,14 @@ h1 {
   display: grid;
   gap: 8px;
   font-weight: 600;
+}
+
+.field-label {
+  font-weight: 600;
+}
+
+.span-all {
+  grid-column: 1 / -1;
 }
 
 .field input {
@@ -240,7 +252,9 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(196, 90, 59, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button.secondary {
@@ -296,12 +310,27 @@ h1 {
   gap: 6px;
 }
 
+.skill-card.selected {
+  border-color: rgba(196, 90, 59, 0.45);
+  box-shadow: 0 10px 24px rgba(196, 90, 59, 0.12);
+}
+
+.skill-card.locked {
+  opacity: 0.7;
+}
+
 .skill-card label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   font-weight: 600;
+}
+
+.skill-card input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
 }
 
 .skill-card small {
@@ -312,6 +341,44 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
+}
+
+.kin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.kin-card {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 12px;
+  border: 1px solid rgba(17, 19, 24, 0.1);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.kin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 18, 25, 0.14);
+}
+
+.kin-card.selected {
+  border-color: rgba(196, 90, 59, 0.55);
+  box-shadow: 0 16px 34px rgba(196, 90, 59, 0.14);
+}
+
+.kin-name {
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .summary-card {

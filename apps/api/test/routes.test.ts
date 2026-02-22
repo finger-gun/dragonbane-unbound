@@ -1,8 +1,47 @@
 import Fastify from 'fastify';
 import { describe, expect, it, vi } from 'vitest';
 
+import { promises as fs } from 'fs';
+import os from 'os';
+import path from 'path';
+
 import { registerCharacterRoutes } from '../src/characterRoutes.js';
 import { registerPackRoutes } from '../src/packRoutes.js';
+
+const writeJson = async (filePath: string, value: unknown) => {
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  await fs.writeFile(filePath, JSON.stringify(value, null, 2), 'utf-8');
+};
+
+const makeTempPacksDir = async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'dbu-packs-'));
+  const coreDir = path.join(root, 'core');
+
+  await writeJson(path.join(coreDir, 'pack.json'), {
+    id: 'core',
+    name: 'Core Pack',
+    version: '0.1.0',
+  });
+
+  await writeJson(path.join(coreDir, 'items.json'), {
+    items: [
+      { id: 'torch', kind: 'item', name: 'Torch' },
+      { id: 'rope', kind: 'item', name: 'Rope' },
+    ],
+  });
+
+  const pngPath = path.join(coreDir, 'assets', 'portraits', 'kins', 'human.png');
+  await fs.mkdir(path.dirname(pngPath), { recursive: true });
+  await fs.writeFile(pngPath, Buffer.from('not-a-real-png-but-ok'));
+
+  await writeJson(path.join(coreDir, 'assets', 'portraits', 'index.json'), {
+    kins: {
+      'core:human': 'assets/portraits/kins/human.png',
+    },
+  });
+
+  return root;
+};
 
 function makeSupabase(overrides: Partial<Record<string, any>> = {}) {
   const state = {
@@ -99,21 +138,6 @@ vi.mock('../src/supabase.js', () => {
   return { supabaseAdmin: makeSupabase() };
 });
 
-vi.mock('@dbu/adapters', async () => {
-  const actual: any = await vi.importActual('@dbu/adapters');
-  return {
-    ...actual,
-    loadLocalPackItems: async () => ({
-      packs: [],
-      errors: [],
-      items: [
-        { id: 'core:torch', pack_id: 'core', item_id: 'torch', kind: 'item', name: 'Torch' },
-        { id: 'core:rope', pack_id: 'core', item_id: 'rope', kind: 'item', name: 'Rope' },
-      ],
-    }),
-  };
-});
-
 describe('api routes', () => {
   it('GET /characters returns user characters', async () => {
     const app = Fastify();
@@ -146,6 +170,8 @@ describe('api routes', () => {
   });
 
   it('GET /packs/items returns items and supports q filtering', async () => {
+    const packsDir = await makeTempPacksDir();
+    process.env.PACKS_DIR = packsDir;
     const app = Fastify();
     registerPackRoutes(app);
 
@@ -154,5 +180,54 @@ describe('api routes', () => {
     const body = res.json();
     expect(body.items).toHaveLength(1);
     expect(body.items[0].id).toBe('core:torch');
+  });
+
+  it('GET /packs/portraits/kins/resolve returns an asset url', async () => {
+    const packsDir = await makeTempPacksDir();
+    process.env.PACKS_DIR = packsDir;
+
+    const app = Fastify();
+    registerPackRoutes(app);
+
+    const res = await app.inject({
+      method: 'GET',
+      url: '/packs/portraits/kins/resolve?ref=core:human',
+    });
+    expect(res.statusCode).toBe(200);
+    const body = res.json();
+    expect(body.pack_id).toBe('core');
+    expect(body.path).toBe('assets/portraits/kins/human.png');
+    expect(body.url).toContain('/packs/assets');
+  });
+
+  it('GET /packs/portraits/kins serves image bytes', async () => {
+    const packsDir = await makeTempPacksDir();
+    process.env.PACKS_DIR = packsDir;
+
+    const app = Fastify();
+    registerPackRoutes(app);
+
+    const res = await app.inject({
+      method: 'GET',
+      url: '/packs/portraits/kins?ref=core:human',
+    });
+    expect(res.statusCode).toBe(200);
+    expect(res.headers['content-type']).toBe('image/png');
+    expect(res.body.length).toBeGreaterThan(0);
+  });
+
+  it('GET /packs/assets rejects path traversal', async () => {
+    const packsDir = await makeTempPacksDir();
+    process.env.PACKS_DIR = packsDir;
+
+    const app = Fastify();
+    registerPackRoutes(app);
+
+    const res = await app.inject({
+      method: 'GET',
+      url: '/packs/assets?pack_id=core&path=../../etc/passwd',
+    });
+    expect(res.statusCode).toBe(400);
+    expect(res.json().error).toBe('invalid_asset_path');
   });
 });

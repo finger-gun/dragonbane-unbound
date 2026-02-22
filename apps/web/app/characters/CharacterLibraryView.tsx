@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-import type { CharacterRecord, CharacterSheet } from '@dbu/types';
+import type { CharacterPortrait, CharacterRecord, CharacterSheet, KinRef } from '@dbu/types';
+
+import PortraitImage from '../components/PortraitImage';
 
 import { getSupabaseClient } from '../../lib/supabaseClient';
 
@@ -10,6 +12,15 @@ type CharacterListItem = {
   id: string;
   updated_at?: string;
   header: CharacterSheet['header'];
+  portrait?: CharacterPortrait | null;
+};
+
+const derivePortrait = (sheet: CharacterSheet): CharacterPortrait | null => {
+  if (sheet.portrait) return sheet.portrait;
+  if (sheet.header.kin_id) {
+    return { kind: 'kin', kin_ref: `core:${sheet.header.kin_id}` as KinRef };
+  }
+  return null;
 };
 
 const formatDate = (value: string | undefined) => {
@@ -54,6 +65,7 @@ export default function CharacterLibraryView() {
           id: record.id,
           updated_at: record.updated_at,
           header: record.data.header,
+          portrait: derivePortrait(record.data),
         }));
 
         setItems(list);
@@ -118,10 +130,20 @@ export default function CharacterLibraryView() {
           <div className="card-grid">
             {sorted.map((character) => (
               <article key={character.id} className="card">
-                <h2>{character.header.character_name}</h2>
-                <p>
-                  {character.header.kin} · {character.header.profession} · {character.header.age}
-                </p>
+                <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+                  <PortraitImage
+                    portrait={character.portrait}
+                    alt={character.header.character_name}
+                    size={64}
+                  />
+                  <div>
+                    <h2 style={{ marginBottom: 6 }}>{character.header.character_name}</h2>
+                    <p>
+                      {character.header.kin} · {character.header.profession} ·{' '}
+                      {character.header.age}
+                    </p>
+                  </div>
+                </div>
                 <p className="page-subtitle">Updated: {formatDate(character.updated_at)}</p>
                 <div className="meta">
                   <a className="cta" href={`/characters/${character.id}`}>

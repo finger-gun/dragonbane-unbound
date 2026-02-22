@@ -1,0 +1,20 @@
+version: 1
+backend: ollama
+model: x/z-image-turbo
+
+generate:
+  width: 1024
+  height: 1024
+  # steps: 20
+  # seed: 123456
+  # negative: "text, watermark, logo"
+  timeout_s: 1800
+
+output:
+  dir: assets/portraits/kins
+  ext: png
+  overwrite: false
+
+source:
+  type: kin_prompts_markdown
+  path: docs/character_creation/kin-profile-portrait-prompts.md

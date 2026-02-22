@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "backend": "ollama",
+  "model": "x/z-image-turbo",
+  "generate": {
+    "width": 1024,
+    "height": 1024,
+    "negative": "anime, manga, chibi, kawaii, big eyes, moe, studio ghibli, cel-shaded anime, key visual, vtuber, 3d render, CGI, plastic skin, photorealism, text, watermark, logo, signature, lowres, blurry, jpeg artifacts",
+    "timeout_s": 1800
+  },
+  "output": {
+    "dir": "assets/portraits/kins",
+    "ext": "png",
+    "overwrite": false
+  },
+  "source": {
+    "type": "kin_prompts_markdown",
+    "path": "docs/character_creation/kin-profile-portrait-prompts.md"
+  }
+}

@@ -4,6 +4,16 @@ export type AppInfo = {
   stage: 'alpha' | 'beta' | 'stable';
 };
 
+/** Canonical namespaced content reference: `${pack_id}:${local_id}` */
+export type ContentRef = `${string}:${string}`;
+
+export type KinRef = ContentRef;
+
+export type CharacterPortrait = {
+  kind: 'kin';
+  kin_ref: KinRef;
+};
+
 export type AttributeId = 'STR' | 'CON' | 'AGL' | 'INT' | 'WIL' | 'CHA';
 
 export type CharacterHeader = {
@@ -122,6 +132,7 @@ export type DeathSaves = {
 
 export type CharacterSheet = {
   header: CharacterHeader;
+  portrait?: CharacterPortrait | null;
   attributes: CharacterAttributes;
   conditions: CharacterConditions;
   derived_ratings: DerivedRatings;

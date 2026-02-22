@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import type { CharacterAttributes } from '@dbu/types';
+import type { CharacterAttributes, KinRef } from '@dbu/types';
 import { buildCharacterSkills, computeDerivedRatings, getAgeSkillSlots } from '@dbu/engine';
 
 import { getSupabaseClient } from '../../../lib/supabaseClient';
+import PortraitImage from '../../components/PortraitImage';
 
 type KinOption = {
   id: string;
@@ -42,7 +43,11 @@ const defaultAttributes: CharacterAttributes = {
   CHA: 10,
 };
 
-export default function CharacterCreationForm({ kins, professions, skills }: CharacterCreationFormProps) {
+export default function CharacterCreationForm({
+  kins,
+  professions,
+  skills,
+}: CharacterCreationFormProps) {
   const router = useRouter();
   const [playerName, setPlayerName] = useState('');
   const [characterName, setCharacterName] = useState('');
@@ -65,7 +70,7 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
 
   const allProfessionSkillIds = useMemo(
     () => professionSkills.map((skill) => skill.id),
-    [professionSkills]
+    [professionSkills],
   );
 
   const trainedSkillIds = useMemo(() => {
@@ -75,14 +80,17 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
 
   const previewSkills = useMemo(
     () => buildCharacterSkills(attributes, trainedSkillIds),
-    [attributes, trainedSkillIds]
+    [attributes, trainedSkillIds],
   );
 
-  const derived = useMemo(() => computeDerivedRatings(attributes, kinId).derived, [attributes, kinId]);
+  const derived = useMemo(
+    () => computeDerivedRatings(attributes, kinId).derived,
+    [attributes, kinId],
+  );
 
   const skillOptions = useMemo(
     () => [...skills.base_skills, ...skills.weapon_skills],
-    [skills.base_skills, skills.weapon_skills]
+    [skills.base_skills, skills.weapon_skills],
   );
 
   const handleAttributeChange = (key: keyof CharacterAttributes, value: number) => {
@@ -220,18 +228,12 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
             />
           </label>
           <label className="field">
-            Kin
-            <select className="select" value={kinId} onChange={(event) => setKinId(event.target.value)}>
-              {kins.map((kin) => (
-                <option key={kin.id} value={kin.id}>
-                  {kin.name} / {kin.name_sv}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="field">
             Age
-            <select className="select" value={age} onChange={(event) => setAge(event.target.value as typeof age)}>
+            <select
+              className="select"
+              value={age}
+              onChange={(event) => setAge(event.target.value as typeof age)}
+            >
               <option value="Young">Young</option>
               <option value="Middle-Aged">Middle-Aged</option>
               <option value="Old">Old</option>
@@ -250,11 +252,34 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
             >
               {professions.map((profession) => (
                 <option key={profession.id} value={profession.id}>
-                  {profession.name} / {profession.name_sv}
+                  {profession.name}
                 </option>
               ))}
             </select>
           </label>
+          <div className="field span-all">
+            <div className="field-label">Kin</div>
+            <div className="kin-grid" role="list" aria-label="Kin">
+              {kins.map((kin) => (
+                <button
+                  key={kin.id}
+                  type="button"
+                  className={`kin-card ${kin.id === kinId ? 'selected' : ''}`}
+                  onClick={() => setKinId(kin.id)}
+                  role="listitem"
+                  aria-pressed={kin.id === kinId}
+                >
+                  <PortraitImage
+                    portrait={{ kind: 'kin', kin_ref: `core:${kin.id}` as KinRef }}
+                    alt={kin.name}
+                    size={64}
+                  />
+                  <div className="kin-name">{kin.name}</div>
+                </button>
+              ))}
+            </div>
+            <div className="help-text">Selected kin becomes your default character portrait.</div>
+          </div>
           <label className="field">
             Weakness
             <input
@@ -336,7 +361,7 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
           {professionSkills.map((skill) => {
             const checked = professionSelection.includes(skill.id);
             return (
-              <div key={skill.id} className="skill-card">
+              <div key={skill.id} className={`skill-card ${checked ? 'selected' : ''}`}>
                 <label>
                   <span>{skill.name}</span>
                   <input
@@ -345,7 +370,7 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
                     onChange={() => toggleProfessionSkill(skill.id)}
                   />
                 </label>
-                <small>{skill.name_sv} · profession</small>
+                <small>Profession</small>
               </div>
             );
           })}
@@ -356,7 +381,10 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
             const checked = trainedSkillIds.includes(skill.id);
             const locked = professionSelection.includes(skill.id);
             return (
-              <div key={skill.id} className="skill-card">
+              <div
+                key={skill.id}
+                className={`skill-card ${checked ? 'selected' : ''} ${locked ? 'locked' : ''}`}
+              >
                 <label>
                   <span>{skill.name}</span>
                   <input
@@ -367,7 +395,7 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
                   />
                 </label>
                 <small>
-                  {skill.name_sv} · {skill.attribute}
+                  {skill.attribute}
                   {allProfessionSkillIds.includes(skill.id) ? ' · profession' : ''}
                 </small>
               </div>
@@ -383,7 +411,6 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
             <div key={skill.id} className="summary-card">
               <strong>{skill.name}</strong>
               <div className="summary-list">
-                <span>{skill.name_sv}</span>
                 <span>
                   {skill.value} · {skill.trained ? 'Trained' : 'Base'}
                 </span>
@@ -397,7 +424,6 @@ export default function CharacterCreationForm({ kins, professions, skills }: Cha
             <div key={skill.id} className="summary-card">
               <strong>{skill.name}</strong>
               <div className="summary-list">
-                <span>{skill.name_sv}</span>
                 <span>
                   {skill.value} · {skill.trained ? 'Trained' : 'Base'}
                 </span>

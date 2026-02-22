@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import { getSupabaseClient } from '../../../lib/supabaseClient';
-import type { CharacterSheet } from '@dbu/types';
+import type { CharacterSheet, KinRef } from '@dbu/types';
+
+import PortraitImage from '../../components/PortraitImage';
+
+const derivePortrait = (sheet: CharacterSheet) => {
+  if (sheet.portrait) return sheet.portrait;
+  if (sheet.header.kin_id)
+    return { kind: 'kin' as const, kin_ref: `core:${sheet.header.kin_id}` as KinRef };
+  return null;
+};
 
 type CharacterAdventureLink = {
   link: { status?: string };
@@ -85,11 +94,18 @@ export default function CharacterSummaryView({ id }: CharacterSummaryViewProps) 
   return (
     <div className="page">
       <header className="page-header">
-        <div>
-          <h1 className="page-title">{character.header.character_name}</h1>
-          <p className="page-subtitle">
-            {character.header.kin} · {character.header.profession} · {character.header.age}
-          </p>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+          <PortraitImage
+            portrait={derivePortrait(character)}
+            alt={character.header.character_name}
+            size={84}
+          />
+          <div>
+            <h1 className="page-title">{character.header.character_name}</h1>
+            <p className="page-subtitle">
+              {character.header.kin} · {character.header.profession} · {character.header.age}
+            </p>
+          </div>
         </div>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <a className="button secondary" href="/characters">
@@ -180,7 +196,6 @@ export default function CharacterSummaryView({ id }: CharacterSummaryViewProps) 
             <div key={skill.id} className="summary-card">
               <strong>{skill.name}</strong>
               <div className="summary-list">
-                <span>{skill.name_sv}</span>
                 <span>
                   {skill.value} · {skill.trained ? 'Trained' : 'Base'}
                 </span>

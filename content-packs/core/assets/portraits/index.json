@@ -1,0 +1,10 @@
+{
+  "kins": {
+    "core:human": "assets/portraits/kins/human.png",
+    "core:halfling": "assets/portraits/kins/halfling.png",
+    "core:dwarf": "assets/portraits/kins/dwarf.png",
+    "core:elf": "assets/portraits/kins/elf.png",
+    "core:mallard": "assets/portraits/kins/mallard.png",
+    "core:wolfkin": "assets/portraits/kins/wolfkin.png"
+  }
+}
